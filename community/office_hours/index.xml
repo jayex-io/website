@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Office Hours</title>
-    <link>https://jenkins-x.io/community/office_hours/</link>
-    <description>Recent content in Office Hours on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Office Hours</title>
+    <link>https://jayex.io/community/office_hours/</link>
+    <description>Recent content in Office Hours on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/community/office_hours/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/community/office_hours/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -14,11 +14,11 @@
     
     
     <item>
-      <title>Community: Jenkins X Office Hours - Archives</title>
-      <link>https://jenkins-x.io/community/office_hours/archives/</link>
+      <title>Community: JayeX Office Hours - Archives</title>
+      <link>https://jayex.io/community/office_hours/archives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/archives/</guid>
+      <guid>https://jayex.io/community/office_hours/archives/</guid>
       <description>
         
         
@@ -36,17 +36,17 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - March 5th 2020</title>
-      <link>https://jenkins-x.io/community/office_hours/2020-03-05/</link>
+      <title>Community: JayeX Office Hours - March 5th 2020</title>
+      <link>https://jayex.io/community/office_hours/2020-03-05/</link>
       <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2020-03-05/</guid>
+      <guid>https://jayex.io/community/office_hours/2020-03-05/</guid>
       <description>
         
         
         &lt;p&gt;Announcements:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Jenkins X Labs&lt;/li&gt;
+&lt;li&gt;JayeX Labs&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Demos:&lt;/p&gt;
 &lt;ul&gt;
@@ -63,18 +63,18 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - Jan 23rd 2020</title>
-      <link>https://jenkins-x.io/community/office_hours/2020-01-23/</link>
+      <title>Community: JayeX Office Hours - Jan 23rd 2020</title>
+      <link>https://jayex.io/community/office_hours/2020-01-23/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2020-01-23/</guid>
+      <guid>https://jayex.io/community/office_hours/2020-01-23/</guid>
       <description>
         
         
         &lt;p&gt;Overview of jx boot apps proposal&lt;/p&gt;
-&lt;p&gt;Demo of early idea around converting a declaritive Jenkins pipeline used with Jenkins X to jenkins-x.yml&lt;/p&gt;
+&lt;p&gt;Demo of early idea around converting a declaritive Jenkins pipeline used with JayeX to jenkins-x.yml&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;fun movie trailer style video for Jenkins X - &lt;a href=&#34;https://twitter.com/SharePointOscar&#34;&gt;Oscar Medina&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fun movie trailer style video for JayeX - &lt;a href=&#34;https://twitter.com/SharePointOscar&#34;&gt;Oscar Medina&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
  &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
@@ -86,17 +86,17 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - July 25, 2019</title>
-      <link>https://jenkins-x.io/community/office_hours/2019-07-25/</link>
+      <title>Community: JayeX Office Hours - July 25, 2019</title>
+      <link>https://jayex.io/community/office_hours/2019-07-25/</link>
       <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2019-07-25/</guid>
+      <guid>https://jayex.io/community/office_hours/2019-07-25/</guid>
       <description>
         
         
         &lt;p&gt;Announcements:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;New Jenkins X Logo!! - &lt;a href=&#34;https://twitter.com/jdrawlings&#34;&gt;James Rawlings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;New JayeX Logo!! - &lt;a href=&#34;https://twitter.com/jdrawlings&#34;&gt;James Rawlings&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Demos:&lt;/p&gt;
 &lt;ul&gt;
@@ -105,7 +105,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Bonus:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;fun movie trailer style video for Jenkins X - &lt;a href=&#34;https://twitter.com/SharePointOscar&#34;&gt;Oscar Medina&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fun movie trailer style video for JayeX - &lt;a href=&#34;https://twitter.com/SharePointOscar&#34;&gt;Oscar Medina&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
  &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
@@ -117,18 +117,23 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - June 27, 2019</title>
-      <link>https://jenkins-x.io/community/office_hours/2019-06-27/</link>
+      <title>Community: JayeX Office Hours - June 27, 2019</title>
+      <link>https://jayex.io/community/office_hours/2019-06-27/</link>
       <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2019-06-27/</guid>
+      <guid>https://jayex.io/community/office_hours/2019-06-27/</guid>
       <description>
         
         
-        &lt;p&gt;Demos:&lt;/p&gt;
+        &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+  &lt;h1&gt;WARNING: This post refers to the unmaintained Jenkins X version 1 or 2&lt;/h1&gt;
+  &lt;h3&gt;This post is outdated and is kept only out of historical interest. Some broken links have been removed.&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Demos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;pipeline scheduler configuration - &lt;a href=&#34;https://twitter.com/davidconde&#34;&gt;Dave Conde&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/plmuir&#34;&gt;Pete Muir&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/docs/reference/boot/&#34;&gt;Jenkins X Boot&lt;/a&gt; - &lt;a href=&#34;https://twitter.com/jstrachan&#34;&gt;James Strachan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Jenkins X Boot - &lt;a href=&#34;https://twitter.com/jstrachan&#34;&gt;James Strachan&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Announcement:&lt;/p&gt;
 &lt;ul&gt;
@@ -149,17 +154,17 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - May 30, 2019</title>
-      <link>https://jenkins-x.io/community/office_hours/2019-05-30/</link>
+      <title>Community: JayeX Office Hours - May 30, 2019</title>
+      <link>https://jayex.io/community/office_hours/2019-05-30/</link>
       <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2019-05-30/</guid>
+      <guid>https://jayex.io/community/office_hours/2019-05-30/</guid>
       <description>
         
         
         &lt;h1 id=&#34;agenda&#34;&gt;Agenda&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Jenkins X and machine learning - Terry Cox&lt;/li&gt;
+&lt;li&gt;JayeX and machine learning - Terry Cox&lt;/li&gt;
 &lt;li&gt;walkthrough of new code coverage&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -172,18 +177,18 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - May 3, 2019</title>
-      <link>https://jenkins-x.io/community/office_hours/2019-05-03/</link>
+      <title>Community: JayeX Office Hours - May 3, 2019</title>
+      <link>https://jayex.io/community/office_hours/2019-05-03/</link>
       <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2019-05-03/</guid>
+      <guid>https://jayex.io/community/office_hours/2019-05-03/</guid>
       <description>
         
         
         &lt;h1 id=&#34;agenda&#34;&gt;Agenda&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;bucketrepo as a lightweight replacement for Nexus (&lt;a href=&#34;https://github.com/jenkins-x/bucketrepo&#34;&gt;https://github.com/jenkins-x/bucketrepo&lt;/a&gt;) - Cosmin Cojocar&lt;/li&gt;
-&lt;li&gt;latest Jenkins X Apps demo - Pete Muir &lt;a href=&#34;https://www.youtube.com/watch?v=MqdMynweoUU&amp;amp;feature=youtu.be&#34;&gt;https://www.youtube.com/watch?v=MqdMynweoUU&amp;amp;feature=youtu.be&lt;/a&gt; and &lt;a href=&#34;https://www.youtube.com/watch?v=csRftjH1uXI&amp;amp;feature=youtu.be&#34;&gt;https://www.youtube.com/watch?v=csRftjH1uXI&amp;amp;feature=youtu.be&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;latest JayeX Apps demo - Pete Muir &lt;a href=&#34;https://www.youtube.com/watch?v=MqdMynweoUU&amp;amp;feature=youtu.be&#34;&gt;https://www.youtube.com/watch?v=MqdMynweoUU&amp;amp;feature=youtu.be&lt;/a&gt; and &lt;a href=&#34;https://www.youtube.com/watch?v=csRftjH1uXI&amp;amp;feature=youtu.be&#34;&gt;https://www.youtube.com/watch?v=csRftjH1uXI&amp;amp;feature=youtu.be&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 
@@ -196,25 +201,30 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - April 19, 2019</title>
-      <link>https://jenkins-x.io/community/office_hours/2019-04-19/</link>
+      <title>Community: JayeX Office Hours - April 19, 2019</title>
+      <link>https://jayex.io/community/office_hours/2019-04-19/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2019-04-19/</guid>
+      <guid>https://jayex.io/community/office_hours/2019-04-19/</guid>
       <description>
         
         
-        &lt;h1 id=&#34;agenda&#34;&gt;Agenda&lt;/h1&gt;
+        &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+  &lt;h1&gt;WARNING: This post refers to the unmaintained Jenkins X version 1 or 2&lt;/h1&gt;
+  &lt;h3&gt;This post is outdated and is kept only out of historical interest. Some broken links have been removed.&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&#34;agenda&#34;&gt;Agenda&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Update on &lt;a href=&#34;https://jenkins-x.io/docs/reference/multi-cluster/&#34;&gt;multi cluster&lt;/a&gt; - &lt;a href=&#34;https://twitter.com/jstrachan&#34;&gt;James Strachan&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Update on Dogfooding Jenkins X - &lt;a href=&#34;https://twitter.com/&#34;&gt;James Rawlings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Update on multi cluster - &lt;a href=&#34;https://twitter.com/jstrachan&#34;&gt;James Strachan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Update on Dogfooding JayeX - &lt;a href=&#34;https://twitter.com/&#34;&gt;James Rawlings&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Update on monitoring - &lt;a href=&#34;https://twitter.com/garethbryncyn&#34;&gt;Gareth Evans&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Update on external dns - &lt;a href=&#34;https://twitter.com/cagiti&#34;&gt;Cai Cooper&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Update on multiple git providers for Prow - &lt;a href=&#34;https://twitter.com/wildwillberry&#34;&gt;Will Refvem&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Demos:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/docs/reference/multi-cluster/&#34;&gt;Multi-cluster&lt;/a&gt; - &lt;a href=&#34;https://twitter.com/jstrachan&#34;&gt;James Strachan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Multi-cluster - &lt;a href=&#34;https://twitter.com/jstrachan&#34;&gt;James Strachan&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Installing apps using GitOps, with private chart repos - &lt;a href=&#34;https://twitter.com/plmuir&#34;&gt;Pete Muir&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Creating optional questions for app install - &lt;a href=&#34;https://twitter.com/davidconde&#34;&gt;Dave Conde&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Jx upgrade app - &lt;a href=&#34;https://twitter.com/plmuir&#34;&gt;Pete Muir&lt;/a&gt;&lt;/li&gt;
@@ -229,18 +239,18 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - April 4, 2019</title>
-      <link>https://jenkins-x.io/community/office_hours/2019-04-04/</link>
+      <title>Community: JayeX Office Hours - April 4, 2019</title>
+      <link>https://jayex.io/community/office_hours/2019-04-04/</link>
       <pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2019-04-04/</guid>
+      <guid>https://jayex.io/community/office_hours/2019-04-04/</guid>
       <description>
         
         
         &lt;h1 id=&#34;agenda&#34;&gt;Agenda&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Rebasing &amp;amp; Batching pull requests - &lt;a href=&#34;https://twitter.com/plmuir&#34;&gt;Pete Muir&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://twitter.com/jdrawlings&#34;&gt;James Rawlings&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Provisioning Jenkins X K8s Clusters Using Infrastructure as Code (Terraform) - &lt;a href=&#34;https://twitter.com/SharePointOscar&#34;&gt;Oscar Medina&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Provisioning JayeX K8s Clusters Using Infrastructure as Code (Terraform) - &lt;a href=&#34;https://twitter.com/SharePointOscar&#34;&gt;Oscar Medina&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Knative Server - &lt;a href=&#34;https://twitter.com/jstrachan&#34;&gt;James Strachan&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Multi-select questions for jx add app - &lt;a href=&#34;https://twitter.com/plmuir&#34;&gt;Pete Muir&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;jx add app against local filesystem - &lt;a href=&#34;https://twitter.com/plmuir&#34;&gt;Pete Muir&lt;/a&gt;&lt;/li&gt;
@@ -256,11 +266,11 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - March 21, 2019</title>
-      <link>https://jenkins-x.io/community/office_hours/2019-03-21/</link>
+      <title>Community: JayeX Office Hours - March 21, 2019</title>
+      <link>https://jayex.io/community/office_hours/2019-03-21/</link>
       <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2019-03-21/</guid>
+      <guid>https://jayex.io/community/office_hours/2019-03-21/</guid>
       <description>
         
         
@@ -268,7 +278,7 @@
 &lt;ul&gt;
 &lt;li&gt;Overview and demo of DevEnv - &lt;a href=&#34;https://twitter.com/cagiti&#34;&gt;Cai Cooper&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;CLI plugins - &lt;a href=&#34;https://twitter.com/plmuir&#34;&gt;Pete Muir&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;CloudBees Docs Team (Ashton, Kim, Tammy, John) - want to know how they can help the community with Jenkins X docs :-)&lt;/li&gt;
+&lt;li&gt;CloudBees Docs Team (Ashton, Kim, Tammy, John) - want to know how they can help the community with JayeX docs :-)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 
@@ -281,17 +291,22 @@
     </item>
     
     <item>
-      <title>Community: Jenkins X Office Hours - February 21, 2019</title>
-      <link>https://jenkins-x.io/community/office_hours/2019-02-21/</link>
+      <title>Community: JayeX Office Hours - February 21, 2019</title>
+      <link>https://jayex.io/community/office_hours/2019-02-21/</link>
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/office_hours/2019-02-21/</guid>
+      <guid>https://jayex.io/community/office_hours/2019-02-21/</guid>
       <description>
         
         
-        &lt;h1 id=&#34;agenda&#34;&gt;Agenda&lt;/h1&gt;
+        &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+  &lt;h1&gt;WARNING: This post refers to the unmaintained Jenkins X version 1 or 2&lt;/h1&gt;
+  &lt;h3&gt;This post is outdated and is kept only out of historical interest. Some broken links have been removed.&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&#34;agenda&#34;&gt;Agenda&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/architecture/jenkins-x-pipelines&#34;&gt;Jenkins X Pipelines&lt;/a&gt; - &lt;a href=&#34;https://github.com/abayer&#34;&gt;Andrew Bayer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Jenkins X Pipelines - &lt;a href=&#34;https://github.com/abayer&#34;&gt;Andrew Bayer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Container Tests - &lt;a href=&#34;https://twitter.com/garethbryncyn&#34;&gt;Gareth Evans&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;

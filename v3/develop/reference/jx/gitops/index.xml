@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx gitops</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/</link>
-    <description>Recent content in jx gitops on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx gitops</title>
+    <link>https://jayex.io/v3/develop/reference/jx/gitops/</link>
+    <description>Recent content in jx gitops on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/gitops/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/gitops/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx gitops annotate</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/annotate/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/annotate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/annotate/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/annotate/</guid>
       <description>
         
         
@@ -51,10 +51,10 @@
     
     <item>
       <title>V3: jx gitops apply</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/apply/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/apply/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/apply/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/apply/</guid>
       <description>
         
         
@@ -79,10 +79,10 @@
     
     <item>
       <title>V3: jx gitops condition</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/condition/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/condition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/condition/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/condition/</guid>
       <description>
         
         
@@ -112,10 +112,10 @@
     
     <item>
       <title>V3: jx gitops copy</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/copy/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/copy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/copy/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/copy/</guid>
       <description>
         
         
@@ -150,10 +150,10 @@
     
     <item>
       <title>V3: jx gitops gc</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/gc/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/gc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/gc/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/gc/</guid>
       <description>
         
         
@@ -171,10 +171,10 @@
     
     <item>
       <title>V3: jx gitops git</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/git/</guid>
       <description>
         
         
@@ -192,10 +192,10 @@
     
     <item>
       <title>V3: jx gitops hash</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/hash/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/hash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/hash/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/hash/</guid>
       <description>
         
         
@@ -222,10 +222,10 @@
     
     <item>
       <title>V3: jx gitops helm</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helm/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helm/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helm/</guid>
       <description>
         
         
@@ -243,10 +243,10 @@
     
     <item>
       <title>V3: jx gitops helmfile</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/</guid>
       <description>
         
         
@@ -264,10 +264,10 @@
     
     <item>
       <title>V3: jx gitops image</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/image/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/image/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/image/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/image/</guid>
       <description>
         
         
@@ -301,10 +301,10 @@
     
     <item>
       <title>V3: jx gitops ingress</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/ingress/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/ingress/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/ingress/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/ingress/</guid>
       <description>
         
         
@@ -328,10 +328,10 @@
     
     <item>
       <title>V3: jx gitops jenkins</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/jenkins/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/jenkins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/jenkins/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/jenkins/</guid>
       <description>
         
         
@@ -349,10 +349,10 @@
     
     <item>
       <title>V3: jx gitops kpt</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/kpt/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/kpt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/kpt/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/kpt/</guid>
       <description>
         
         
@@ -370,10 +370,10 @@
     
     <item>
       <title>V3: jx gitops kustomize</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/kustomize/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/kustomize/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/kustomize/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/kustomize/</guid>
       <description>
         
         
@@ -398,10 +398,10 @@
     
     <item>
       <title>V3: jx gitops label</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/label/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/label/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/label/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/label/</guid>
       <description>
         
         
@@ -434,10 +434,10 @@
     
     <item>
       <title>V3: jx gitops lint</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/lint/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/lint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/lint/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/lint/</guid>
       <description>
         
         
@@ -459,10 +459,10 @@
     
     <item>
       <title>V3: jx gitops namespace</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/namespace/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/namespace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/namespace/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/namespace/</guid>
       <description>
         
         
@@ -498,10 +498,10 @@
     
     <item>
       <title>V3: jx gitops patch</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/patch/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/patch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/patch/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/patch/</guid>
       <description>
         
         
@@ -532,10 +532,10 @@
     
     <item>
       <title>V3: jx gitops plugin</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/plugin/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/plugin/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/plugin/</guid>
       <description>
         
         
@@ -553,10 +553,10 @@
     
     <item>
       <title>V3: jx gitops postprocess</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/postprocess/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/postprocess/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/postprocess/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/postprocess/</guid>
       <description>
         
         
@@ -583,10 +583,10 @@
     
     <item>
       <title>V3: jx gitops pr</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/pr/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/pr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/pr/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/pr/</guid>
       <description>
         
         
@@ -604,10 +604,10 @@
     
     <item>
       <title>V3: jx gitops rename</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/rename/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/rename/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/rename/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/rename/</guid>
       <description>
         
         
@@ -629,10 +629,10 @@
     
     <item>
       <title>V3: jx gitops repository</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/repository/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/repository/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/repository/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/repository/</guid>
       <description>
         
         
@@ -650,10 +650,10 @@
     
     <item>
       <title>V3: jx gitops requirement</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/requirement/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/requirement/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/requirement/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/requirement/</guid>
       <description>
         
         
@@ -671,10 +671,10 @@
     
     <item>
       <title>V3: jx gitops sa</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/sa/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/sa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/sa/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/sa/</guid>
       <description>
         
         
@@ -692,10 +692,10 @@
     
     <item>
       <title>V3: jx gitops scheduler</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/scheduler/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/scheduler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/scheduler/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/scheduler/</guid>
       <description>
         
         
@@ -722,10 +722,10 @@
     
     <item>
       <title>V3: jx gitops split</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/split/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/split/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/split/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/split/</guid>
       <description>
         
         
@@ -747,10 +747,10 @@
     
     <item>
       <title>V3: jx gitops upgrade</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/upgrade/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/upgrade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/upgrade/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/upgrade/</guid>
       <description>
         
         
@@ -786,10 +786,10 @@
     
     <item>
       <title>V3: jx gitops variables</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/variables/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/variables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/variables/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/variables/</guid>
       <description>
         
         
@@ -825,10 +825,10 @@
     
     <item>
       <title>V3: jx gitops version</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/version/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/version/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/version/</guid>
       <description>
         
         
@@ -846,10 +846,10 @@
     
     <item>
       <title>V3: jx gitops versionstream</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/versionstream/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/versionstream/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/versionstream/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/versionstream/</guid>
       <description>
         
         
@@ -882,10 +882,10 @@
     
     <item>
       <title>V3: jx gitops webhook</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/webhook/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/webhook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/webhook/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/webhook/</guid>
       <description>
         
         
@@ -903,10 +903,10 @@
     
     <item>
       <title>V3: jx gitops yset</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/yset/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/yset/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/yset/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/yset/</guid>
       <description>
         
         

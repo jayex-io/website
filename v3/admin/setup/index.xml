@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Getting started</title>
-    <link>https://jenkins-x.io/v3/admin/setup/</link>
-    <description>Recent content in Getting started on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Getting started</title>
+    <link>https://jayex.io/v3/admin/setup/</link>
+    <description>Recent content in Getting started on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/setup/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/setup/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,16 +15,16 @@
     
     <item>
       <title>V3: Install the CLI</title>
-      <link>https://jenkins-x.io/v3/admin/setup/jx3/</link>
+      <link>https://jayex.io/v3/admin/setup/jx3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/jx3/</guid>
+      <guid>https://jayex.io/v3/admin/setup/jx3/</guid>
       <description>
         
         
         &lt;p&gt;You can download 3.x of &lt;code&gt;jx&lt;/code&gt; from here: &lt;a href=&#34;https://github.com/jenkins-x/jx/releases&#34;&gt;https://github.com/jenkins-x/jx/releases&lt;/a&gt; or use &lt;code&gt;HomeBrew&lt;/code&gt; (macOS).&lt;/p&gt;
 &lt;h3 id=&#34;linux&#34;&gt;Linux&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -L https://github.com/jenkins-x/jx/releases/download/v3.16.43/jx-linux-amd64.tar.gz | tar xzv
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -L https://github.com/jenkins-x/jx/releases/download/v3.16.56/jx-linux-amd64.tar.gz | tar xzv
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod +x jx 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mv jx /usr/local/bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;macos&#34;&gt;macOS&lt;/h3&gt;
@@ -35,12 +35,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;Curl method:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -L  https://github.com/jenkins-x/jx/releases/download/v3.16.43/jx-darwin-amd64.tar.gz | tar xzv
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -L  https://github.com/jenkins-x/jx/releases/download/v3.16.56/jx-darwin-amd64.tar.gz | tar xzv
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod +x jx 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mv jx /usr/local/bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;windows&#34;&gt;Windows&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;click on the &lt;a href=&#34;https://github.com/jenkins-x/jx/releases/download/v3.16.43/jx-windows-amd64.zip&#34;&gt;download link&lt;/a&gt; to download a binary&lt;/li&gt;
+&lt;li&gt;click on the &lt;a href=&#34;https://github.com/jenkins-x/jx/releases/download/v3.16.56/jx-windows-amd64.zip&#34;&gt;download link&lt;/a&gt; to download a binary&lt;/li&gt;
 &lt;li&gt;copy the &lt;code&gt;jx&lt;/code&gt; binary to a directory on your &lt;code&gt;$PATH&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;verify-your-install&#34;&gt;Verify your install&lt;/h2&gt;
@@ -48,46 +48,46 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx version 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx --help 
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For more detail see the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/&#34;&gt;Command Line Reference Guide&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For more detail see the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/&#34;&gt;Command Line Reference Guide&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Install the Operator</title>
-      <link>https://jenkins-x.io/v3/admin/setup/operator/</link>
+      <link>https://jayex.io/v3/admin/setup/operator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/operator/</guid>
+      <guid>https://jayex.io/v3/admin/setup/operator/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X 3.x uses a &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;git operator&lt;/a&gt; to manage installing + upgrading of Jenkins X and any other components in any environment. If you are interested you can read &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/&#34;&gt;how it works&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;JayeX 3.x uses a &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;git operator&lt;/a&gt; to manage installing + upgrading of JayeX and any other components in any environment. If you are interested you can read &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/&#34;&gt;how it works&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;using-terraform&#34;&gt;Using Terraform&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;NOTE&lt;/em&gt; if you are using one of the public clouds to install Jenkins X then Terraform will install the &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;git operator&lt;/a&gt; for you so that there is no need for you to do so manually.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;NOTE&lt;/em&gt; if you are using one of the public clouds to install JayeX then Terraform will install the &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;git operator&lt;/a&gt; for you so that there is no need for you to do so manually.&lt;/p&gt;
 &lt;p&gt;So the following approaches automatically install the operator for you:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/eks/&#34;&gt;Amazon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/azure/&#34;&gt;Azure&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/gke/&#34;&gt;Google Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/admin/platform/eks/&#34;&gt;Amazon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/admin/platform/azure/&#34;&gt;Azure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/admin/platform/gke/&#34;&gt;Google Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;git-user-and-token&#34;&gt;Git user and token&lt;/h2&gt;
 &lt;p&gt;To install the &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;git operator&lt;/a&gt; you will need a pipeline user and token for the git repository.&lt;/p&gt;
 &lt;p&gt;This user and token needs read and write access to the git repository containing the installation configuration. Ideally the token will also have permissions to be able to create a webhook on the repository (to trigger CI/CD pipelines whenever someone creates a Pull Request on the git repository).&lt;/p&gt;
-&lt;p&gt;You can always setup webhooks by hand yourself whenever a git repository is &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;created or imported&lt;/a&gt; or the domain name of your &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt; hook endpoint changes via the &lt;a href=&#34;https://github.com/jenkins-x/jx-verify/blob/master/docs/cmd/jx-verify_webhooks.md&#34;&gt;jx verify webhooks&lt;/a&gt; command. Though its easier to get Jenkins X to automate this for you as part of the CI/CD pipelines; it just requires the git user and token to have sufficient permissions to list, create and modify webhooks.&lt;/p&gt;
-&lt;p&gt;Note also that the same pipeline user and token is reused by default for all pipelines on &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;all repositories created or imported&lt;/a&gt; which will need read, write and webhook permissions on all of those repositories too. Though if you really want you can change this later on by &lt;a href=&#34;https://jenkins-x.io/v3/guides/secrets/#edit-secrets&#34;&gt;editing the pipeline token&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can always setup webhooks by hand yourself whenever a git repository is &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;created or imported&lt;/a&gt; or the domain name of your &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt; hook endpoint changes via the &lt;a href=&#34;https://github.com/jenkins-x/jx-verify/blob/master/docs/cmd/jx-verify_webhooks.md&#34;&gt;jx verify webhooks&lt;/a&gt; command. Though its easier to get JayeX to automate this for you as part of the CI/CD pipelines; it just requires the git user and token to have sufficient permissions to list, create and modify webhooks.&lt;/p&gt;
+&lt;p&gt;Note also that the same pipeline user and token is reused by default for all pipelines on &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;all repositories created or imported&lt;/a&gt; which will need read, write and webhook permissions on all of those repositories too. Though if you really want you can change this later on by &lt;a href=&#34;https://jayex.io/v3/guides/secrets/#edit-secrets&#34;&gt;editing the pipeline token&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;create-a-git-token&#34;&gt;Create a git token&lt;/h2&gt;
 &lt;p&gt;To create a git token for passing into the operator use this button:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow&#34; target=&#34;github&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create new GitHub Token&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;installing-the-operator&#34;&gt;Installing the operator&lt;/h2&gt;
-&lt;p&gt;Run &lt;a href=&#34;https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md&#34;&gt;jx admin operator&lt;/a&gt; command inside the git clone of the &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;git repository&lt;/a&gt; you created previously:&lt;/p&gt;
+&lt;p&gt;Run &lt;a href=&#34;https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md&#34;&gt;jx admin operator&lt;/a&gt; command inside the git clone of the &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;git repository&lt;/a&gt; you created previously:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx admin operator --username &amp;lt;mygituser&amp;gt; --token &amp;lt;mygittoken&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you don&amp;rsquo;t specify the &lt;code&gt;username&lt;/code&gt; or &lt;code&gt;token&lt;/code&gt; parameters you will be prompted for them.&lt;/p&gt;
-&lt;p&gt;If you are not inside the git clone of the &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;git repository&lt;/a&gt; you will need to specify the &lt;code&gt;--url&lt;/code&gt; parameter for the git URL:&lt;/p&gt;
+&lt;p&gt;If you are not inside the git clone of the &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;git repository&lt;/a&gt; you will need to specify the &lt;code&gt;--url&lt;/code&gt; parameter for the git URL:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx admin operator --url&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;https://github.com/myorg/env-mycluster-dev.git --username &amp;lt;mygituser&amp;gt; --token &amp;lt;mygittoken&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command will use helm to install the &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;git operator&lt;/a&gt; which will trigger a Job to install Jenkins X (and re-trigger a Job whenever you commit to your git repository).&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command will use helm to install the &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;git operator&lt;/a&gt; which will trigger a Job to install JayeX (and re-trigger a Job whenever you commit to your git repository).&lt;/p&gt;
 &lt;p&gt;The terminal will display the logs as the boot &lt;code&gt;Job&lt;/code&gt; runs.&lt;/p&gt;
-&lt;p&gt;Jenkins X will now install itself.&lt;/p&gt;
+&lt;p&gt;JayeX will now install itself.&lt;/p&gt;
 &lt;h2 id=&#34;http-proxy-settings&#34;&gt;HTTP proxy settings&lt;/h2&gt;
 &lt;p&gt;If you are behind a HTTP proxy and need to configure environment variables for HTTP proxy support then you can do this as follows.&lt;/p&gt;
 &lt;p&gt;For each environment variable you want to pass in use the &lt;code&gt;--set jxBootJobEnvVarSecrets.NAME=value&lt;/code&gt; argument.&lt;/p&gt;
@@ -133,14 +133,14 @@
     
     <item>
       <title>V3: Ingress</title>
-      <link>https://jenkins-x.io/v3/admin/setup/ingress/</link>
+      <link>https://jayex.io/v3/admin/setup/ingress/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/ingress/</guid>
+      <guid>https://jayex.io/v3/admin/setup/ingress/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X requires ingress so that webhooks from your git provider can trigger pipelines and so that you can use tools like the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/dashboard/&#34;&gt;Dashboard&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;JayeX requires ingress so that webhooks from your git provider can trigger pipelines and so that you can use tools like the &lt;a href=&#34;https://jayex.io/v3/develop/ui/dashboard/&#34;&gt;Dashboard&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The ingress domain is defined in &lt;code&gt;ingress.domain&lt;/code&gt; in the &lt;a href=&#34;https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements&#34;&gt;jx-requirements.yml&lt;/a&gt; file in your development git repository&lt;/p&gt;
 
       </description>
@@ -148,14 +148,14 @@
     
     <item>
       <title>V3: Secrets</title>
-      <link>https://jenkins-x.io/v3/admin/setup/secrets/</link>
+      <link>https://jayex.io/v3/admin/setup/secrets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/secrets/</guid>
+      <guid>https://jayex.io/v3/admin/setup/secrets/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X 3.x uses &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;Kubernetes External Secrets&lt;/a&gt; to manage populating secrets from your underlying secret store such as:&lt;/p&gt;
+        &lt;p&gt;JayeX 3.x uses &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;Kubernetes External Secrets&lt;/a&gt; to manage populating secrets from your underlying secret store such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Alibaba Cloud KMS Secret Manager&lt;/li&gt;
 &lt;li&gt;Amazon Secret Manager&lt;/li&gt;
@@ -201,7 +201,7 @@ graph TB
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx secret vault portforward
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You should then be able to run the following &lt;code&gt;jx secret edit&lt;/code&gt; command. You can also run the &lt;code&gt;jx secret vault shell&lt;/code&gt; command, which gives you a shell with an environment where you can can issue &lt;code&gt;vault&lt;/code&gt; commands.&lt;/p&gt;
 &lt;h2 id=&#34;edit-secrets&#34;&gt;Edit Secrets&lt;/h2&gt;
-&lt;p&gt;To edit the Secrets use the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/secret/edit/&#34;&gt;jx secret edit&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;To edit the Secrets use the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/secret/edit/&#34;&gt;jx secret edit&lt;/a&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx secret edit
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will prompt you to enter all the missing Secrets by default.&lt;/p&gt;
 &lt;p&gt;If you just want to enter a specific secret you can use &lt;code&gt;--filter&lt;/code&gt; or &lt;code&gt;-f&lt;/code&gt; to filter for a specific secret name.&lt;/p&gt;
@@ -214,21 +214,21 @@ graph TB
 &lt;h2 id=&#34;create-a-new-secret&#34;&gt;Create a new Secret&lt;/h2&gt;
 &lt;p&gt;If you wish to add a new custom Secret to your cluster so that you can reference it inside a Pipeline then follow these steps:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Add an &lt;code&gt;ExternalSecret&lt;/code&gt; (or &lt;code&gt;Secret&lt;/code&gt; with empty values) resource via the  &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-resources&#34;&gt;add a kubernetes resources guide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add an &lt;code&gt;ExternalSecret&lt;/code&gt; (or &lt;code&gt;Secret&lt;/code&gt; with empty values) resource via the  &lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-resources&#34;&gt;add a kubernetes resources guide&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Submit your change as a Pull Request then merge the change.&lt;/li&gt;
-&lt;li&gt;This should now trigger a &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#boot-job&#34;&gt;boot Job&lt;/a&gt; to apply the changes in your repository&lt;/li&gt;
+&lt;li&gt;This should now trigger a &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#boot-job&#34;&gt;boot Job&lt;/a&gt; to apply the changes in your repository&lt;/li&gt;
 &lt;li&gt;You should now be able to see the &lt;code&gt;ExternalSecret&lt;/code&gt; in the namespace you wanted via:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get es --namespace jx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;You can view which External Secrets are &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/secrets/&#34;&gt;populated via the External Secrets service&lt;/a&gt; via:&lt;/li&gt;
+&lt;li&gt;You can view which External Secrets are &lt;a href=&#34;https://jayex.io/v3/admin/setup/secrets/&#34;&gt;populated via the External Secrets service&lt;/a&gt; via:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx secret verify
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The &lt;code&gt;Secret&lt;/code&gt; gets created by the &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/secrets/&#34;&gt;the External Secrets service&lt;/a&gt; when the underlying secret store (e.g. vault / cloud provider secret manager) is populated or updated. You can populate the secrets in a number of ways&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Secret&lt;/code&gt; gets created by the &lt;a href=&#34;https://jayex.io/v3/admin/setup/secrets/&#34;&gt;the External Secrets service&lt;/a&gt; when the underlying secret store (e.g. vault / cloud provider secret manager) is populated or updated. You can populate the secrets in a number of ways&amp;hellip;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;using the underlying secret store directly. e.g. using the &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/secrets/vault/#using-the-vault-cli-directly&#34;&gt;vault CLI directly&lt;/a&gt; or &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/secrets/vault/#using-the-vault-web-ui&#34;&gt;vault web UI&lt;/a&gt; or use your cloud providers secret manager&amp;rsquo;s CLI or web UI&lt;/li&gt;
+&lt;li&gt;using the underlying secret store directly. e.g. using the &lt;a href=&#34;https://jayex.io/v3/admin/setup/secrets/vault/#using-the-vault-cli-directly&#34;&gt;vault CLI directly&lt;/a&gt; or &lt;a href=&#34;https://jayex.io/v3/admin/setup/secrets/vault/#using-the-vault-web-ui&#34;&gt;vault web UI&lt;/a&gt; or use your cloud providers secret manager&amp;rsquo;s CLI or web UI&lt;/li&gt;
 &lt;li&gt;using &lt;code&gt;jx secret edit -f mysecret-name&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;using a generator or template. You can define a &lt;code&gt;secret-schema.yaml&lt;/code&gt; in &lt;code&gt;versionStream/charts/chartRepoName/chartName/secret-schema.yaml&lt;/code&gt; file which describes how to generate the secret (e.g. using a random password generator or a template) such as &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/presslabs/mysql-operator/secret-schema.yaml&#34;&gt;this example to generate a dynamic password for MySQL&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -236,10 +236,10 @@ graph TB
 &lt;/ul&gt;
 &lt;h2 id=&#34;replicating-secrets-among-namespaces&#34;&gt;Replicating Secrets among namespaces&lt;/h2&gt;
 &lt;p&gt;Its quite common to need to replicate the same Secrets across namespaces. For example &lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/&#34;&gt;Image Pull Secrets&lt;/a&gt; to pull images from container registries which may need to be used in dev, staging and production.&lt;/p&gt;
-&lt;p&gt;The Jenkins X boot job does this automatically for any secret labelled with &lt;code&gt;secret.jenkins-x.io/replica-source=true&lt;/code&gt; using the &lt;a href=&#34;https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md&#34;&gt;jx secret replicate&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;The JayeX boot job does this automatically for any secret labelled with &lt;code&gt;secret.jenkins-x.io/replica-source=true&lt;/code&gt; using the &lt;a href=&#34;https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md&#34;&gt;jx secret replicate&lt;/a&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx secret replicate --selector secret.jenkins-x.io/replica-source&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;true
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will replicate the secret to all permanent enivronments in the same cluster (e.g. a local Staging or Production environment).&lt;/p&gt;
-&lt;p&gt;If you want to replicate another secret just add the label &lt;code&gt;secret.jenkins-x.io/replica-source=true&lt;/code&gt; or you can add a new &lt;a href=&#34;https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md&#34;&gt;jx secret replicate&lt;/a&gt; to the &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#boot-job&#34;&gt;boot makefile&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you want to replicate another secret just add the label &lt;code&gt;secret.jenkins-x.io/replica-source=true&lt;/code&gt; or you can add a new &lt;a href=&#34;https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md&#34;&gt;jx secret replicate&lt;/a&gt; to the &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#boot-job&#34;&gt;boot makefile&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;migrating-secrets-from-vault&#34;&gt;Migrating Secrets from Vault&lt;/h3&gt;
 &lt;p&gt;If you have secrets already in a Vault then use the vault CLI tool to export the secrets to disk, reformat it in the above YAML layout and then import the secrets as above.&lt;/p&gt;
 
@@ -248,19 +248,19 @@ graph TB
     
     <item>
       <title>V3: Configuration</title>
-      <link>https://jenkins-x.io/v3/admin/setup/config/</link>
+      <link>https://jayex.io/v3/admin/setup/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/config/</guid>
+      <guid>https://jayex.io/v3/admin/setup/config/</guid>
       <description>
         
         
         &lt;p&gt;There are a number of ways to change the configuration:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;edit the &lt;a href=&#34;https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements&#34;&gt;jx-requirements.yml&lt;/a&gt; file in the dev cluster git repository to change most configuration.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-charts&#34;&gt;add new charts via helmfile&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-resources&#34;&gt;add kubernetes resources&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#customising-charts&#34;&gt;customize charts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-charts&#34;&gt;add new charts via helmfile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-resources&#34;&gt;add kubernetes resources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/apps/#customising-charts&#34;&gt;customize charts&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Here are some more specific configuration guides:&lt;/p&gt;
 
@@ -269,18 +269,18 @@ graph TB
     
     <item>
       <title>V3: Upgrades</title>
-      <link>https://jenkins-x.io/v3/admin/setup/upgrades/</link>
+      <link>https://jayex.io/v3/admin/setup/upgrades/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/upgrades/</guid>
+      <guid>https://jayex.io/v3/admin/setup/upgrades/</guid>
       <description>
         
         
-        &lt;p&gt;There are a few areas to consider when upgrading Jenkins X.&lt;/p&gt;
+        &lt;p&gt;There are a few areas to consider when upgrading JayeX.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;infrastructure typically managed by tools like Terraform&lt;/li&gt;
-&lt;li&gt;the jx CLI used to interact with Jenkins X&lt;/li&gt;
-&lt;li&gt;cluster managed by GitOps and the Jenkins X version streams&lt;/li&gt;
+&lt;li&gt;the jx CLI used to interact with JayeX&lt;/li&gt;
+&lt;li&gt;cluster managed by GitOps and the JayeX version streams&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -288,18 +288,18 @@ graph TB
     
     <item>
       <title>V3: Health</title>
-      <link>https://jenkins-x.io/v3/admin/setup/health/</link>
+      <link>https://jayex.io/v3/admin/setup/health/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/health/</guid>
+      <guid>https://jayex.io/v3/admin/setup/health/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X v3.x now has a CLI plugin that works with &lt;a href=&#34;https://github.com/Comcast/kuberhealthy&#34;&gt;Kuberhealthy&lt;/a&gt; to check the health of a working Jenkins X.&lt;/p&gt;
+        &lt;p&gt;JayeX v3.x now has a CLI plugin that works with &lt;a href=&#34;https://github.com/Comcast/kuberhealthy&#34;&gt;Kuberhealthy&lt;/a&gt; to check the health of a working JayeX.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;jx health&lt;/code&gt; plugin is self contained in the git repository &lt;a href=&#34;https://github.com/jenkins-x-plugins/jx-health&#34;&gt;https://github.com/jenkins-x-plugins/jx-health&lt;/a&gt;.  This provides a way to query teh result of health checks that run periodically in each Kubernetes namespace.&lt;/p&gt;
 &lt;p&gt;The plugin is also useful in a more locked down cluster for developers with reduced RBAC permissions.  A user only needs permissions to read the Kuberhealth state custom resources &lt;a href=&#34;https://github.com/jenkins-x-plugins/jx-health#rbac-requirements&#34;&gt;https://github.com/jenkins-x-plugins/jx-health#rbac-requirements&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Kuberhealthy provides an easy way to extend using custom health checks to report errors.  To see how to write your own check see the docs &lt;a href=&#34;https://github.com/Comcast/kuberhealthy/blob/master/docs/EXTERNAL_CHECK_CREATION.md&#34;&gt;here&lt;/a&gt;.  Jenkins X already comes with a set of custom health checks that can be installed that report errors, for example with webhooks, missing secrets, a bad install or invalid bot token.  For more details take a look here &lt;a href=&#34;https://github.com/jenkins-x-plugins/jx-kh-check/tree/master/cmd&#34;&gt;https://github.com/jenkins-x-plugins/jx-kh-check/tree/master/cmd&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;d like to encourrage contributions to add extra checks as Jenkins X v3 matures.  If you have a check that you would like to add please reach out in the community channels or create an issue or pull request.&lt;/p&gt;
+&lt;p&gt;Kuberhealthy provides an easy way to extend using custom health checks to report errors.  To see how to write your own check see the docs &lt;a href=&#34;https://github.com/Comcast/kuberhealthy/blob/master/docs/EXTERNAL_CHECK_CREATION.md&#34;&gt;here&lt;/a&gt;.  JayeX already comes with a set of custom health checks that can be installed that report errors, for example with webhooks, missing secrets, a bad install or invalid bot token.  For more details take a look here &lt;a href=&#34;https://github.com/jenkins-x-plugins/jx-kh-check/tree/master/cmd&#34;&gt;https://github.com/jenkins-x-plugins/jx-kh-check/tree/master/cmd&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to encourrage contributions to add extra checks as JayeX v3 matures.  If you have a check that you would like to add please reach out in the community channels or create an issue or pull request.&lt;/p&gt;
 &lt;h1 id=&#34;try-it-out&#34;&gt;Try it out&lt;/h1&gt;
 &lt;p&gt;When using Terraform (the recommended approach) Kuberhealthy and health checks are installed by default.&lt;/p&gt;
 &lt;p&gt;You can use the new health CLI plugin to get health statuses that run periodically checking different things, our favorite is the watch for checks across all namespaces.&lt;/p&gt;

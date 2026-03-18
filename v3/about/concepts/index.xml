@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Jenkins X concept models</title>
-    <link>https://jenkins-x.io/v3/about/concepts/</link>
-    <description>Recent content in Jenkins X concept models on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – JayeX concept models</title>
+    <link>https://jayex.io/v3/about/concepts/</link>
+    <description>Recent content in JayeX concept models on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/about/concepts/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/about/concepts/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -14,15 +14,62 @@
     
     
     <item>
-      <title>V3: Source Repositories</title>
-      <link>https://jenkins-x.io/v3/about/concepts/source-repository/</link>
+      <title>V3: Version Stream</title>
+      <link>https://jayex.io/v3/about/concepts/version-stream/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/concepts/source-repository/</guid>
+      <guid>https://jayex.io/v3/about/concepts/version-stream/</guid>
       <description>
         
         
-        &lt;p&gt;Source Control Management (SCM) Repositories which have been configured to run CI/CD pipelines using Jenkins X are represented as Source Repositories.
+        &lt;p&gt;JayeX is made up of a large number of command line &lt;em&gt;packages&lt;/em&gt;, &lt;em&gt;images&lt;/em&gt; and helm &lt;em&gt;charts&lt;/em&gt;, some of which are released by the JayeX community and others come from the wider open source ecosystem.&lt;/p&gt;
+&lt;p&gt;To improve the stability of JayeX when lots of packages and charts are changing all the time we have introduced the JayeX &lt;code&gt;Version Stream&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
+&lt;p&gt;The version stream is stored in the &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions&#34;&gt;jenkins-x/jx3-versions&lt;/a&gt; git
+repository and stores the stable version of all packages and charts used by JayeX.&lt;/p&gt;
+&lt;p&gt;When you run a &lt;code&gt;jx&lt;/code&gt; command, such as &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/gitops/upgrade&#34;&gt;jx gitops upgrade&lt;/a&gt;, it
+will ensure you have a local clone of the  &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions&#34;&gt;jenkins-x/jx3-versions&lt;/a&gt; git
+repository and then pull the stable version of any chart or package from that source.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/jenkins-x/jx&#34;&gt;jx&lt;/a&gt; release now defaults to being released as a
+&lt;a href=&#34;https://help.github.com/en/articles/creating-releases&#34;&gt;prerelease&lt;/a&gt;. Each release of jx is only updated to a full release
+so long as that released version successfully makes its way to the jx3-versions repository where it also needs to pass
+another round of BDD tests (&lt;em&gt;see &lt;a href=&#34;https://jayex.io/community/code/continuous-integrating-jx-itself/&#34;&gt;Continuous Integrating JX itself&lt;/a&gt;
+for more information&lt;/em&gt;).&lt;/p&gt;
+&lt;h2 id=&#34;creating-pull-requests&#34;&gt;Creating Pull Requests&lt;/h2&gt;
+&lt;p&gt;Our command &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/updatebot/pr/&#34;&gt;jx updatebot pr&lt;/a&gt; is used for automatically generating pull
+requests on the &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions&#34;&gt;jenkins-x/jx3-versions&lt;/a&gt; git repository.&lt;/p&gt;
+&lt;h3 id=&#34;periodic-updates&#34;&gt;Periodic updates&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s not always easy/possible to update upstream pipelines to push version changes to JayeX via a pull pequest. So
+we also have a periodic job to check for version upgrades for helm charts.&lt;/p&gt;
+&lt;p&gt;e.g. to upgrade the versions of all the JayeX maintained charts we essentially run the command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx updatebot pr -c .github/workflows/update-charts/updatebot.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;where updatebot.yaml contains:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;updatebot.jenkins-x.io/v1alpha1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;UpdateConfig&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;spec&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;rules&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#f92672&#34;&gt;urls&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - &lt;span style=&#34;color:#ae81ff&#34;&gt;https://github.com/jenkins-x/jx3-versions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;changes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - &lt;span style=&#34;color:#f92672&#34;&gt;versionStream&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;charts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;include&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            - &lt;span style=&#34;color:#ae81ff&#34;&gt;cdf/*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            - &lt;span style=&#34;color:#ae81ff&#34;&gt;jxgh/*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>V3: Source Repositories</title>
+      <link>https://jayex.io/v3/about/concepts/source-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/v3/about/concepts/source-repository/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Source Control Management (SCM) Repositories which have been configured to run CI/CD pipelines using JayeX are represented as Source Repositories.
 Source Repositories are a &lt;a href=&#34;https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/&#34;&gt;kubernetes custom resource (CR)&lt;/a&gt; scoped to a namespace and created in the development namespace/environment.&lt;/p&gt;
 &lt;p&gt;A source repository includes information about the SCM provider, Organization, Repository name and clone URLs.&lt;/p&gt;
 &lt;p&gt;A simple example of a source repository is shown below&lt;/p&gt;
@@ -54,18 +101,18 @@ It represents a repository named &lt;code&gt;jx&lt;/code&gt; in the &lt;code&gt;
     
     <item>
       <title>V3: Environments</title>
-      <link>https://jenkins-x.io/v3/about/concepts/environments/</link>
+      <link>https://jayex.io/v3/about/concepts/environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/concepts/environments/</guid>
+      <guid>https://jayex.io/v3/about/concepts/environments/</guid>
       <description>
         
         
-        &lt;p&gt;Environment is a &lt;a href=&#34;https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/&#34;&gt;kubernetes custom resource (CR)&lt;/a&gt; in Jenkins X where the application code lives.
+        &lt;p&gt;Environment is a &lt;a href=&#34;https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/&#34;&gt;kubernetes custom resource (CR)&lt;/a&gt; in JayeX where the application code lives.
 Examples of environment include development, testing, staging and production.
-Environments are scoped to kubernetes namespaces and essentially extend a namespace with additional Jenkins X related metadata.&lt;/p&gt;
-&lt;p&gt;After installing Jenkins X, a development environment is created.
-This is the environment where all Jenkins X related resources like lighthouse, build controller, nexus, chart museum are installed.
+Environments are scoped to kubernetes namespaces and essentially extend a namespace with additional JayeX related metadata.&lt;/p&gt;
+&lt;p&gt;After installing JayeX, a development environment is created.
+This is the environment where all JayeX related resources like lighthouse, build controller, nexus, chart museum are installed.
 Dev environment by default is in the &lt;code&gt;jx&lt;/code&gt; namespace, but it is configurable.
 This is also the environment where all your pipelines will run.&lt;/p&gt;
 &lt;p&gt;Other environments like staging and production can be in the same cluster as the development environment or in remote clusters.&lt;/p&gt;
@@ -110,14 +157,14 @@ It has promotion strategy set to &lt;code&gt;never&lt;/code&gt; to not allow you
     
     <item>
       <title>V3: Pipeline activites</title>
-      <link>https://jenkins-x.io/v3/about/concepts/pipeline-activity/</link>
+      <link>https://jayex.io/v3/about/concepts/pipeline-activity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/concepts/pipeline-activity/</guid>
+      <guid>https://jayex.io/v3/about/concepts/pipeline-activity/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X creates pipeline activites for jobs.
+        &lt;p&gt;JayeX creates pipeline activites for jobs.
 It&amp;rsquo;s a &lt;a href=&#34;https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/&#34;&gt;kubernetes custom resource (CR)&lt;/a&gt; which is scoped to a namespace.&lt;/p&gt;
 &lt;p&gt;Pipeline activities are made up of steps.
 A step can have three kinds&lt;/p&gt;
@@ -130,7 +177,7 @@ A step can have three kinds&lt;/p&gt;
 A pipeline activity can have steps of different kinds (for example a pipeline activity can have a stage, preview and promote step)
 Let&amp;rsquo;s look at each of these kinds in detail.&lt;/p&gt;
 &lt;h3 id=&#34;stage&#34;&gt;Stage&lt;/h3&gt;
-&lt;p&gt;A step of kind step is made up of multiple sub steps and is normally associated with the Continuous Integration (CI) part of Jenkins X.
+&lt;p&gt;A step of kind step is made up of multiple sub steps and is normally associated with the Continuous Integration (CI) part of JayeX.
 The build controller which runs in the development environment creates a stage for every &lt;a href=&#34;https://tekton.dev/docs/pipelines/taskruns/&#34;&gt;tekton taskrun&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Example of a pipeline activity with a step of kind stage is shown below (some fields are left out for simplicity):&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jenkins.io/v1&lt;/span&gt;
@@ -155,7 +202,7 @@ The build controller which runs in the development environment creates a stage f
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Make Lint&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;startedTimestamp&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2022-06-28T21:58:25Z&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;status&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Succeeded&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a simple Jenkins X pipeline activity which has a step of kind &lt;strong&gt;stage&lt;/strong&gt;.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a simple JayeX pipeline activity which has a step of kind &lt;strong&gt;stage&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;preview&#34;&gt;Preview&lt;/h3&gt;
 &lt;p&gt;A Preview step is responsible for creating a preview environment as part of a pull request.
 To learn more about environments see &lt;a href=&#34;../environments&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
@@ -241,17 +288,17 @@ The first promote step promotes to staging environment and the second step promo
     
     <item>
       <title>V3: Deployment lifecycle</title>
-      <link>https://jenkins-x.io/v3/about/concepts/deployment-lifecycle/</link>
+      <link>https://jayex.io/v3/about/concepts/deployment-lifecycle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/concepts/deployment-lifecycle/</guid>
+      <guid>https://jayex.io/v3/about/concepts/deployment-lifecycle/</guid>
       <description>
         
         
-        &lt;p&gt;Ever wondered how the code you commit to your source control repository ends up deployed in production by Jenkins X?
+        &lt;p&gt;Ever wondered how the code you commit to your source control repository ends up deployed in production by JayeX?
 Well, this document is an attempt to answer that question.&lt;/p&gt;
 &lt;p&gt;Please go over documentation regarding &lt;a href=&#34;../source-repository&#34;&gt;source repositories&lt;/a&gt;, &lt;a href=&#34;../environments&#34;&gt;environments&lt;/a&gt; and &lt;a href=&#34;../pipeline-activity&#34;&gt;pipeline activities&lt;/a&gt; before reading this section.&lt;/p&gt;
-&lt;p&gt;After you have &lt;a href=&#34;https://jenkins-x.io/v3/admin/&#34;&gt;installed Jenkins X in a kubernetes cluster&lt;/a&gt; and created a &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;quickstart or imported an existing repository&lt;/a&gt;, you should see a folder structure which resembles this:&lt;/p&gt;
+&lt;p&gt;After you have &lt;a href=&#34;https://jayex.io/v3/admin/&#34;&gt;installed JayeX in a kubernetes cluster&lt;/a&gt; and created a &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;quickstart or imported an existing repository&lt;/a&gt;, you should see a folder structure which resembles this:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── charts
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│   └── app
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│       ├── Chart.yaml
@@ -287,7 +334,7 @@ Well, this document is an attempt to answer that question.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ├── helmfile.yaml
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ├── Kptfile
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    └── values.yaml.gotmpl
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The Jenkins X pipeline files are all located in the &lt;code&gt;.lighthouse/jenkins-x&lt;/code&gt; folder.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The JayeX pipeline files are all located in the &lt;code&gt;.lighthouse/jenkins-x&lt;/code&gt; folder.
 Inside this folder, you should see these files:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;triggers.yaml: Defines the rules for triggering pipelines defined in the pull request and release yaml files&lt;/li&gt;
@@ -355,14 +402,14 @@ Inside this folder, you should see these files:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;serviceAccountName&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;tekton-bot&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;timeout&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1h0m0s&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;status&lt;/span&gt;: {}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jenkins X allows the end users to write pipelines in native tekton format.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JayeX allows the end users to write pipelines in native tekton format.
 Here we are defining a tekton pipelinerun with one task named &lt;code&gt;from-build-pack&lt;/code&gt; which has a few steps.
 Refer to tekton documentation to learn more about &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelineruns/&#34;&gt;pipelineruns&lt;/a&gt; and &lt;a href=&#34;https://tekton.dev/docs/pipelines/tasks/&#34;&gt;tasks&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The thing that is different from tekton is the &lt;code&gt;uses&lt;/code&gt; key.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@versionStream&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;resources&lt;/span&gt;: {}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jenkins X resolves this step at runtime as follows:&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JayeX resolves this step at runtime as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;It looks for a file git-clone-pr.yaml under tasks/git-clone in the &lt;code&gt;jx3-pipeline-catalog&lt;/code&gt; repository in the jenkins-x organization in github.
 In this case, the steps defined &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/tasks/git-clone/git-clone-pr.yaml&#34;&gt;here&lt;/a&gt; are added to the pipeline run.&lt;/li&gt;
@@ -374,7 +421,7 @@ In this case, the steps defined &lt;a href=&#34;https://github.com/jenkins-x/jx3
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;When a pull request is opened against the base branch of the repository, the lighthouse webhook component of Jenkins X will create a lighthouse job and subsequently a tekton pipelinerun.&lt;/p&gt;
+&lt;p&gt;When a pull request is opened against the base branch of the repository, the lighthouse webhook component of JayeX will create a lighthouse job and subsequently a tekton pipelinerun.&lt;/p&gt;
 &lt;p&gt;The tekton pipelinerun created after a PR is opened looks like this (some fields are removed for simplicity):&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;tekton.dev/v1beta1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;PipelineRun&lt;/span&gt;
@@ -498,7 +545,7 @@ In this case, the steps defined &lt;a href=&#34;https://github.com/jenkins-x/jx3
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;pipelineTaskName&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;from-build-pack&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;status&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Another component of Jenkins X, the &lt;code&gt;jx-build-controller&lt;/code&gt; running in the dev namespace (jx by default) watches newly created tekton pipelineruns and creates Jenkins X pipeline activities from them.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Another component of JayeX, the &lt;code&gt;jx-build-controller&lt;/code&gt; running in the dev namespace (jx by default) watches newly created tekton pipelineruns and creates JayeX pipeline activities from them.&lt;/p&gt;
 &lt;p&gt;The pipeline activity generated from the tekton pipelinerun looks as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jenkins.io/v1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;PipelineActivity&lt;/span&gt;
@@ -547,7 +594,7 @@ In this case, the steps defined &lt;a href=&#34;https://github.com/jenkins-x/jx3
 Normally two PRs are opened, one for the staging environment and one for the production environment.
 The staging environment PR is merged automatically if the pipeline passes, thereby promoting the application to the staging environment.
 The production environment PR needs to be merged manually.
-Once the production PR is merged, Jenkins X will promote your code to production.&lt;/p&gt;
+Once the production PR is merged, JayeX will promote your code to production.&lt;/p&gt;
 
       </description>
     </item>

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – other</title>
-    <link>https://jenkins-x.io/categories/other/</link>
-    <description>Recent content in other on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – other</title>
+    <link>https://jayex.io/categories/other/</link>
+    <description>Recent content in other on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 15 Feb 2022 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://jenkins-x.io/categories/other/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/categories/other/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,14 +16,14 @@
     
     <item>
       <title>Blog: Jenkins X Survey Result Details</title>
-      <link>https://jenkins-x.io/blog/2022/02/15/survey-1-result-details-2022/</link>
+      <link>https://jayex.io/blog/2022/02/15/survey-1-result-details-2022/</link>
       <pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/blog/2022/02/15/survey-1-result-details-2022/</guid>
+      <guid>https://jayex.io/blog/2022/02/15/survey-1-result-details-2022/</guid>
       <description>
         
         
-        &lt;p&gt;For more information on the Jenkins X survey see &lt;a href=&#34;https://jenkins-x.io/blog/2022/02/15/survey-1-results-2022/&#34;&gt;Survey results&lt;/a&gt;
+        &lt;p&gt;For more information on the Jenkins X survey see &lt;a href=&#34;https://jayex.io/blog/2022/02/15/survey-1-results-2022/&#34;&gt;Survey results&lt;/a&gt;
 Some highlights from the free text answers.&lt;/p&gt;
 &lt;h3 id=&#34;what-do-you-enjoy-the-most-with-jenkins-x&#34;&gt;What do you enjoy the most with Jenkins X?&lt;/h3&gt;
 &lt;h4 id=&#34;kubernetes&#34;&gt;KUBERNETES&lt;/h4&gt;

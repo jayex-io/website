@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Troubleshooting</title>
-    <link>https://jenkins-x.io/v3/admin/troubleshooting/</link>
-    <description>Recent content in Troubleshooting on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Troubleshooting</title>
+    <link>https://jayex.io/v3/admin/troubleshooting/</link>
+    <description>Recent content in Troubleshooting on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: Install</title>
-      <link>https://jenkins-x.io/v3/admin/troubleshooting/install/</link>
+      <link>https://jayex.io/v3/admin/troubleshooting/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/troubleshooting/install/</guid>
+      <guid>https://jayex.io/v3/admin/troubleshooting/install/</guid>
       <description>
         
         
@@ -56,15 +56,15 @@ This step runs &lt;code&gt;jx secret populate&lt;/code&gt;&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;If you are using backends other than vault, use the right cluster git repository for that secret backend.
 For example, use &lt;code&gt;jx3-eks-asm&lt;/code&gt; template repository to generate the cluster git repository if you want to store secrets in AWS secrets manager.&lt;/li&gt;
-&lt;li&gt;Check &lt;a href=&#34;https://github.com/jx3-gitops-repositories&#34;&gt;this github organization&lt;/a&gt; for all the different public template repositories you can use with Jenkins X.&lt;/li&gt;
+&lt;li&gt;Check &lt;a href=&#34;https://github.com/jx3-gitops-repositories&#34;&gt;this github organization&lt;/a&gt; for all the different public template repositories you can use with JayeX.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;issues-with-webhook&#34;&gt;Issues with webhook&lt;/h2&gt;
-&lt;p&gt;To find if webhooks were created by Jenkins X, navigate to the settings page of your repository, and click on webhooks.
-Check the &lt;a href=&#34;https://jenkins-x.io/v3/admin/troubleshooting/webhooks/&#34;&gt;webhook troubleshooting guide&lt;/a&gt; if they exist, and do not work.&lt;/p&gt;
+&lt;p&gt;To find if webhooks were created by JayeX, navigate to the settings page of your repository, and click on webhooks.
+Check the &lt;a href=&#34;https://jayex.io/v3/admin/troubleshooting/webhooks/&#34;&gt;webhook troubleshooting guide&lt;/a&gt; if they exist, and do not work.&lt;/p&gt;
 &lt;p&gt;The recent delivery tab should have good debugging information on why webhooks failed to deliver payload.&lt;/p&gt;
 
       </description>
@@ -72,10 +72,10 @@ Check the &lt;a href=&#34;https://jenkins-x.io/v3/admin/troubleshooting/webhooks
     
     <item>
       <title>V3: Bot Token</title>
-      <link>https://jenkins-x.io/v3/admin/troubleshooting/bot-token/</link>
+      <link>https://jayex.io/v3/admin/troubleshooting/bot-token/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/troubleshooting/bot-token/</guid>
+      <guid>https://jayex.io/v3/admin/troubleshooting/bot-token/</guid>
       <description>
         
         
@@ -90,10 +90,10 @@ Check the &lt;a href=&#34;https://jenkins-x.io/v3/admin/troubleshooting/webhooks
     
     <item>
       <title>V3: Secrets</title>
-      <link>https://jenkins-x.io/v3/admin/troubleshooting/secrets/</link>
+      <link>https://jayex.io/v3/admin/troubleshooting/secrets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/troubleshooting/secrets/</guid>
+      <guid>https://jayex.io/v3/admin/troubleshooting/secrets/</guid>
       <description>
         
         
@@ -123,10 +123,10 @@ kubectl logs deploy/kubernetes-external-secrets -n secret-infra
     
     <item>
       <title>V3: Webhooks</title>
-      <link>https://jenkins-x.io/v3/admin/troubleshooting/webhooks/</link>
+      <link>https://jayex.io/v3/admin/troubleshooting/webhooks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/troubleshooting/webhooks/</guid>
+      <guid>https://jayex.io/v3/admin/troubleshooting/webhooks/</guid>
       <description>
         
         
@@ -142,7 +142,7 @@ kubectl logs deploy/kubernetes-external-secrets -n secret-infra
 &lt;p&gt;For webhooks to work you must have a working &lt;code&gt;Ingress&lt;/code&gt; for the &lt;code&gt;hook&lt;/code&gt; endpoint from &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The ingress defaults to using the domain name specified in &lt;code&gt;ingress.domain&lt;/code&gt; in your &lt;code&gt;jx-requirements.yml&lt;/code&gt; file.&lt;/p&gt;
 &lt;h3 id=&#34;diagnosing-issues&#34;&gt;Diagnosing issues&lt;/h3&gt;
-&lt;p&gt;You can check on the health of your system and webhooks via the &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/health/&#34;&gt;Health guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can check on the health of your system and webhooks via the &lt;a href=&#34;https://jayex.io/v3/admin/setup/health/&#34;&gt;Health guide&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;First make sure you have a valid ingress for hook&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# switch to the jx namespace&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx ns jx
@@ -156,7 +156,7 @@ kubectl logs deploy/kubernetes-external-secrets -n secret-infra
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get environments
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then click the &lt;code&gt;GIT URL&lt;/code&gt; link for your repository.&lt;/p&gt;
 &lt;p&gt;Now look at the &lt;strong&gt;Webbooks&lt;/strong&gt; page to see if your git provider could send webhooks to your hook endpoint. On GitHub thats &lt;strong&gt;Settings&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Webhooks&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;It could be your git provider can&amp;rsquo;t see public ingress endpoint? If thats the case you may need to look at setting up a tunnel via something like &lt;a href=&#34;https://jenkins-x.io/v3/admin/platforms/on-premises/#enable-webhooks&#34;&gt;ngrok to enable on-premises webhooks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It could be your git provider can&amp;rsquo;t see public ingress endpoint? If thats the case you may need to look at setting up a tunnel via something like &lt;a href=&#34;https://jayex.io/v3/admin/platforms/on-premises/#enable-webhooks&#34;&gt;ngrok to enable on-premises webhooks&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;aws-specific-issues&#34;&gt;AWS specific issues&lt;/h3&gt;
 &lt;p&gt;If you are using AWS you can check out the &lt;a href=&#34;https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html&#34;&gt;AWS docs on using ELB&lt;/a&gt;&lt;/p&gt;
 
@@ -165,14 +165,14 @@ kubectl logs deploy/kubernetes-external-secrets -n secret-infra
     
     <item>
       <title>V3: Quickstart/Import</title>
-      <link>https://jenkins-x.io/v3/admin/troubleshooting/quickstart-import/</link>
+      <link>https://jayex.io/v3/admin/troubleshooting/quickstart-import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/troubleshooting/quickstart-import/</guid>
+      <guid>https://jayex.io/v3/admin/troubleshooting/quickstart-import/</guid>
       <description>
         
         
-        &lt;p&gt;After a successful installation of Jenkins X, the first thing to do is to either create a quickstart or import an existing repository into Jenkins X.
+        &lt;p&gt;After a successful installation of JayeX, the first thing to do is to either create a quickstart or import an existing repository into JayeX.
 They are both very similar, so the steps mentioned here can be applied for both.&lt;/p&gt;
 &lt;p&gt;Import/Quickstart involves the following steps:&lt;/p&gt;
 &lt;ul&gt;
@@ -192,7 +192,7 @@ jx looks at a few places for the credentials:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;--git-token&lt;/code&gt; and &lt;code&gt;--git-username&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;~/.git-credentials&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/using/#how-do-i-stop-jx-asking-for-git-credentials&#34;&gt;~/git/credentials&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/faq/using/#how-do-i-stop-jx-asking-for-git-credentials&#34;&gt;~/git/credentials&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Passing the args for every import is cumbersome and error prone, hence it&amp;rsquo;s better to create the git credentials file.&lt;/p&gt;
 &lt;p&gt;The git credential file expects the username and token in the form:&lt;/p&gt;
@@ -283,7 +283,7 @@ failed to find sourceRepository  in namespace jx for repository owner-repository
 &lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;error: failed to wait for repository to be setup in lighthouse: failed to find trigger in the lighthouse configuration in ConfigMap config in namespace jx for repository: owner/repo within 20m0s
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;check the logs from the release pipeline to see what is the issue.&lt;/p&gt;
-&lt;p&gt;If everything works, then your repository has been successfully imported into Jenkins X!&lt;/p&gt;
+&lt;p&gt;If everything works, then your repository has been successfully imported into JayeX!&lt;/p&gt;
 
       </description>
     </item>

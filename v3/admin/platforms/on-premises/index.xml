@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – On-Premises</title>
-    <link>https://jenkins-x.io/v3/admin/platforms/on-premises/</link>
-    <description>Recent content in On-Premises on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – On-Premises</title>
+    <link>https://jayex.io/v3/admin/platforms/on-premises/</link>
+    <description>Recent content in On-Premises on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/platforms/on-premises/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/platforms/on-premises/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>V3: Enable WebHooks</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/on-premises/webhooks/</link>
+      <link>https://jayex.io/v3/admin/platforms/on-premises/webhooks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/on-premises/webhooks/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/on-premises/webhooks/</guid>
       <description>
         
         
@@ -75,17 +75,17 @@
     
     <item>
       <title>V3: Vault</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/on-premises/vault/</link>
+      <link>https://jayex.io/v3/admin/platforms/on-premises/vault/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/on-premises/vault/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/on-premises/vault/</guid>
       <description>
         
         
         &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; that in the following instructions it is left to the user to manage, backup and restore the vault installation once it has been installed.&lt;/p&gt;
-&lt;p&gt;For production workloads &lt;a href=&#34;https://jenkins-x.io/v3/devops/patterns/prefer_cloud_over_kube/&#34;&gt;we recommend you use a cloud provider secret store&lt;/a&gt; or &lt;a href=&#34;https://www.hashicorp.com/resources/running-vault-as-a-service-on-hashicorp-cloud-platform&#34;&gt;Vault as a service&lt;/a&gt;. Managing on-premises vault instances is undifferentiated heavy lifting that should be outsourced to a cloud provider if you can.&lt;/p&gt;
+&lt;p&gt;For production workloads &lt;a href=&#34;https://jayex.io/v3/devops/patterns/prefer_cloud_over_kube/&#34;&gt;we recommend you use a cloud provider secret store&lt;/a&gt; or &lt;a href=&#34;https://www.hashicorp.com/resources/running-vault-as-a-service-on-hashicorp-cloud-platform&#34;&gt;Vault as a service&lt;/a&gt;. Managing on-premises vault instances is undifferentiated heavy lifting that should be outsourced to a cloud provider if you can.&lt;/p&gt;
 &lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
-&lt;p&gt;The prerequisites are the &lt;a href=&#34;https://jenkins-x.io/v3/admin/platforms/on-premises/#prerequisites&#34;&gt;same as regular on-premises kubernetes&lt;/a&gt; around having a kubernetes cluster with ingress and storage&lt;/p&gt;
+&lt;p&gt;The prerequisites are the &lt;a href=&#34;https://jayex.io/v3/admin/platforms/on-premises/#prerequisites&#34;&gt;same as regular on-premises kubernetes&lt;/a&gt; around having a kubernetes cluster with ingress and storage&lt;/p&gt;
 &lt;p&gt;The difference is for vault:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -121,7 +121,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;verify your cluster does not already have an &lt;a href=&#34;https://www.nginx.com/&#34;&gt;nginx&lt;/a&gt; installation. If it does then please remove the &lt;code&gt;nginx&lt;/code&gt; line from your &lt;code&gt;helmfile.yaml&lt;/code&gt; file and remove the &lt;code&gt;helmfiles/nginx&lt;/code&gt; files. If you are using a custom nginx installation then you will need to figure out your domain by hand and won&amp;rsquo;t be able to let Jenkins X detect the load balancer IP from its included nginx installation.&lt;/p&gt;
+&lt;p&gt;verify your cluster does not already have an &lt;a href=&#34;https://www.nginx.com/&#34;&gt;nginx&lt;/a&gt; installation. If it does then please remove the &lt;code&gt;nginx&lt;/code&gt; line from your &lt;code&gt;helmfile.yaml&lt;/code&gt; file and remove the &lt;code&gt;helmfiles/nginx&lt;/code&gt; files. If you are using a custom nginx installation then you will need to figure out your domain by hand and won&amp;rsquo;t be able to let JayeX detect the load balancer IP from its included nginx installation.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;git add, commit and push your changes:&lt;/p&gt;
@@ -137,9 +137,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get node      
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/guides/operator/&#34; 
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/guides/operator/&#34; 
 target=&#34;github&#34; class=&#34;btn bg-primary text-light&#34; 
-title=&#34;install the git operator to setup Jenkins X in your cluster&#34;&gt;
+title=&#34;install the git operator to setup JayeX in your cluster&#34;&gt;
 Install the git operator
 &lt;/a&gt; from inside a git clone of the git repository you created above.&lt;/p&gt;
 &lt;/li&gt;
@@ -149,7 +149,7 @@ Install the git operator
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx ns jx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

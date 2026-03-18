@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Reference</title>
-    <link>https://jenkins-x.io/v3/develop/reference/</link>
-    <description>Recent content in Reference on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Reference</title>
+    <link>https://jayex.io/v3/develop/reference/</link>
+    <description>Recent content in Reference on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: Pipelines</title>
-      <link>https://jenkins-x.io/v3/develop/reference/pipelines/</link>
+      <link>https://jayex.io/v3/develop/reference/pipelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/pipelines/</guid>
+      <guid>https://jayex.io/v3/develop/reference/pipelines/</guid>
       <description>
         
         
@@ -44,14 +44,14 @@
     
     <item>
       <title>V3: Files</title>
-      <link>https://jenkins-x.io/v3/develop/reference/files/</link>
+      <link>https://jayex.io/v3/develop/reference/files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/files/</guid>
+      <guid>https://jayex.io/v3/develop/reference/files/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X uses &lt;a href=&#34;https://jenkins-x.io/v3/devops/gitops/&#34;&gt;GitOps&lt;/a&gt; and so has a number of different source files with declarative schemas.&lt;/p&gt;
+        &lt;p&gt;JayeX uses &lt;a href=&#34;https://jayex.io/v3/devops/gitops/&#34;&gt;GitOps&lt;/a&gt; and so has a number of different source files with declarative schemas.&lt;/p&gt;
 &lt;p&gt;You may also find the &lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md&#34;&gt;git layout document&lt;/a&gt; useful.&lt;/p&gt;
 &lt;h2 id=&#34;files-in-any-repository&#34;&gt;Files in any repository&lt;/h2&gt;
 &lt;table&gt;
@@ -75,13 +75,13 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;.lighthouse/*/triggers.yaml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/pipelines/#lighthouse&#34;&gt;TriggerConfig&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://jayex.io/v3/develop/reference/pipelines/#lighthouse&#34;&gt;TriggerConfig&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Defines the pipeline triggers in &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt; which start tekton pipelines in response to git or ChatOps activity&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;.lighthouse/*/*.yaml&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun&#34;&gt;PipelineRun&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Tekton pipelines to define pull request pipelines (or &lt;code&gt;presubmits&lt;/code&gt;) and release pipelines (&lt;code&gt;postsubmits&lt;/code&gt;). For more detail check out the &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/reference&#34;&gt;pipeline reference&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Tekton pipelines to define pull request pipelines (or &lt;code&gt;presubmits&lt;/code&gt;) and release pipelines (&lt;code&gt;postsubmits&lt;/code&gt;). For more detail check out the &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/reference&#34;&gt;pipeline reference&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;charts&lt;/code&gt;&lt;/td&gt;
@@ -124,17 +124,17 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;.jx/gitops/source-config.yaml&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.SourceConfig&#34;&gt;SourceConfig&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Defines the git owners (organisations/users) and repositories which are imported into Jenkins X and so have webhooks and &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt; &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/pipelines/#lighthouse&#34;&gt;triggers&lt;/a&gt; defined. Also supports &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/slack/&#34;&gt;slack&lt;/a&gt; and &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/jenkinsfile/&#34;&gt;jenkins&lt;/a&gt; configuration&lt;/td&gt;
+&lt;td&gt;Defines the git owners (organisations/users) and repositories which are imported into JayeX and so have webhooks and &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt; &lt;a href=&#34;https://jayex.io/v3/develop/reference/pipelines/#lighthouse&#34;&gt;triggers&lt;/a&gt; defined. Also supports &lt;a href=&#34;https://jayex.io/v3/develop/ui/slack/&#34;&gt;slack&lt;/a&gt; and &lt;a href=&#34;https://jayex.io/v3/develop/create-project/jenkinsfile/&#34;&gt;jenkins&lt;/a&gt; configuration&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;.jx/gitops/kpt-strategy.yaml&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.KptStrategies&#34;&gt;KptStrategies&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Lets you define what kind of &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt; upgrade strategy you wish to you for different folders. See &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/upgrades/cluster/&#34;&gt;upgrade cluster&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Lets you define what kind of &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt; upgrade strategy you wish to you for different folders. See &lt;a href=&#34;https://jayex.io/v3/admin/setup/upgrades/cluster/&#34;&gt;upgrade cluster&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;.jx/secret/mapping/secret-mappings.yaml&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.SecretMapping&#34;&gt;SecretMapping&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Defines the generic mapping of &lt;code&gt;Secrets&lt;/code&gt; to &lt;code&gt;ExternalSecrets&lt;/code&gt;. For more detail see &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/secrets/&#34;&gt;how we use ExternalSecrets&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Defines the generic mapping of &lt;code&gt;Secrets&lt;/code&gt; to &lt;code&gt;ExternalSecrets&lt;/code&gt;. For more detail see &lt;a href=&#34;https://jayex.io/v3/admin/setup/secrets/&#34;&gt;how we use ExternalSecrets&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;config-root&lt;/code&gt;&lt;/td&gt;
@@ -144,7 +144,7 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;docs/README.md&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;A markdown report of all the helm charts and versions installed in each namespace in your cluster. Its generated from the &lt;code&gt;**/helmfile.yaml&lt;/code&gt; files during the &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#boot-job&#34;&gt;boot Job&lt;/a&gt; via the &lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_helmfile_report.md&#34;&gt;jx gitops helmfile report&lt;/a&gt; command&lt;/td&gt;
+&lt;td&gt;A markdown report of all the helm charts and versions installed in each namespace in your cluster. Its generated from the &lt;code&gt;**/helmfile.yaml&lt;/code&gt; files during the &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#boot-job&#34;&gt;boot Job&lt;/a&gt; via the &lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_helmfile_report.md&#34;&gt;jx gitops helmfile report&lt;/a&gt; command&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;extensions/pipeline-catalog.yaml&lt;/code&gt;&lt;/td&gt;
@@ -154,7 +154,7 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;extensions/quickstarts.yaml&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.Quickstarts&#34;&gt;Quickstarts&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Defines the quickstarts used by your team when &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;creating a quickstart project&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Defines the quickstarts used by your team when &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;creating a quickstart project&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;jx-requirements.yml&lt;/code&gt;&lt;/td&gt;
@@ -186,10 +186,10 @@
     
     <item>
       <title>V3: Variables</title>
-      <link>https://jenkins-x.io/v3/develop/reference/variables/</link>
+      <link>https://jayex.io/v3/develop/reference/variables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/variables/</guid>
+      <guid>https://jayex.io/v3/develop/reference/variables/</guid>
       <description>
         
         
@@ -313,7 +313,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;JENKINS_X_URL&lt;/td&gt;
-&lt;td&gt;the URL to view the current pipeline in the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/dashboard/&#34;&gt;dashboard&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;the URL to view the current pipeline in the &lt;a href=&#34;https://jayex.io/v3/develop/ui/dashboard/&#34;&gt;dashboard&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;JX_CHART_REPOSITORY&lt;/td&gt;
@@ -406,10 +406,10 @@
     
     <item>
       <title>V3: ChatOps</title>
-      <link>https://jenkins-x.io/v3/develop/reference/chatops/</link>
+      <link>https://jayex.io/v3/develop/reference/chatops/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/chatops/</guid>
+      <guid>https://jayex.io/v3/develop/reference/chatops/</guid>
       <description>
         
         
@@ -483,30 +483,30 @@
     
     <item>
       <title>V3: jx</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/</guid>
       <description>
         
         
-        &lt;p&gt;Check the &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/jx3/&#34;&gt;getting the jx binary&lt;/a&gt; and how to &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx-help/&#34;&gt;get help on jx commands&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;Check the &lt;a href=&#34;https://jayex.io/v3/admin/setup/jx3/&#34;&gt;getting the jx binary&lt;/a&gt; and how to &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx-help/&#34;&gt;get help on jx commands&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: jx help</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx-help/</link>
+      <link>https://jayex.io/v3/develop/reference/jx-help/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx-help/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx-help/</guid>
       <description>
         
         
-        &lt;p&gt;You can browse the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/&#34;&gt;Command Line Reference&lt;/a&gt; online or you can use the &lt;code&gt;jx&lt;/code&gt; CLI directly to get help:&lt;/p&gt;
+        &lt;p&gt;You can browse the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/&#34;&gt;Command Line Reference&lt;/a&gt; online or you can use the &lt;code&gt;jx&lt;/code&gt; CLI directly to get help:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx --help
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To get help about a particular &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/&#34;&gt;plugin&lt;/a&gt;, such as &lt;code&gt;gitops&lt;/code&gt; you can type:&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To get help about a particular &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/&#34;&gt;plugin&lt;/a&gt;, such as &lt;code&gt;gitops&lt;/code&gt; you can type:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx gitops --help
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>

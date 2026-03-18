@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Guides</title>
-    <link>https://jenkins-x.io/v3/admin/guides/</link>
-    <description>Recent content in Guides on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Guides</title>
+    <link>https://jayex.io/v3/admin/guides/</link>
+    <description>Recent content in Guides on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/guides/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/guides/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,16 +15,16 @@
     
     <item>
       <title>V3: Kubernetes upgrades</title>
-      <link>https://jenkins-x.io/v3/admin/guides/k8s-upgrades/</link>
+      <link>https://jayex.io/v3/admin/guides/k8s-upgrades/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/k8s-upgrades/</guid>
+      <guid>https://jayex.io/v3/admin/guides/k8s-upgrades/</guid>
       <description>
         
         
-        &lt;p&gt;Upgrading your Kubernetes cluster is one of the tasks you must take on as an operator of Jenkins X. Kubernetes comes out with &lt;a href=&#34;https://kubernetes.io/releases/&#34;&gt;new releases&lt;/a&gt; regularly, and will only maintain releases for the three latest versions. Meaning if something breaks, or there is a security issue on an older version, Kubernetes will not fix it, but ask you to upgrade. All the major cloud providers only support a given set of latest versions.&lt;/p&gt;
+        &lt;p&gt;Upgrading your Kubernetes cluster is one of the tasks you must take on as an operator of JayeX. Kubernetes comes out with &lt;a href=&#34;https://kubernetes.io/releases/&#34;&gt;new releases&lt;/a&gt; regularly, and will only maintain releases for the three latest versions. Meaning if something breaks, or there is a security issue on an older version, Kubernetes will not fix it, but ask you to upgrade. All the major cloud providers only support a given set of latest versions.&lt;/p&gt;
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-  Jenkins X supports the Kubernetes versions 1.23-1.30.
+  JayeX supports the Kubernetes versions 1.23-1.34.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;upgrade-procedure&#34;&gt;Upgrade procedure&lt;/h2&gt;
@@ -47,10 +47,10 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
     
     <item>
       <title>V3: Cluster Recovery</title>
-      <link>https://jenkins-x.io/v3/admin/guides/cluster-recovery/</link>
+      <link>https://jayex.io/v3/admin/guides/cluster-recovery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/cluster-recovery/</guid>
+      <guid>https://jayex.io/v3/admin/guides/cluster-recovery/</guid>
       <description>
         
         
@@ -60,10 +60,10 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
     
     <item>
       <title>V3: Migrate</title>
-      <link>https://jenkins-x.io/v3/admin/guides/migrate/</link>
+      <link>https://jayex.io/v3/admin/guides/migrate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/migrate/</guid>
+      <guid>https://jayex.io/v3/admin/guides/migrate/</guid>
       <description>
         
         
@@ -73,10 +73,10 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
     
     <item>
       <title>V3: Multi-Cluster</title>
-      <link>https://jenkins-x.io/v3/admin/guides/multi-cluster/</link>
+      <link>https://jayex.io/v3/admin/guides/multi-cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/multi-cluster/</guid>
+      <guid>https://jayex.io/v3/admin/guides/multi-cluster/</guid>
       <description>
         
         
@@ -86,16 +86,16 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
     
     <item>
       <title>V3: Lighthouse WebUI</title>
-      <link>https://jenkins-x.io/v3/admin/guides/lighthouse-webui/</link>
+      <link>https://jayex.io/v3/admin/guides/lighthouse-webui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/lighthouse-webui/</guid>
+      <guid>https://jayex.io/v3/admin/guides/lighthouse-webui/</guid>
       <description>
         
         
-        &lt;p&gt;This guide will help you install and configure the &lt;a href=&#34;https://github.com/jenkins-x-plugins/lighthouse-webui-plugin&#34;&gt;lighthouse-webui-plugin&lt;/a&gt; in your Jenkins X cluster. You can see the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/lighthouse/&#34;&gt;Lighthouse Web UI documentation&lt;/a&gt; for more details on why you might need to install this optional component.&lt;/p&gt;
+        &lt;p&gt;This guide will help you install and configure the &lt;a href=&#34;https://github.com/jenkins-x-plugins/lighthouse-webui-plugin&#34;&gt;lighthouse-webui-plugin&lt;/a&gt; in your JayeX cluster. You can see the &lt;a href=&#34;https://jayex.io/v3/develop/ui/lighthouse/&#34;&gt;Lighthouse Web UI documentation&lt;/a&gt; for more details on why you might need to install this optional component.&lt;/p&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;Please follow the usual &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;getting started guide for boot and helm 3&lt;/a&gt; first.&lt;/p&gt;
+&lt;p&gt;Please follow the usual &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;getting started guide for boot and helm 3&lt;/a&gt; first.&lt;/p&gt;
 &lt;p&gt;Then, open the &lt;code&gt;helmfiles/jx/helmfile.yaml&lt;/code&gt; file located in your development environment git repository, and add the following content under the &lt;code&gt;releases&lt;/code&gt; section:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;chart&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jxgh/lighthouse-webui-plugin&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;lighthouse-webui-plugin&lt;/span&gt;
@@ -113,25 +113,25 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME                                           READY   STATUS    RESTARTS   AGE
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lighthouse-webui-plugin-696b8c85f9-99hnn       1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;          31m
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;See the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/lighthouse/&#34;&gt;Lighthouse Web UI documentation&lt;/a&gt; for how to access it and use it.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://jayex.io/v3/develop/ui/lighthouse/&#34;&gt;Lighthouse Web UI documentation&lt;/a&gt; for how to access it and use it.&lt;/p&gt;
 &lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
-&lt;p&gt;The configuration is defined in a &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse-webui-plugin/values.yaml.gotmpl&#34;&gt;&amp;ldquo;values file&amp;rdquo; stored in the Jenkins X Version Stream&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The configuration is defined in a &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse-webui-plugin/values.yaml.gotmpl&#34;&gt;&amp;ldquo;values file&amp;rdquo; stored in the JayeX Version Stream&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you want to change anything from the default configuration, you can either:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;submit a Pull Request if you believe this change is beneficial for everybody&lt;/li&gt;
 &lt;li&gt;or create a new values file in your development environment git repositor: &lt;code&gt;values/lighthouse-webui-plugin/values.yaml&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;If you want to change the default basic auth to OAuth for example, you can read the &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/ingress/oauth/&#34;&gt;OAuth guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to change the default basic auth to OAuth for example, you can read the &lt;a href=&#34;https://jayex.io/v3/admin/setup/ingress/oauth/&#34;&gt;OAuth guide&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Observability</title>
-      <link>https://jenkins-x.io/v3/admin/guides/observability/</link>
+      <link>https://jayex.io/v3/admin/guides/observability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/observability/</guid>
+      <guid>https://jayex.io/v3/admin/guides/observability/</guid>
       <description>
         
         
@@ -141,19 +141,19 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
     
     <item>
       <title>V3: Preview Environments</title>
-      <link>https://jenkins-x.io/v3/admin/guides/preview-environments/</link>
+      <link>https://jayex.io/v3/admin/guides/preview-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/preview-environments/</guid>
+      <guid>https://jayex.io/v3/admin/guides/preview-environments/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/&#34;&gt;Preview environments&lt;/a&gt; are temporary environments created automatically by Jenkins X for each Pull Request.&lt;/p&gt;
-&lt;p&gt;This is very nice, but if you start adding applications to your Jenkins X cluster, and each application repository has a few opened Pull Requests - each with a preview environment including a few dependencies - then you&amp;rsquo;ll quickly get tens of preview environments and a lot more running pods. But these pods are usually only used to run the integration tests in the Pull Request pipelines, or when someone manually visits the preview environment URL. Most of the time, these pods are just idle, waiting and using resources. What if you could easily scale them down when they are idle?&lt;/p&gt;
-&lt;p&gt;This guide will help you install &lt;a href=&#34;https://github.com/dailymotion-oss/osiris&#34;&gt;Osiris&lt;/a&gt; in your Jenkins X cluster. Osiris is a Kubernetes component that will inject itself as a proxy in front of your applications, and scale them down when it notices that they are idle for more than a pre-configured period. And if someone wants to access your application, Osiris will receive the request, scale up the application, and forward the request to the application.&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/&#34;&gt;Preview environments&lt;/a&gt; are temporary environments created automatically by JayeX for each Pull Request.&lt;/p&gt;
+&lt;p&gt;This is very nice, but if you start adding applications to your JayeX cluster, and each application repository has a few opened Pull Requests - each with a preview environment including a few dependencies - then you&amp;rsquo;ll quickly get tens of preview environments and a lot more running pods. But these pods are usually only used to run the integration tests in the Pull Request pipelines, or when someone manually visits the preview environment URL. Most of the time, these pods are just idle, waiting and using resources. What if you could easily scale them down when they are idle?&lt;/p&gt;
+&lt;p&gt;This guide will help you install &lt;a href=&#34;https://github.com/dailymotion-oss/osiris&#34;&gt;Osiris&lt;/a&gt; in your JayeX cluster. Osiris is a Kubernetes component that will inject itself as a proxy in front of your applications, and scale them down when it notices that they are idle for more than a pre-configured period. And if someone wants to access your application, Osiris will receive the request, scale up the application, and forward the request to the application.&lt;/p&gt;
 &lt;p&gt;Combined with a cluster autoscaler, Osiris will help you scale down/up your cluster nodes automatically based on your workload.&lt;/p&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;Please follow the usual &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;getting started guide for boot and helm 3&lt;/a&gt; first.&lt;/p&gt;
+&lt;p&gt;Please follow the usual &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;getting started guide for boot and helm 3&lt;/a&gt; first.&lt;/p&gt;
 &lt;p&gt;The first step is to edit your main &lt;code&gt;helmfile.yaml&lt;/code&gt; file located in the root directory of your development environment git repository, so that it references the &lt;code&gt;helmfiles/osiris-system/helmfile.yaml&lt;/code&gt; file, such as:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;helmfiles&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;path&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;helmfiles/jx/helmfile.yaml&lt;/span&gt;
@@ -176,7 +176,7 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 &lt;p&gt;Osiris requires specific annotations to be added to your application&amp;rsquo;s Deployment and Service, otherwise, it won&amp;rsquo;t do anything. You can read the &lt;a href=&#34;https://github.com/dailymotion-oss/osiris&#34;&gt;Osiris documentation&lt;/a&gt; to see which annotations you need to add to your resources.&lt;/p&gt;
 &lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
-&lt;p&gt;The configuration is defined in a &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/tree/master/charts/osiris/osiris/values.yaml.gotmpl&#34;&gt;&amp;ldquo;values file&amp;rdquo; stored in the Jenkins X Version Stream&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The configuration is defined in a &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/tree/master/charts/osiris/osiris/values.yaml.gotmpl&#34;&gt;&amp;ldquo;values file&amp;rdquo; stored in the JayeX Version Stream&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you want to change anything from the default configuration, you can either:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;submit a Pull Request if you believe this change is beneficial for everybody&lt;/li&gt;
@@ -188,21 +188,21 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
     
     <item>
       <title>V3: Progressive Delivery</title>
-      <link>https://jenkins-x.io/v3/admin/guides/progressive-delivery/</link>
+      <link>https://jayex.io/v3/admin/guides/progressive-delivery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/progressive-delivery/</guid>
+      <guid>https://jayex.io/v3/admin/guides/progressive-delivery/</guid>
       <description>
         
         
         &lt;p&gt;Progressive delivery allows you to gradually rollout new versions of your application to an environment using &lt;em&gt;canaries&lt;/em&gt; and gradually giving traffic to the new version until you are happy to fully rollover to the new version.&lt;/p&gt;
-&lt;p&gt;Our recommendation for using progressive delivery with Jenkins X is to use:&lt;/p&gt;
+&lt;p&gt;Our recommendation for using progressive delivery with JayeX is to use:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://flagger.app/&#34;&gt;flagger&lt;/a&gt; as the progressive delivery controller&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://istio.io/&#34;&gt;istio&lt;/a&gt; as the service mesh to provide advanced load balancing capabilities across internal or external networking&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;configuring-progressive-delivery&#34;&gt;Configuring Progressive Delivery&lt;/h2&gt;
-&lt;p&gt;Please follow the usual &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;getting started guide for boot and helm 3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please follow the usual &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;getting started guide for boot and helm 3&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;add-the-istio-and-flagger-apps&#34;&gt;Add the istio and flagger apps&lt;/h3&gt;
 &lt;p&gt;Please make sure your &lt;code&gt;helmfile.yaml&lt;/code&gt; has the necessary apps for using &lt;a href=&#34;https://flagger.app/&#34;&gt;flagger&lt;/a&gt; and &lt;a href=&#34;https://istio.io/&#34;&gt;istio&lt;/a&gt;. Your &lt;code&gt;helmfile.yaml&lt;/code&gt; in your development environment git repository should look something like this:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;releases&lt;/span&gt;:
@@ -223,7 +223,7 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now your development git repository should be setup and be ready. Now:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;make sure you have setup &lt;a href=&#34;https://jenkins-x.io/v3/guides/secrets/&#34;&gt;any secrets you need to boot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;make sure you have setup &lt;a href=&#34;https://jayex.io/v3/guides/secrets/&#34;&gt;any secrets you need to boot&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;When it is all complete you should see istio, flagger, grafana pods running in the &lt;code&gt;istio-system&lt;/code&gt; namespace something like this:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ kubectl get pod -n istio-system
@@ -243,12 +243,12 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To enable istio in production:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl label namespace jx-production istio-injection&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;enabled
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;defaulting-to-use-canary&#34;&gt;Defaulting to use Canary&lt;/h3&gt;
-&lt;p&gt;Run the following command to default to using canary deployments and horizontal pod autoscaling whenever you &lt;a href=&#34;https://jenkins-x.io/docs/getting-started/first-project/create-quickstart/&#34;&gt;create a new quickstart&lt;/a&gt; or &lt;a href=&#34;https://jenkins-x.io/docs/resources/guides/using-jx/creating/import/&#34;&gt;import a project&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Run the following command to default to using canary deployments and horizontal pod autoscaling whenever you &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;create a new quickstart or import a project&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx edit deploy --team --canary --hpa
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will enable all new quickstarts and imported projects to use canary rollouts and use horizontal pod autoscaling in all environments.&lt;/p&gt;
 &lt;p&gt;You can switch the defaults back again at any time or configure any app to change its defaults by running &lt;code&gt;jx edit deploy&lt;/code&gt; inside a git clone of an application.&lt;/p&gt;
 &lt;h3 id=&#34;enablingdisabling-canaryhpa-in-an-environment&#34;&gt;Enabling/Disabling Canary/HPA in an Environment&lt;/h3&gt;
-&lt;p&gt;If you want to enable/disable canary or horizontal pod autoscaling for a specific app in an environment then you can &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#customising-charts&#34;&gt;follow the app customisation approach&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to enable/disable canary or horizontal pod autoscaling for a specific app in an environment then you can &lt;a href=&#34;https://jayex.io/v3/develop/apps/#customising-charts&#34;&gt;follow the app customisation approach&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Assuming your app is called &lt;code&gt;myapp&lt;/code&gt; then in the git repository for the environment (e.g. &lt;code&gt;Staging&lt;/code&gt;) you can add/edit a file called &lt;code&gt;apps/mychart/values.yaml&lt;/code&gt; to look like this:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;canary&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;enabled&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
@@ -257,8 +257,8 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;enabled&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;you can enable/disable those 2 flags for canary releases and horizontal pod autoscaler at any point in any environment.&lt;/p&gt;
 &lt;h2 id=&#34;using-progressive-delivery&#34;&gt;Using Progressive Delivery&lt;/h2&gt;
-&lt;p&gt;Once you have followed the above steps create a &lt;a href=&#34;https://jenkins-x.io/docs/getting-started/first-project/create-quickstart/&#34;&gt;quickstart application&lt;/a&gt; in the usual way.&lt;/p&gt;
-&lt;p&gt;As you merge changes to the master branch of your application Jenkins X will create a new release and &lt;a href=&#34;https://jenkins-x.io/docs/resources/faq/using/#how-does-promotion-actually-work&#34;&gt;promote it to the staging environment&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once you have followed the above steps create a &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;quickstart application&lt;/a&gt; in the usual way.&lt;/p&gt;
+&lt;p&gt;As you merge changes to the master branch of your application JayeX will create a new release and &lt;a href=&#34;https://jayex.io/docs/resources/faq/using/#how-does-promotion-actually-work&#34;&gt;promote it to the staging environment&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However if Canary deployment is enabled your new version will gradually be rolled out progressively:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the defaults are that 20% of the traffic will go to the new version&lt;/li&gt;
@@ -274,15 +274,15 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
     
     <item>
       <title>V3: Spot Instances For Builds</title>
-      <link>https://jenkins-x.io/v3/admin/guides/spot-instances/</link>
+      <link>https://jayex.io/v3/admin/guides/spot-instances/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/spot-instances/</guid>
+      <guid>https://jayex.io/v3/admin/guides/spot-instances/</guid>
       <description>
         
         
         &lt;p&gt;Using spot instances for builds is a great way to detach your builds (increasing stablility on your deployed applications) and save money.&lt;/p&gt;
-&lt;p&gt;Jenkins X supports a &lt;a href=&#34;https://Tekton.dev/&#34;&gt;Tekton&lt;/a&gt; helm chart that lets configuring spot instances for builds really easy.&lt;/p&gt;
+&lt;p&gt;JayeX supports a &lt;a href=&#34;https://Tekton.dev/&#34;&gt;Tekton&lt;/a&gt; helm chart that lets configuring spot instances for builds really easy.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s discuss:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Why spot instances are a good fit for builds&lt;/li&gt;
@@ -376,14 +376,14 @@ kubernetes.Azure.com/scalesetpriority: spot
     
     <item>
       <title>V3: Jenkins</title>
-      <link>https://jenkins-x.io/v3/admin/guides/jenkins/</link>
+      <link>https://jayex.io/v3/admin/guides/jenkins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/jenkins/</guid>
+      <guid>https://jayex.io/v3/admin/guides/jenkins/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/guides/jx3/&#34;&gt;Jenkins X version 3 &lt;/a&gt; includes support for the interoperability of &lt;a href=&#34;https://jenkins.io&#34;&gt;Jenkins&lt;/a&gt;, &lt;a href=&#34;https://jenkins-x.io/v3/about/&#34;&gt;Jenkins X&lt;/a&gt; and &lt;a href=&#34;https://github.com/tektoncd/pipeline&#34;&gt;Tekton&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/guides/jx3/&#34;&gt;JayeX version 3 &lt;/a&gt; includes support for the interoperability of &lt;a href=&#34;https://jenkins.io&#34;&gt;Jenkins&lt;/a&gt;, &lt;a href=&#34;https://jayex.io/v3/about/&#34;&gt;JayeX&lt;/a&gt; and &lt;a href=&#34;https://github.com/tektoncd/pipeline&#34;&gt;Tekton&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>

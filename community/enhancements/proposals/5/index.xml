@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Decomposition of Jenkins X</title>
+    <link>https://jayex.io/community/enhancements/proposals/5/</link>
+    <description>Recent content in Decomposition of Jenkins X on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://jayex.io/community/enhancements/proposals/5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>

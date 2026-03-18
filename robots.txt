@@ -2,4 +2,4 @@ User-agent: *
 
 Disallow: /docs/
 
-Sitemap: https://jenkins-x.io/sitemap.xml
+Sitemap: https://jayex.io/sitemap.xml

@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/</link>
-    <description>Recent content in jx on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx</title>
+    <link>https://jayex.io/v3/develop/reference/jx/</link>
+    <description>Recent content in jx on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,17 +15,17 @@
     
     <item>
       <title>V3: jx admin</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/</guid>
       <description>
         
         
         &lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;jx admin
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;synopsis&#34;&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;commands for creating and upgrading Jenkins X environments using GitOps&lt;/p&gt;
+&lt;p&gt;commands for creating and upgrading JayeX environments using GitOps&lt;/p&gt;
 &lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  -h, --help   help for jx-admin
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;source&#34;&gt;Source&lt;/h3&gt;
@@ -36,10 +36,10 @@
     
     <item>
       <title>V3: jx application</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/application/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/application/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/application/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/application/</guid>
       <description>
         
         
@@ -60,10 +60,10 @@
     
     <item>
       <title>V3: jx changelog</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/changelog/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/changelog/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/changelog/</guid>
       <description>
         
         
@@ -84,10 +84,10 @@
     
     <item>
       <title>V3: jx charter</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/charter/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/charter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/charter/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/charter/</guid>
       <description>
         
         
@@ -105,10 +105,10 @@
     
     <item>
       <title>V3: jx gitops</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/</guid>
       <description>
         
         
@@ -126,10 +126,10 @@
     
     <item>
       <title>V3: jx health</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/health/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/health/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/health/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/health/</guid>
       <description>
         
         
@@ -147,10 +147,10 @@
     
     <item>
       <title>V3: jx kube-test</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/kube-test/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/kube-test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/kube-test/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/kube-test/</guid>
       <description>
         
         
@@ -168,17 +168,17 @@
     
     <item>
       <title>V3: jx pipeline</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/</guid>
       <description>
         
         
         &lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;jx pipeline
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;synopsis&#34;&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;commands for working with Jenkins X Pipelines&lt;/p&gt;
+&lt;p&gt;commands for working with JayeX Pipelines&lt;/p&gt;
 &lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  -h, --help   help for jx-pipeline
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;source&#34;&gt;Source&lt;/h3&gt;
@@ -189,10 +189,10 @@
     
     <item>
       <title>V3: jx preview</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/preview/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/preview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/preview/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/preview/</guid>
       <description>
         
         
@@ -210,10 +210,10 @@
     
     <item>
       <title>V3: jx project</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/project/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/project/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/project/</guid>
       <description>
         
         
@@ -234,10 +234,10 @@
     
     <item>
       <title>V3: jx promote</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/promote/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/promote/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/promote/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/promote/</guid>
       <description>
         
         
@@ -245,7 +245,7 @@
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;promote [application]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;synopsis&#34;&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Promotes a version of an application to zero to many permanent environments.&lt;/p&gt;
-&lt;p&gt;For more documentation see: &lt;a href=&#34;https://jenkins-x.io/docs/getting-started/promotion/&#34;&gt;https://jenkins-x.io/docs/getting-started/promotion/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For more documentation see: &lt;a href=&#34;https://jayex.io/docs/getting-started/promotion/&#34;&gt;https://jayex.io/docs/getting-started/promotion/&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Promote a version of the current application to staging&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# discovering the application name from the source code&lt;/span&gt;
@@ -304,10 +304,10 @@
     
     <item>
       <title>V3: jx registry</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/registry/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/registry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/registry/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/registry/</guid>
       <description>
         
         
@@ -325,10 +325,10 @@
     
     <item>
       <title>V3: jx scm</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/scm/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/scm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/scm/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/scm/</guid>
       <description>
         
         
@@ -346,10 +346,10 @@
     
     <item>
       <title>V3: jx secret</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/secret/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/secret/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/secret/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/secret/</guid>
       <description>
         
         
@@ -367,10 +367,10 @@
     
     <item>
       <title>V3: jx tap</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/tap/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/tap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/tap/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/tap/</guid>
       <description>
         
         
@@ -388,10 +388,10 @@
     
     <item>
       <title>V3: jx tekton-to-actions</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/tekton-to-actions/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/tekton-to-actions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/tekton-to-actions/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/tekton-to-actions/</guid>
       <description>
         
         
@@ -409,10 +409,10 @@
     
     <item>
       <title>V3: jx test</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/test/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/test/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/test/</guid>
       <description>
         
         
@@ -430,10 +430,10 @@
     
     <item>
       <title>V3: jx updatebot</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/updatebot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/updatebot/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/updatebot/</guid>
       <description>
         
         
@@ -451,17 +451,17 @@
     
     <item>
       <title>V3: jx verify</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/verify/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/verify/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/verify/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/verify/</guid>
       <description>
         
         
         &lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;jx verify
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;synopsis&#34;&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;commands for verifying Jenkins X environments&lt;/p&gt;
+&lt;p&gt;commands for verifying JayeX environments&lt;/p&gt;
 &lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  -h, --help   help for jx-verify
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;source&#34;&gt;Source&lt;/h3&gt;

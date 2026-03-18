@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx pipeline</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/</link>
-    <description>Recent content in jx pipeline on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx pipeline</title>
+    <link>https://jayex.io/v3/develop/reference/jx/pipeline/</link>
+    <description>Recent content in jx pipeline on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/pipeline/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/pipeline/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx pipeline activities</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/activities/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/activities/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/activities/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/activities/</guid>
       <description>
         
         
@@ -52,10 +52,10 @@
     
     <item>
       <title>V3: jx pipeline convert</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/convert/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/convert/</guid>
       <description>
         
         
@@ -78,10 +78,10 @@
     
     <item>
       <title>V3: jx pipeline debug</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/debug/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/debug/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/debug/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/debug/</guid>
       <description>
         
         
@@ -107,10 +107,10 @@
     
     <item>
       <title>V3: jx pipeline effective</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/effective/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/effective/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/effective/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/effective/</guid>
       <description>
         
         
@@ -159,10 +159,10 @@
     
     <item>
       <title>V3: jx pipeline env</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/env/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/env/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/env/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/env/</guid>
       <description>
         
         
@@ -208,10 +208,10 @@
     
     <item>
       <title>V3: jx pipeline fmt</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/fmt/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/fmt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/fmt/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/fmt/</guid>
       <description>
         
         
@@ -238,10 +238,10 @@
     
     <item>
       <title>V3: jx pipeline get</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/get/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/get/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/get/</guid>
       <description>
         
         
@@ -270,10 +270,10 @@
     
     <item>
       <title>V3: jx pipeline grid</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/grid/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/grid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/grid/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/grid/</guid>
       <description>
         
         
@@ -303,10 +303,10 @@
     
     <item>
       <title>V3: jx pipeline import</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/import/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/import/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/import/</guid>
       <description>
         
         
@@ -340,10 +340,10 @@
     
     <item>
       <title>V3: jx pipeline lint</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/lint/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/lint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/lint/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/lint/</guid>
       <description>
         
         
@@ -375,10 +375,10 @@
     
     <item>
       <title>V3: jx pipeline log</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/log/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/log/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/log/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/log/</guid>
       <description>
         
         
@@ -433,10 +433,10 @@
     
     <item>
       <title>V3: jx pipeline override</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/override/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/override/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/override/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/override/</guid>
       <description>
         
         
@@ -477,10 +477,10 @@
     
     <item>
       <title>V3: jx pipeline pods</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/pods/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/pods/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/pods/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/pods/</guid>
       <description>
         
         
@@ -527,10 +527,10 @@
     
     <item>
       <title>V3: jx pipeline previews</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/previews/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/previews/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/previews/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/previews/</guid>
       <description>
         
         
@@ -540,7 +540,7 @@
 &lt;p&gt;Display one or more preview environments.&lt;/p&gt;
 &lt;p&gt;See Also:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;jx get env : &lt;a href=&#34;https://jenkins-x.io/commands/jx_get_env&#34;&gt;https://jenkins-x.io/commands/jx_get_env&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;jx get env : &lt;a href=&#34;https://jayex.io/commands/jx_get_env&#34;&gt;https://jayex.io/commands/jx_get_env&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# List all preview environments&lt;/span&gt;
@@ -564,10 +564,10 @@
     
     <item>
       <title>V3: jx pipeline set</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/set/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/set/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/set/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/set/</guid>
       <description>
         
         
@@ -591,10 +591,10 @@
     
     <item>
       <title>V3: jx pipeline start</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/start/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/start/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/start/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/start/</guid>
       <description>
         
         
@@ -640,10 +640,10 @@
     
     <item>
       <title>V3: jx pipeline stop</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/stop/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/stop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/stop/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/stop/</guid>
       <description>
         
         
@@ -680,10 +680,10 @@
     
     <item>
       <title>V3: jx pipeline version</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/version/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/version/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/version/</guid>
       <description>
         
         
@@ -701,10 +701,10 @@
     
     <item>
       <title>V3: jx pipeline wait</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/wait/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/wait/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/wait/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/wait/</guid>
       <description>
         
         

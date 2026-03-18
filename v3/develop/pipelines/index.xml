@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Pipelines</title>
-    <link>https://jenkins-x.io/v3/develop/pipelines/</link>
-    <description>Recent content in Pipelines on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Pipelines</title>
+    <link>https://jayex.io/v3/develop/pipelines/</link>
+    <description>Recent content in Pipelines on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/pipelines/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/pipelines/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: Demo</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/demo/</link>
+      <link>https://jayex.io/v3/develop/pipelines/demo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/demo/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/demo/</guid>
       <description>
         
         
@@ -31,31 +31,31 @@
     
     <item>
       <title>V3: Editing</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/editing/</link>
+      <link>https://jayex.io/v3/develop/pipelines/editing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/editing/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/editing/</guid>
       <description>
         
         
         &lt;h2 id=&#34;source-layout&#34;&gt;Source layout&lt;/h2&gt;
-&lt;p&gt;If you &lt;a href=&#34;https://jenkins-x.io/v3/guides/upgrade/#cluster&#34;&gt;upgrade your cluster to the latest version stream&lt;/a&gt; then you will find if you &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/#create-a-new-project-from-a-quickstart&#34;&gt;create a new quickstart&lt;/a&gt; that:&lt;/p&gt;
+&lt;p&gt;If you &lt;a href=&#34;https://jayex.io/v3/guides/upgrade/#cluster&#34;&gt;upgrade your cluster to the latest version stream&lt;/a&gt; then you will find if you &lt;a href=&#34;https://jayex.io/v3/develop/create-project/#create-a-new-project-from-a-quickstart&#34;&gt;create a new quickstart&lt;/a&gt; that:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;.lighthouse/jenkins-x&lt;/code&gt; directory contains the default CI/CD pipelines for Jenkins X with these files:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.lighthouse/jenkins-x&lt;/code&gt; directory contains the default CI/CD pipelines for JayeX with these files:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;triggers.yaml&lt;/code&gt; to define the &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt; &lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#Config&#34;&gt;TriggerConfig&lt;/a&gt; which defines the &lt;a href=&#34;https://jenkins-x.io/docs/resources/faq/using/chatops/#what-is-chatops&#34;&gt;ChatOps&lt;/a&gt; and triggering configuration via a &lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#ConfigSpec&#34;&gt;spec field&lt;/a&gt; which defines &lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Presubmit&#34;&gt;presubmits&lt;/a&gt; and &lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Postsubmit&#34;&gt;postsubmits&lt;/a&gt; (i.e. Pull Request and Release triggers).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;triggers.yaml&lt;/code&gt; to define the &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt; &lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#Config&#34;&gt;TriggerConfig&lt;/a&gt; which defines the &lt;a href=&#34;https://jayex.io/docs/resources/faq/using/chatops/#what-is-chatops&#34;&gt;ChatOps&lt;/a&gt; and triggering configuration via a &lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#ConfigSpec&#34;&gt;spec field&lt;/a&gt; which defines &lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Presubmit&#34;&gt;presubmits&lt;/a&gt; and &lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Postsubmit&#34;&gt;postsubmits&lt;/a&gt; (i.e. Pull Request and Release triggers).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pullrequest.yaml&lt;/code&gt; defines the Pull Request pipeline using a Tekton &lt;a href=&#34;https://tekton.dev/docs/pipelines/tasks/#configuring-a-task&#34;&gt;Task&lt;/a&gt;, &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline&#34;&gt;Pipeline&lt;/a&gt; or &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun&#34;&gt;PipelineRun&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;release.yaml&lt;/code&gt; defines the Release pipeline using a Tekton Tekton &lt;a href=&#34;https://tekton.dev/docs/pipelines/tasks/#configuring-a-task&#34;&gt;Task&lt;/a&gt;, &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline&#34;&gt;Pipeline&lt;/a&gt; or &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun&#34;&gt;PipelineRun&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;jenkins-x.yml&lt;/code&gt; files are no longer used by default in new quickstarts instead we use the above. Note if you have projects using &lt;code&gt;jenkins-x.yml&lt;/code&gt; files they are still supported if you &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/#import-an-existing-project&#34;&gt;import them into v3&lt;/a&gt; or you can &lt;a href=&#34;https://github.com/jenkins-x-plugins/jx-v2-tekton-converter/blob/main/README.md&#34;&gt;use this tool to migrate them to tekton pipelines&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jenkins-x.yml&lt;/code&gt; files are no longer used by default in new quickstarts instead we use the above. Note if you have projects using &lt;code&gt;jenkins-x.yml&lt;/code&gt; files they are still supported if you &lt;a href=&#34;https://jayex.io/v3/develop/create-project/#import-an-existing-project&#34;&gt;import them into v3&lt;/a&gt; or you can &lt;a href=&#34;https://github.com/jenkins-x-plugins/jx-v2-tekton-converter/blob/main/README.md&#34;&gt;use this tool to migrate them to tekton pipelines&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;editing-pipelines&#34;&gt;Editing pipelines&lt;/h2&gt;
 &lt;p&gt;You can now easily modify any of the &lt;a href=&#34;https://tekton.dev/docs/pipelines/tasks/#configuring-a-task&#34;&gt;Task&lt;/a&gt;, &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline&#34;&gt;Pipeline&lt;/a&gt; or &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun&#34;&gt;PipelineRun&lt;/a&gt; resources in any git repository - just look in each folder inside &lt;code&gt;.lighthouse&lt;/code&gt; for the YAML files to edit.&lt;/p&gt;
-&lt;p&gt;e.g. for the default Jenkins X CI/CD pipelines edit either:&lt;/p&gt;
+&lt;p&gt;e.g. for the default JayeX CI/CD pipelines edit either:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;.lighthouse/jenkins-x&lt;/code&gt;
 &lt;ul&gt;
@@ -66,22 +66,22 @@
 &lt;/ul&gt;
 &lt;p&gt;You can test out changes to the Pull Request pipeline by submitting changes in a Pull Request. Changes to a release only take place after merging the change to the main branch.&lt;/p&gt;
 &lt;h3 id=&#34;overriding-steps&#34;&gt;Overriding steps&lt;/h3&gt;
-&lt;p&gt;The default pipelines use the default &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog/&#34;&gt;Jenkins X Catalog&lt;/a&gt; and so the details of the steps such as the container image and commands used are often inherited.&lt;/p&gt;
+&lt;p&gt;The default pipelines use the default &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog/&#34;&gt;JayeX Catalog&lt;/a&gt; and so the details of the steps such as the container image and commands used are often inherited.&lt;/p&gt;
 &lt;p&gt;You can override steps locally by:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog/#overriding-a-pipeline-step-locally&#34;&gt;Overriding a pipeilne step locally&lt;/a&gt; so that you inline the step details into your local YAML file and then edit accordingly.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog/#overriding-specific-properties-of-a-step-locally&#34;&gt;Override a specific step property locally such as the script property&lt;/a&gt; which lets you just inline, say, the &lt;code&gt;script&lt;/code&gt; commands to modify the commands run&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog/#overriding-a-pipeline-step-locally&#34;&gt;Overriding a pipeilne step locally&lt;/a&gt; so that you inline the step details into your local YAML file and then edit accordingly.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog/#overriding-specific-properties-of-a-step-locally&#34;&gt;Override a specific step property locally such as the script property&lt;/a&gt; which lets you just inline, say, the &lt;code&gt;script&lt;/code&gt; commands to modify the commands run&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;tools&#34;&gt;Tools&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog/#viewing-the-effective-pipeline&#34;&gt;viewing the effective pipeline&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog/#overriding-a-pipeline-step-locally&#34;&gt;overriding a pipeline step locally&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog/#viewing-the-effective-pipeline&#34;&gt;viewing the effective pipeline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog/#overriding-a-pipeline-step-locally&#34;&gt;overriding a pipeline step locally&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;linting&#34;&gt;Linting&lt;/h3&gt;
-&lt;p&gt;You can run the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/lint&#34;&gt;jx pipeline lint&lt;/a&gt; command from a clone of your repository.&lt;/p&gt;
+&lt;p&gt;You can run the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/lint&#34;&gt;jx pipeline lint&lt;/a&gt; command from a clone of your repository.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx pipeline lint
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;which will verify that have not made any typos.&lt;/p&gt;
-&lt;p&gt;You can also &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog/#viewing-the-effective-pipeline&#34;&gt;view the effective pipeline&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can also &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog/#viewing-the-effective-pipeline&#34;&gt;view the effective pipeline&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ide-support&#34;&gt;IDE support&lt;/h2&gt;
 &lt;p&gt;If you use &lt;a href=&#34;https://www.jetbrains.com/idea/&#34;&gt;IntelliJ IDEA&lt;/a&gt; or &lt;a href=&#34;https://www.jetbrains.com/go/&#34;&gt;Goland&lt;/a&gt; you might find the &lt;a href=&#34;https://plugins.jetbrains.com/plugin/14096-tekton-pipelines-by-red-hat&#34;&gt;RedHat&amp;rsquo;s intellij-tekton plugin&lt;/a&gt; useful for editing pipelines with schema validation and completion.&lt;/p&gt;
 &lt;p&gt;If you use &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VS Code&lt;/a&gt; you may want to try &lt;a href=&#34;https://github.com/redhat-developer/vscode-tekton#tekton-pipelines-extension--&#34;&gt;Red Hat&amp;rsquo;s Tekton Pipelines Extension tekton&lt;/a&gt;&lt;/p&gt;
@@ -112,20 +112,20 @@
     
     <item>
       <title>V3: Catalog</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/catalog/</link>
+      <link>https://jayex.io/v3/develop/pipelines/catalog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/catalog/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/catalog/</guid>
       <description>
         
         
         &lt;p&gt;As we create more and more software we tend to get an explosion in the number of git repositories and microservices. Each repository needs automated CI and CD; but how do we manage the hundreds of pipelines we need - while also making it easy to share pipelines across repositories and allowing each repository to customize when required?&lt;/p&gt;
-&lt;p&gt;Jenkins X solves this as follows:&lt;/p&gt;
+&lt;p&gt;JayeX solves this as follows:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;the pipelines, tasks and steps are defined via &lt;a href=&#34;https://tekton.dev/docs/pipelines/tasks/#configuring-a-task&#34;&gt;Tekton YAML&lt;/a&gt; letting you use any tekton tooling such as &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/#ide-support&#34;&gt;IDE completion and validation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;the pipelines, tasks and steps are defined via &lt;a href=&#34;https://tekton.dev/docs/pipelines/tasks/#configuring-a-task&#34;&gt;Tekton YAML&lt;/a&gt; letting you use any tekton tooling such as &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/#ide-support&#34;&gt;IDE completion and validation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;we support an &lt;code&gt;image: uses:sourceURI&lt;/code&gt; notation that lets you inherit steps from a git repository without having to copy/paste the source code aross repositories.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;For example if you create a new &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;quickstart&lt;/a&gt; pipeline may look like this (slightly condensed)&amp;hellip;&lt;/p&gt;
+&lt;p&gt;For example if you create a new &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;quickstart&lt;/a&gt; pipeline may look like this (slightly condensed)&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;tasks&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;from-build-pack&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;taskSpec&lt;/span&gt;:
@@ -167,7 +167,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This references the &lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt; repository for &lt;code&gt;owner/repository&lt;/code&gt; and &lt;strong&gt;@version&lt;/strong&gt; can be a git tag, branch or SHA.&lt;/p&gt;
 &lt;p&gt;If you are not using &lt;a href=&#34;https://github.com&#34;&gt;github.com&lt;/a&gt; to host your git repositories you can access a pipeline task or step from your custom git serve use the &lt;strong&gt;uses:lighthouse:&lt;/strong&gt; prefix before &lt;code&gt;owner&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;uses:lighthouse:owner/repository/pathToFile@version&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We &lt;a href=&#34;https://jenkins-x.io/v3/devops/gitops/#recommendations&#34;&gt;recommend you version everything with GitOps&lt;/a&gt; so you know exactly what versions are being used from git.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We &lt;a href=&#34;https://jayex.io/v3/devops/gitops/#recommendations&#34;&gt;recommend you version everything with GitOps&lt;/a&gt; so you know exactly what versions are being used from git.&lt;/p&gt;
 &lt;p&gt;However you can use &lt;strong&gt;@HEAD&lt;/strong&gt; to reference the latest version.&lt;/p&gt;
 &lt;p&gt;To use a locked down version based on the &lt;em&gt;version stream&lt;/em&gt; of your cluster, you can use &lt;strong&gt;@versionStream&lt;/strong&gt; which means use the git SHA for the repository which is configured in the version stream.&lt;/p&gt;
 &lt;p&gt;The nice thing about &lt;strong&gt;@versionStream&lt;/strong&gt; is that the pipeline catalog you inherit tasks and steps from is locked down to an exact SHA in the version stream; but it avoids you having to go through every one of your git repositories whenever you upgrade a pipeline catalog.&lt;/p&gt;
@@ -177,7 +177,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If there&amp;rsquo;s no @version on a uses string its interpreted as a local file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;uses:some-file.yaml&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-it-looks&#34;&gt;How it looks&lt;/h2&gt;
-&lt;p&gt;So here is an &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/.lighthouse/jenkins-x/release.yaml&#34;&gt;example release pipeline&lt;/a&gt; generated via the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks&#34;&gt;Jenkins X Pipeline catalog&lt;/a&gt; if you create a &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog&#34;&gt;JavaScript quickstart&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So here is an &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/.lighthouse/jenkins-x/release.yaml&#34;&gt;example release pipeline&lt;/a&gt; generated via the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks&#34;&gt;JayeX Pipeline catalog&lt;/a&gt; if you create a &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog&#34;&gt;JavaScript quickstart&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;tekton.dev/v1beta1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;PipelineRun&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;metadata&lt;/span&gt;:
@@ -246,7 +246,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jx-variables &lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;customizing-an-inherited-step&#34;&gt;Customizing an inherited step&lt;/h3&gt;
-&lt;p&gt;You can edit the step in your &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/#ide-support&#34;&gt;IDE&lt;/a&gt; and add any custom properties such as &lt;code&gt;command&lt;/code&gt;, &lt;code&gt;args&lt;/code&gt;, &lt;code&gt;env&lt;/code&gt;, &lt;code&gt;script&lt;/code&gt; or &lt;code&gt;volumeMount&lt;/code&gt; - those values then override the inherited step.&lt;/p&gt;
+&lt;p&gt;You can edit the step in your &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/#ide-support&#34;&gt;IDE&lt;/a&gt; and add any custom properties such as &lt;code&gt;command&lt;/code&gt;, &lt;code&gt;args&lt;/code&gt;, &lt;code&gt;env&lt;/code&gt;, &lt;code&gt;script&lt;/code&gt; or &lt;code&gt;volumeMount&lt;/code&gt; - those values then override the inherited step.&lt;/p&gt;
 &lt;p&gt;e.g. you can then change any command line, add an environment variable or add a new volume mount without copy pasting the whole step. e.g. we change the &lt;code&gt;script&lt;/code&gt; value of the &lt;code&gt;jx-variables&lt;/code&gt; step below:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;tekton.dev/v1beta1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;PipelineRun&lt;/span&gt;
@@ -265,7 +265,7 @@
 &lt;h2 id=&#34;command-line-tools&#34;&gt;Command line tools&lt;/h2&gt;
 &lt;p&gt;To help understand the inheriance and overriding of steps we have a few command line tools to help:&lt;/p&gt;
 &lt;h3 id=&#34;viewing-the-effective-pipeline&#34;&gt;Viewing the effective pipeline&lt;/h3&gt;
-&lt;p&gt;To see the actual Tekton pipeline that would be executed from your local source directory you can run the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/effective&#34;&gt;jx pipeline effective&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;To see the actual Tekton pipeline that would be executed from your local source directory you can run the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/effective&#34;&gt;jx pipeline effective&lt;/a&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx pipeline effective
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to open the effective pipeline in your editor, such as &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VS Code&lt;/a&gt; you can do:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx pipeline effective -e code
@@ -277,7 +277,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# now we will always open effective pipelines inside VS Code&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx pipeline effective
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;overriding-a-pipeline-step-locally&#34;&gt;Overriding a pipeline step locally&lt;/h3&gt;
-&lt;p&gt;If you want to edit a step that is inherited from a pipeline catalog just run the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/override&#34;&gt;jx pipeline override&lt;/a&gt; command from a clone of your repository.&lt;/p&gt;
+&lt;p&gt;If you want to edit a step that is inherited from a pipeline catalog just run the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/override&#34;&gt;jx pipeline override&lt;/a&gt; command from a clone of your repository.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx pipeline override
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will then prompt you to pick which pipeline and step that&amp;rsquo;s inherited via the &lt;code&gt;image: uses:sourceURI&lt;/code&gt; notation. When chosen the step will be inlined into your local file so you can &lt;a href=&#34;#customizing-an-inherited-step&#34;&gt;edit any of the properties&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can use the git compare to see the changes and remove any properties you don&amp;rsquo;t wish to override.&lt;/p&gt;
@@ -295,19 +295,19 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;steps&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;uses:tektoncd/catalog/task/git-clone/0.2/git-clone.yaml@HEAD&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will then include the steps from the &lt;a href=&#34;https://github.com/tektoncd/catalog/blob/master/task/git-clone/0.2/git-clone.yaml&#34;&gt;git-clone.yaml&lt;/a&gt; file&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s not just the &lt;a href=&#34;https://github.com/tektoncd/catalog&#34;&gt;Tekton Catalog&lt;/a&gt; - you can use this same approach to reuse Tasks or steps from any git repository of your choosing; such as the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks&#34;&gt;Jenkins X Pipeline catalog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not just the &lt;a href=&#34;https://github.com/tektoncd/catalog&#34;&gt;Tekton Catalog&lt;/a&gt; - you can use this same approach to reuse Tasks or steps from any git repository of your choosing; such as the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks&#34;&gt;JayeX Pipeline catalog&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;custom-pipeline-catalog&#34;&gt;Custom Pipeline Catalog&lt;/h2&gt;
-&lt;p&gt;See &lt;a href=&#34;https://jenkins-x.io/v3/about/extending/#pipeline-catalog&#34;&gt;this section&lt;/a&gt; to configure your custom pipeline catalog.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://jayex.io/v3/about/extending/#pipeline-catalog&#34;&gt;this section&lt;/a&gt; to configure your custom pipeline catalog.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Debugging</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/debugging/</link>
+      <link>https://jayex.io/v3/develop/pipelines/debugging/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/debugging/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/debugging/</guid>
       <description>
         
         
@@ -316,28 +316,28 @@
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 
 
-    &lt;code&gt;TaskRun&lt;/code&gt; breakpoint functionality is no longer supported since Tekton 0.29.0 upgrades in &lt;code&gt;3.2.298&lt;/code&gt;. For more info see &lt;a href=&#34;https://jenkins-x.io/blog/2022/04/22/kubernetes-1.22-tekton/&#34;&gt;Kubernetes 1.22 - Breaking change!&lt;/a&gt;.
+    &lt;code&gt;TaskRun&lt;/code&gt; breakpoint functionality is no longer supported since Tekton 0.29.0 upgrades in &lt;code&gt;3.2.298&lt;/code&gt;. For more info see &lt;a href=&#34;https://jayex.io/blog/2022/04/22/kubernetes-1.22-tekton/&#34;&gt;Kubernetes 1.22 - Breaking change!&lt;/a&gt;.
 
 &lt;/div&gt;
 
 &lt;p&gt;Here is a demo which shows how to debug pipelines:&lt;/p&gt;
 &lt;iframe width=&#34;850&#34; height=&#34;500&#34; src=&#34;https://www.youtube.com/embed/QqTaclB6-oI&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
-&lt;p&gt;Make sure &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/upgrades/cluster/&#34;&gt;your cluster is upgraded to the latest version stream&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you intend to use the &lt;code&gt;jx&lt;/code&gt; in the below examples make sure you &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/upgrades/cli/&#34;&gt;upgrade the CLI too&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Make sure &lt;a href=&#34;https://jayex.io/v3/admin/setup/upgrades/cluster/&#34;&gt;your cluster is upgraded to the latest version stream&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you intend to use the &lt;code&gt;jx&lt;/code&gt; in the below examples make sure you &lt;a href=&#34;https://jayex.io/v3/admin/setup/upgrades/cli/&#34;&gt;upgrade the CLI too&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;enable-a-breakpoint&#34;&gt;Enable a breakpoint&lt;/h3&gt;
 &lt;p&gt;To enable a breakpoint you can:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;use the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt; as shown in the above video by:
+&lt;li&gt;use the &lt;a href=&#34;https://jayex.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt; as shown in the above video by:
 &lt;ul&gt;
 &lt;li&gt;right click on a &lt;code&gt;Pipeline&lt;/code&gt; action menu&lt;/li&gt;
 &lt;li&gt;select &lt;code&gt;Breakpoint -&amp;gt; Add&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;you can use the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/debug/&#34;&gt;jx pipeline debug&lt;/a&gt; command then select the pipeline to add/remove a breakpoint.&lt;/li&gt;
+&lt;li&gt;you can use the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/debug/&#34;&gt;jx pipeline debug&lt;/a&gt; command then select the pipeline to add/remove a breakpoint.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;viewing-breakpoints&#34;&gt;Viewing breakpoints&lt;/h3&gt;
-&lt;p&gt;You can view breakpoints in the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt; in the &lt;code&gt;Breakpoints&lt;/code&gt; tab or via:&lt;/p&gt;
+&lt;p&gt;You can view breakpoints in the &lt;a href=&#34;https://jayex.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt; in the &lt;code&gt;Breakpoints&lt;/code&gt; tab or via:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get lighthousebreakpoints
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# you can use the short name:&lt;/span&gt;
@@ -346,14 +346,14 @@
 &lt;p&gt;Once you have set a breakpoint defined for a particular Pipeline you need to trigger the pipeline. e.g. perform a git commit on the git branch to trigger a new pipeline to execute.&lt;/p&gt;
 &lt;p&gt;The pipeline will execute as normal; you&amp;rsquo;ll be able to view it execute via:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;run &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/grid/&#34;&gt;jx pipeline grid&lt;/a&gt; to watch pipelines run and select the one you wish to view the log&lt;/li&gt;
-&lt;li&gt;run &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/log/&#34;&gt;jx pipeline log&lt;/a&gt; to watch the log of a specific pipeline&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;run &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/grid/&#34;&gt;jx pipeline grid&lt;/a&gt; to watch pipelines run and select the one you wish to view the log&lt;/li&gt;
+&lt;li&gt;run &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/log/&#34;&gt;jx pipeline log&lt;/a&gt; to watch the log of a specific pipeline&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;opening-a-shell&#34;&gt;Opening a shell&lt;/h3&gt;
 &lt;p&gt;Once your breakpoint is reached the pipeline pod will pause, waiting to continue.&lt;/p&gt;
 &lt;p&gt;At this point you can then open a shell inside the container.&lt;/p&gt;
-&lt;p&gt;The easiest way to do this is via the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt;, click on the Pipeline action menu then &lt;code&gt;Shell&lt;/code&gt; -&amp;gt; &lt;code&gt;latest step&lt;/code&gt; and a shell will open.&lt;/p&gt;
+&lt;p&gt;The easiest way to do this is via the &lt;a href=&#34;https://jayex.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt;, click on the Pipeline action menu then &lt;code&gt;Shell&lt;/code&gt; -&amp;gt; &lt;code&gt;latest step&lt;/code&gt; and a shell will open.&lt;/p&gt;
 &lt;p&gt;Otherwise you can use:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl exec -it -c $name-of-container $name-of-pod &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;sh | bash | ash&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;continuing-after-the-breakpoint&#34;&gt;Continuing after the breakpoint&lt;/h3&gt;
@@ -378,8 +378,8 @@
 &lt;/table&gt;
 &lt;h3 id=&#34;removing-breakpoints&#34;&gt;Removing breakpoints&lt;/h3&gt;
 &lt;p&gt;There are a few ways to delete breakpoints.&lt;/p&gt;
-&lt;p&gt;You can run &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/debug/&#34;&gt;jx pipeline debug&lt;/a&gt; and toggle off any existing breakpoints.&lt;/p&gt;
-&lt;p&gt;You can use the &lt;code&gt;Breakpoints&lt;/code&gt; tab in &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt; then click the breakpoints action menu then &lt;code&gt;Remove&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can run &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/debug/&#34;&gt;jx pipeline debug&lt;/a&gt; and toggle off any existing breakpoints.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;code&gt;Breakpoints&lt;/code&gt; tab in &lt;a href=&#34;https://jayex.io/v3/develop/ui/lens/&#34;&gt;Lens UI&lt;/a&gt; then click the breakpoints action menu then &lt;code&gt;Remove&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Or find the one you want via:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get lhbp
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl delete lhbp whatever-the-name-is
@@ -389,21 +389,21 @@
     
     <item>
       <title>V3: Upgrading</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/upgrading/</link>
+      <link>https://jayex.io/v3/develop/pipelines/upgrading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/upgrading/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/upgrading/</guid>
       <description>
         
         
         &lt;h2 id=&#34;converting-older-pipelines&#34;&gt;Converting older pipelines&lt;/h2&gt;
-&lt;p&gt;If you have older pipelines in your git repository created with an older version of Jenkins X you can convert them to the new concise &lt;code&gt;image: uses:sourceURI&lt;/code&gt; syntax via the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert&#34;&gt;jx pipeline convert&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;If you have older pipelines in your git repository created with an older version of JayeX you can convert them to the new concise &lt;code&gt;image: uses:sourceURI&lt;/code&gt; syntax via the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/convert&#34;&gt;jx pipeline convert&lt;/a&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx pipeline convert 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The pipelines should be modified and if you have a &lt;code&gt;Kptfile&lt;/code&gt; it will be removed.&lt;/p&gt;
 &lt;p&gt;If you have any old &lt;code&gt;jenkins-x.yml&lt;/code&gt; files, those will be converted across to the new &lt;code&gt;.lighthouse&lt;/code&gt; tekton notation too.&lt;/p&gt;
 &lt;h2 id=&#34;recreating-pipelines&#34;&gt;Recreating pipelines&lt;/h2&gt;
 &lt;p&gt;If you created/imported your repository a long time ago (particularly before the GA version of 3.x) you may have old steps and images inside your &lt;code&gt;.lighthouse/jenkins-x/*.yaml&lt;/code&gt; files.&lt;/p&gt;
-&lt;p&gt;So it&amp;rsquo;s a good idea to recreate them from the latest catalog which are then simpler and &lt;a href=&#34;https://jenkins-x.io/blog/2021/02/25/gitops-pipelines/#sharing-tasks-and-steps-across-repositories&#34;&gt;easier to keep up to date with the version stream&lt;/a&gt; and &lt;a href=&#34;https://jenkins-x.io/blog/2021/02/25/gitops-pipelines/#customizing-an-inherited-step&#34;&gt;easier to custommize locally&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So it&amp;rsquo;s a good idea to recreate them from the latest catalog which are then simpler and &lt;a href=&#34;https://jayex.io/blog/2021/02/25/gitops-pipelines/#sharing-tasks-and-steps-across-repositories&#34;&gt;easier to keep up to date with the version stream&lt;/a&gt; and &lt;a href=&#34;https://jayex.io/blog/2021/02/25/gitops-pipelines/#customizing-an-inherited-step&#34;&gt;easier to custommize locally&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You can do that via the following from inside a git clone of your repository:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm -rf .lighthouse charts preview
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx project import
@@ -415,9 +415,9 @@
 &lt;/ul&gt;
 &lt;p&gt;from the latest pipeline catalog; there should be no need to create a Pull Request on your dev cluster git repository as all the webhooks should be setup already.&lt;/p&gt;
 &lt;p&gt;You can use the git history to compare changes in case you had made any custom pipeline changes.&lt;/p&gt;
-&lt;p&gt;If you are worried about losing changes you can add &lt;code&gt;--dry-run&lt;/code&gt; to &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/project/import/&#34;&gt;jx project import&lt;/a&gt; which will give you a chance to review the changes before committing. Though you can always use git to revert thing too ;)&lt;/p&gt;
+&lt;p&gt;If you are worried about losing changes you can add &lt;code&gt;--dry-run&lt;/code&gt; to &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/project/import/&#34;&gt;jx project import&lt;/a&gt; which will give you a chance to review the changes before committing. Though you can always use git to revert thing too ;)&lt;/p&gt;
 &lt;h2 id=&#34;upgrading-pipelines-and-helm-charts-via-kpt&#34;&gt;Upgrading pipelines and helm charts via kpt&lt;/h2&gt;
-&lt;p&gt;You can upgrade any git repository in the same way you upgrade your &lt;a href=&#34;https://jenkins-x.io/v3/guides/upgrade/#cluster&#34;&gt;clusters git repository&lt;/a&gt; by running the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/gitops/upgrade&#34;&gt;jx gitops upgrade&lt;/a&gt; command inside a git checkout of your repository:&lt;/p&gt;
+&lt;p&gt;You can upgrade any git repository in the same way you upgrade your &lt;a href=&#34;https://jayex.io/v3/guides/upgrade/#cluster&#34;&gt;clusters git repository&lt;/a&gt; by running the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/gitops/upgrade&#34;&gt;jx gitops upgrade&lt;/a&gt; command inside a git checkout of your repository:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd my-quickstart-thingy
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx gitops upgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will then upgrade any helm charts or pipeline catalogs you are using in your git repository with the latest versions.&lt;/p&gt;
@@ -429,7 +429,7 @@
 &lt;p&gt;You can follow the inline git helper messages to resolve conflicts - or use your IDE to help figure out the merge issues more easily.&lt;/p&gt;
 &lt;h3 id=&#34;converting-all-repositories&#34;&gt;Converting all repositories&lt;/h3&gt;
 &lt;p&gt;You can now perform a batch of Pull Requests if you need to upgrade your pipelines on your repositories if the upstream pipeline catalogs have upgraded.&lt;/p&gt;
-&lt;p&gt;See: &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/migrate/v3-alpha/#upgrading-pipelines-in-your-repositories&#34;&gt;generate pull requests to upgrade pipelines&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;See: &lt;a href=&#34;https://jayex.io/v3/admin/guides/migrate/v3-alpha/#upgrading-pipelines-in-your-repositories&#34;&gt;generate pull requests to upgrade pipelines&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Here is an example of &lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/pull/551&#34;&gt;an automated Pull Request&lt;/a&gt; that was used to migrate one of our pipelines on &lt;a href=&#34;https://github.com/jenkins-x/jx-gitops&#34;&gt;jx-gitops&lt;/a&gt; - as you can see the resulting file is much simpler and easier to maintain.&lt;/p&gt;
 
       </description>
@@ -437,15 +437,15 @@
     
     <item>
       <title>V3: Inner loop</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/inner-loop/</link>
+      <link>https://jayex.io/v3/develop/pipelines/inner-loop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/inner-loop/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/inner-loop/</guid>
       <description>
         
         
-        &lt;p&gt;In v2 of Jenkins X we had a feature called &lt;code&gt;Dev Pods&lt;/code&gt;  where we spun up a pod using the container image from the Jenkins X pipeline so that you could perform interative development inside the cluster.&lt;/p&gt;
-&lt;p&gt;We don&amp;rsquo;t yet have an exact equivalent in Jenkins X v3 as we&amp;rsquo;ve moved from large monolithic container images with all the tools inside to small focussed images for each tekton pipeline step. e.g. using the upstream images for maven, golang, npm to perform those builds directly.&lt;/p&gt;
+        &lt;p&gt;In v2 of JayeX we had a feature called &lt;code&gt;Dev Pods&lt;/code&gt;  where we spun up a pod using the container image from the JayeX pipeline so that you could perform interative development inside the cluster.&lt;/p&gt;
+&lt;p&gt;We don&amp;rsquo;t yet have an exact equivalent in JayeX v3 as we&amp;rsquo;ve moved from large monolithic container images with all the tools inside to small focussed images for each tekton pipeline step. e.g. using the upstream images for maven, golang, npm to perform those builds directly.&lt;/p&gt;
 &lt;p&gt;You may also find &lt;a href=&#34;https://thenewstack.io/kubernetes-infrastructure-know-the-inner-dev-loop/&#34;&gt;this article on kubernetes inner loop&lt;/a&gt; useful&lt;/p&gt;
 &lt;p&gt;If you want something like &lt;code&gt;Dev Pods&lt;/code&gt;  in v3 there are a few open source tools that offer something similar:&lt;/p&gt;
 

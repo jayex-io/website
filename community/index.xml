@@ -1,203 +1,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – </title>
-    <link>https://jenkins-x.io/community/</link>
-    <description>Recent content on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – </title>
+    <link>https://jayex.io/community/</link>
+    <description>Recent content on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/community/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/community/index.xml" rel="self" type="application/rss+xml" />
     
     
       
         
       
     
-    
-    <item>
-      <title>Community: Trigger Jenkins</title>
-      <link>https://jenkins-x.io/community/labs/enhancements/proposals/trigger-jenkins/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-x.io/community/labs/enhancements/proposals/trigger-jenkins/readme/</guid>
-      <description>
-        
-        
-        &lt;h1 id=&#34;problem-be-able-to-trigger-pipelines-in-remote-jenkins-servers&#34;&gt;Problem: be able to trigger pipelines in remote Jenkins servers&lt;/h1&gt;
-&lt;p&gt;We want to make it easy to reuse existing remote Jenkins servers with Jenkins X / tekton so that folks can work with either 100% cloud native tekton based automated CI/CD from Jenkins X or reuse existing Jenkins pipelines with remote Jenkins servers.&lt;/p&gt;
-&lt;p&gt;Over time we can then bring more value to folks using a mixture of Jenkins + Jenkins X. e.g.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Reuse ChatOps from Jenkins X for existing projects that use Jenkins pipelines&lt;/li&gt;
-&lt;li&gt;Reuse Jenkins X Apps / Build Packs on projects released by Jenkins
-&lt;ul&gt;
-&lt;li&gt;E.g. reuse Jenkins X Apps / Pipelines for linting, code quality, security scanning - while preserving the existing Jenkins pipelines&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;solutio&#34;&gt;Solutio&lt;/h2&gt;
-&lt;p&gt;Check out the &lt;a href=&#34;https://jenkins-x.io/docs/labs/jenkins/&#34;&gt;docs for using the PoC and using it with Jenkins X and helm 3&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In addition there is a small CLI / container image &lt;a href=&#34;https://github.com/jenkins-x-labs/trigger-pipeline&#34;&gt;jenkins-x-labs/trigger-pipeline&lt;/a&gt; which can be invoked from inside any kind of CI / pipeline to trigger a pipeline in a remote Jenkins server.&lt;/p&gt;
-&lt;p&gt;This allows a jenkins pipeline to be invoked in:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;any kubernetes cluster/namespace&lt;/li&gt;
-&lt;li&gt;any jenkins server (inside or outside of k8s)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;from anywhere in the cloud native ecosystem:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Kubernetes Job&lt;/li&gt;
-&lt;li&gt;Jenkins X Pipeline&lt;/li&gt;
-&lt;li&gt;Tekton&lt;/li&gt;
-&lt;li&gt;GitHub Actions&lt;/li&gt;
-&lt;li&gt;Any Jenkins server (inside or outside of k8s)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;open-issues&#34;&gt;Open Issues&lt;/h2&gt;
-&lt;p&gt;There are a number of remaining problems that trigger-pipeline does not solve by itself:&lt;/p&gt;
-&lt;h3 id=&#34;discovering-the-jenkins-server--api-token&#34;&gt;Discovering the Jenkins Server + API token&lt;/h3&gt;
-&lt;p&gt;To work trigger-pipeline needs to know where the Jenkins server is and how to talk to it. So it needs a URL and an API Token.&lt;/p&gt;
-&lt;p&gt;There’s no standard way to define that nor any tooling for configuring that.&lt;/p&gt;
-&lt;p&gt;So the trigger-pipeline CLI defines a number of &lt;a href=&#34;https://github.com/jenkins-x-labs/trigger-pipeline#adding-jenkins-servers&#34;&gt;commands to register Jenkins servers&lt;/a&gt; along with the username + API token to use.&lt;/p&gt;
-&lt;p&gt;Over time we should be able to create some Core capability to automatically populate the Jenkins server registry.&lt;/p&gt;
-&lt;h3 id=&#34;setting-up-the-pipelines&#34;&gt;Setting up the pipelines&lt;/h3&gt;
-&lt;p&gt;Having a &lt;code&gt;trigger-pipeline&lt;/code&gt; binary is one thing but then creating a custom &lt;em&gt;jenkins-x.yml&lt;/em&gt; pipeline file with details of how to find the Jenkins URL + the Secret and setting up webhooks is another issue.&lt;/p&gt;
-&lt;p&gt;Currently &lt;code&gt;trigger-pipeline&lt;/code&gt; is not very developer friendly and will require some wizards that can automate the creation of trigger-pipeline based &lt;em&gt;jenkins-x.yml.&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;faqs&#34;&gt;FAQs&lt;/h2&gt;
-&lt;h3 id=&#34;jenkins-x-used-to-install-a-jenkins-server-into-kubernetes-for-me-how-do-i-install-jenkins-now&#34;&gt;Jenkins X used to install a Jenkins Server into Kubernetes for me. How do I install Jenkins now?&lt;/h3&gt;
-&lt;p&gt;Jenkins is to Jenkins X as Java is to Javascript - all they share is a name. You don&amp;rsquo;t need Jenkins installed to use Jenkins X. That said, you may want to install Jenkins in the same Kubernetes cluster as Jenkins X. Here&amp;rsquo;s some links that explain how you can do it:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Jenkins Operator - &lt;a href=&#34;https://jenkinsci.github.io/kubernetes-operator/docs/installation/&#34;&gt;https://jenkinsci.github.io/kubernetes-operator/docs/installation/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Jenkins Helm Chart - &lt;a href=&#34;https://github.com/helm/charts/tree/master/stable/jenkins&#34;&gt;https://github.com/helm/charts/tree/master/stable/jenkins&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;As well as some commercial offerings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;CloudBees Core - &lt;a href=&#34;https://docs.cloudbees.com/docs/cloudbees-jenkins-distribution/latest/distro-install-guide/kubernetes&#34;&gt;https://docs.cloudbees.com/docs/cloudbees-jenkins-distribution/latest/distro-install-guide/kubernetes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Google Kubernetes Engine - &lt;a href=&#34;https://cloud.google.com/solutions/jenkins-on-kubernetes-engine-tutorial&#34;&gt;https://cloud.google.com/solutions/jenkins-on-kubernetes-engine-tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Community: Proposals</title>
-      <link>https://jenkins-x.io/community/labs/enhancements/proposals/proposals/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-x.io/community/labs/enhancements/proposals/proposals/</guid>
-      <description>
-        
-        
-        &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/rawlingsj/enhancements/blob/master/proposals/labs/README.md&#34;&gt;Labs - enable rapid innovation while keeping a stable base platform&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/hferentschik/enhancements/blob/cloud-resources/proposals/3/README.md&#34;&gt;Cloud Resource Creation&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jstrachan/enhancements/blob/jenkins-trigger/proposals/trigger-jenkins/README.md&#34;&gt;Trigger Jenkins Pipelines&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vbehar/enhancements/blob/preview-helmfile/proposals/4/README.md&#34;&gt;Preview with Helmfile&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/garethjevans/enhancements/blob/decomposition/proposals/5/README.md&#34;&gt;Decomposition of Jenkins X&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Community: Use Tekton Dashboard</title>
-      <link>https://jenkins-x.io/community/labs/enhancements/proposals/use-tekton-dashboard/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-x.io/community/labs/enhancements/proposals/use-tekton-dashboard/readme/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;1-overview&#34;&gt;1. Overview&lt;/h2&gt;
-&lt;p&gt;This document outlines how to use Tekton Dashboard instead of jx-pipelines-visualizer.&lt;/p&gt;
-&lt;h2 id=&#34;11-motivation&#34;&gt;1.1 Motivation&lt;/h2&gt;
-&lt;p&gt;The idea is to have less to maintain inside the jx3 ecosystem, step by step, starting with the Dashboard
-I personnaly like their Dashboard, and want to use as most as possible Tekton features&lt;/p&gt;
-&lt;h2 id=&#34;12-goal&#34;&gt;1.2 Goal&lt;/h2&gt;
-&lt;p&gt;The goal is that instead of using jx-pipelines-visualizer with his own log persistency, we can use Tekton Dashboard with Tekton Results in order to persist Logs.&lt;/p&gt;
-&lt;h2 id=&#34;13-requirements&#34;&gt;1.3 Requirements&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Kubernetes version: 1.22.x
-Tekton Pipeline version: 0.42.0
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;14-screenshot-of-tekton-dashboard&#34;&gt;1.4 Screenshot of Tekton Dashboard&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;media/tekton-dashboard.png&#34; alt=&#34;Design&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;2-design-proposal&#34;&gt;2. Design proposal&lt;/h2&gt;
-&lt;h3 id=&#34;21-how-to-have-tekton-dashboard-with-logs-persistency&#34;&gt;2.1 How to have Tekton Dashboard with Logs persistency&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Tekton Dashboard Helm Chart can be added in the repostiory &lt;a href=&#34;https://github.com/cdfoundation/tekton-helm-chart/tree/main&#34;&gt;cdfoundation/tekton-helm-chart&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;this &lt;a href=&#34;https://tekton.dev/docs/dashboard/install/&#34;&gt;installing-tekton-dashboard documentation&lt;/a&gt; can help to create the helm chart&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Tekton Results Helm Chart can be added in the repostiory &lt;a href=&#34;https://github.com/cdfoundation/tekton-helm-chart/tree/main&#34;&gt;cdfoundation/tekton-helm-chart&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;this &lt;a href=&#34;https://github.com/tektoncd/results/blob/main/docs/install.md#installing-tekton-results&#34;&gt;Installing Tekton Results documentation&lt;/a&gt; can help to create the helm chart&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Both Tekton Dashboard &amp;amp; Tekton Results can be added as optional and configured in &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions&#34;&gt;jenkins-x/jx3-versions&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;Add &lt;a href=&#34;https://github.com/tektoncd/results/tree/main/docs/api&#34;&gt;Tekton Results queryable gRPC API server &lt;/a&gt; as a fallback source for logs with the Tekton Dashboard argument &lt;code&gt;--external-logs&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;fallback is useful after the PipelineRun / TaskRun or backing Pod has been deleted to retrieve logs&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;22-how-to-configure-lighthouse-to-use-tekton-dashboard-&#34;&gt;2.2 How to configure Lighthouse to use Tekton Dashboard ?&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse/values.yaml.gotmpl#L28&#34;&gt;.Values.env.LIGHTHOUSE_DASHBOARD_TEMPLATE&lt;/a&gt; &amp;amp;&amp;amp; &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse/values.yaml.gotmpl#L24&#34;&gt;.Values.tektoncontroller.dashboardTemplate&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;override them to &amp;quot;&amp;quot; in order to have this default value that represent the tekton dashboard url to pipelineruns:
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fmt.Sprintf(&amp;quot;%s/#/namespaces/%s/pipelineruns/%s&amp;quot;, trimDashboardURL(r.dashboardURL)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/v1.11.10/pkg/engines/tekton/controller.go#L200-L202&#34;&gt;source&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse/values.yaml.gotmpl#L23&#34;&gt;.Values.tektoncontroller.dashboardURL&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;override it to the url of tekton dashboard&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;3-affected-repositories&#34;&gt;3. Affected repositories&lt;/h2&gt;
-&lt;p&gt;As outlined above the following repositories need changes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;cdfoundation/tekton-helm-chart&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x/jx3-versions&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x/lighthouse&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;4-current-limitation-of-using-tekton-dashboard&#34;&gt;4. Current limitation of using Tekton Dashboard&lt;/h2&gt;
-&lt;p&gt;If we want to Rerun a Tekton PipelineRuns through the Tekton Dashboard instead of using &lt;code&gt;jx pipeline start&lt;/code&gt;, this will only create a PipelineRun without creating the associated Jx3 PipelineActivity. Then the associated Github Status normally updated by Lighthouse won&amp;rsquo;t be at all here because Lighthouse is only watching for PipelineActivity and not PipelineRun.&lt;/p&gt;
-
-      </description>
-    </item>
     
     <item>
       <title>Community: </title>
-      <link>https://jenkins-x.io/community/readme/</link>
+      <link>https://jayex.io/community/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/readme/</guid>
+      <guid>https://jayex.io/community/readme/</guid>
       <description>
         
         
         &lt;h1 id=&#34;contributing-rich-event-data&#34;&gt;Contributing Rich Event Data&lt;/h1&gt;
-&lt;p&gt;To make upcoming Jenkins X events show up more prominently in Google search and map results, we mark up our event information in structured data.&lt;/p&gt;
+&lt;p&gt;To make upcoming JayeX events show up more prominently in Google search and map results, we mark up our event information in structured data.&lt;/p&gt;
 &lt;p&gt;More information here: &lt;a href=&#34;https://developers.google.com/search/docs/data-types/event&#34;&gt;https://developers.google.com/search/docs/data-types/event&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;sample-event-data&#34;&gt;Sample Event Data&lt;/h2&gt;
 &lt;p&gt;Here is a multi-day event for DevOps World - Jenkins World with an offers URL for the registration page:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;div class=&amp;#34;event-wrapper&amp;#34; itemscope itemtype=&amp;#34;http://schema.org/Event&amp;#34;&amp;gt;
-  &amp;lt;meta itemprop=&amp;#34;image&amp;#34; content=&amp;#34;https://jenkins-x.io/images/community/events/2019-DWJW-JAM_banner-600x338.jpg&amp;#34; /&amp;gt;
+  &amp;lt;meta itemprop=&amp;#34;image&amp;#34; content=&amp;#34;https://jayex.io/images/community/events/2019-DWJW-JAM_banner-600x338.jpg&amp;#34; /&amp;gt;
   &amp;lt;meta itemprop=&amp;#34;description&amp;#34; content=&amp;#34;DevOps World - Jenkins World is the largest gathering of Jenkins users in the world, including Jenkins experts, continuous delivery practitioners, and companies offering complementary technologies to Jenkins.&amp;#34; /&amp;gt;
   &amp;lt;meta class=&amp;#34;event-date&amp;#34; itemprop=&amp;#34;startDate&amp;#34; content=&amp;#34;2019-12-03&amp;#34; /&amp;gt;
   &amp;lt;meta class=&amp;#34;event-date&amp;#34; itemprop=&amp;#34;endDate&amp;#34; content=&amp;#34;2019-12-05&amp;#34; /&amp;gt;
@@ -218,7 +49,7 @@ Tekton Pipeline version: 0.42.0
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here is a one-day event with start and end times. Google assumes the timezone of the provided location, so if the event is online be sure to add timezone info like &lt;code&gt;2020-02-02T09:00:00+02:00&lt;/code&gt; (for Brussels UTC+2) if no location is specified. Here we use &lt;code&gt;isAccessibleForFree&lt;/code&gt; to denote a free event.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;div class=&amp;#34;event-wrapper&amp;#34; itemscope itemtype=&amp;#34;http://schema.org/Event&amp;#34;&amp;gt;
-  &amp;lt;link itemprop=&amp;#34;image&amp;#34; content=&amp;#34;https://jenkins-x.io/images/community/events/2020-fosdem.png&amp;#34; /&amp;gt;
+  &amp;lt;link itemprop=&amp;#34;image&amp;#34; content=&amp;#34;https://jayex.io/images/community/events/2020-fosdem.png&amp;#34; /&amp;gt;
   &amp;lt;meta itemprop=&amp;#34;description&amp;#34; content=&amp;#34;For the first time, there will be a Continuous Integration and Continuous 
   Deployment (CI/CD) devroom at FOSDEM! The CI/CD devroom will take place on 2nd of February 2020 in Brussels, Belgium.&amp;#34; /&amp;gt;
   &amp;lt;meta class=&amp;#34;event-date&amp;#34; itemprop=&amp;#34;startDate&amp;#34; content=&amp;#34;2020-02-02T09:00:00&amp;#34; /&amp;gt;

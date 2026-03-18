@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – FAQ</title>
-    <link>https://jenkins-x.io/v3/develop/faq/</link>
-    <description>Recent content in FAQ on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – FAQ</title>
+    <link>https://jayex.io/v3/develop/faq/</link>
+    <description>Recent content in FAQ on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/faq/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/faq/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,27 +15,27 @@
     
     <item>
       <title>V3: General</title>
-      <link>https://jenkins-x.io/v3/develop/faq/general/</link>
+      <link>https://jayex.io/v3/develop/faq/general/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/general/</guid>
+      <guid>https://jayex.io/v3/develop/faq/general/</guid>
       <description>
         
         
         &lt;h2 id=&#34;where-do-i-raise-issues&#34;&gt;Where do I raise issues?&lt;/h2&gt;
-&lt;p&gt;One of the challenges with Jenkins X 3.x is the &lt;a href=&#34;https://jenkins-x.io/v3/about/overview/source/&#34;&gt;source code is spread across a number of organisations and repositories&lt;/a&gt; since its highly decoupled into many &lt;a href=&#34;https://jenkins-x.io/v3/about/overview/&#34;&gt;plugins and microservices&lt;/a&gt; so it can be confusing&lt;/p&gt;
+&lt;p&gt;One of the challenges with JayeX 3.x is the &lt;a href=&#34;https://jayex.io/v3/about/overview/source/&#34;&gt;source code is spread across a number of organisations and repositories&lt;/a&gt; since its highly decoupled into many &lt;a href=&#34;https://jayex.io/v3/about/overview/&#34;&gt;plugins and microservices&lt;/a&gt; so it can be confusing&lt;/p&gt;
 &lt;p&gt;If you know the specific plugin causing an issue, say &lt;a href=&#34;https://github.com/jenkins-x/jx-preview&#34;&gt;jx-preview&lt;/a&gt; then just raise the issue there in the issue tracker.&lt;/p&gt;
-&lt;p&gt;Otherwise use the &lt;a href=&#34;https://github.com/jenkins-x/issues&#34;&gt;issue tracker for Jenkins X 3.x&lt;/a&gt; and we can triage as required.&lt;/p&gt;
-&lt;h2 id=&#34;why-does-jenkins-x-use-helmfile-template&#34;&gt;Why does Jenkins X use &lt;code&gt;helmfile template&lt;/code&gt;?&lt;/h2&gt;
+&lt;p&gt;Otherwise use the &lt;a href=&#34;https://github.com/jenkins-x/issues&#34;&gt;issue tracker for JayeX 3.x&lt;/a&gt; and we can triage as required.&lt;/p&gt;
+&lt;h2 id=&#34;why-does-jayex-use-helmfile-template&#34;&gt;Why does JayeX use &lt;code&gt;helmfile template&lt;/code&gt;?&lt;/h2&gt;
 &lt;p&gt;If you look into the &lt;strong&gt;versionStream/src/Makefile.mk&lt;/strong&gt; file in your cluster git repository to see how the boot process works you may notice its defined a simple makefile and uses the &lt;code&gt;helmfile template&lt;/code&gt; command to convert the &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt; &lt;code&gt;helmfile.yaml&lt;/code&gt; files referencing helm charts into YAML.&lt;/p&gt;
 &lt;p&gt;So why don&amp;rsquo;t we use &lt;code&gt;helmfile sync&lt;/code&gt; instead to apply the kubernetes resources from the charts directly into kubernetes?&lt;/p&gt;
-&lt;p&gt;The current approach has a &lt;a href=&#34;https://jenkins-x.io/v3/about/benefits/&#34;&gt;number of benefits&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;The current approach has a &lt;a href=&#34;https://jayex.io/v3/about/benefits/&#34;&gt;number of benefits&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;we want to version all kubernetes resources (apart from &lt;code&gt;Secrets&lt;/code&gt;) in git so that you can use git tooling to view the history of every kubernetes resource over time.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;by checking in all the kubernetes resources (apart from &lt;code&gt;Secrets&lt;/code&gt;) its very easy to trace (and &lt;code&gt;git blame&lt;/code&gt;) any change in any kubernetes resource in any chart and namespace to diagnose issues.&lt;/li&gt;
-&lt;li&gt;the upgrade of any tool such as &lt;a href=&#34;https://helm.sh/&#34;&gt;helm&lt;/a&gt;, &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt;, &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt;, &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt;, &lt;a href=&#34;https://kubernetes.io/docs/reference/kubectl/kubectl/&#34;&gt;kubectl&lt;/a&gt; or &lt;a href=&#34;https://jenkins-x.io/v3/guides/jx3/&#34;&gt;jx&lt;/a&gt; could result in different YAML being generated changing the behaivour of your applications in Production.&lt;/li&gt;
+&lt;li&gt;the upgrade of any tool such as &lt;a href=&#34;https://helm.sh/&#34;&gt;helm&lt;/a&gt;, &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt;, &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt;, &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt;, &lt;a href=&#34;https://kubernetes.io/docs/reference/kubectl/kubectl/&#34;&gt;kubectl&lt;/a&gt; or &lt;a href=&#34;https://jayex.io/v3/guides/jx3/&#34;&gt;jx&lt;/a&gt; could result in different YAML being generated changing the behaivour of your applications in Production.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -45,7 +45,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;we can default to using &lt;a href=&#34;https://jenkins-x.io/v3/guides/secrets/&#34;&gt;canonical secret management mechanism&lt;/a&gt; based on &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;kubernetes external secrets&lt;/a&gt; (see &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#generate-step&#34;&gt;how it works&lt;/a&gt;) to ensure that:&lt;/p&gt;
+&lt;p&gt;we can default to using &lt;a href=&#34;https://jayex.io/v3/guides/secrets/&#34;&gt;canonical secret management mechanism&lt;/a&gt; based on &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;kubernetes external secrets&lt;/a&gt; (see &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#generate-step&#34;&gt;how it works&lt;/a&gt;) to ensure that:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;no Secret value accidentally gets checked into git by mistake&lt;/li&gt;
 &lt;li&gt;all secrets can be managed, versioned, stored and rotated using vault or your cloud providers native secret storage mechanism&lt;/li&gt;
@@ -66,25 +66,25 @@
 &lt;p&gt;you can see the above kubernetes resource, a &lt;code&gt;Deployment&lt;/code&gt; with name &lt;code&gt;lighthouse-webhooks&lt;/code&gt; in the namespace &lt;code&gt;jx&lt;/code&gt; which comes from the &lt;code&gt;lighthouse&lt;/code&gt; chart.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;its easy to enrich the generated YAML with a combination of any additional tools &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt;, &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt; or &lt;a href=&#34;https://jenkins-x.io/v3/guides/jx3/&#34;&gt;jx&lt;/a&gt;. e.g.&lt;/p&gt;
+&lt;p&gt;its easy to enrich the generated YAML with a combination of any additional tools &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt;, &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt; or &lt;a href=&#34;https://jayex.io/v3/guides/jx3/&#34;&gt;jx&lt;/a&gt;. e.g.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;its trivial to run &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt; or &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt; to modify any resource in any chart before it&amp;rsquo;s applied to Production and to review the generated values first&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;its easy to use &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/gitops/hash&#34;&gt;jx gitops hash&lt;/a&gt; to add some hash annotations to cause rolling upgrade to &lt;code&gt;Deployments&lt;/code&gt; when git changes (when the &lt;code&gt;Deployment&lt;/code&gt; YAML does not)&lt;/p&gt;
+&lt;p&gt;its easy to use &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/gitops/hash&#34;&gt;jx gitops hash&lt;/a&gt; to add some hash annotations to cause rolling upgrade to &lt;code&gt;Deployments&lt;/code&gt; when git changes (when the &lt;code&gt;Deployment&lt;/code&gt; YAML does not)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;use &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/gitops/annotate&#34;&gt;jx gitops annotate&lt;/a&gt; to add add support for tools like &lt;a href=&#34;https://github.com/pusher/wave&#34;&gt;pusher wave&lt;/a&gt; so that rotating secrets in your underlying secret store can cause rolling upgrades in your &lt;code&gt;Deployments&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;use &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/gitops/annotate&#34;&gt;jx gitops annotate&lt;/a&gt; to add add support for tools like &lt;a href=&#34;https://github.com/pusher/wave&#34;&gt;pusher wave&lt;/a&gt; so that rotating secrets in your underlying secret store can cause rolling upgrades in your &lt;code&gt;Deployments&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;However since the steps to deploy a kubernetes cluster in Jenkins X is defined in a simple makefile stored in your cluster git repository its easy for developers to modify their cluster git repository to add any combination of tools to the makefile to use any permutation of  &lt;a href=&#34;https://helm.sh/&#34;&gt;helm 3&lt;/a&gt;, &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt;, &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt;, &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt;  and &lt;a href=&#34;https://kubernetes.io/docs/reference/kubectl/kubectl/&#34;&gt;kubectl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;However since the steps to deploy a kubernetes cluster in JayeX is defined in a simple makefile stored in your cluster git repository its easy for developers to modify their cluster git repository to add any combination of tools to the makefile to use any permutation of  &lt;a href=&#34;https://helm.sh/&#34;&gt;helm 3&lt;/a&gt;, &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt;, &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt;, &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt;  and &lt;a href=&#34;https://kubernetes.io/docs/reference/kubectl/kubectl/&#34;&gt;kubectl&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;So if you really wanted to opt out of the canonical GitOps, resource and secret management model above you can add a &lt;code&gt;helm upgrade&lt;/code&gt; or &lt;code&gt;helmfile sync&lt;/code&gt; command to your makefile. The entire boot job is defined in git in &lt;strong&gt;versionStream/git-operator/job.yaml&lt;/strong&gt; so you are free to go in whatever direction you prefer.&lt;/p&gt;
-&lt;h2 id=&#34;does-jenkins-x-support-helmfile-hooks&#34;&gt;Does Jenkins X support helmfile hooks?&lt;/h2&gt;
+&lt;h2 id=&#34;does-jayex-support-helmfile-hooks&#34;&gt;Does JayeX support helmfile hooks?&lt;/h2&gt;
 &lt;p&gt;Helmfile hooks allow programs to be executed during the lifecycle of the application of your helmfiles.&lt;/p&gt;
-&lt;p&gt;Since we default to using &lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template&#34;&gt;helmfile template&lt;/a&gt; helmfile hooks are not supported for cluster git repositories (though you can use them in preview environments).&lt;/p&gt;
+&lt;p&gt;Since we default to using &lt;a href=&#34;https://jayex.io/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template&#34;&gt;helmfile template&lt;/a&gt; helmfile hooks are not supported for cluster git repositories (though you can use them in preview environments).&lt;/p&gt;
 &lt;p&gt;However you can support it with the following example:&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-add-a-post-install-hook-in-a-cluster&#34;&gt;How do I add a post install hook in a cluster?&lt;/h2&gt;
 &lt;p&gt;If you want to perform some tasks after a promotion or configuration change in your cluster you can modify the &lt;code&gt;Makefile&lt;/code&gt; in your git repository.&lt;/p&gt;
@@ -98,10 +98,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To trigger the tests you could:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;download binaries and run them locally via a shell script&lt;/li&gt;
-&lt;li&gt;create a kubernetes &lt;code&gt;Job&lt;/code&gt; and verify that the job succeeds via &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/verify/job/&#34;&gt;jx verify job&lt;/a&gt; which also tails the log&lt;/li&gt;
-&lt;li&gt;trigger a pipeline via &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/start/&#34;&gt;jx pipeline start&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;create a kubernetes &lt;code&gt;Job&lt;/code&gt; and verify that the job succeeds via &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/verify/job/&#34;&gt;jx verify job&lt;/a&gt; which also tails the log&lt;/li&gt;
+&lt;li&gt;trigger a pipeline via &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/start/&#34;&gt;jx pipeline start&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;how-do-i-uninstall-jenkins-x&#34;&gt;How do I uninstall Jenkins X?&lt;/h2&gt;
+&lt;h2 id=&#34;how-do-i-uninstall-jayex&#34;&gt;How do I uninstall JayeX?&lt;/h2&gt;
 &lt;p&gt;We don&amp;rsquo;t yet have a nice uninstall command.&lt;/p&gt;
 &lt;p&gt;Though if you git clone your development git repository and cd into it you can run:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl delete -R -f config-root/namespaces
@@ -112,10 +112,10 @@
     
     <item>
       <title>V3: Using</title>
-      <link>https://jenkins-x.io/v3/develop/faq/using/</link>
+      <link>https://jayex.io/v3/develop/faq/using/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/using/</guid>
+      <guid>https://jayex.io/v3/develop/faq/using/</guid>
       <description>
         
         
@@ -129,16 +129,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     lighthouse/
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       lighthouse-webhooks-deploy.yaml
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can see the above kubernetes resource, a &lt;code&gt;Deployment&lt;/code&gt; with name &lt;code&gt;lighthouse-webhooks&lt;/code&gt; in the namespace &lt;code&gt;jx&lt;/code&gt; which comes from the &lt;code&gt;lighthouse&lt;/code&gt; chart.&lt;/p&gt;
-&lt;p&gt;There could be some additional charts installed via Terraform for the &lt;a href=&#34;https://jenkins-x.io/v3/guides/operator/&#34;&gt;git operator&lt;/a&gt; and &lt;a href=&#34;https://jenkins-x.io/v3/guides/health/&#34;&gt;health subsystem&lt;/a&gt; which can be viewed via:&lt;/p&gt;
+&lt;p&gt;There could be some additional charts installed via Terraform for the &lt;a href=&#34;https://jayex.io/v3/guides/operator/&#34;&gt;git operator&lt;/a&gt; and &lt;a href=&#34;https://jayex.io/v3/guides/health/&#34;&gt;health subsystem&lt;/a&gt; which can be viewed via:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;helm list --all-namespaces
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-do-i-delete-an-application&#34;&gt;How do I delete an application?&lt;/h2&gt;
-&lt;p&gt;There is a &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/application/delete/&#34;&gt;jx application delete&lt;/a&gt; command to remove a repository from the source configuration and for removing any deployed instances of the application.&lt;/p&gt;
+&lt;p&gt;There is a &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/application/delete/&#34;&gt;jx application delete&lt;/a&gt; command to remove a repository from the source configuration and for removing any deployed instances of the application.&lt;/p&gt;
 &lt;p&gt;e.g.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx application delete --repo myapp
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or you can remove an application or helm chart from an environment by removing the entry in the &lt;code&gt;releases:&lt;/code&gt; list in the &lt;code&gt;helmfiles/$namespace/helmfile.yaml&lt;/code&gt; file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request).&lt;/p&gt;
-&lt;p&gt;Once the pull request is merged, the &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#boot-job&#34;&gt;boot job will trigger&lt;/a&gt; which will remove the application from kubernetes.&lt;/p&gt;
+&lt;p&gt;Once the pull request is merged, the &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#boot-job&#34;&gt;boot job will trigger&lt;/a&gt; which will remove the application from kubernetes.&lt;/p&gt;
 &lt;h3 id=&#34;stopping-new-releases&#34;&gt;Stopping new releases&lt;/h3&gt;
-&lt;p&gt;If the application you are removing was released via Jenkins X then the next time there is a change committed to your applications git repsitory a new release will be triggered which will be promoted again.&lt;/p&gt;
+&lt;p&gt;If the application you are removing was released via JayeX then the next time there is a change committed to your applications git repsitory a new release will be triggered which will be promoted again.&lt;/p&gt;
 &lt;p&gt;So to stop new releases you need to remove the application from the &lt;code&gt;.jx/gitops/source-config.yaml&lt;/code&gt; repository.&lt;/p&gt;
 &lt;p&gt;You should also ensure that the &lt;code&gt;SourceRepository&lt;/code&gt; has been deleted. Unfortunately when using &lt;code&gt;kubectl apply&lt;/code&gt; this doesn&amp;rsquo;t usually get removed (though it does with &lt;code&gt;kapp&lt;/code&gt;) so you may want to do:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# view all the SourceRepository resources:&lt;/span&gt;
@@ -146,10 +146,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# find the one that you want to remove then:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl delete sr $theNameToDelete
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will stop Jenkins X creating webhooks and firing pipelines when you make changes.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will stop JayeX creating webhooks and firing pipelines when you make changes.&lt;/p&gt;
 &lt;p&gt;You may also want to remove the webhook from the repository to be safe.&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-stop-jx-asking-for-git-credentials&#34;&gt;How do I stop jx asking for git credentials&lt;/h2&gt;
-&lt;p&gt;Commands like &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/project/&#34;&gt;jx project&lt;/a&gt; used to create/import repositories or &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/application/&#34;&gt;jx application&lt;/a&gt; used to list applications need to be able to access git repositories using tokens.&lt;/p&gt;
+&lt;p&gt;Commands like &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/project/&#34;&gt;jx project&lt;/a&gt; used to create/import repositories or &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/application/&#34;&gt;jx application&lt;/a&gt; used to list applications need to be able to access git repositories using tokens.&lt;/p&gt;
 &lt;p&gt;Running these commands prompt the user to enter the git-username and git-token to clone the repository into a temporary folder (ssh authentication is not supported at the moment).
 Follow the steps below to stop the prompting (substitute the &lt;code&gt;&amp;lt;git-username&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;git-token&amp;gt;&lt;/code&gt; with your personal username and access token)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export GIT_USERNAME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;git-username&amp;gt;
@@ -165,21 +165,21 @@ Follow the steps below to stop the prompting (substitute the &lt;code&gt;&amp;lt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: If you set &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt; to &lt;code&gt;$HOME&lt;/code&gt; environment variable, then you dont have to copy the credentials to &lt;code&gt;~/.git-credentials&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;To read more about the git credential store follow this &lt;a href=&#34;https://git-scm.com/docs/git-credential-store&#34;&gt;document&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-use-dev-pods&#34;&gt;How do I use dev pods?&lt;/h2&gt;
-&lt;p&gt;See the &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/inner-loop/&#34;&gt;inner loop documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/inner-loop/&#34;&gt;inner loop documentation&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-use-testcontainers&#34;&gt;How do I use Testcontainers?&lt;/h2&gt;
 &lt;p&gt;If you want to use a container, such as a database, inside your pipeline so that you can run tests against your database inside your pipeline then use a &lt;a href=&#34;https://tekton.dev/vault/pipelines-v0.16.3/tasks/#specifying-sidecars&#34;&gt;sidecar container in Tekton&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here is &lt;a href=&#34;https://tekton.dev/vault/pipelines-v0.16.3/tasks/#using-a-sidecar-in-a-task&#34;&gt;another example of a sidecar in a pipeline&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;If you want to use a separate container inside a preview environment then add &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-charts&#34;&gt;charts or resources&lt;/a&gt; to the &lt;code&gt;preview/helmfile.yaml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you want to use a separate container inside a preview environment then add &lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-charts&#34;&gt;charts or resources&lt;/a&gt; to the &lt;code&gt;preview/helmfile.yaml&lt;/code&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Pipelines</title>
-      <link>https://jenkins-x.io/v3/develop/faq/pipeline/</link>
+      <link>https://jayex.io/v3/develop/faq/pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/pipeline/</guid>
+      <guid>https://jayex.io/v3/develop/faq/pipeline/</guid>
       <description>
         
         
@@ -188,12 +188,12 @@ Follow the steps below to stop the prompting (substitute the &lt;code&gt;&amp;lt
 the pipelinerun or the related pod(s). If you use your favourite tool for looking in kubernetes (kubectl, k9s, &amp;hellip;) and
 list the pipelineruns in the jx namespace you will proably be able to identify the one you are interested.&lt;/p&gt;
 &lt;p&gt;Looking at the details for the piplinerun will give you the details.&lt;/p&gt;
-&lt;p&gt;If that doesn&amp;rsquo;t help another option is to &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/#editing-pipelines&#34;&gt;edit the pipeline step&lt;/a&gt; via the &lt;code&gt;.lighthouse/jenkins-x/release.yaml&lt;/code&gt; or  &lt;code&gt;.lighthouse/jenkins-x/pullrequest.yaml&lt;/code&gt; file to add the command: &lt;code&gt;sleep infinity&lt;/code&gt; in the &lt;code&gt;script:&lt;/code&gt; value before the command that is not working.&lt;/p&gt;
+&lt;p&gt;If that doesn&amp;rsquo;t help another option is to &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/#editing-pipelines&#34;&gt;edit the pipeline step&lt;/a&gt; via the &lt;code&gt;.lighthouse/jenkins-x/release.yaml&lt;/code&gt; or  &lt;code&gt;.lighthouse/jenkins-x/pullrequest.yaml&lt;/code&gt; file to add the command: &lt;code&gt;sleep infinity&lt;/code&gt; in the &lt;code&gt;script:&lt;/code&gt; value before the command that is not working.&lt;/p&gt;
 &lt;p&gt;You can then &lt;code&gt;kubectl exec&lt;/code&gt; into the pod at that step and look around and try running commands inside the pod/container.&lt;/p&gt;
 &lt;p&gt;e.g. using the pod name from the above page and the container name you can do something like:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl exec -it -c name-of-step-container name-of-pod sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-do-i-access-a-secret-from-my-pipeline&#34;&gt;How do I access a Secret from my pipeline?&lt;/h2&gt;
-&lt;p&gt;Once you have a kubernetes Secret (see &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/secrets/#create-a-new-secret&#34;&gt;how to create them&lt;/a&gt;) you can access then in a pipeline either:&lt;/p&gt;
+&lt;p&gt;Once you have a kubernetes Secret (see &lt;a href=&#34;https://jayex.io/v3/admin/setup/secrets/#create-a-new-secret&#34;&gt;how to create them&lt;/a&gt;) you can access then in a pipeline either:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;as an &lt;a href=&#34;https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables&#34;&gt;environment variable in a step&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;via &lt;a href=&#34;https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-files-from-a-pod&#34;&gt;a volume mount&lt;/a&gt;&lt;/li&gt;
@@ -212,7 +212,7 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;: |&lt;span style=&#34;color:#e6db74&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;#!/busybox/sh&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-can-i-use-a-monorepo&#34;&gt;How can I use a monorepo?&lt;/h2&gt;
-&lt;p&gt;If you have an existing monorepo you want to import into Jenkins X you can; just be aware that you&amp;rsquo;ll have to &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/editing/&#34;&gt;create and maintain your own pipelines&lt;/a&gt; for your monorepo.&lt;/p&gt;
+&lt;p&gt;If you have an existing monorepo you want to import into JayeX you can; just be aware that you&amp;rsquo;ll have to &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/editing/&#34;&gt;create and maintain your own pipelines&lt;/a&gt; for your monorepo.&lt;/p&gt;
 &lt;p&gt;We currently have no special tekton steps to analyse git changes and conditionally run different sets of tekton steps based on what has changed.&lt;/p&gt;
 &lt;p&gt;So you may need to write your own steps to handle this nicely based on whatever kind of monorepo you have. Or you may want to look at using a tool like &lt;a href=&#34;https://bazel.build/&#34;&gt;Bazel&lt;/a&gt; or some similar tool to implement your monorepo build and just invoke that from the Tekton pipeline.&lt;/p&gt;
 &lt;p&gt;You could start with the automated CI/CD pipelines that most match your technology choices and edit them to suit.&lt;/p&gt;
@@ -223,7 +223,7 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
 &lt;li&gt;&lt;a href=&#34;https://github.com/mateodelnorte/meta&#34;&gt;meta&lt;/a&gt; see the &lt;a href=&#34;https://patrickleet.medium.com/mono-repo-or-multi-repo-why-choose-one-when-you-can-have-both-e9c77bd0c668&#34;&gt;blog post introducing meta&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;how-do-i-configure-a-different-branch-for-releases&#34;&gt;How do I configure a different branch for releases?&lt;/h2&gt;
-&lt;p&gt;If you look at the &lt;code&gt;postsubmits&lt;/code&gt; section  of the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/pipelines/#lighthouse&#34;&gt;trigger config&lt;/a&gt; in your &lt;code&gt;.lighthouse/jenkins-x/triggers.yaml&lt;/code&gt; file you will see the post submits (which is prow/lighthouse terminology for release pipelines).&lt;/p&gt;
+&lt;p&gt;If you look at the &lt;code&gt;postsubmits&lt;/code&gt; section  of the &lt;a href=&#34;https://jayex.io/v3/develop/reference/pipelines/#lighthouse&#34;&gt;trigger config&lt;/a&gt; in your &lt;code&gt;.lighthouse/jenkins-x/triggers.yaml&lt;/code&gt; file you will see the post submits (which is prow/lighthouse terminology for release pipelines).&lt;/p&gt;
 &lt;p&gt;By default the &lt;code&gt;branches:&lt;/code&gt; is setup with regular expressions for either &lt;code&gt;main&lt;/code&gt; or &lt;code&gt;master&lt;/code&gt; branches:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;postsubmits&lt;/span&gt;:
@@ -240,46 +240,46 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
     
     <item>
       <title>V3: Previews</title>
-      <link>https://jenkins-x.io/v3/develop/faq/previews/</link>
+      <link>https://jayex.io/v3/develop/faq/previews/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/previews/</guid>
+      <guid>https://jayex.io/v3/develop/faq/previews/</guid>
       <description>
         
         
         &lt;h2 id=&#34;when-do-preview-environments-get-removed&#34;&gt;When do Preview Environments get removed?&lt;/h2&gt;
-&lt;p&gt;We have a background garbage collection job which removes Preview Environments after the Pull Request is closed/merged. You can run it any time you like via the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/gc/&#34;&gt;jx preview gc&lt;/a&gt; command&lt;/p&gt;
+&lt;p&gt;We have a background garbage collection job which removes Preview Environments after the Pull Request is closed/merged. You can run it any time you like via the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/gc/&#34;&gt;jx preview gc&lt;/a&gt; command&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx preview gc
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also view the current previews via  &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/get/&#34;&gt;jx preview get&lt;/a&gt;:&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also view the current previews via  &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/get/&#34;&gt;jx preview get&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx preview get
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and delete a preview by choosing one to delete via &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/destroy/&#34;&gt;jx preview destroy&lt;/a&gt;:&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and delete a preview by choosing one to delete via &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/destroy/&#34;&gt;jx preview destroy&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx preview destroy
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-do-i-access-the-preview-namespace-or-url&#34;&gt;How do I access the preview namespace or URL?&lt;/h2&gt;
-&lt;p&gt;After the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; step in a pull request pipeline you can access a number of &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/#environment-variables&#34;&gt;preview environment variables&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;For details see &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/#additional-preview-steps&#34;&gt;how to add additional preview steps&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; step in a pull request pipeline you can access a number of &lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/#environment-variables&#34;&gt;preview environment variables&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For details see &lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/#additional-preview-steps&#34;&gt;how to add additional preview steps&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-add-other-services-into-a-preview&#34;&gt;How do I add other services into a Preview?&lt;/h2&gt;
-&lt;p&gt;see &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/#adding-more-resources&#34;&gt;how to add resources to your previews&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;see &lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/#adding-more-resources&#34;&gt;how to add resources to your previews&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-configure-secrets-in-a-preview&#34;&gt;How do I configure Secrets in a Preview?&lt;/h2&gt;
-&lt;p&gt;Previews are installed via &lt;code&gt;helmfile sync&lt;/code&gt; unlike the &lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template&#34;&gt;usual approach for promoted environments&lt;/a&gt; like &lt;code&gt;Dev&lt;/code&gt;, &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt; as the changes have not yet been released.&lt;/p&gt;
-&lt;p&gt;This means the usual &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#secrets&#34;&gt;conversion from Secret resources to ExternalSecrets&lt;/a&gt; is not enabled for previews.&lt;/p&gt;
+&lt;p&gt;Previews are installed via &lt;code&gt;helmfile sync&lt;/code&gt; unlike the &lt;a href=&#34;https://jayex.io/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template&#34;&gt;usual approach for promoted environments&lt;/a&gt; like &lt;code&gt;Dev&lt;/code&gt;, &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt; as the changes have not yet been released.&lt;/p&gt;
+&lt;p&gt;This means the usual &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#secrets&#34;&gt;conversion from Secret resources to ExternalSecrets&lt;/a&gt; is not enabled for previews.&lt;/p&gt;
 &lt;p&gt;So to add &lt;code&gt;Secret&lt;/code&gt; resources into your preview namespace try one of the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;if you can use dynamically generated &lt;code&gt;Secret&lt;/code&gt; values then just use the usual helm approach to creating &lt;code&gt;Secret&lt;/code&gt; resources&lt;/li&gt;
 &lt;li&gt;if you need configured Secrets to access external services then you can copy them from the &lt;code&gt;jx&lt;/code&gt; namespace. We copy labelled secrets &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/preview/helmfile.yaml#L23-L31&#34;&gt;by default in the preview helmfile.yaml&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;you just need to add the label: &lt;code&gt;secret.jenkins-x.io/replica-source=true&lt;/code&gt; to your &lt;code&gt;Secret&lt;/code&gt; in the &lt;code&gt;jx&lt;/code&gt; namespace&lt;/li&gt;
-&lt;li&gt;see &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/secrets/#create-a-new-secret&#34;&gt;how to add a new Secret&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;see &lt;a href=&#34;https://jayex.io/v3/admin/setup/secrets/#create-a-new-secret&#34;&gt;how to add a new Secret&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;you can add an &lt;code&gt;ExternalSecret resource&lt;/code&gt; to your preview &lt;code&gt;helmfile.yaml&lt;/code&gt;as a &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-resources&#34;&gt;nested chart like this&lt;/a&gt; which will then use &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;kubernetes external secrets&lt;/a&gt; to populate the &lt;code&gt;Secret&lt;/code&gt; resources from the external secret store.&lt;/li&gt;
+&lt;li&gt;you can add an &lt;code&gt;ExternalSecret resource&lt;/code&gt; to your preview &lt;code&gt;helmfile.yaml&lt;/code&gt;as a &lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-resources&#34;&gt;nested chart like this&lt;/a&gt; which will then use &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;kubernetes external secrets&lt;/a&gt; to populate the &lt;code&gt;Secret&lt;/code&gt; resources from the external secret store.&lt;/li&gt;
 &lt;li&gt;add a &lt;code&gt;Job&lt;/code&gt;, init-container or helmfile hook in &lt;code&gt;preview/helmfile.yaml&lt;/code&gt; to generate the &lt;code&gt;Secret&lt;/code&gt; dynamically using whatever custom logic you prefer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;how-do-i-inject-the-preview-url-into-other-services&#34;&gt;How do I inject the Preview URL into other services?&lt;/h2&gt;
-&lt;p&gt;The preview namespace and URL are &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/#environment-variables&#34;&gt;available as environment variables&lt;/a&gt; after the preview has been created.&lt;/p&gt;
-&lt;p&gt;However if you want to pass in the preview URL to &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/#adding-more-resources&#34;&gt;other charts included in your preview&lt;/a&gt; via the &lt;code&gt;preview/helmfile.yaml&lt;/code&gt; file you can:&lt;/p&gt;
+&lt;p&gt;The preview namespace and URL are &lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/#environment-variables&#34;&gt;available as environment variables&lt;/a&gt; after the preview has been created.&lt;/p&gt;
+&lt;p&gt;However if you want to pass in the preview URL to &lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/#adding-more-resources&#34;&gt;other charts included in your preview&lt;/a&gt; via the &lt;code&gt;preview/helmfile.yaml&lt;/code&gt; file you can:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;use the service URL rather than ingress which is much simpler and does not depend on the namespace or domain. e.g. just use &lt;code&gt;http://my-app-name&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;add a &lt;code&gt;values.yaml.gotmpl&lt;/code&gt; file for the chart to &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#customising-charts&#34;&gt;configure its values&lt;/a&gt; you wish to inject the URL into and pass in whatever yaml is required to configure the preview URL using the following expression. The example below uses &lt;code&gt;someValue&lt;/code&gt; as the key to specify the URL but use whatever yaml keys your chart expects:&lt;/li&gt;
+&lt;li&gt;add a &lt;code&gt;values.yaml.gotmpl&lt;/code&gt; file for the chart to &lt;a href=&#34;https://jayex.io/v3/develop/apps/#customising-charts&#34;&gt;configure its values&lt;/a&gt; you wish to inject the URL into and pass in whatever yaml is required to configure the preview URL using the following expression. The example below uses &lt;code&gt;someValue&lt;/code&gt; as the key to specify the URL but use whatever yaml keys your chart expects:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;someValue&lt;/span&gt;:  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{{ requiredEnv &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;APP_NAME&amp;#34; }}-pr{{ requiredEnv &amp;#34;PULL_NUMBER&amp;#34; }}.{{ .Values.jxRequirements.ingress.domain }}&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -288,10 +288,10 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
     
     <item>
       <title>V3: ChatOps</title>
-      <link>https://jenkins-x.io/v3/develop/faq/chatops/</link>
+      <link>https://jayex.io/v3/develop/faq/chatops/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/chatops/</guid>
+      <guid>https://jayex.io/v3/develop/faq/chatops/</guid>
       <description>
         
         
@@ -307,7 +307,7 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
 &lt;/ul&gt;
 &lt;p&gt;For more details see &lt;a href=&#34;#what-does-lighthouse-do&#34;&gt;what does lighthouse do&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;which-kinds-of-webhook-support-chatops&#34;&gt;Which kinds of webhook support ChatOps?&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/about/overview/#lighthouse&#34;&gt;Lighthouse&lt;/a&gt; support these &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/chatops/&#34;&gt;ChatOps commands&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/about/overview/#lighthouse&#34;&gt;Lighthouse&lt;/a&gt; support these &lt;a href=&#34;https://jayex.io/v3/develop/reference/chatops/&#34;&gt;ChatOps commands&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-re-trigger-a-pr-pipeline&#34;&gt;How do I re-trigger a PR pipeline?&lt;/h2&gt;
 &lt;p&gt;If a pipeline fails due to some compile error or failing test - fix the code and push your changes and the Pull Request pipeline will rerun.&lt;/p&gt;
 &lt;p&gt;If you think the pipeline failed due to some temporary infrastructure reason then you can use ChatOps to re-trigger the pipeline via commenting on the Pull Request:&lt;/p&gt;
@@ -317,22 +317,26 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
 &lt;li&gt;&lt;code&gt;/test foo&lt;/code&gt; reruns the pipeline called &lt;code&gt;foo&lt;/code&gt; only&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Note that you need to be in the &lt;code&gt;OWNERS&lt;/code&gt; file as an &lt;a href=&#34;#why-did-a-pullrequest-have-no-pipeline-triggered&#34;&gt;approver for this to work&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;See the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/chatops/&#34;&gt;ChatOps commands&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://jayex.io/v3/develop/reference/chatops/&#34;&gt;ChatOps commands&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-add-multiple-parallel-pipelines-to-a-project&#34;&gt;How do I add multiple parallel pipelines to a project?&lt;/h2&gt;
 &lt;p&gt;It can be useful to have multiple pipelines to perform different kinds of long running tests on Pull Requests. e.g. running the same test suite using different databases, microservice configurations or underlying infrastructure.&lt;/p&gt;
-&lt;p&gt;In Jenkins X you can create a custom &lt;code&gt;Scheduler&lt;/code&gt; resource in your &lt;a href=&#34;https://jenkins-x.io/docs/getting-started/setup/boot/&#34;&gt;jx boot&lt;/a&gt; configuration (in &lt;code&gt;env/templates/myscheduler.yaml&lt;/code&gt;) which you can add multiple named contexts in the &lt;code&gt;presubmits&lt;/code&gt; section. Then for each context name make sure you have a file called &lt;code&gt;jenkins-x-${context}.yml&lt;/code&gt; in your project.&lt;/p&gt;
-&lt;p&gt;Then Jenkins X will invoke each context on demand via &lt;code&gt;/test mycontext&lt;/code&gt; or automatically if you enable &lt;code&gt;alwaysRun: true&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can see how we define lots of &lt;a href=&#34;https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18&#34;&gt;parallel testing contexts in the version stream here&lt;/a&gt; which all run in parallel and report their status on each pull request on the &lt;a href=&#34;https://jenkins-x.io/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;See also &lt;a href=&#34;https://jenkins-x.io/docs/resources/faq/setup/#how-do-i-map-sourcerepository-to-a-custom-scheduler&#34;&gt;How do I map SourceRepository to a custom Scheduler?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In JayeX you can create a custom &lt;code&gt;TriggerConfig&lt;/code&gt; resource in your
+&lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;Lighthouse&lt;/a&gt; &lt;a href=&#34;https://jayex.io/v3/about/concepts/deployment-lifecycle/&#34;&gt;configuration&lt;/a&gt; (in
+the directory &lt;code&gt;.lighthouse&lt;/code&gt;) in which you
+can add multiple named contexts in the &lt;code&gt;presubmits&lt;/code&gt; section. Then for
+each context name specify a source file that you then create in the same directory.&lt;/p&gt;
+&lt;p&gt;Then JayeX will invoke each context on demand via &lt;code&gt;/test mycontext&lt;/code&gt; or automatically if you enable &lt;code&gt;alwaysRun: true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can see how we define lots of &lt;a href=&#34;https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18&#34;&gt;parallel testing contexts in the version stream here&lt;/a&gt; which all run in parallel and report their status on each pull request on the &lt;a href=&#34;https://jayex.io/v3/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;See also &lt;a href=&#34;https://jayex.io/docs/resources/faq/setup/#how-do-i-map-sourcerepository-to-a-custom-scheduler&#34;&gt;How do I map SourceRepository to a custom Scheduler?&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-does-lighthouse-do&#34;&gt;What does lighthouse do?&lt;/h2&gt;
-&lt;p&gt;Lighthouse handles webhooks and implements these &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/chatops/&#34;&gt;ChatOps commands&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;To see what each of the parts of lighthouse do please refer to the &lt;a href=&#34;https://jenkins-x.io/v3/about/overview/#lighthouse&#34;&gt;lighthouse components overview&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lighthouse handles webhooks and implements these &lt;a href=&#34;https://jayex.io/v3/develop/reference/chatops/&#34;&gt;ChatOps commands&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To see what each of the parts of lighthouse do please refer to the &lt;a href=&#34;https://jayex.io/v3/about/overview/#lighthouse&#34;&gt;lighthouse components overview&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-can-i-make-chatops-ha&#34;&gt;How can I make ChatOps HA?&lt;/h2&gt;
-&lt;p&gt;To make ChatOps highly available scale up the &lt;a href=&#34;https://jenkins-x.io/v3/about/overview/#lighthouse&#34;&gt;lighthouse webhook deployment&lt;/a&gt;  which listen for http requests to, say, 3 replicas.&lt;/p&gt;
+&lt;p&gt;To make ChatOps highly available scale up the &lt;a href=&#34;https://jayex.io/v3/about/overview/#lighthouse&#34;&gt;lighthouse webhook deployment&lt;/a&gt;  which listen for http requests to, say, 3 replicas.&lt;/p&gt;
 &lt;h2 id=&#34;how-to-handle-a-flakybroken-pipeline&#34;&gt;How to handle a flaky/broken pipeline&lt;/h2&gt;
 &lt;p&gt;If you have a pending Pull Request which is blocked on a flaky test or an incorrectly failing lint or code review; you can use ChatOps to override its status via the ChatOps command: &lt;code&gt;/override nameOfPipeline&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;why-did-a-pullrequest-have-no-pipeline-triggered&#34;&gt;Why did a PullRequest have no pipeline triggered?&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/about/overview/#lighthouse&#34;&gt;Lighthouse&lt;/a&gt; use an &lt;code&gt;OWNERS&lt;/code&gt; file stored in each git repository to define which developers are allowed to review and approve changes. You can even limit those roles to different folders.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/about/overview/#lighthouse&#34;&gt;Lighthouse&lt;/a&gt; use an &lt;code&gt;OWNERS&lt;/code&gt; file stored in each git repository to define which developers are allowed to review and approve changes. You can even limit those roles to different folders.&lt;/p&gt;
 &lt;p&gt;If a non-reviewer submits a Pull Request it won&amp;rsquo;t trigger CI pipelines by default until a reviewer adds an &lt;code&gt;/ok-to-test&lt;/code&gt; comment on the Pull Request.&lt;/p&gt;
 &lt;p&gt;If you have public git repositories this also avoids the security issue of a non-approver submitting a Pull Request to change the pipeline to email them your security credentials in the CI pipeline ;)&lt;/p&gt;
 &lt;h2 id=&#34;how-do-i-configure-multiple-approvers&#34;&gt;How do I configure multiple approvers&lt;/h2&gt;
@@ -359,10 +363,10 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
     
     <item>
       <title>V3: Configuration</title>
-      <link>https://jenkins-x.io/v3/develop/faq/config/</link>
+      <link>https://jayex.io/v3/develop/faq/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/config/</guid>
+      <guid>https://jayex.io/v3/develop/faq/config/</guid>
       <description>
         
         
@@ -372,35 +376,35 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
     
     <item>
       <title>V3: Troubleshooting</title>
-      <link>https://jenkins-x.io/v3/develop/faq/issues/</link>
+      <link>https://jayex.io/v3/develop/faq/issues/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/issues/</guid>
+      <guid>https://jayex.io/v3/develop/faq/issues/</guid>
       <description>
         
         
         &lt;h2 id=&#34;why-did-my-quickstart--import-not-work&#34;&gt;Why did my quickstart / import not work?&lt;/h2&gt;
 &lt;p&gt;If you are not able to create quickstarts or import projects its most probably webhooks not being setup correctly.&lt;/p&gt;
-&lt;p&gt;When the &lt;code&gt;jx project import&lt;/code&gt; or &lt;code&gt;jx project quickstart&lt;/code&gt; runs it creates a Pull Request on your dev cluster repository. This should &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;trigger a webhook&lt;/a&gt; on your git provider which should then trigger a Pipeline (via &lt;a href=&#34;https://jenkins-x.io/v3/about/overview/#lighthouse&#34;&gt;lighthouse webhooks&lt;/a&gt;). The pipeline should then  &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;create a second commit on the pull request&lt;/a&gt; to configure your repository which then should get labelled and auto-merge.&lt;/p&gt;
-&lt;p&gt;If this does not happen its usually your webhooks are not working. You can check on the health of your system and webhooks via the &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/health/&#34;&gt;Health guide&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Check out the &lt;a href=&#34;https://jenkins-x.io/v3/admin/troubleshooting/webhooks/&#34;&gt;webhooks troubleshooting guide&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;If you manually merge the Pull Request by hand then you&amp;rsquo;ll miss out the &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;create a second commit on the pull request&lt;/a&gt; which means your project won&amp;rsquo;t properly import. To work around that you can do a dummy commit on your dev cluster repository which will trigger a regeneration.&lt;/p&gt;
-&lt;p&gt;If the &lt;code&gt;jx project import&lt;/code&gt; or &lt;code&gt;jx project quickstart&lt;/code&gt; times out before the pipeline triggers the &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;second commit on the pull request&lt;/a&gt; and it auto merges and triggers a boot job to setup webhooks for the new repository - you will have pipeline catalog files locally on your laptop which are not pushed to git. e.g. the &lt;code&gt;.lighthouse/*&lt;/code&gt; files and maybe other files like &lt;code&gt;charts/*&lt;/code&gt; and &lt;code&gt;Dockerfile&lt;/code&gt;. You can always try add those files to git locally and push once you have got your webhooks working.&lt;/p&gt;
+&lt;p&gt;When the &lt;code&gt;jx project import&lt;/code&gt; or &lt;code&gt;jx project quickstart&lt;/code&gt; runs it creates a Pull Request on your dev cluster repository. This should &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;trigger a webhook&lt;/a&gt; on your git provider which should then trigger a Pipeline (via &lt;a href=&#34;https://jayex.io/v3/about/overview/#lighthouse&#34;&gt;lighthouse webhooks&lt;/a&gt;). The pipeline should then  &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;create a second commit on the pull request&lt;/a&gt; to configure your repository which then should get labelled and auto-merge.&lt;/p&gt;
+&lt;p&gt;If this does not happen its usually your webhooks are not working. You can check on the health of your system and webhooks via the &lt;a href=&#34;https://jayex.io/v3/admin/setup/health/&#34;&gt;Health guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&#34;https://jayex.io/v3/admin/troubleshooting/webhooks/&#34;&gt;webhooks troubleshooting guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you manually merge the Pull Request by hand then you&amp;rsquo;ll miss out the &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;create a second commit on the pull request&lt;/a&gt; which means your project won&amp;rsquo;t properly import. To work around that you can do a dummy commit on your dev cluster repository which will trigger a regeneration.&lt;/p&gt;
+&lt;p&gt;If the &lt;code&gt;jx project import&lt;/code&gt; or &lt;code&gt;jx project quickstart&lt;/code&gt; times out before the pipeline triggers the &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;second commit on the pull request&lt;/a&gt; and it auto merges and triggers a boot job to setup webhooks for the new repository - you will have pipeline catalog files locally on your laptop which are not pushed to git. e.g. the &lt;code&gt;.lighthouse/*&lt;/code&gt; files and maybe other files like &lt;code&gt;charts/*&lt;/code&gt; and &lt;code&gt;Dockerfile&lt;/code&gt;. You can always try add those files to git locally and push once you have got your webhooks working.&lt;/p&gt;
 &lt;p&gt;Also make sure that the boot Job that is triggered by the pull request merging has the necessary scopes on the git personal access token to be able to registry the webhooks on the new repository. You will see if the webhook registration has been successful in the boot log:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx admin log 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;why-does-my-pipeline-not-start&#34;&gt;Why does my pipeline not start?&lt;/h2&gt;
-&lt;p&gt;It could be your &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/pipelines/&#34;&gt;YAML configuration&lt;/a&gt; is invalid.&lt;/p&gt;
-&lt;p&gt;Try &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/editing/#linting&#34;&gt;linting your YAML configuration&lt;/a&gt; to verify things are setup correctly.&lt;/p&gt;
+&lt;p&gt;It could be your &lt;a href=&#34;https://jayex.io/v3/develop/reference/pipelines/&#34;&gt;YAML configuration&lt;/a&gt; is invalid.&lt;/p&gt;
+&lt;p&gt;Try &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/editing/#linting&#34;&gt;linting your YAML configuration&lt;/a&gt; to verify things are setup correctly.&lt;/p&gt;
 &lt;p&gt;Also make sure you are in the git repository collaborators group and are in the &lt;code&gt;OWNERS&lt;/code&gt; file in the main branch.&lt;/p&gt;
 &lt;h2 id=&#34;why-is-my-pipeline-pending&#34;&gt;Why is my pipeline pending?&lt;/h2&gt;
-&lt;p&gt;If your pipeline shows pending in the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/cli/&#34;&gt;CLI&lt;/a&gt; or &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/dashboard/&#34;&gt;Dashboard&lt;/a&gt; there could be various causes such as invalid images, pipeline configuration, missing secrets or insufficient cluster capacity to name but a few.&lt;/p&gt;
+&lt;p&gt;If your pipeline shows pending in the &lt;a href=&#34;https://jayex.io/v3/develop/ui/cli/&#34;&gt;CLI&lt;/a&gt; or &lt;a href=&#34;https://jayex.io/v3/develop/ui/dashboard/&#34;&gt;Dashboard&lt;/a&gt; there could be various causes such as invalid images, pipeline configuration, missing secrets or insufficient cluster capacity to name but a few.&lt;/p&gt;
 &lt;h2 id=&#34;upgrading-cli-fails&#34;&gt;Upgrading CLI fails&lt;/h2&gt;
 &lt;p&gt;I run &lt;code&gt;jx upgrade cli&lt;/code&gt; and get a failure:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ jx upgrade cli   
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;using latest upstream versionstream URL https://github.com/jenkins-x/jxr-versions.git from Kptfile to resolve jx-cli version
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;error: failed to find jx cli version: invalid version requested: : Version string empty &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The issue is you are using an old alpha of the &lt;code&gt;jx&lt;/code&gt; binary which no longer auto upgrades with the GA &lt;a href=&#34;https://github.com/jenkins-x/jx/releases&#34;&gt;jx releases&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;To fix please &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/jx3/&#34;&gt;download a new &lt;code&gt;jx&lt;/code&gt; binary&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To fix please &lt;a href=&#34;https://jayex.io/v3/admin/setup/jx3/&#34;&gt;download a new &lt;code&gt;jx&lt;/code&gt; binary&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;releasing-a-chart-fails-with-500&#34;&gt;Releasing a chart fails with 500&lt;/h2&gt;
 &lt;p&gt;If your release pipeline fails with a HTTP 500 error pushing a helm chart to chartmuseum it could be that the chart name and version has already been released before and chartmuseum won&amp;rsquo;t let you re-publish the same version of the helm chart.&lt;/p&gt;
 &lt;p&gt;If you retrigger a release on your repository (e.g. merging a git commit to the main branch), you should see a new version being created and released?&lt;/p&gt;
@@ -438,7 +442,7 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx get build pod -r myrepo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then you should be able to see the pod name for the pipeline in question. You can then use &lt;code&gt;kubectl&lt;/code&gt; to destribe the issue:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl describe pod the-actual-pod-name-for-your-pipeline&lt;span style=&#34;color:#e6db74&#34;&gt;```&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;why-does-jenkins-x-fail-to-download-plugins&#34;&gt;Why does Jenkins X fail to download plugins?&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;why-does-jayex-fail-to-download-plugins&#34;&gt;Why does JayeX fail to download plugins?&lt;/h2&gt;
 &lt;p&gt;When I run a &lt;code&gt;jx&lt;/code&gt; command I get an error like&amp;hellip;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt; Get https://github.com/jenkins-x/jx-..../releases/download/v..../jx-.....tar.gz: dial tcp: i/o timeout&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;This sounds like a network problem; the code in &lt;code&gt;jx&lt;/code&gt; is trying to download from &lt;code&gt;github.com&lt;/code&gt; and your laptop is having trouble resolving the &lt;code&gt;github.com&lt;/code&gt; domain.&lt;/p&gt;
@@ -453,7 +457,7 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get validatingwebhookconfigurations | grep nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can remove the nginx one via:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl delete validatingwebhookconfigurations ingress-nginx-admission
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then try do a dummy git commit in your git repository which will &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#boot-job&#34;&gt;trigger another boot job&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then try do a dummy git commit in your git repository which will &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#boot-job&#34;&gt;trigger another boot job&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You can watch the boot job run via:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx admin log -w
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tekton-failed-calling-webhook-configwebhookpipelinetektondev&#34;&gt;Tekton failed calling webhook &amp;ldquo;config.webhook.pipeline.tekton.dev&amp;rdquo;&lt;/h2&gt;
@@ -467,7 +471,7 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl delete mutatingwebhookconfigurations webhook.pipeline.tekton.dev
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl delete validatingwebhookconfigurations config.webhook.pipeline.tekton.dev
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl delete validatingwebhookconfigurations validation.webhook.pipeline.tekton.dev
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then try do a dummy git commit in your git repository which will &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#boot-job&#34;&gt;trigger another boot job&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then try do a dummy git commit in your git repository which will &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#boot-job&#34;&gt;trigger another boot job&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You can watch the boot job run via:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx admin log -w
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tekton-webhook-certs-have-expired&#34;&gt;Tekton webhook certs have expired?&lt;/h2&gt;
@@ -478,14 +482,14 @@ list the pipelineruns in the jx namespace you will proably be able to identify t
     
     <item>
       <title>V3: Ngrok</title>
-      <link>https://jenkins-x.io/v3/develop/faq/ngrok/</link>
+      <link>https://jayex.io/v3/develop/faq/ngrok/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/ngrok/</guid>
+      <guid>https://jayex.io/v3/develop/faq/ngrok/</guid>
       <description>
         
         
-        &lt;p&gt;Follow these steps to set up ngrok for local Jenkins X installs.&lt;/p&gt;
+        &lt;p&gt;Follow these steps to set up ngrok for local JayeX installs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Download and install &lt;a href=&#34;https://ngrok.com/&#34;&gt;ngrok&lt;/a&gt;.&lt;/p&gt;

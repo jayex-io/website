@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx updatebot</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/</link>
-    <description>Recent content in jx updatebot on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx updatebot</title>
+    <link>https://jayex.io/v3/develop/reference/jx/updatebot/</link>
+    <description>Recent content in jx updatebot on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/updatebot/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/updatebot/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx updatebot argo</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/argo/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/updatebot/argo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/updatebot/argo/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/updatebot/argo/</guid>
       <description>
         
         
@@ -36,10 +36,10 @@
     
     <item>
       <title>V3: jx updatebot environment</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/environment/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/updatebot/environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/updatebot/environment/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/updatebot/environment/</guid>
       <description>
         
         
@@ -70,10 +70,10 @@
     
     <item>
       <title>V3: jx updatebot flux</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/flux/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/updatebot/flux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/updatebot/flux/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/updatebot/flux/</guid>
       <description>
         
         
@@ -91,10 +91,10 @@
     
     <item>
       <title>V3: jx updatebot pipeline</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/pipeline/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/updatebot/pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/updatebot/pipeline/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/updatebot/pipeline/</guid>
       <description>
         
         
@@ -127,10 +127,10 @@
     
     <item>
       <title>V3: jx updatebot pr</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/pr/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/updatebot/pr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/updatebot/pr/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/updatebot/pr/</guid>
       <description>
         
         
@@ -172,10 +172,10 @@
     
     <item>
       <title>V3: jx updatebot sync</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/sync/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/updatebot/sync/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/updatebot/sync/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/updatebot/sync/</guid>
       <description>
         
         
@@ -238,10 +238,10 @@
     
     <item>
       <title>V3: jx updatebot version</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/updatebot/version/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/updatebot/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/updatebot/version/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/updatebot/version/</guid>
       <description>
         
         

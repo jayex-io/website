@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – TLS and DNS</title>
-    <link>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/</link>
-    <description>Recent content in TLS and DNS on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – TLS and DNS</title>
+    <link>https://jayex.io/v3/admin/setup/ingress/tls_dns/</link>
+    <description>Recent content in TLS and DNS on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/setup/ingress/tls_dns/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: Demo</title>
-      <link>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/demo/</link>
+      <link>https://jayex.io/v3/admin/setup/ingress/tls_dns/demo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/demo/</guid>
+      <guid>https://jayex.io/v3/admin/setup/ingress/tls_dns/demo/</guid>
       <description>
         
         
@@ -31,15 +31,15 @@
     
     <item>
       <title>V3: Background</title>
-      <link>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/background/</link>
+      <link>https://jayex.io/v3/admin/setup/ingress/tls_dns/background/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/background/</guid>
+      <guid>https://jayex.io/v3/admin/setup/ingress/tls_dns/background/</guid>
       <description>
         
         
         &lt;p&gt;To achieve this we will use a couple of open source projects to help enable automated DNS for your applications.&lt;/p&gt;
-&lt;p&gt;For this guide we are going to assume you own a domain called &lt;code&gt;foo.io&lt;/code&gt; which is managed by Google Cloud DNS, if it is not see &lt;a href=&#34;https://jenkins-x.io/v3/guides/infra/google_cloud_dns&#34;&gt;configure cloud dns to manage a domain&lt;/a&gt;. A similar procedure is described for an external registrar, see the Azure section.&lt;/p&gt;
+&lt;p&gt;For this guide we are going to assume you own a domain called &lt;code&gt;foo.io&lt;/code&gt; which is managed by Google Cloud DNS, if it is not see &lt;a href=&#34;https://jayex.io/v3/guides/infra/google_cloud_dns&#34;&gt;configure cloud dns to manage a domain&lt;/a&gt;. A similar procedure is described for an external registrar, see the Azure section.&lt;/p&gt;
 &lt;p&gt;A common requirement for domains is to have production services accessed using a parent / &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site&#34;&gt;apex domain&lt;/a&gt;
 for example:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://foo.com&#34;&gt;https://foo.com&lt;/a&gt;&lt;/p&gt;
@@ -49,7 +49,7 @@ and
 &lt;a href=&#34;https://staging.foo.com&#34;&gt;https://staging.foo.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;These use subdomains.&lt;/p&gt;
 &lt;p&gt;In this guide below there is a prerequisite that you must already have a domain which is managed by your cloud provider, this is so that you can choose whichever of the scenarios above you need.  It also means the dns management of the apex domain happens outside of a single cluster installation and can be shared by multiple installations using a subdomain.&lt;/p&gt;
-&lt;p&gt;Jenkins X services will have URLs like &lt;code&gt;https://hook-jx.dev.foo.io&lt;/code&gt;.  The jx-requirements.yml &lt;code&gt;namespaceSubDomain:&lt;/code&gt; of &lt;code&gt;-jx&lt;/code&gt; which is in the cluster git repository refers to the Kubernetes namespace the service is running in, this avoids clashes of the same application running in different namespaces in the same cluster.&lt;/p&gt;
+&lt;p&gt;JayeX services will have URLs like &lt;code&gt;https://hook-jx.dev.foo.io&lt;/code&gt;.  The jx-requirements.yml &lt;code&gt;namespaceSubDomain:&lt;/code&gt; of &lt;code&gt;-jx&lt;/code&gt; which is in the cluster git repository refers to the Kubernetes namespace the service is running in, this avoids clashes of the same application running in different namespaces in the same cluster.&lt;/p&gt;
 &lt;p&gt;To start with we are focussed on GCP and Azure but will expand to other cloud providers.&lt;/p&gt;
 
       </description>
@@ -57,10 +57,10 @@ and
     
     <item>
       <title>V3: Azure</title>
-      <link>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/azure/</link>
+      <link>https://jayex.io/v3/admin/setup/ingress/tls_dns/azure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/azure/</guid>
+      <guid>https://jayex.io/v3/admin/setup/ingress/tls_dns/azure/</guid>
       <description>
         
         
@@ -102,8 +102,8 @@ and
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;domain-dns-servers-configuration&#34;&gt;Domain DNS servers configuration&lt;/h2&gt;
 &lt;p&gt;In your registrar admin panel, find the DNS servers section of the domain you want to use and replace the default ones by those from the first step:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jenkins-x.io/images/v3/registrar_dns_servers.png&#34; alt=&#34;dns servers section&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jenkins-x.io/images/v3/registrar_dns_servers_update.png&#34; alt=&#34;dns servers update&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jayex.io/images/v3/registrar_dns_servers.png&#34; alt=&#34;dns servers section&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jayex.io/images/v3/registrar_dns_servers_update.png&#34; alt=&#34;dns servers update&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Test the DNS delegation by adding a A record in the Azure DNS zone you&amp;rsquo;ve previously created:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ az network dns record-set a add-record -g rg-dns -z foo.io -n potato -a 1.2.3.4
 {
@@ -173,18 +173,18 @@ $ git push
     
     <item>
       <title>V3: Google</title>
-      <link>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/google/</link>
+      <link>https://jayex.io/v3/admin/setup/ingress/tls_dns/google/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/google/</guid>
+      <guid>https://jayex.io/v3/admin/setup/ingress/tls_dns/google/</guid>
       <description>
         
         
         &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;cluster created using Jenkins X &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/gke/&#34;&gt;GCP Terraform getting started&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;own a domain and have GCP manage it, &lt;a href=&#34;https://jenkins-x.io/v3/guides/infra/google_cloud_dns&#34;&gt;configure cloud dns to manage a domain&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;latest Jenkins X CLI, Infrastructure and Cluster git repository updates &lt;a href=&#34;https://jenkins-x.io/v3/guides/upgrade&#34;&gt;upgrade&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;cluster created using JayeX &lt;a href=&#34;https://jayex.io/v3/admin/platform/gke/&#34;&gt;GCP Terraform getting started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;own a domain and have GCP manage it, &lt;a href=&#34;https://jayex.io/v3/guides/infra/google_cloud_dns&#34;&gt;configure cloud dns to manage a domain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;latest JayeX CLI, Infrastructure and Cluster git repository updates &lt;a href=&#34;https://jayex.io/v3/guides/upgrade&#34;&gt;upgrade&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;cloud-infrastructure&#34;&gt;Cloud Infrastructure&lt;/h3&gt;
 &lt;p&gt;First we will configure the cloud infrastructure requirements:&lt;/p&gt;
@@ -197,7 +197,7 @@ $ git push
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Most people prefer to use a subdomain for a specific installation rather than purchasing one domain per cluster.  For example in a multi cluster setup you will probably want all using the same parent domain but two clusters using a different subdomain like development.foo.io, staging.foo.io leaving production using just the parent domain foo.io.&lt;/p&gt;
 &lt;p&gt;To use a subdomain for this cluster add the following configuration:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;subdomain     = &amp;#34;dev&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We will now add details that will be passed to Jenkins X as requirements when booting the cluster.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We will now add details that will be passed to JayeX as requirements when booting the cluster.&lt;/p&gt;
 &lt;p&gt;Add these to &lt;code&gt;values.auto.tfvars&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;lets_encrypt_production = true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;tls_email               = your_email_address@googlegroups.com&lt;/span&gt;
@@ -212,7 +212,7 @@ export TF_VAR_jx_bot_token=
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;terraform plan
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;terraform apply
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If using a subdomain you will now see your managed zone in GCP &lt;a href=&#34;https://console.cloud.google.com/net-services/dns/zones&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Once terraform has finished for now there is a manual trigger of the Jenkins X cluster repository required.  This will not be needed in the future but for now please make a dummy commit on your cluster git repository and follow the boot job as in applies the updates to your cluster.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Once terraform has finished for now there is a manual trigger of the JayeX cluster repository required.  This will not be needed in the future but for now please make a dummy commit on your cluster git repository and follow the boot job as in applies the updates to your cluster.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;To follow the jx boot installation using the instructions given in the terraform output, connect to the cluster and run:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx admin logs
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;There is a timing issue with cert-manager and the admission controller so the first boot job may fail but second will run automatically and succeed.&lt;/p&gt;
@@ -222,7 +222,7 @@ export TF_VAR_jx_bot_token=
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and use the hook URL&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx verify tls hook-jx.dev.foo.io  --production&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;false --timeout 20m
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You should be able to verify the TLS certificate from Lets Encrypt in your browser (beware of browser caching if you don&amp;rsquo;t see any changes)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jenkins-x.io/images/v3/working_tls.png&#34; alt=&#34;Working TLS&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jayex.io/images/v3/working_tls.png&#34; alt=&#34;Working TLS&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Once this is working you can switch any of the configuration using your cluster git repository and change the jx-requirements.yaml, e.g. toggling the cert-manager production service or editing the email address used:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;ingress&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;domain&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;dev.foo.io&lt;/span&gt;
@@ -242,10 +242,10 @@ export TF_VAR_jx_bot_token=
     
     <item>
       <title>V3: Cluster</title>
-      <link>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/cluster/</link>
+      <link>https://jayex.io/v3/admin/setup/ingress/tls_dns/cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/cluster/</guid>
+      <guid>https://jayex.io/v3/admin/setup/ingress/tls_dns/cluster/</guid>
       <description>
         
         
@@ -267,7 +267,7 @@ export TF_VAR_jx_bot_token=
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    production: false
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When first installing set &lt;code&gt;tls.production=false&lt;/code&gt; so you use the Lets Encrypt staging service which allows for more API calls before rate limiting requests.  They will issue a self-signed certificate so once happy everything is working change this to &lt;code&gt;tls.production=true&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; Helmfile is not able to skip insecure TLS when adding helm repositories, therefore staging certificates will not work with chartmuseum that is running in the cluster.  Therefore once you have verified cert-manager can issue certificates from staging, switch to the production service.&lt;/p&gt;
-&lt;p&gt;Jenkins X uses a version stream to rollout tested versions of images, charts and default configuration.  The &lt;code&gt;jx-boot&lt;/code&gt; job will apply these versions to your helmfile but you can also run the step yourself to see the defaults.&lt;/p&gt;
+&lt;p&gt;JayeX uses a version stream to rollout tested versions of images, charts and default configuration.  The &lt;code&gt;jx-boot&lt;/code&gt; job will apply these versions to your helmfile but you can also run the step yourself to see the defaults.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx gitops helmfile resolve
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add helmfile.yaml
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat: enable DNS and TLS&amp;#39;&lt;/span&gt;
@@ -280,10 +280,10 @@ export TF_VAR_jx_bot_token=
     
     <item>
       <title>V3: Multiple domains</title>
-      <link>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/tls/</link>
+      <link>https://jayex.io/v3/admin/setup/ingress/tls_dns/tls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/tls/</guid>
+      <guid>https://jayex.io/v3/admin/setup/ingress/tls_dns/tls/</guid>
       <description>
         
         
@@ -340,15 +340,15 @@ export TF_VAR_jx_bot_token=
     
     <item>
       <title>V3: FAQ</title>
-      <link>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/faq/</link>
+      <link>https://jayex.io/v3/admin/setup/ingress/tls_dns/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/ingress/tls_dns/faq/</guid>
+      <guid>https://jayex.io/v3/admin/setup/ingress/tls_dns/faq/</guid>
       <description>
         
         
         &lt;h2 id=&#34;what-if-i-have-a-chartmuseum-with-charts-running-using-nipio&#34;&gt;What if I have a chartmuseum with charts running using nip.io?&lt;/h2&gt;
-&lt;p&gt;It is best to comment out your Jenkins X chartmuseum repository and charts from your helmfile until your new domain and ingress is working.  Then uncomment and make sure you update the chartmuseum URL to your new one.&lt;/p&gt;
+&lt;p&gt;It is best to comment out your JayeX chartmuseum repository and charts from your helmfile until your new domain and ingress is working.  Then uncomment and make sure you update the chartmuseum URL to your new one.&lt;/p&gt;
 &lt;h2 id=&#34;what-if-i-use-a-subdomain-with-an-apex-domain-in-a-different-gcp-project&#34;&gt;What if I use a subdomain with an apex domain in a different GCP project?&lt;/h2&gt;
 &lt;p&gt;When using a subdomain Terraform will create a managed zone in GCP, add the recordsets to your parent / apex domain.&lt;/p&gt;
 &lt;p&gt;If the GCP managed zone for your apex domain is in a different GCP project than the project that your current installation the you will need to set in your infrastructure repository the terraform variable:&lt;/p&gt;
@@ -366,7 +366,7 @@ export TF_VAR_jx_bot_token=
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl get certificaterequest -n jx
 &lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl describe certificaterequest -n jx
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;how-can-i-install-the-charts-if-not-using-terraform-to-autamatically-enable-them&#34;&gt;How can I install the charts if not using terraform to autamatically enable them?&lt;/h2&gt;
-&lt;p&gt;If you are not using the Jenkins X Terraform above then you can manually update your cluster git repository and add the charts needed.&lt;/p&gt;
+&lt;p&gt;If you are not using the JayeX Terraform above then you can manually update your cluster git repository and add the charts needed.&lt;/p&gt;
 
       </description>
     </item>

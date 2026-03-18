@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Cluster Recovery</title>
-    <link>https://jenkins-x.io/v3/admin/guides/cluster-recovery/</link>
-    <description>Recent content in Cluster Recovery on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Cluster Recovery</title>
+    <link>https://jayex.io/v3/admin/guides/cluster-recovery/</link>
+    <description>Recent content in Cluster Recovery on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/guides/cluster-recovery/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/guides/cluster-recovery/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,22 +15,22 @@
     
     <item>
       <title>V3: Cluster Recovery Demo</title>
-      <link>https://jenkins-x.io/v3/admin/guides/cluster-recovery/cluster-demo/</link>
+      <link>https://jayex.io/v3/admin/guides/cluster-recovery/cluster-demo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/cluster-recovery/cluster-demo/</guid>
+      <guid>https://jayex.io/v3/admin/guides/cluster-recovery/cluster-demo/</guid>
       <description>
         
         
-        &lt;p&gt;This section describes cluster recovery situations for when things go bad.  It can also be used to reguary recreate clusters, this is something the Jenkins X project does itself as we prefer to treat our clusters as cattle and not pets, giving confidence that we can restore services at any time.&lt;/p&gt;
+        &lt;p&gt;This section describes cluster recovery situations for when things go bad.  It can also be used to reguary recreate clusters, this is something the JayeX project does itself as we prefer to treat our clusters as cattle and not pets, giving confidence that we can restore services at any time.&lt;/p&gt;
 &lt;p&gt;Disclaimer: there may well be better approaches so if you know of better ways please contribute and help improve the experience.  There are some manual steps below that we know to work but expect we can improve.&lt;/p&gt;
 &lt;h1 id=&#34;demo&#34;&gt;Demo&lt;/h1&gt;
 &lt;p&gt;The following demo walks you through cluster recovery&lt;/p&gt;
 &lt;iframe width=&#34;700&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/2QgX3cn0GqU&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;p&gt;see &lt;a href=&#34;https://www.youtube.com/playlist?list=PLr_PmC4W69dKM3fo8OK729fdmX_MTqdHd&#34;&gt;other demos here&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;cluster-applications-and-services&#34;&gt;Cluster applications and services&lt;/h1&gt;
-&lt;p&gt;Jenkins X embraces GitOps, details of any application or configuration are stored declaratively in Git.  Jenkins X recommends using external storage if you require persistence to be preserved.  Cloud Storage buckets are great at achieving this.  With that said Jenkins X has one service that writes data to a persistent volume and is not backed up in cloud storage.  The current use of Chartmuseuam to store helm charts for applications means if we need to recreate a cluster we will need to retrigger release pipelines for any application running in the staging or production cluster.&lt;/p&gt;
-&lt;p&gt;The Jenkins X project itself does not use Chartmuseum, instead it uses Work Load Identity and &lt;a href=&#34;https://github.com/hayorov/helm-gcs&#34;&gt;helm gcs plugin&lt;/a&gt; to write directly to a GCP bucket.  You could consider using this approach but as well Jenkins X will look to resolve this by adding OOTB support for buckets or other external repositories for charts.&lt;/p&gt;
+&lt;p&gt;JayeX embraces GitOps, details of any application or configuration are stored declaratively in Git.  JayeX recommends using external storage if you require persistence to be preserved.  Cloud Storage buckets are great at achieving this.  With that said JayeX has one service that writes data to a persistent volume and is not backed up in cloud storage.  The current use of Chartmuseuam to store helm charts for applications means if we need to recreate a cluster we will need to retrigger release pipelines for any application running in the staging or production cluster.&lt;/p&gt;
+&lt;p&gt;The JayeX project itself does not use Chartmuseum, instead it uses Work Load Identity and &lt;a href=&#34;https://github.com/hayorov/helm-gcs&#34;&gt;helm gcs plugin&lt;/a&gt; to write directly to a GCP bucket.  You could consider using this approach but as well JayeX will look to resolve this by adding OOTB support for buckets or other external repositories for charts.&lt;/p&gt;
 &lt;p&gt;For now you will need to modify your cluster git repository and remove the helmfile repository that points to the internal chartmuseum service.&lt;/p&gt;
 &lt;p&gt;For example: &lt;a href=&#34;https://github.com/cb-kubecd/jx3-demo-walk-cluster/blob/ce3fa07834e93e44b2d19882b82a7de51f627ba2/helmfiles/jx-staging/helmfile.yaml#L7-L15&#34;&gt;https://github.com/cb-kubecd/jx3-demo-walk-cluster/blob/ce3fa07834e93e44b2d19882b82a7de51f627ba2/helmfiles/jx-staging/helmfile.yaml#L7-L15&lt;/a&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;filepath: &amp;#34;&amp;#34;
@@ -57,13 +57,13 @@ renderedvalues: {}
 &lt;h2 id=&#34;gcp-specific&#34;&gt;GCP specific&lt;/h2&gt;
 &lt;p&gt;For Google Container Engine there is a manual task you need to perform because the Terraform module does not manage deleting Cloud DNS Manage Zones that contain record sets.  This is something we hope to address in the future but if you are using DNS you will need to manually delete your Managed Zone, the easiest way is via the GCP console.&lt;/p&gt;
 &lt;p&gt;Select your managed zone &lt;a href=&#34;https://console.cloud.google.com/net-services/dns/zones&#34;&gt;https://console.cloud.google.com/net-services/dns/zones&lt;/a&gt;
-&lt;img src=&#34;https://jenkins-x.io/images/v3/gcp_select_zone.png&#34; alt=&#34;Select Zone&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://jayex.io/images/v3/gcp_select_zone.png&#34; alt=&#34;Select Zone&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Select all record set checkbox and click the DELETE RECORD SETS button
-&lt;img src=&#34;https://jenkins-x.io/images/v3/gcp_delete_recordsets.png&#34; alt=&#34;Delete Record Sets&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://jayex.io/images/v3/gcp_delete_recordsets.png&#34; alt=&#34;Delete Record Sets&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Now select the DELETE ZONE button at the top&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jenkins-x.io/images/v3/gcp_delete_zone.png&#34; alt=&#34;Delete Zone&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jayex.io/images/v3/gcp_delete_zone.png&#34; alt=&#34;Delete Zone&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;recover&#34;&gt;Recover&lt;/h2&gt;
-&lt;p&gt;The Jenkins X terraform modules write some details into a cluster once it is created, this can cause issues when applying the Terraform plan if that cluster is not available.&lt;/p&gt;
+&lt;p&gt;The JayeX terraform modules write some details into a cluster once it is created, this can cause issues when applying the Terraform plan if that cluster is not available.&lt;/p&gt;
 &lt;p&gt;You will need to modify the state file so navigate to your local clone of your infrastructure git repository&lt;/p&gt;
 &lt;p&gt;Set your bot username and personal access token &lt;code&gt;TF_VAR_&lt;/code&gt;s&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export TF_VAR_jx_bot_username=
@@ -89,24 +89,24 @@ terraform {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;terraform plan
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;terraform apply
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;what-is-not-recovered&#34;&gt;What is not recovered&lt;/h2&gt;
-&lt;p&gt;Any Custom Resources not stored in git will not be recovered, for example Jenkins X Pipeline Activities.  There are solutions like &lt;a href=&#34;https://velero.io/&#34;&gt;Velero&lt;/a&gt; that handles backups which could be used.&lt;/p&gt;
+&lt;p&gt;Any Custom Resources not stored in git will not be recovered, for example JayeX Pipeline Activities.  There are solutions like &lt;a href=&#34;https://velero.io/&#34;&gt;Velero&lt;/a&gt; that handles backups which could be used.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Cluster Rebuild Example</title>
-      <link>https://jenkins-x.io/v3/admin/guides/cluster-recovery/cluster-rebuild/</link>
+      <link>https://jayex.io/v3/admin/guides/cluster-recovery/cluster-rebuild/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/guides/cluster-recovery/cluster-rebuild/</guid>
+      <guid>https://jayex.io/v3/admin/guides/cluster-recovery/cluster-rebuild/</guid>
       <description>
         
         
-        &lt;p&gt;This is an example on how to treat your clusters as cattle and not pets by rebuilding a JX3/GKE environment and restoring to it&amp;rsquo;s previous configuration. The steps will include building a JX3 Google/GSM environment from scratch and deploying projects to staging and production. It will utilize DNS (&lt;code&gt;jx3rocks.com&lt;/code&gt;), TLS, Let&amp;rsquo;s Encrypt certificates. The example includes the recovery of the helm chart repository which is currently implemented with &lt;a href=&#34;https://github.com/helm/chartmuseum&#34;&gt;ChartMuseum&lt;/a&gt; . This example is inteded for an audience already familiar with Jenkins X operability and focuses on an example of actual commands used to build and maintain a recoverable  environment. Additional information regarding using Google as the provider for this example can be found under &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/tls_dns/#prerequisites&#34;&gt;Google Cloud Platform Prequisites&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you wish to bypass the initial building of the cluster and project deployment steps, go to &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/cluster-rebuild/#prepare-for-outtage&#34;&gt;Prepare for outtage&lt;/a&gt; for the cluster rebuilding steps.&lt;/p&gt;
+        &lt;p&gt;This is an example on how to treat your clusters as cattle and not pets by rebuilding a JX3/GKE environment and restoring to it&amp;rsquo;s previous configuration. The steps will include building a JX3 Google/GSM environment from scratch and deploying projects to staging and production. It will utilize DNS (&lt;code&gt;jx3rocks.com&lt;/code&gt;), TLS, Let&amp;rsquo;s Encrypt certificates. The example includes the recovery of the helm chart repository which is currently implemented with &lt;a href=&#34;https://github.com/helm/chartmuseum&#34;&gt;ChartMuseum&lt;/a&gt; . This example is inteded for an audience already familiar with JayeX operability and focuses on an example of actual commands used to build and maintain a recoverable  environment. Additional information regarding using Google as the provider for this example can be found under &lt;a href=&#34;https://jayex.io/v3/admin/guides/tls_dns/#prerequisites&#34;&gt;Google Cloud Platform Prequisites&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you wish to bypass the initial building of the cluster and project deployment steps, go to &lt;a href=&#34;https://jayex.io/v3/admin/guides/cluster-rebuild/#prepare-for-outtage&#34;&gt;Prepare for outtage&lt;/a&gt; for the cluster rebuilding steps.&lt;/p&gt;
 &lt;h3 id=&#34;initialize-the-infra-and-cluster-repos&#34;&gt;Initialize the Infra and Cluster Repos&lt;/h3&gt;
-&lt;p&gt;Using a command-line based approach, the example employs a process modeled after the doc &lt;a href=&#34;https://jenkins-x.io/v3/admin/platforms/google&#34;&gt;Setup Jenkins X on Google Cloud with GKE&lt;/a&gt;, and will use Google Secret Manger. It requires installation of &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;Git&lt;/a&gt; and &lt;a href=&#34;https://hub.github.com/&#34;&gt;Hub&lt;/a&gt; command line tools.&lt;/p&gt;
+&lt;p&gt;Using a command-line based approach, the example employs a process modeled after the doc &lt;a href=&#34;https://jayex.io/v3/admin/platforms/google&#34;&gt;Setup JayeX on Google Cloud with GKE&lt;/a&gt;, and will use Google Secret Manger. It requires installation of &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;Git&lt;/a&gt; and &lt;a href=&#34;https://hub.github.com/&#34;&gt;Hub&lt;/a&gt; command line tools.&lt;/p&gt;
 &lt;p&gt;The following are the values used for the creation of the Infra and Cluster repos:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Repo Source:		jx3-gitops-repositories
 Infra Repo:		jx3-terraform-gke
@@ -170,7 +170,7 @@ TF_VAR_force_destroy=true
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd &lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;JX3HOME&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;/jx3-gke-gsm
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bin/create.sh                &lt;span style=&#34;color:#75715e&#34;&gt;# Performs terraform init, plan and apply&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;enable-prod-certificate&#34;&gt;Enable prod certificate&lt;/h3&gt;
-&lt;p&gt;This example employs TLS and accesing Jenkins from a browser requires a valid production certificate. It should be noted that TLS is not supported with automated domains &lt;code&gt;(i.e. nip.io)&lt;/code&gt;. The process will begin by installing a Let&amp;rsquo;s Encrypt test certicate. After the initial build completes and is successful, it’s best to ensure that the test certificate is ready (READY=True) before enabing the production certificate. You can find more information regarding this subject under &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/tls_dns/&#34;&gt;TLS and DNS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This example employs TLS and accesing Jenkins from a browser requires a valid production certificate. It should be noted that TLS is not supported with automated domains &lt;code&gt;(i.e. nip.io)&lt;/code&gt;. The process will begin by installing a Let&amp;rsquo;s Encrypt test certicate. After the initial build completes and is successful, it’s best to ensure that the test certificate is ready (READY=True) before enabing the production certificate. You can find more information regarding this subject under &lt;a href=&#34;https://jayex.io/v3/admin/guides/tls_dns/&#34;&gt;TLS and DNS&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Set credentials&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcloud container clusters get-credentials jx3web --zone us-east1-b 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Set jx namespace&lt;/span&gt;
@@ -228,7 +228,7 @@ TF_VAR_force_destroy=true
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;index-cache.yaml  lost+found             node-http01-0.0.1.tgz  
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;destroy-infrastructure&#34;&gt;Destroy Infrastructure&lt;/h3&gt;
-&lt;p&gt;Commands to shutdown infrastructure. Make sure the same Terraform variables are set found under &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/cluster-rebuild/#build-the-infrastucture-with-terraform&#34;&gt;Building the infrastructure with Terraform&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Commands to shutdown infrastructure. Make sure the same Terraform variables are set found under &lt;a href=&#34;https://jayex.io/v3/admin/guides/cluster-rebuild/#build-the-infrastucture-with-terraform&#34;&gt;Building the infrastructure with Terraform&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd &lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;JX3HOME&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;/jx3-terraform-gke
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;terraform destroy -auto-approve
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;cluster-down&#34;&gt;Cluster Down&lt;/h3&gt;
@@ -247,7 +247,7 @@ TF_VAR_force_destroy=true
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -a -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chore: Remove staging and prod links&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;rebuild-infrastructure&#34;&gt;Rebuild Infrastructure&lt;/h3&gt;
-&lt;p&gt;Commands to rebuild  infrastructure. Once again, make sure you have the same Terraform variables set found under &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/cluster-rebuild/#build-the-infrastucture-with-terraform&#34;&gt;Building the infrastructure with Terraform&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Commands to rebuild  infrastructure. Once again, make sure you have the same Terraform variables set found under &lt;a href=&#34;https://jayex.io/v3/admin/guides/cluster-rebuild/#build-the-infrastucture-with-terraform&#34;&gt;Building the infrastructure with Terraform&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd &lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;JX3HOME&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;/jx3-terraform-gke
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;terraform apply -auto-approve
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;rebuild-helm-repo&#34;&gt;Rebuild Helm Repo&lt;/h3&gt;
@@ -306,7 +306,7 @@ TF_VAR_force_destroy=true
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;node-http04 0.0.1   1/1  http://node-http04-stg.tri.jx3rocks.com 0.0.1      1/1  https://node-http04.tri.jx3rocks.com
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;node-http05 0.0.1   1/1  http://node-http05-stg.tri.jx3rocks.com 0.0.1      1/1  https://node-http05.tri.jx3rocks.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;cluster-rebuilt&#34;&gt;Cluster Rebuilt&lt;/h3&gt;
-&lt;p&gt;Following the completion of the previous commands the cluster has now been returned to it&amp;rsquo;s previous state and should be fully functioning.  If you wish to repeat the rebuild process start from the &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/cluster-rebuild/#prepare-for-outtage&#34;&gt;Prepare for outtage&lt;/a&gt; step.&lt;/p&gt;
+&lt;p&gt;Following the completion of the previous commands the cluster has now been returned to it&amp;rsquo;s previous state and should be fully functioning.  If you wish to repeat the rebuild process start from the &lt;a href=&#34;https://jayex.io/v3/admin/guides/cluster-rebuild/#prepare-for-outtage&#34;&gt;Prepare for outtage&lt;/a&gt; step.&lt;/p&gt;
 
       </description>
     </item>

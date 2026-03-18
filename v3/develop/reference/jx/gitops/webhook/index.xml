@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx gitops webhook</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/webhook/</link>
-    <description>Recent content in jx gitops webhook on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx gitops webhook</title>
+    <link>https://jayex.io/v3/develop/reference/jx/gitops/webhook/</link>
+    <description>Recent content in jx gitops webhook on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/gitops/webhook/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/gitops/webhook/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx gitops webhook delete</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/webhook/delete/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/webhook/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/webhook/delete/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/webhook/delete/</guid>
       <description>
         
         
@@ -59,10 +59,10 @@
     
     <item>
       <title>V3: jx gitops webhook update</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/webhook/update/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/webhook/update/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/webhook/update/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/webhook/update/</guid>
       <description>
         
         

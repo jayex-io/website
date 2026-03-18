@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Azure</title>
-    <link>https://jenkins-x.io/v3/admin/platforms/azure/</link>
-    <description>Recent content in Azure on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Azure</title>
+    <link>https://jayex.io/v3/admin/platforms/azure/</link>
+    <description>Recent content in Azure on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/platforms/azure/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/platforms/azure/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,14 +16,14 @@
     
     <item>
       <title>V3: Configure Azure Service Principal</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/azure/svc_principal/</link>
+      <link>https://jayex.io/v3/admin/platforms/azure/svc_principal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/azure/svc_principal/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/azure/svc_principal/</guid>
       <description>
         
         
-        &lt;p&gt;Azure has a notion of a &lt;strong&gt;Service Principal&lt;/strong&gt; which is a service acount. This doc will demonstrate how to set up an Azure service principal that can be used by Terraform to execute &lt;a href=&#34;https://github.com/jenkins-x/terraform-azurerm-jx#jenkins-x-azure-module&#34;&gt;Jenkins X Azure Module&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;Azure has a notion of a &lt;strong&gt;Service Principal&lt;/strong&gt; which is a service acount. This doc will demonstrate how to set up an Azure service principal that can be used by Terraform to execute &lt;a href=&#34;https://github.com/jenkins-x/terraform-azurerm-jx#jenkins-x-azure-module&#34;&gt;JayeX Azure Module&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;💡 This doc has been designed to assist in performing the demonstration through copying and pasting each block of code into a shell terminal.&lt;/p&gt;
 &lt;p&gt;To execute the commands listed in your local bash shell will require the &lt;a href=&#34;https://docs.microsoft.com/en-us/cli/azure/&#34;&gt;Azure CLI&lt;/a&gt; and the &lt;a href=&#34;https://stedolan.github.io/jq/&#34;&gt;JQ command-line JSON processor&lt;/a&gt;.&lt;/p&gt;
@@ -36,7 +36,7 @@
 &lt;li&gt;Microsoft Entra ID App registration admin role;&lt;code&gt;Cloud Application Administrator&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Microsoft Graph API permission;&lt;code&gt;Application.ReadWrite.All&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Further details can be found under &lt;a href=&#34;https://github.com/jenkins-x/terraform-azurerm-jx#prerequisites&#34;&gt;Jenkins X Azure Module Prequisites&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Further details can be found under &lt;a href=&#34;https://github.com/jenkins-x/terraform-azurerm-jx#prerequisites&#34;&gt;JayeX Azure Module Prequisites&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;create-service-principal-with-subscription-roles&#34;&gt;Create service principal with subscription roles&lt;/h3&gt;
 &lt;p&gt;The first step is to create a new service principal (APP_NAME) and to assign it the subscription built-in roles &lt;code&gt;Contributor&lt;/code&gt; and &lt;code&gt;User Access Administrator&lt;/code&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -97,7 +97,7 @@ Always perform all commands in the same local terminal session to preserve depen
 ------------------------------------
 00000003-0000-0000-c000-000000000000
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;prepare-to-run-terraform&#34;&gt;Prepare to run Terraform&lt;/h3&gt;
-&lt;p&gt;Once the service prinicpal is created and assigned the appropriate roles and permissions, it can now be used by Terraform to execute the Jenkins X Azure module. In order for Terraform to use the service principal credentials you need to &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell-bash&#34;&gt;specify service principal credentials in environment variables&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Once the service prinicpal is created and assigned the appropriate roles and permissions, it can now be used by Terraform to execute the JayeX Azure module. In order for Terraform to use the service principal credentials you need to &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell-bash&#34;&gt;specify service principal credentials in environment variables&lt;/a&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export ARM_CLIENT_ID=${APP_ID}
 export ARM_CLIENT_SECRET=${PASS_ID}
 export ARM_TENANT_ID=${TENANT_ID}

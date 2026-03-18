@@ -1,0 +1,1226 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Current Enhancements</title>
+    <link>https://jayex.io/community/enhancements/proposals/</link>
+    <description>Recent content in Current Enhancements on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://jayex.io/community/enhancements/proposals/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Community: Consolidate Apps and Addons</title>
+      <link>https://jayex.io/community/enhancements/proposals/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This proposal tries to conslidate Apps and Addons inside Jenkins X to avoid confusion&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Two years ago we added the addon framework to Jenkins X as a way of extending the Jenkins X platform to provide additional capabilities.&lt;/p&gt;
+&lt;h3 id=&#34;we-created-addons&#34;&gt;We created Addons&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Addons&lt;/code&gt; were either generic helm charts or a combination of helm chart plus some custom go code to install and integrate them with the Jenkins X platform.&lt;/p&gt;
+&lt;p&gt;At this point we referred to &lt;code&gt;apps&lt;/code&gt; as the charts developers created. e.g. the output of &lt;code&gt;jx create quickstart&lt;/code&gt; was an app and &lt;code&gt;jx get apps&lt;/code&gt; would list the quickstarts folks had added to &lt;code&gt;Staging&lt;/code&gt; or &lt;code&gt;Production&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;we-created-apps&#34;&gt;We created Apps&lt;/h3&gt;
+&lt;p&gt;We wanted to avoid having to change the &lt;code&gt;jx&lt;/code&gt; binary to add a new extension to the Jenkins X platform; so we then introduced the &lt;code&gt;Apps&lt;/code&gt; framework which provided a more generic way of adding charts chatting to Jenkins X such that anybody could create an app without having to modify the underlying &lt;code&gt;jx&lt;/code&gt; code.&lt;/p&gt;
+&lt;h3 id=&#34;confusion&#34;&gt;Confusion&lt;/h3&gt;
+&lt;p&gt;That&amp;rsquo;s now left us with confusing over what an App is.&lt;/p&gt;
+&lt;p&gt;This is made worse by having support for &lt;code&gt;apps&lt;/code&gt; and &lt;code&gt;addons&lt;/code&gt; in the current CLI.&lt;/p&gt;
+&lt;p&gt;Developers like to talk about the &lt;code&gt;apps&lt;/code&gt; they are developing.&lt;/p&gt;
+&lt;h2 id=&#34;proposal&#34;&gt;Proposal&lt;/h2&gt;
+&lt;p&gt;Going forward lets refer to everything as an &lt;code&gt;App&lt;/code&gt; and deprecate the use of the word &lt;code&gt;Addon&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Then all of these things would be an &lt;code&gt;App&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;system charts like knative, gloo, nginx-controller, flagger, prometheus, external-dns, cert-manager&lt;/li&gt;
+&lt;li&gt;instantiations of Quickstarts or repositories that folks import&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;status-deprecated&#34;&gt;Status: Deprecated&lt;/h2&gt;
+&lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;We would be able to reuse the current &lt;code&gt;jx add app&lt;/code&gt; and &lt;code&gt;jx delete app&lt;/code&gt; commands and folks could reuse them to add any app to any environment &lt;code&gt;dev&lt;/code&gt;, &lt;code&gt;Staging&lt;/code&gt; or &lt;code&gt;Production&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;One possible confusion is between &lt;code&gt;jx promote&lt;/code&gt; and &lt;code&gt;jx add app&lt;/code&gt;. In many ways &lt;code&gt;promote&lt;/code&gt; is for promoting a different version to a different environment; &lt;code&gt;jx add app&lt;/code&gt; adds an app to the current environment (usually &lt;code&gt;Dev&lt;/code&gt; by default).&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Community: Boot Apps with Helm 3 and Helmfile</title>
+      <link>https://jayex.io/community/enhancements/proposals/2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Issue: &lt;a href=&#34;https://github.com/jenkins-x/jx/issues/6442&#34;&gt;https://github.com/jenkins-x/jx/issues/6442&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Old design doc:: &lt;a href=&#34;https://docs.google.com/document/d/1DL1oEeAZtWFfpJOWk5UVO54D88BnlqZDf5IDaOkGxCk/edit?usp=sharing&#34;&gt;https://docs.google.com/document/d/1DL1oEeAZtWFfpJOWk5UVO54D88BnlqZDf5IDaOkGxCk/edit?usp=sharing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;current-implementation&#34;&gt;Current Implementation&lt;/h3&gt;
+&lt;p&gt;Refer to th &lt;a href=&#34;https://github.com/jenkins-x-labs/jxl&#34;&gt;jxl&lt;/a&gt; repository for an overview of how to use helmfile and helm 3.&lt;/p&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
+&lt;p&gt;We want a simple canonical way to install any helm chart in any namespace without having to manually hack the &lt;code&gt;jx boot&lt;/code&gt; pipeline file: &lt;code&gt;jenkins-x.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This will make it easy for people or software to easily add/remove apps to any git repository for any Environment (dev / staging / production).&lt;/p&gt;
+&lt;p&gt;The boot config repo has become quite complex and hard to manage upgrades to and share common config between different flavours of base boot config repos.  It’s also hard to experiment by adding new helm charts / features / applications that require changes to the boot install pipeline.&lt;/p&gt;
+&lt;p&gt;We want a simpler more modular system that lets us, say, swap out nginx-controller and use gloo/knative/istio for ingress without a deep knowledge of the jenkins-x.yml pipeline for boot.&lt;/p&gt;
+&lt;p&gt;What we’d really like is for folks to type commands like…&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx delete app nginx-controller
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx add app istio
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx delete app knative
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And for it to just work and generically add those to the right namespace.&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;The current apps model lets you add/remove charts fine - but there are a number of limitations:&lt;/p&gt;
+&lt;h3 id=&#34;only-works-in-1-namespace&#34;&gt;Only works in 1 namespace&lt;/h3&gt;
+&lt;p&gt;Currently apps can only work inside the dev namespace - we can’t support things like knative, gloo, cert-manager, nginx, velero which tend to be installed in separate namespaces.&lt;/p&gt;
+&lt;p&gt;### Does not handle boot phases&lt;/p&gt;
+&lt;p&gt;This is not surprising as we created the App extension model before boot. But right now boot has a number of distinct phases with pipeline steps between them where we may want to add apps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pre/post ingress setup (in the case of nip.io / nginx-controller)&lt;/li&gt;
+&lt;li&gt;pre/post vault setup&lt;/li&gt;
+&lt;li&gt;pre/post vault population of parameters&lt;/li&gt;
+&lt;li&gt;pre/post setup of certmanager/external dns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is currently no way for an apps to specify a namespace + specify which phase its to be installed in &amp;amp; have (say) the domain / certs / secrets injected easily.&lt;/p&gt;
+&lt;p&gt;So rather than adding steps at the right point in a list of steps in the jenkins-x.yml it would be nice to have a more declarative YAML file to describe which apps are to be enabled.&lt;/p&gt;
+&lt;p&gt;E.g. we need a new YAML file with list of charts to be installed along with metadata for which phase to install them. We also want to invoke a selection of those appss to be installed at the different phases of the boot pipeline.&lt;/p&gt;
+&lt;h3 id=&#34;limitations-of-the-current-deploy-model&#34;&gt;Limitations of the current deploy model&lt;/h3&gt;
+&lt;p&gt;We have some issues with the current way we deploy apps in Staging / Production:&lt;/p&gt;
+&lt;h4 id=&#34;composite-charts-hide-the-individual-versions&#34;&gt;Composite charts hide the individual versions&lt;/h4&gt;
+&lt;p&gt;Right now we deploy all charts in Staging/Production as a single chart. That means if you use &lt;code&gt;helm list&lt;/code&gt; we don&amp;rsquo;t show any actual versions of the dependent charts - its just 1 chart (with no version).&lt;/p&gt;
+&lt;h4 id=&#34;removing-apps-on-dev-doesnt-work&#34;&gt;Removing Apps on Dev doesn&amp;rsquo;t work&lt;/h4&gt;
+&lt;p&gt;If you remove a chart from &lt;code&gt;env/requirements.yaml&lt;/code&gt;  in the Dev repository the pipeline does not remove the chart. e.g. if you add &lt;code&gt;lighthouse&lt;/code&gt; and remove &lt;code&gt;prow&lt;/code&gt; you need to manually delete the prow resources yourself.&lt;/p&gt;
+&lt;h3 id=&#34;limitation-of-boot&#34;&gt;Limitation of boot&lt;/h3&gt;
+&lt;p&gt;We currently manually configure in the boot pipeline the install of multiple systems usually in separate namespaces:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;velero (if enabled)&lt;/li&gt;
+&lt;li&gt;nginx&lt;/li&gt;
+&lt;li&gt;externaldns&lt;/li&gt;
+&lt;li&gt;cert-manager&lt;/li&gt;
+&lt;li&gt;acme certs chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ideally those should be modular and optional. e.g it should be really trivial to disable nginx if folks are using, say, istio - without having to hack a pipeline yaml.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d also like to make it easy to add a number of other systems in order in separate namespaces independently of the &lt;code&gt;Staging / Production&lt;/code&gt; environment namespaces:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;knative &lt;a href=&#34;https://github.com/jenkins-x/jx/issues/6331&#34;&gt;https://github.com/jenkins-x/jx/issues/6331&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;gloo&lt;/li&gt;
+&lt;li&gt;istio&lt;/li&gt;
+&lt;li&gt;linkerd &lt;a href=&#34;https://github.com/jenkins-x/jx/issues/6330&#34;&gt;https://github.com/jenkins-x/jx/issues/6330&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;flagger&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;so it&amp;rsquo;d be nice to have a simple app model where anyone can add any systems/charts to any namespace at any point in the flow before we setup the dev/staging/production environment in the traditional way.&lt;/p&gt;
+&lt;h2 id=&#34;proposal&#34;&gt;Proposal&lt;/h2&gt;
+&lt;p&gt;We propose we combine the extensibility of Jenkins X using Apps with &lt;code&gt;jx boot&lt;/code&gt; via a simple declarative YAML file declaring the charts to be installed.&lt;/p&gt;
+&lt;p&gt;e.g. a file &lt;code&gt;apps.yaml&lt;/code&gt;  something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;defaultNamespace&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;releases&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;alias&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;velero&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;velero&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://kubernetes-charts.storage.googleapis.com&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;phase&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;system  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;namespace&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;velero&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;alias&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;nginx-ingress&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;nginx-ingress&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://kubernetes-charts.storage.googleapis.com&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;phase&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;system  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;namespace&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;kube-system&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;external-dns&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://charts.bitnami.com/bitnami&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;phase&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;post-ingress  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;alias&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;cert-manager&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;cert-manager&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://charts.jetstack.io&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;namespace&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;cert-manager  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;phase&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;post-ingress  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jxboot-resources&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://chartmuseum.jenkins-x.io&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;alias&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;tekton&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;tekton&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://chartmuseum.jenkins-x.io&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;alias&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;prow&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;condition&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;prow.enabled&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;prow&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://chartmuseum.jenkins-x.io&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;alias&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;lighthouse&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;condition&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;lighthouse.enabled&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;lighthouse&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://chartmuseum.jenkins-x.io&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;alias&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;bucketrepo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;condition&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;bucketrepo.enabled&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;bucketrepo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://chartmuseum.jenkins-x.io&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jenkins-x-platform&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://chartmuseum.jenkins-x.io&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Using a yaml file in a boot config repo we list the apps that should be installed.  This means we can instead have a bare minimum base boot config repo and list the apps we want installed and different points of the installation process.&lt;/p&gt;
+&lt;p&gt;The above YAML looks quite like the &lt;code&gt;env/requirements.yaml&lt;/code&gt; file only:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it allows the &lt;code&gt;namespace&lt;/code&gt; to be specified if its different from the &lt;code&gt;defaultNamespace&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;we add the &lt;code&gt;phase&lt;/code&gt; label so that we can filter the apps by phase so we can install different charts at different points in the boot pipeline.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;### Strawman Solutions&lt;/p&gt;
+&lt;p&gt;The above &lt;code&gt;apps.yaml&lt;/code&gt; proposal looks very much like helmfile.&lt;/p&gt;
+&lt;p&gt;So lets look into helmfile and try using it with a stripped back boot config repo to see how things might fit together&lt;/p&gt;
+&lt;p&gt;One possible solution might be to add a single step the boot pipeline to invoke helmfile: &lt;a href=&#34;https://github.com/roboll/helmfile#configuration&#34;&gt;https://github.com/roboll/helmfile#configuration&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;e.g. given the &lt;code&gt;apps.yaml&lt;/code&gt; file in the file system then run helmfile as a step on the file.&lt;/p&gt;
+&lt;p&gt;It looks like helmfile already supports tillerless + helm3 and lets us define namespaces and orders etc.&lt;/p&gt;
+&lt;p&gt;We may need to build our own step to wrap helmfile so that we can do some of the things we do with &lt;code&gt;jx step helm apply&lt;/code&gt; right now (e.g. exposing the &lt;code&gt;jx-requirements.yml&lt;/code&gt; file as a &lt;code&gt;values.yaml&lt;/code&gt; its values can be used inside any &lt;code&gt;values.yaml&lt;/code&gt; we use in the charts).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;should we support access to secrets in vault / local file system via URLs or Parameters injection?&lt;/li&gt;
+&lt;li&gt;do we need to support exposing the properties from the &lt;code&gt;jx-requirements.yml&lt;/code&gt; as values.yaml files that can be reused inside the helmfile templates?&lt;/li&gt;
+&lt;li&gt;do we need to improve access to certs / domain after we&amp;rsquo;ve set those up in boot?&lt;/li&gt;
+&lt;li&gt;allow the use of version streams to manage versions of things if no version is specified in the &lt;code&gt;helmfile.yaml&lt;/code&gt; - like we do with helm charts requirements.yaml file right now (in &lt;code&gt;jx step helm apply&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So if we do need anything other than vanilla helmfile we could maybe do a similar thing to &lt;code&gt;jx step helm apply&lt;/code&gt; where we copy the directory where helmfile lives, then generate any secret yamls + &lt;code&gt;jx-requirements.yaml&lt;/code&gt; files and then run helmfile in a temporary directory (to avoid accidentally committing any secrets to git). Hopefully we don&amp;rsquo;t need to fork helmfile; but we could just wrap it slightly with a pre-processor?&lt;/p&gt;
+&lt;p&gt;We want to allow the &lt;code&gt;jx boot&lt;/code&gt; pipeline to invoke a helmfile like thing at the different phases.&lt;/p&gt;
+&lt;p&gt;e.g. currently in boot we do something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;install a bunch of charts in different namespaces with a defined order&lt;/li&gt;
+&lt;li&gt;then we modify the requirements based on ingress: &lt;code&gt;jx step create install values&lt;/code&gt; (to handle things like detecting the domain/ingress)&lt;/li&gt;
+&lt;li&gt;install more charts (e.g. external dns/cert manager/vault)&lt;/li&gt;
+&lt;li&gt;populate parameters/secrets (&lt;code&gt;jx step create values --name parameters&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;do the traditional install and maybe other charts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;so we already have 3 natural places to invoke a helmfile-like thing to install charts in different phases. So maybe thats 3 places where we invoke helmfile with a selector as @vbehar mentions if thats something helmfile can do? or we use 3 separate helmfiles maybe?&lt;/p&gt;
+&lt;p&gt;e.g. the pipeline with boot apps could be something like this&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx step helmfile --selector phase&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;pre-ingress
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# populate ingress stuff (e.g. default domain from nip.io if not using custom domain)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx step create install values
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# add any charts that need a domain injected&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx step helmfile --selector phase&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;post-ingress
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# populate any missing charts in vault&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx step create values --name parameters
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# lets include generated secrets after they have been populated in vault&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx step helmfile --selector &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;!phase&amp;#34;&lt;/span&gt; --secrets
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we could have a list of apps which we group as to where they get added based on what they are &amp;amp; whether they need integration with secrets / TLS / domain / certs etc?&lt;/p&gt;
+&lt;p&gt;We can then modify the existing &lt;code&gt;jx add app / jx delete app&lt;/code&gt; to detect the &lt;code&gt;apps.yaml&lt;/code&gt; file and create the necessary code change in a Pull Request.&lt;/p&gt;
+&lt;p&gt;Maybe over time we move more towards this kind of helmfile-like approach for all environments too (&lt;code&gt;Dev&lt;/code&gt; / &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt;)?&lt;/p&gt;
+&lt;h3 id=&#34;proposed-schedule&#34;&gt;Proposed Schedule&lt;/h3&gt;
+&lt;p&gt;We can easily try a prototype a new boot config repo where we add helmfile and add some helmfile steps and see how it works and what we think of the general git source code &amp;amp; if it helps us and users have modular boot apps without committing to any significant changes in the jx repos.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;try out helmfile for installing things like gloo / knative / linkerd / istio?&lt;/li&gt;
+&lt;li&gt;if that works and we are happy with it, we could look at adding the phases approach for easier app composition&lt;/li&gt;
+&lt;li&gt;if thats all looking good try migrate existing things like nginx / cert manager / external dns to the helmfile approach in a new git repository&lt;/li&gt;
+&lt;li&gt;anyone can then try out the helmfile approach without changing the core upstream boot configuration &lt;a href=&#34;https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/env&#34;&gt;jenkins-x-boot-config&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;we could try create a new remote cluster boot configuration for multi-cluster which installs a small subset of Jenkins X (e.g. lighthouse + tekton + a single &lt;code&gt;SourceRepository + Schedule&lt;/code&gt; for replicating the logic of the &lt;code&gt;environment controller&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;create a demo repository which replaces nginx-controller with knative + gloo we can use for Progressive Delivery demos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Maybe we find when we look at migrating the current charts to boot apps (nginx / cert manager / external-dns in particular) we may find its got some limitations and building a simple similar tool might be easier. Or we may find helmfile gets us where we need to go faster.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Community: Cloud Resource Creation</title>
+      <link>https://jayex.io/community/enhancements/proposals/3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/3/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1-overview&#34;&gt;1. Overview&lt;/h2&gt;
+&lt;p&gt;This document outlines the work for extracting cloud resource creation from jx.&lt;/p&gt;
+&lt;h2 id=&#34;11-motivation&#34;&gt;1.1 Motivation&lt;/h2&gt;
+&lt;p&gt;At the moment, cloud resources needed by Jenkins X, e.g. service accounts, buckets, cryptographic keys, are generated on the fly.
+This creation happens either as part of a &lt;code&gt;jx create cluster&lt;/code&gt; &lt;code&gt;jx install&lt;/code&gt; or via &lt;code&gt;jx boot&lt;/code&gt;.
+This proposal outlines an approach to separate cloud resource creation from the Jenkins X install.&lt;/p&gt;
+&lt;h2 id=&#34;12-background&#34;&gt;1.2 Background&lt;/h2&gt;
+&lt;p&gt;The following drawbacks of &lt;code&gt;jx boot&lt;/code&gt; are the motivation for this proposal:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For users, it is not transparent what cloud resource and permissions are needed  by  Jenkins X&lt;/li&gt;
+&lt;li&gt;It is hard to limit permissions. At the moment Boot requires full admin permissions on all Cloud APIs&lt;/li&gt;
+&lt;li&gt;Code for generating and dealing cloud resources is distributed across multiple commands and files in the source code&lt;/li&gt;
+&lt;li&gt;Hard to integrate new cloud provider due to the lack of abstraction&lt;/li&gt;
+&lt;li&gt;Hard to maintain current code&lt;/li&gt;
+&lt;li&gt;One confusion, for example, is that the various “&lt;em&gt;verify&lt;/em&gt;” pipeline steps do not purely verify resources, but also lazily create them&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This enhancement proposes a stricter separation of concerns, addressing the points mentioned above as well as introducing the required abstractions to integrate with further cloud providers.&lt;/p&gt;
+&lt;h2 id=&#34;2-design&#34;&gt;2. Design&lt;/h2&gt;
+&lt;h3 id=&#34;21-ux&#34;&gt;2.1 UX&lt;/h3&gt;
+&lt;p&gt;For the user, the proposed change means that he is responsible for creating all required cloud resources upfront (before installing Jenkins X).
+We provide documentation on what is required as well as Terraform scripts to create and manage the resources necessary.
+&lt;code&gt;terraform apply&lt;/code&gt; can be seen as a replacement for &lt;code&gt;jx create cluster&lt;/code&gt;.
+After implementing this proposal, the Getting Started workflow for the user will exemplary look like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git clone https://github.com/jenkins-x/jx-cloud-provisioners
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd jx-cloud-provisioners/eks/terraform 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ terraform init
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# edit variables file to provide required details for the cloud provider&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# if not provided Terraform will prompt for the required variables &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ terraform apply -var-file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;terraform.tfvars
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# this will also create a templated jx-requirements.yml to be used with &amp;#39;jx boot&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ jx boot -r jx-cloud-provisioners/eks/terraform/jx-requirements.yml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As a prerequisite, the user needs to have &lt;code&gt;terraform&lt;/code&gt; as well as &lt;code&gt;jx&lt;/code&gt; installed.&lt;/p&gt;
+&lt;p&gt;After the implementation of this proposal, the user has to create cloud resources required by new Jenkins X features upfront, either manually or via the Terraform scripts.
+&lt;code&gt;jx boot&lt;/code&gt; or &lt;code&gt;jx upgrade boot&lt;/code&gt; will fail until the user has ensured that the required resources exist.&lt;/p&gt;
+&lt;p&gt;In the future, the Jenkins X install process (&lt;code&gt;jx boot&lt;/code&gt;) will always only verify whether a needed resource exists, never create it
+When verification fails, the install process halts and needs to provide enough context to the user to identify which cloud resource is missing.&lt;/p&gt;
+&lt;h3 id=&#34;22-technical-design&#34;&gt;2.2. Technical Design&lt;/h3&gt;
+&lt;h4 id=&#34;221-jx-boot-and-jx-requirementsyaml&#34;&gt;2.2.1 &lt;code&gt;jx boot&lt;/code&gt; and &lt;code&gt;jx-requirements.yaml&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;For this proposal, the current &lt;code&gt;jx boot&lt;/code&gt; code stays unmodified.
+This allows to use still &lt;code&gt;jx create cluster&lt;/code&gt; and &lt;code&gt;jx boot&lt;/code&gt; as is.
+The plan is to remove &lt;code&gt;jx create cluster&lt;/code&gt; in a second step together with a cleaning up of the &lt;code&gt;jx boot&lt;/code&gt; code.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jx-requirements.yaml&lt;/code&gt; also stays unmodified.
+In the case the user is using the Terraform scripts, he will get a templated &lt;code&gt;jx-requirements.yaml&lt;/code&gt; as an output of &lt;code&gt;terraform apply&lt;/code&gt; which can be passed to &lt;code&gt;jx install&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;222-terraform&#34;&gt;2.2.2 Terraform&lt;/h4&gt;
+&lt;p&gt;As part of the enhancement, we are creating a GitHub repository with initially two Terraform setups, one for GKE and one for EKS.
+In each case, it is the responsibility of the Terraform script to create the required cloud resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Service accounts
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;externaldns-sa&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;optional, only enabled if user wants to use external DNS&lt;/li&gt;
+&lt;li&gt;IAM roles:
+&lt;ul&gt;
+&lt;li&gt;GKE - roles/iam.workloadIdentityUser, roles/dns.admin&lt;/li&gt;
+&lt;li&gt;EKS - IAM/role and IAM Policy with Route53 permissions., Kubernetes Service Account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;kaniko-sa&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;required&lt;/li&gt;
+&lt;li&gt;IAM roles:
+&lt;ul&gt;
+&lt;li&gt;GKE - roles/iam.workloadIdentityUser, roles/storage.admin, roles/storage.objectAdmin, roles/storage.objectCreator&lt;/li&gt;
+&lt;li&gt;EKS - Covered by the tekton-bot Service Account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;storage-sa&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;required&lt;/li&gt;
+&lt;li&gt;IAM roles:
+&lt;ul&gt;
+&lt;li&gt;GKE - roles/iam.workloadIdentityUser, storage.objects.[create|get|delete|update]&lt;/li&gt;
+&lt;li&gt;EKS - S3Access Policy attached to an IAM/role and a Kubernetes Service Account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;tekton-sa&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;required&lt;/li&gt;
+&lt;li&gt;IAM roles:
+&lt;ul&gt;
+&lt;li&gt;GKE - roles/iam.workloadIdentityUser, roles/viewer&lt;/li&gt;
+&lt;li&gt;EKS - IAM/role and IAM Policy with general permissions, Kubernetes Service Account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;velero-sa&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;optional, only created if the user wants to use Velero&lt;/li&gt;
+&lt;li&gt;IAM roles:
+&lt;ul&gt;
+&lt;li&gt;GKE - roles/iam.workloadIdentityUser, roles/storage.admin, roles/storage.objectAdmin, roles/storage.objectCreator&lt;/li&gt;
+&lt;li&gt;EKS - S3Access Policy attached to an IAM/role and a Kubernetes Service Account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;vault-sa&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;required&lt;/li&gt;
+&lt;li&gt;IAM roles:
+&lt;ul&gt;
+&lt;li&gt;GKE - roles/iam.workloadIdentityUser, roles/cloudkms.admin, roles/cloudkms.cryptoKeyEncrypterDecrypter, roles/storage.objectAdmin&lt;/li&gt;
+&lt;li&gt;EKS - ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Storage buckets
+&lt;ul&gt;
+&lt;li&gt;logs (required)&lt;/li&gt;
+&lt;li&gt;vault (required)&lt;/li&gt;
+&lt;li&gt;reports (optional, same bucket as logs if not provided)&lt;/li&gt;
+&lt;li&gt;repository (optional, used by bucketrepo if enabled)&lt;/li&gt;
+&lt;li&gt;backup (optional, used by Velero if enabled)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Kryptographic keys&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Permissions needed by Kubernetes service accounts for the various Cloud APIs will be managed by &lt;a href=&#34;https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity&#34;&gt;workload identity&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Similar to the setup in &lt;a href=&#34;https://github.com/jenkins-x/terraform-google-jx&#34;&gt;terraform-google-jx&lt;/a&gt;, the output of applying the Terraform plan will be a &lt;code&gt;jx-requirements.yaml&lt;/code&gt; which can then be used as input for &lt;code&gt;jx boot&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The Terraform scripts and documentation will discuss and recommend how Terraform state should be managed, e.g. via remote storage in a cloud bucket.&lt;/p&gt;
+&lt;p&gt;Initially, the versioning of the repository containing the Terraform scripts is not automatically linked to &lt;code&gt;jx&lt;/code&gt; resp &lt;a href=&#34;https://github.com/jenkins-x/jenkins-x-boot-config&#34;&gt;jenkins-x-boot-config&lt;/a&gt; releases.
+Moving forward we can either automatically update the Terraform &lt;code&gt;jx-requirements.yaml&lt;/code&gt; templates as new releases of the boot config become available or we integrate the install of Jenkins X into the Terraform script via the Helm provider.&lt;/p&gt;
+&lt;h4 id=&#34;223-docs&#34;&gt;2.2.3 Docs&lt;/h4&gt;
+&lt;p&gt;Ar part of this enhancement the documentation will get extended and will include sections for the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generic description of the cloud resources needed and their purpose&lt;/li&gt;
+&lt;li&gt;Documentation on where to find the Terraform script and how to use them
+&lt;ul&gt;
+&lt;li&gt;Recommendations on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;23-out-of-scope&#34;&gt;2.3. Out of Scope&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Removal of cloud resource creation code from &lt;code&gt;jx boot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Removal of &lt;code&gt;jx edit storage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Removal of &lt;code&gt;jx create cluster&lt;/code&gt; and &lt;code&gt;jx install&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Automate versioning between Terraform scripts and jx releases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-acceptance-criteria&#34;&gt;3. Acceptance Criteria&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A section in the Jenkins X docs outlining the required cloud resources to install Jenkins X&lt;/li&gt;
+&lt;li&gt;Terraform script for creation of cloud resources for GKE and EKS
+&lt;ul&gt;
+&lt;li&gt;Scripts use workload identity and IAM Roles for Service Accounts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Documentation on how to best manage the Terraform state file&lt;/li&gt;
+&lt;li&gt;Ability to boot Jenkins X on GKE and EKS using cluster prepared with Terraform
+&lt;ul&gt;
+&lt;li&gt;Installation of Jenkins X with a user with limited permissions (unable to create cloud resources)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Identification of items for later cleanup (removal of cloud creation code within Boot) and create backlog items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-references&#34;&gt;4. References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/terraform-google-jx&#34;&gt;https://github.com/jenkins-x/terraform-google-jx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x-labs/jenkins-x-installer&#34;&gt;https://github.com/jenkins-x-labs/jenkins-x-installer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity&#34;&gt;https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://registry.terraform.io/modules/terraform-google-modules/kubernetes-engine/google/7.1.0/submodules/workload-identity&#34;&gt;https://registry.terraform.io/modules/terraform-google-modules/kubernetes-engine/google/7.1.0/submodules/workload-identity&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Community: Preview with Helmfile</title>
+      <link>https://jayex.io/community/enhancements/proposals/4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/4/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;jx-enhancement-4-preview-with-helmfile&#34;&gt;JX Enhancement 4: Preview with Helmfile&lt;/h1&gt;
+&lt;h2 id=&#34;1-overview&#34;&gt;1. Overview&lt;/h2&gt;
+&lt;p&gt;This document outlines the work for deploying &lt;a href=&#34;https://jenkins-x.io/docs/reference/preview/&#34;&gt;Jenkins X Preview Environments&lt;/a&gt; using &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;Helmfile&lt;/a&gt; - instead of raw &lt;a href=&#34;https://helm.sh/&#34;&gt;Helm&lt;/a&gt; - and the benefits.&lt;/p&gt;
+&lt;h3 id=&#34;11-motivation&#34;&gt;1.1 Motivation&lt;/h3&gt;
+&lt;p&gt;Preview Environments are currently (April 2020) implemented using an &amp;ldquo;umbrella (Helm) chart&amp;rdquo;, named &lt;code&gt;preview&lt;/code&gt;, located in the &lt;code&gt;charts/preview&lt;/code&gt; directory of applications repositories.
+This umbrella chart usually has no templates, just a dependency on the &amp;ldquo;main&amp;rdquo; application chart, and maybe on some other charts. Values for the main application can be customized by using the &lt;code&gt;values.yaml&lt;/code&gt; file of the preview chart.&lt;/p&gt;
+&lt;p&gt;This implementation works, but has a number of limitations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;no templating of the preview&amp;rsquo;s &lt;code&gt;values.yaml&lt;/code&gt; - the workaround is to use Helm&amp;rsquo;s &lt;code&gt;tpl&lt;/code&gt; function in the main chart&amp;rsquo;s templates when using values customized by the preview chart.&lt;/li&gt;
+&lt;li&gt;no easy way to use an environment variable in the values, although it&amp;rsquo;s very easy to add some in the pipeline&lt;/li&gt;
+&lt;li&gt;the preview chart needs to be hacked before being used, this is done with a &lt;a href=&#34;https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/go/preview/Makefile&#34;&gt;Makefile&lt;/a&gt; which uses &lt;code&gt;sed&lt;/code&gt; commands to replace values in the &lt;code&gt;Chart.yaml&lt;/code&gt; and &lt;code&gt;values.yaml&lt;/code&gt; files, and this &lt;code&gt;Makefile&lt;/code&gt; can quickly grow if people re-use this hack as a workaround the templating limitations.&lt;/li&gt;
+&lt;li&gt;adding new charts dependencies in a preview environment can easily be done by updating the &lt;code&gt;requirements.yaml&lt;/code&gt; file&amp;hellip; as long as you respect the &lt;a href=&#34;https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/go/preview/requirements.yaml&#34;&gt;strict formatting rules of this file&lt;/a&gt;, and you don&amp;rsquo;t need charts from a specific repository. Otherwise, you&amp;rsquo;ll need to update the &lt;code&gt;Makefile&lt;/code&gt; to add your repositories first.&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;values.yaml&lt;/code&gt; file is confusing for newcomers, because the values for the main chart are placed under the &lt;code&gt;preview&lt;/code&gt; definition - because the main chart is aliased as &lt;code&gt;preview&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;jx&lt;/code&gt; uses the same Helm settings to deploy its own charts and the preview charts. So by default its Helm 2 in templating mode. Which makes it harder to debug a preview environment, because in templating mode we don&amp;rsquo;t store the Helm release secret with the values.&lt;/li&gt;
+&lt;li&gt;another issue with Helm 2 in templating mode is the limited support for Helm hooks - which have been re-implmented in Jenkins X.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-background&#34;&gt;1.2 Background&lt;/h3&gt;
+&lt;p&gt;Helm is currently used by Jenkins X to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;deploy its own components / charts: prow/lighthouse, tekton, controllers, &amp;hellip;&lt;/li&gt;
+&lt;li&gt;deploy the preview environments - in the pullrequest pipelines&lt;/li&gt;
+&lt;li&gt;package the application&amp;rsquo;s chart - in the release pipeline&lt;/li&gt;
+&lt;li&gt;install the applications in the staging/prod environments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is already work being done to re-implement the staging/prod charts installation, using &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;Helmfile&lt;/a&gt;, which would also bring in Helm 3 support.
+This work might also be used for the &amp;ldquo;jx boot&amp;rdquo; part.&lt;/p&gt;
+&lt;p&gt;So it means there are 2 &amp;ldquo;direct&amp;rdquo; use of Helm left: the previews and the chart packaging. This proposal is focused on the previews use-case, and coherent with what is being done in other parts of Jenkins X.&lt;/p&gt;
+&lt;h2 id=&#34;2-proposal&#34;&gt;2. Proposal&lt;/h2&gt;
+&lt;h3 id=&#34;21-helmfile&#34;&gt;2.1 Helmfile&lt;/h3&gt;
+&lt;p&gt;Why &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;Helmfile&lt;/a&gt;?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;already being integrated in Jenkins X&lt;/li&gt;
+&lt;li&gt;some Jenkins X users (Dailymotion) have experience using it to deploy applications in (remote) staging/prod environments&lt;/li&gt;
+&lt;li&gt;support templated values files&lt;/li&gt;
+&lt;li&gt;support secrets from various backends: &lt;a href=&#34;https://github.com/mozilla/sops&#34;&gt;sops&lt;/a&gt;, &lt;a href=&#34;https://www.vaultproject.io/&#34;&gt;Vault&lt;/a&gt;, &amp;hellip; - see &lt;a href=&#34;https://github.com/variantdev/vals&#34;&gt;github.com/variantdev/vals&lt;/a&gt; which is used by Helmfile&lt;/li&gt;
+&lt;li&gt;declarative definition of the releases of course, but also the Helm repositories and the Helm settings: timeout, force, wait, &amp;hellip;&lt;/li&gt;
+&lt;li&gt;supports Helm 2 with or without Tiller, and Helm 3&lt;/li&gt;
+&lt;li&gt;lots of features, including
+&lt;ul&gt;
+&lt;li&gt;hooks&lt;/li&gt;
+&lt;li&gt;nested helmfile, which can be remote files using the Terraform-module-like URL: &lt;code&gt;git::https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes.git@packs/go/helmfile.yaml?ref=0.40.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;written in Go&lt;/li&gt;
+&lt;li&gt;actively developed and growing usage - used for Jenkins&amp;rsquo;s own infrastructure for example&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;22-design&#34;&gt;2.2 Design&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;charts/preview&lt;/code&gt; directory won&amp;rsquo;t be a Helm chart anymore, but an Helmfile project.
+And instead of using raw Helm commands to deploy the preview, jx will use Helmfile commands.&lt;/p&gt;
+&lt;p&gt;The only required file in this folder is &lt;code&gt;the helmfile.yaml&lt;/code&gt; - which defines all the releases we want to install.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# https://github.com/roboll/helmfile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# we can use Helm 3 if its present in the container image&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;helmBinary&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;helm3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;helmDefaults&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;wait&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;timeout&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;180&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# seconds&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# extra Helm repositories&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;repositories&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;bitnami&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;url&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://charts.bitnami.com/bitnami&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;something-else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;url&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://charts.example.com&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# all the releases we want to install in a preview env&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;releases&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#75715e&#34;&gt;# the main application&amp;#39;s chart&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: {{ &lt;span style=&#34;color:#ae81ff&#34;&gt;.Values.preview.releaseName }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;namespace&lt;/span&gt;: {{ &lt;span style=&#34;color:#ae81ff&#34;&gt;.Values.preview.namespace }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;chart&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;../{{ requiredEnv &amp;#34;APP_NAME&amp;#34; }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;values&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;values.yaml.gotmpl&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#75715e&#34;&gt;# we can include other releases as well&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;postgresql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;namespace&lt;/span&gt;: 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;chart&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;bitnami/postgresql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;8.9.2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;values&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;postgresql.yaml&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Custom values can either be written directly in this file, or in other files - such as values.yaml.gotmpl - which are defined in the main &lt;code&gt;helmfile.yaml&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go-text-template&#34; data-lang=&#34;go-text-template&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# This file contains the custom values for our application&amp;#39;s chart
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# and support Go templates, parsed by https://github.com/roboll/helmfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;image:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  repository: &lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Values.preview.image.repository&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  tag: &lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Values.preview.image.tag&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ingress:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  enabled: true
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  class: nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  hosts:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &amp;#39;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.values.preview.name&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;.&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;.Values.expose.config.domain&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  tls:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    enabled: true
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    secrets:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      wildcard:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        replicateFrom: &lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;requiredEnv&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;WILDCARD_TLS_SECRET_LOCATION&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;labels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  git-commit: &lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;requiredEnv&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;PULL_PULL_SHA&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;jx preview&lt;/code&gt; command will have to be modified to execute the &lt;code&gt;helmfile apply&lt;/code&gt; command on this directory. This command will take care of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;adding required Helm repositories&lt;/li&gt;
+&lt;li&gt;calculates the &amp;ldquo;diff&amp;rdquo; of what needs to be done, and print it&lt;/li&gt;
+&lt;li&gt;apply the diff&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We will also need to pass some values calculated by Jenkins X - such as the &lt;code&gt;extraValues.yaml&lt;/code&gt; generated for Helm. The same file can also be passed to Helmfile, using the &lt;code&gt;--state-values-file&lt;/code&gt; flag.&lt;/p&gt;
+&lt;h3 id=&#34;23-implementation&#34;&gt;2.3 Implementation&lt;/h3&gt;
+&lt;h4 id=&#34;231-quick-and-dirty-implementation&#34;&gt;2.3.1 Quick and dirty implementation&lt;/h4&gt;
+&lt;p&gt;I already have a working implementation which we are already using at Dailymotion.
+It&amp;rsquo;s just a quick and dirty implementation that works for our use-case, so it will need more work to handle more use-cases.&lt;/p&gt;
+&lt;p&gt;It is in the &lt;a href=&#34;https://github.com/vbehar/jx/tree/preview-helmfile&#34;&gt;preview-helmfile branch&lt;/a&gt;, and you can see the &lt;a href=&#34;https://github.com/jenkins-x/jx/compare/master...vbehar:preview-helmfile&#34;&gt;diff with jx master&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A few notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it is based on v2.0.1245 because we are using CJXD 8&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve updated the &lt;code&gt;extraValues.yaml&lt;/code&gt; file to include:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt; of the preview&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;releaseName&lt;/code&gt; of the preview&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;namespace&lt;/code&gt; of the preview&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;jx preview&lt;/code&gt; command has a new &lt;code&gt;--helmfile&lt;/code&gt; flag to give it the name of a helmfile.yaml&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;helmfile&lt;/code&gt; command being used is &lt;code&gt;helmfile --file=helmfile.yaml --state-values-file=extraValues.yaml --state-values-set=tags.jx-ns-NAMESPACE=true,global.jxNsNAMESPACE=true,...,global.jxNs=NAMESPACE,... --namespace=NAMESPACE apply&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We call it with the following flags: &lt;code&gt;jx preview --app &amp;quot;${APP_NAME}&amp;quot; --namespace &amp;quot;preview-${APP_NAME}-pr-${PULL_NUMBER}&amp;quot; --name &amp;quot;preview-${APP_NAME}-pr-${PULL_NUMBER}&amp;quot; --release &amp;quot;preview-${APP_NAME}-pr-${PULL_NUMBER}&amp;quot; --helmfile &amp;quot;helmfile.yaml&amp;quot; --verbose&lt;/code&gt; - see  the jenkins-x.yml below for the jx pipeline.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;buildPack&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;none&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;pipelineConfig&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;pipelines&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;pullRequest&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;pipeline&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;stages&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;preview-env&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;steps&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;deploy-preview-env&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#f92672&#34;&gt;command&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jx preview&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#f92672&#34;&gt;args&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  - --&lt;span style=&#34;color:#ae81ff&#34;&gt;app &amp;#34;${APP_NAME}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  - --&lt;span style=&#34;color:#ae81ff&#34;&gt;namespace &amp;#34;preview-${APP_NAME}-pr-${PULL_NUMBER}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  - --&lt;span style=&#34;color:#ae81ff&#34;&gt;name &amp;#34;preview-${APP_NAME}-pr-${PULL_NUMBER}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  - --&lt;span style=&#34;color:#ae81ff&#34;&gt;release &amp;#34;preview-${APP_NAME}-pr-${PULL_NUMBER}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  - --&lt;span style=&#34;color:#ae81ff&#34;&gt;helmfile &amp;#34;helmfile.yaml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  - --&lt;span style=&#34;color:#ae81ff&#34;&gt;verbose&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#f92672&#34;&gt;dir&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;charts/preview&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;our-custom-jx-image-with-helmfile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#f92672&#34;&gt;env&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;WILDCARD_TLS_SECRET_LOCATION&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#f92672&#34;&gt;value&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jx/tls-jx-example-com-p&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;--app&lt;/code&gt; flag is &amp;ldquo;mandatory&amp;rdquo; when using helmfile, to avoid trying to find a default value from the preview chart, which doesn&amp;rsquo;t exist anymore.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;jx preview&lt;/code&gt; command is now run in a specific container image, which contains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;jx&lt;/code&gt; built from the &lt;a href=&#34;https://github.com/vbehar/jx/tree/preview-helmfile&#34;&gt;preview-helmfile branch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;helmfile&lt;/code&gt; version 0.111.0 - it needs a recent version to support the &lt;code&gt;helmBinary&lt;/code&gt; config flag&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;helm3&lt;/code&gt; binary, we used version 3.2.0&lt;/li&gt;
+&lt;li&gt;a few Helm plugins
+see the Dockerfile below for more details. This image has both &lt;code&gt;helm&lt;/code&gt; and &lt;code&gt;helm3&lt;/code&gt; binaries. We might have plugins compatibility issues.
+For now in this quick-and-dirty implementation we ignored this issue, because this image is only used to run &lt;code&gt;jx preview&lt;/code&gt; with helmfile and helm 3, so it never uses Helm 2.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-docker&#34; data-lang=&#34;docker&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# part of the Dockerfile used to build the container image used to run &amp;#34;jx preview&amp;#34; with helmfile&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# install helm&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; HELM_VERSION 2.14.2&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; HELM_HOME &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/helm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;RUN&lt;/span&gt; echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Installing Helm &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;HELM_VERSION&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; curl -f https://storage.googleapis.com/kubernetes-helm/helm-v&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;HELM_VERSION&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;-linux-amd64.tar.gz | tar xzv &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv linux-amd64/helm /usr/bin/ &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv linux-amd64/tiller /usr/bin/ &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -rf linux-amd64 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; helm init --client-only&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; HELM3_VERSION&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;3.2.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;RUN&lt;/span&gt; echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Installing Helm3 &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;HELM3_VERSION&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; curl -f https://get.helm.sh/helm-v&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;HELM3_VERSION&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;-linux-amd64.tar.gz | tar xzv &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv linux-amd64/helm /usr/bin/helm3 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -rf linux-amd64&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; HELM_PLUGINS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/helm/plugins&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;RUN&lt;/span&gt; echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Installing Helm3 plugins in &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;HELM_PLUGINS&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; export XDG_DATA_HOME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; helm3 plugin install https://github.com/futuresimple/helm-secrets --version v2.0.2 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; helm3 plugin install https://github.com/databus23/helm-diff --version v3.1.1 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; helm3 plugin install https://github.com/hayorov/helm-gcs --version 0.3.1 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; unset XDG_DATA_HOME&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; HELMFILE_VERSION 0.111.0&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;RUN&lt;/span&gt; echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Installing helmfile &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;HELMFILE_VERSION&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; curl -LO https://github.com/roboll/helmfile/releases/download/v&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;HELMFILE_VERSION&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;/helmfile_linux_amd64 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod +x helmfile_linux_amd64 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv helmfile_linux_amd64 /usr/bin/helmfile&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# install kubectl&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; KUBECTL_VERSION&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.15&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;RUN&lt;/span&gt; echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Installing kubectl &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;KUBECTL_VERSION&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; curl -LO https://storage.googleapis.com/kubernetes-release/release/&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;curl -s https://storage.googleapis.com/kubernetes-release/release/stable-&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;KUBECTL_VERSION&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;.txt&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;/bin/linux/amd64/kubectl &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod +x kubectl &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv kubectl /usr/bin/&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can see the output:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;for the first run&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Creating a preview
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;expose:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Annotations:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    helm.sh/hook: post-install,post-upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    helm.sh/hook-delete-policy: hook-succeeded
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  config:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    domain: jx.example.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    exposer: Ingress
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    http: &amp;#34;true&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  image:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    repository: gcr.io/owner/myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    tag: 0.0.0-SNAPSHOT-PR-129-16
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  name: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  namespace: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  releaseName: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Installing Preview Environment with Helmfile...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Running: helmfile --file=helmfile.yaml --state-values-file=/workspace/source/charts/preview/extraValues.yaml --state-values-set=tags.jx-ns-preview-myapp-pr-129=true,global.jxNsPreviewMyappPr129=true,tags.jx-preview=true,tags.jx-env-preview-myapp-pr-129=true,global.jxPreview=true,global.jxEnvPreviewMyappPr129=true,global.jxNs=preview-myapp-pr-129,global.jxTypeEnv=preview,global.jxEnv=preview-myapp-pr-129,global.jxPreviewApp=myapp,global.jxPreviewPr=129 --namespace=preview-myapp-pr-129 apply
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Building dependency release=preview-myapp-pr-129, chart=../myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Comparing release=preview-myapp-pr-129, chart=../myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;********************
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Release was not present in Helm.  Diff will show entire contents as new.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;********************
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129, preview-myapp-pr-129-tls-wildcard, Secret (v1) has been added:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ # Source: myapp/templates/ingress.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ apiVersion: v1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ kind: Secret
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   annotations:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     replicator.v1.mittwald.de/replicate-from: jx/tls-jx-example-com-p
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   labels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/managed-by: Helm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/version: latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     git-commit: 94f909b03f2f4189ac433e1aba8cd1147b3aa467
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     helm.sh/chart: myapp-4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   name: preview-myapp-pr-129-tls-wildcard
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ data:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   tls.crt: &amp;#39;++++++++ # (0 bytes)&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   tls.key: &amp;#39;++++++++ # (0 bytes)&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ type: kubernetes.io/tls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129, preview-myapp-pr-129, Service (v1) has been added:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ # Source: myapp/templates/service.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ apiVersion: v1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ kind: Service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   name: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   labels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     helm.sh/chart: myapp-4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/version: &amp;#34;latest&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/managed-by: Helm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     git-commit: 94f909b03f2f4189ac433e1aba8cd1147b3aa467
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ spec:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   type: ClusterIP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   ports:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     - name: http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       port: 8080
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       targetPort: http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   selector:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129, preview-myapp-pr-129, Deployment (apps) has been added:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ # Source: myapp/templates/deployment.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ apiVersion: apps/v1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ kind: Deployment
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   name: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   labels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     helm.sh/chart: myapp-4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/version: &amp;#34;latest&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/managed-by: Helm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     git-commit: 94f909b03f2f4189ac433e1aba8cd1147b3aa467
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ spec:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   replicas: 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   revisionHistoryLimit: 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   selector:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     matchLabels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   template:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       labels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+         helm.sh/chart: myapp-4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+         app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+         app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+         app.kubernetes.io/version: &amp;#34;latest&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+         app.kubernetes.io/managed-by: Helm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+         git-commit: 94f909b03f2f4189ac433e1aba8cd1147b3aa467
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     spec:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       containers:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+         - name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+           image: &amp;#34;gcr.io/owner/myapp:0.0.0-SNAPSHOT-PR-129-16&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+           ports:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+             - name: http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               containerPort: 8080
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+           livenessProbe:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+             tcpSocket:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               port: http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+           readinessProbe:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+             httpGet:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               path: /
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               port: http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+           resources:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+             limits:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               cpu: &amp;#34;0.1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               memory: 32M
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+             requests:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               cpu: &amp;#34;0.1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               memory: 32M
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       enableServiceLinks: false
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       terminationGracePeriodSeconds: 30
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129, preview-myapp-pr-129, Ingress (networking.k8s.io) has been added:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ # Source: myapp/templates/ingress.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ apiVersion: networking.k8s.io/v1beta1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ kind: Ingress
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   name: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   labels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     helm.sh/chart: myapp-4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/version: &amp;#34;latest&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     app.kubernetes.io/managed-by: Helm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     git-commit: 94f909b03f2f4189ac433e1aba8cd1147b3aa467
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   annotations:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     kubernetes.io/ingress.class: nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     kubernetes.io/ingress.allow-http: &amp;#34;false&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ spec:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   rules:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     - host: preview-myapp-pr-129.jx.example.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+       http:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+         paths:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+           - backend:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               serviceName: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+               servicePort: 8080
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+   tls:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+     - secretName: preview-myapp-pr-129-tls-wildcard
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Upgrading release=preview-myapp-pr-129, chart=../myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Release &amp;#34;preview-myapp-pr-129&amp;#34; does not exist. Installing it now.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LAST DEPLOYED: Fri Apr 24 05:11:49 2020
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAMESPACE: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;STATUS: deployed
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REVISION: 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Listing releases matching ^preview-myapp-pr-129$
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129	preview-myapp-pr-129	1       	2020-04-24 05:11:49.634624822 +0000 UTC	deployed	myapp-4.3.0	latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;UPDATED RELEASES:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME                          CHART             VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129   ../myapp     4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Preview Environment successfully installed with Helmfile!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;for the second run&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Creating a preview
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;expose:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Annotations:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    helm.sh/hook: post-install,post-upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    helm.sh/hook-delete-policy: hook-succeeded
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  config:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    domain: jx.example.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    exposer: Ingress
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    http: &amp;#34;true&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  image:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    repository: gcr.io/owner/myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    tag: 0.0.0-SNAPSHOT-PR-129-18
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  name: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  namespace: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  releaseName: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Installing Preview Environment with Helmfile...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Running: helmfile --file=helmfile.yaml --state-values-file=/workspace/source/charts/preview/extraValues.yaml --state-values-set=tags.jx-ns-preview-myapp-pr-129=true,global.jxNsPreviewMyappPr129=true,tags.jx-preview=true,tags.jx-env-preview-myapp-pr-129=true,global.jxPreview=true,global.jxEnvPreviewMyappPr129=true,global.jxNs=preview-myapp-pr-129,global.jxTypeEnv=preview,global.jxEnv=preview-myapp-pr-129,global.jxPreviewApp=myapp,global.jxPreviewPr=129 --namespace=preview-myapp-pr-129 apply
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Building dependency release=preview-myapp-pr-129, chart=../myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Comparing release=preview-myapp-pr-129, chart=../myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129, preview-myapp-pr-129, Deployment (apps) has changed:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  # Source: myapp/templates/deployment.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  apiVersion: apps/v1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  kind: Deployment
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    name: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    labels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      helm.sh/chart: myapp-4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      app.kubernetes.io/version: &amp;#34;latest&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      app.kubernetes.io/managed-by: Helm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      git-commit: 94f909b03f2f4189ac433e1aba8cd1147b3aa467
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  spec:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    replicas: 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    revisionHistoryLimit: 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    selector:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      matchLabels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    template:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        labels:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          helm.sh/chart: myapp-4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          app.kubernetes.io/name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          app.kubernetes.io/instance: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          app.kubernetes.io/version: &amp;#34;latest&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          app.kubernetes.io/managed-by: Helm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          git-commit: 94f909b03f2f4189ac433e1aba8cd1147b3aa467
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      spec:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        containers:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          - name: myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-           image: &amp;#34;gcr.io/owner/myapp:0.0.0-SNAPSHOT-PR-129-16&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+           image: &amp;#34;gcr.io/owner/myapp:0.0.0-SNAPSHOT-PR-129-18&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ports:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              - name: http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                containerPort: 8080
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            livenessProbe:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              tcpSocket:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                port: http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            readinessProbe:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              httpGet:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                path: /
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                port: http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            resources:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              limits:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                cpu: &amp;#34;0.1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                memory: 32M
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              requests:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                cpu: &amp;#34;0.1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                memory: 32M
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        enableServiceLinks: false
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        terminationGracePeriodSeconds: 30
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Upgrading release=preview-myapp-pr-129, chart=../myapp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Release &amp;#34;preview-myapp-pr-129&amp;#34; has been upgraded. Happy Helming!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Listing releases matching ^preview-myapp-pr-129$
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LAST DEPLOYED: Fri Apr 24 08:36:04 2020
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAMESPACE: preview-myapp-pr-129
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;STATUS: deployed
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REVISION: 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129	preview-myapp-pr-129	2       	2020-04-24 08:36:04.231316767 +0000 UTC	deployed	myapp-4.3.0	latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;UPDATED RELEASES:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME                          CHART             VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;preview-myapp-pr-129   ../myapp     4.3.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Preview Environment successfully installed with Helmfile!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;233-proposed-implementation&#34;&gt;2.3.3 Proposed implementation&lt;/h4&gt;
+&lt;p&gt;The real implementation should:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;include a recent version of helmfile and helm 3 in the official jx container image, along with helmfile&amp;rsquo;s required plugins (diff)&lt;/li&gt;
+&lt;li&gt;use a global flag in &lt;code&gt;jx-requirements.yaml&lt;/code&gt; to enable Helmfile for preview environment&lt;/li&gt;
+&lt;li&gt;don&amp;rsquo;t fail if it doesn&amp;rsquo;t find a preview chart&lt;/li&gt;
+&lt;li&gt;maybe generate a &lt;code&gt;helmfile.yaml&lt;/code&gt; with good default values if none can be found in the repository?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-benefits&#34;&gt;3. Benefits&lt;/h2&gt;
+&lt;p&gt;There are quite a few benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;very easy to add charts in a preview env, including ones from custom repos&lt;/li&gt;
+&lt;li&gt;values files can now be templatized, using (almost) the same functions as Helm templates&lt;/li&gt;
+&lt;li&gt;can use secrets from multiple backends, including &lt;a href=&#34;https://github.com/mozilla/sops&#34;&gt;sops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;using Helm 3, which brings support for library charts - but it can also use Helm 2, in tiller-less mode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-migration&#34;&gt;4. Migration&lt;/h2&gt;
+&lt;p&gt;It is a relatively small change but with a big impact, because it will impact the organization of all repositories using Jenkins X.
+Here is a migration plan proposal:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use a new &amp;ldquo;alpha&amp;rdquo; command to allow a few users to try out this new feature, without impacting other users.
+This would still require a change in the container image, to bundle Helmfile and Helm 3 along with jx and Helm 2.&lt;/li&gt;
+&lt;li&gt;Use an auto-detection mechanism to see if the &lt;code&gt;charts/preview&lt;/code&gt; directory contains a &lt;code&gt;Chart.yaml&lt;/code&gt; or an &lt;code&gt;helmfile.yaml&lt;/code&gt; file, and use the right tool - Helm or Helmfile - based on that.
+This would allow users to migrate their repositories one by one.&lt;/li&gt;
+&lt;li&gt;Update the buildpacks to generate the &lt;code&gt;charts/preview&lt;/code&gt; with an &lt;code&gt;helmfile.yaml&lt;/code&gt; file instead of an &amp;ldquo;umbrella&amp;rdquo; chart.
+At this point new repositories will use Helmfile by default.&lt;/li&gt;
+&lt;li&gt;Write a migration tool / command to migrate from an umbrella chart to an Helmfile structure?&lt;/li&gt;
+&lt;li&gt;Deprecate the support for the umbrella chart: when we detect a &lt;code&gt;Chart.yaml&lt;/code&gt; print a warning message in the logs.&lt;/li&gt;
+&lt;li&gt;Remove support for the umbrella chart.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Community: Decomposition of Jenkins X</title>
+      <link>https://jayex.io/community/enhancements/proposals/5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/5/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1-overview&#34;&gt;1. Overview&lt;/h2&gt;
+&lt;p&gt;This document outlines the work for decomposing Jenkins X into a series of reusable libraries.&lt;/p&gt;
+&lt;h2 id=&#34;11-motivation&#34;&gt;1.1 Motivation&lt;/h2&gt;
+&lt;p&gt;At the moment, the source code that comprises the main JX binary is tightly coupled and difficult to work on.  Changes have
+unintended consequences and this makes the codebase fragile.&lt;/p&gt;
+&lt;p&gt;One of the design goals in Accelerate is to have a &lt;strong&gt;Loosely Coupled Architecture&lt;/strong&gt; - in particular:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The goal is for your architecture to support the ability of teams to get their work done—from design through to deployment—without requiring high-bandwidth communication between teams.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;12-background&#34;&gt;1.2 Background&lt;/h2&gt;
+&lt;p&gt;The main &lt;a href=&#34;https://github.com/jenkins-x/jx&#34;&gt;JX repository&lt;/a&gt; contains over 250k lines of code, creating Apps / Extensions / Binary Plugins is difficult without adding a dependency back onto the JX repo.&lt;/p&gt;
+&lt;p&gt;It should be possible to separate the repository out into a series of reusable libraries so only what is needed can be imported.&lt;/p&gt;
+&lt;h2 id=&#34;2-design&#34;&gt;2. Design&lt;/h2&gt;
+&lt;p&gt;There are currently a number of proposed repositories/modules, some of these are currently in flight.&lt;/p&gt;
+&lt;h3 id=&#34;existing-modules&#34;&gt;Existing Modules&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx-api&#34;&gt;jx-api&lt;/a&gt;: JX CRDs / Installation Requirements&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx-kube-client&#34;&gt;jx-kube-client&lt;/a&gt;: A helper module to create a Kubernetes rest config&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx-vault-client&#34;&gt;jx-vault-client&lt;/a&gt;: &lt;strong&gt;Deprecated&lt;/strong&gt; this has been implemented to aid decomposition, it will not be supported longer term.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/go-scm&#34;&gt;go-scm&lt;/a&gt;: All SCM operations&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/lighthouse-config&#34;&gt;lighthouse-config&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;proposed-modules&#34;&gt;Proposed Modules&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;jx-kube/jx-helpers: It may make sense to refactor some of the higher level utils/kube functions within JX into its own package to make them reusable.&lt;/li&gt;
+&lt;li&gt;Metapipeline Client&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx-codegen&#34;&gt;codegen&lt;/a&gt;: this currently exists within the JX repository and is often copied between projects.&lt;/li&gt;
+&lt;li&gt;Version Streams: Would these make sense to be moved out of JX?&lt;/li&gt;
+&lt;li&gt;Updatebot (jx create pr)? This would have value outside of the core JX codebase&lt;/li&gt;
+&lt;li&gt;Storage APIs?&lt;/li&gt;
+&lt;li&gt;Cloud APIs?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;21-action-plan&#34;&gt;2.1. Action Plan&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;Agree on a way forward!&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Ensure &lt;a href=&#34;https://github.com/jenkins-x/jx/pull/7313&#34;&gt;Kubernetes Dependency Updates PR&lt;/a&gt; is merged.&lt;/li&gt;
+&lt;li&gt;Re-introduce &lt;a href=&#34;https://github.com/jenkins-x/jx-api&#34;&gt;jx-api&lt;/a&gt; as a dependency within &lt;a href=&#34;https://github.com/jenkins-x/jx&#34;&gt;jx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Test and Release&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Once we have completed this once, we should be able to repeat the following process a number of times&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Identify code to be extracted&lt;/li&gt;
+&lt;li&gt;Extract code into new repo&lt;/li&gt;
+&lt;li&gt;Release new repository&lt;/li&gt;
+&lt;li&gt;Reintroduce library as a dependency inside JX&lt;/li&gt;
+&lt;li&gt;Repeat as required.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;22-considerations-for-new-repositories&#34;&gt;2.2 Considerations for New Repositories&lt;/h2&gt;
+&lt;p&gt;All new repositories should aim for the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic documentation to explain how the module should be used&lt;/li&gt;
+&lt;li&gt;A full set of &lt;a href=&#34;https://golangci-lint.run/usage/linters&#34;&gt;linters&lt;/a&gt;, suggesting (asciicheck bodyclose deadcode dogsled dupl errcheck goconst gofmt goimports gosec gosimple govet ineffassign interfacer misspell staticcheck structcheck typecheck unconvert unparam unused varcheck), ideally add gocyclo, nestif &amp;amp; gocritic&lt;/li&gt;
+&lt;li&gt;Tests (we should define a base level for code coverage, I&amp;rsquo;d expect this to be quite low initially)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://goreportcard.com/&#34;&gt;Go Report Card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Should aim to use &lt;a href=&#34;https://semver.org/&#34;&gt;Semantic Versioning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Change Logs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Q: It may be possible to template this out? or even use a buildpack to create this?&lt;/p&gt;
+&lt;h2 id=&#34;3-acceptance-criteria&#34;&gt;3. Acceptance Criteria&lt;/h2&gt;
+&lt;p&gt;I think we can say that this has been successful when new Apps / Operators / Plugins can be created for Jenkins-X without
+having to depend on the JX repository.  We must provide all the wiring to make this easy.&lt;/p&gt;
+&lt;p&gt;It should be easier to do the right thing, than the wrong thing.&lt;/p&gt;
+&lt;h2 id=&#34;4-faq&#34;&gt;4. FAQ&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;When should we start this?&lt;/strong&gt; We should aim to start this immediately, new functionality should be written in this decomposed way, if
+we ultimately decide that this is a bad idea, Its far easier to refactor something into the JX codebase than it is to refactor something out.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I have an idea for a module?&lt;/strong&gt; Great, add it to the list.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shouldn&amp;rsquo;t we plan out what modules we are going to need first?&lt;/strong&gt; It&amp;rsquo;s very hard to understand exactly what we can
+extract in a timely manner, without trying to do it.  I&amp;rsquo;m expecting there to be a number of failed attempts / false starts
+on this - and this is ok.  For instance, we may discover that we need to perform a refactor inside JX before we can pull out
+a module, this is ok. It&amp;rsquo;s all part of continuously improving.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Won&amp;rsquo;t extra modules add additional overhead?&lt;/strong&gt; Yes they will, but they will also bring much larger advantages.  We should aim
+to use &lt;code&gt;dependabot&lt;/code&gt; (on a weekly schedule) to update dependencies in sub projects, afterall, this is what we would expect
+the community to use.  If we find that we are constantly version chasing from one module to the next, then that code is too
+highly coupled and we need to rethink (refactor or take a different approach)&lt;/p&gt;
+&lt;h2 id=&#34;5-additional-benefits&#34;&gt;5. Additional Benefits&lt;/h2&gt;
+&lt;p&gt;It may make sense to use this as an opportunity to dog-food Jenkins-X. We should create a buildpack to allow the easy
+creation of new modules that contains all of the build &amp;amp; lint configuration required.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Community: Trigger Jenkins</title>
+      <link>https://jayex.io/community/enhancements/proposals/trigger-jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/trigger-jenkins/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;problem-be-able-to-trigger-pipelines-in-remote-jenkins-servers&#34;&gt;Problem: be able to trigger pipelines in remote Jenkins servers&lt;/h1&gt;
+&lt;p&gt;We want to make it easy to reuse existing remote Jenkins servers with Jenkins X / tekton so that folks can work with either 100% cloud native tekton based automated CI/CD from Jenkins X or reuse existing Jenkins pipelines with remote Jenkins servers.&lt;/p&gt;
+&lt;p&gt;Over time we can then bring more value to folks using a mixture of Jenkins + Jenkins X. e.g.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reuse ChatOps from Jenkins X for existing projects that use Jenkins pipelines&lt;/li&gt;
+&lt;li&gt;Reuse Jenkins X Apps / Build Packs on projects released by Jenkins
+&lt;ul&gt;
+&lt;li&gt;E.g. reuse Jenkins X Apps / Pipelines for linting, code quality, security scanning - while preserving the existing Jenkins pipelines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;solutio&#34;&gt;Solutio&lt;/h2&gt;
+&lt;p&gt;Check out the &lt;a href=&#34;https://jenkins-x.io/docs/labs/jenkins/&#34;&gt;docs for using the PoC and using it with Jenkins X and helm 3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In addition there is a small CLI / container image &lt;a href=&#34;https://github.com/jenkins-x-labs/trigger-pipeline&#34;&gt;jenkins-x-labs/trigger-pipeline&lt;/a&gt; which can be invoked from inside any kind of CI / pipeline to trigger a pipeline in a remote Jenkins server.&lt;/p&gt;
+&lt;p&gt;This allows a jenkins pipeline to be invoked in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;any kubernetes cluster/namespace&lt;/li&gt;
+&lt;li&gt;any jenkins server (inside or outside of k8s)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;from anywhere in the cloud native ecosystem:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kubernetes Job&lt;/li&gt;
+&lt;li&gt;Jenkins X Pipeline&lt;/li&gt;
+&lt;li&gt;Tekton&lt;/li&gt;
+&lt;li&gt;GitHub Actions&lt;/li&gt;
+&lt;li&gt;Any Jenkins server (inside or outside of k8s)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;open-issues&#34;&gt;Open Issues&lt;/h2&gt;
+&lt;p&gt;There are a number of remaining problems that trigger-pipeline does not solve by itself:&lt;/p&gt;
+&lt;h3 id=&#34;discovering-the-jenkins-server--api-token&#34;&gt;Discovering the Jenkins Server + API token&lt;/h3&gt;
+&lt;p&gt;To work trigger-pipeline needs to know where the Jenkins server is and how to talk to it. So it needs a URL and an API Token.&lt;/p&gt;
+&lt;p&gt;There’s no standard way to define that nor any tooling for configuring that.&lt;/p&gt;
+&lt;p&gt;So the trigger-pipeline CLI defines a number of &lt;a href=&#34;https://github.com/jenkins-x-labs/trigger-pipeline#adding-jenkins-servers&#34;&gt;commands to register Jenkins servers&lt;/a&gt; along with the username + API token to use.&lt;/p&gt;
+&lt;p&gt;Over time we should be able to create some Core capability to automatically populate the Jenkins server registry.&lt;/p&gt;
+&lt;h3 id=&#34;setting-up-the-pipelines&#34;&gt;Setting up the pipelines&lt;/h3&gt;
+&lt;p&gt;Having a &lt;code&gt;trigger-pipeline&lt;/code&gt; binary is one thing but then creating a custom &lt;em&gt;jenkins-x.yml&lt;/em&gt; pipeline file with details of how to find the Jenkins URL + the Secret and setting up webhooks is another issue.&lt;/p&gt;
+&lt;p&gt;Currently &lt;code&gt;trigger-pipeline&lt;/code&gt; is not very developer friendly and will require some wizards that can automate the creation of trigger-pipeline based &lt;em&gt;jenkins-x.yml.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;faqs&#34;&gt;FAQs&lt;/h2&gt;
+&lt;h3 id=&#34;jenkins-x-used-to-install-a-jenkins-server-into-kubernetes-for-me-how-do-i-install-jenkins-now&#34;&gt;Jenkins X used to install a Jenkins Server into Kubernetes for me. How do I install Jenkins now?&lt;/h3&gt;
+&lt;p&gt;Jenkins is to Jenkins X as Java is to Javascript - all they share is a name. You don&amp;rsquo;t need Jenkins installed to use Jenkins X. That said, you may want to install Jenkins in the same Kubernetes cluster as Jenkins X. Here&amp;rsquo;s some links that explain how you can do it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Jenkins Operator - &lt;a href=&#34;https://jenkinsci.github.io/kubernetes-operator/docs/installation/&#34;&gt;https://jenkinsci.github.io/kubernetes-operator/docs/installation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Jenkins Helm Chart - &lt;a href=&#34;https://github.com/helm/charts/tree/master/stable/jenkins&#34;&gt;https://github.com/helm/charts/tree/master/stable/jenkins&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As well as some commercial offerings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CloudBees Core - &lt;a href=&#34;https://docs.cloudbees.com/docs/cloudbees-jenkins-distribution/latest/distro-install-guide/kubernetes&#34;&gt;https://docs.cloudbees.com/docs/cloudbees-jenkins-distribution/latest/distro-install-guide/kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Google Kubernetes Engine - &lt;a href=&#34;https://cloud.google.com/solutions/jenkins-on-kubernetes-engine-tutorial&#34;&gt;https://cloud.google.com/solutions/jenkins-on-kubernetes-engine-tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Community: Propagation of changelogs</title>
+      <link>https://jayex.io/community/enhancements/proposals/propagate-changelogs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/propagate-changelogs/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1-overview&#34;&gt;1. Overview&lt;/h2&gt;
+&lt;p&gt;This document outlines how to propagate change logs along with version changes when using &lt;code&gt;jx promote&lt;/code&gt; and &lt;code&gt;jx updatebot pr&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;11-motivation&#34;&gt;1.1 Motivation&lt;/h2&gt;
+&lt;p&gt;At the moment, the change log resulting from upgrading a dependency of an application at best shows to which version of
+what dependency the upgrade was made. A lot more information would be useful to show, and it should be fairly easy to achieve.&lt;/p&gt;
+&lt;h2 id=&#34;12-goal&#34;&gt;1.2 Goal&lt;/h2&gt;
+&lt;p&gt;The goal is that the resulting change log of a dependency upgrade done using &lt;code&gt;jx promote&lt;/code&gt; or &lt;code&gt;jx updatebot pr&lt;/code&gt; should show
+the change logs of the dependency. If there are versions that has not been deployed also the change log for the versions
+skipped over should be included.&lt;/p&gt;
+&lt;p&gt;Where possible dependency updates should also be added to the changelog.&lt;/p&gt;
+&lt;p&gt;The behaviour should be easily adaptable both in pipelines and for cluster repositories.&lt;/p&gt;
+&lt;h2 id=&#34;2-design-proposal&#34;&gt;2. Design proposal&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;jx changelog create&lt;/code&gt; already supports generating a change log document to a file in Markdown format.
+The content of this file can then be added after a divider (I propose the section divider &amp;ldquo;&lt;code&gt;-----&lt;/code&gt;&amp;rdquo;) to the body of the pull request by
+&lt;code&gt;jx promote&lt;/code&gt; and &lt;code&gt;jx updatebot pr&lt;/code&gt;. When &lt;code&gt;jx promote&lt;/code&gt; and &lt;code&gt;jx updatebot pr&lt;/code&gt; is updating an existing pull request any
+existing change log of the PR should be kept and the changelog for the current upgrade is added.&lt;/p&gt;
+&lt;p&gt;When &lt;code&gt;jx changelog create&lt;/code&gt; encounters the merge of a pull request it should include the changelog from its body in the generated changelog.
+This has the added benefit that manually added or changed changelogs from these pull requests also will turn up in the changelog.&lt;/p&gt;
+&lt;p&gt;For added context in cluster repos the change in &lt;code&gt;docs/releases.yaml&lt;/code&gt; could be used to populate the section
+&lt;strong&gt;Dependency Updates&lt;/strong&gt; that is already partly supported by &lt;code&gt;jx changelog create&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To support this by default the invocations of &lt;code&gt;jx changelog create&lt;/code&gt;, &lt;code&gt;jx promote&lt;/code&gt; and &lt;code&gt;jx updatebot pr&lt;/code&gt; in
+&lt;code&gt;jenkins-x/jx3-pipeline-catalog&lt;/code&gt; needs to be updated.&lt;/p&gt;
+&lt;p&gt;Also &lt;code&gt;src/Makefile.mk&lt;/code&gt; in &lt;code&gt;jenkins-x/jx3-versions&lt;/code&gt; needs to be updated to support changelog for cluster repositories.
+Since &lt;code&gt;jx changelog create&lt;/code&gt; needs tags to create the changelog and tagging currently is only done when
+&lt;code&gt;KUBEAPPLY = kpt-apply&lt;/code&gt; is set in the repository Makefile this will initially be required to get the changelog
+functionality for cluster repositories.&lt;/p&gt;
+&lt;p&gt;The command line arguments needs to be amendable using variables to ease customization.&lt;/p&gt;
+&lt;h2 id=&#34;3-affected-repositories&#34;&gt;3. Affected repositories&lt;/h2&gt;
+&lt;p&gt;As outlined above the following repositories need changes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x-plugins/jx-changelog&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x-plugins/jx-promote&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x-plugins/jx-updatebot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x/jx3-versions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x/jx3-pipeline-catalog&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Community: Proposals</title>
+      <link>https://jayex.io/community/enhancements/proposals/proposals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/proposals/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/rawlingsj/enhancements/blob/master/proposals/labs/README.md&#34;&gt;Labs - enable rapid innovation while keeping a stable base platform&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/hferentschik/enhancements/blob/cloud-resources/proposals/3/README.md&#34;&gt;Cloud Resource Creation&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jstrachan/enhancements/blob/jenkins-trigger/proposals/trigger-jenkins/README.md&#34;&gt;Trigger Jenkins Pipelines&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vbehar/enhancements/blob/preview-helmfile/proposals/4/README.md&#34;&gt;Preview with Helmfile&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/garethjevans/enhancements/blob/decomposition/proposals/5/README.md&#34;&gt;Decomposition of Jenkins X&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Community: Use Tekton Dashboard</title>
+      <link>https://jayex.io/community/enhancements/proposals/use-tekton-dashboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/community/enhancements/proposals/use-tekton-dashboard/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1-overview&#34;&gt;1. Overview&lt;/h2&gt;
+&lt;p&gt;This document outlines how to use Tekton Dashboard instead of jx-pipelines-visualizer.&lt;/p&gt;
+&lt;h2 id=&#34;11-motivation&#34;&gt;1.1 Motivation&lt;/h2&gt;
+&lt;p&gt;The idea is to have less to maintain inside the jx3 ecosystem, step by step, starting with the Dashboard
+I personnaly like their Dashboard, and want to use as most as possible Tekton features&lt;/p&gt;
+&lt;h2 id=&#34;12-goal&#34;&gt;1.2 Goal&lt;/h2&gt;
+&lt;p&gt;The goal is that instead of using jx-pipelines-visualizer with his own log persistency, we can use Tekton Dashboard with Tekton Results in order to persist Logs.&lt;/p&gt;
+&lt;h2 id=&#34;13-requirements&#34;&gt;1.3 Requirements&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Kubernetes version: 1.22.x
+Tekton Pipeline version: 0.42.0
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;14-screenshot-of-tekton-dashboard&#34;&gt;1.4 Screenshot of Tekton Dashboard&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;media/tekton-dashboard.png&#34; alt=&#34;Design&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-design-proposal&#34;&gt;2. Design proposal&lt;/h2&gt;
+&lt;h3 id=&#34;21-how-to-have-tekton-dashboard-with-logs-persistency&#34;&gt;2.1 How to have Tekton Dashboard with Logs persistency&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Tekton Dashboard Helm Chart can be added in the repostiory &lt;a href=&#34;https://github.com/cdfoundation/tekton-helm-chart/tree/main&#34;&gt;cdfoundation/tekton-helm-chart&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;this &lt;a href=&#34;https://tekton.dev/docs/dashboard/install/&#34;&gt;installing-tekton-dashboard documentation&lt;/a&gt; can help to create the helm chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Tekton Results Helm Chart can be added in the repostiory &lt;a href=&#34;https://github.com/cdfoundation/tekton-helm-chart/tree/main&#34;&gt;cdfoundation/tekton-helm-chart&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;this &lt;a href=&#34;https://github.com/tektoncd/results/blob/main/docs/install.md#installing-tekton-results&#34;&gt;Installing Tekton Results documentation&lt;/a&gt; can help to create the helm chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Both Tekton Dashboard &amp;amp; Tekton Results can be added as optional and configured in &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions&#34;&gt;jenkins-x/jx3-versions&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;a href=&#34;https://github.com/tektoncd/results/tree/main/docs/api&#34;&gt;Tekton Results queryable gRPC API server &lt;/a&gt; as a fallback source for logs with the Tekton Dashboard argument &lt;code&gt;--external-logs&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;fallback is useful after the PipelineRun / TaskRun or backing Pod has been deleted to retrieve logs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;22-how-to-configure-lighthouse-to-use-tekton-dashboard-&#34;&gt;2.2 How to configure Lighthouse to use Tekton Dashboard ?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse/values.yaml.gotmpl#L28&#34;&gt;.Values.env.LIGHTHOUSE_DASHBOARD_TEMPLATE&lt;/a&gt; &amp;amp;&amp;amp; &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse/values.yaml.gotmpl#L24&#34;&gt;.Values.tektoncontroller.dashboardTemplate&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;override them to &amp;quot;&amp;quot; in order to have this default value that represent the tekton dashboard url to pipelineruns:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fmt.Sprintf(&amp;quot;%s/#/namespaces/%s/pipelineruns/%s&amp;quot;, trimDashboardURL(r.dashboardURL)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkins-x/lighthouse/blob/v1.11.10/pkg/engines/tekton/controller.go#L200-L202&#34;&gt;source&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse/values.yaml.gotmpl#L23&#34;&gt;.Values.tektoncontroller.dashboardURL&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;override it to the url of tekton dashboard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-affected-repositories&#34;&gt;3. Affected repositories&lt;/h2&gt;
+&lt;p&gt;As outlined above the following repositories need changes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;cdfoundation/tekton-helm-chart&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x/jx3-versions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;jenkins-x/lighthouse&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-current-limitation-of-using-tekton-dashboard&#34;&gt;4. Current limitation of using Tekton Dashboard&lt;/h2&gt;
+&lt;p&gt;If we want to Rerun a Tekton PipelineRuns through the Tekton Dashboard instead of using &lt;code&gt;jx pipeline start&lt;/code&gt;, this will only create a PipelineRun without creating the associated Jx3 PipelineActivity. Then the associated Github Status normally updated by Lighthouse won&amp;rsquo;t be at all here because Lighthouse is only watching for PipelineActivity and not PipelineRun.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

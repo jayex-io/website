@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx admin</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/admin/</link>
-    <description>Recent content in jx admin on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx admin</title>
+    <link>https://jayex.io/v3/develop/reference/jx/admin/</link>
+    <description>Recent content in jx admin on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/admin/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/admin/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,17 +15,17 @@
     
     <item>
       <title>V3: jx admin create</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/create/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/create/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/create/</guid>
       <description>
         
         
         &lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;jx admin create
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;synopsis&#34;&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Creates a new git repository for a new Jenkins X installation&lt;/p&gt;
+&lt;p&gt;Creates a new git repository for a new JayeX installation&lt;/p&gt;
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# create a new git repository which we can then boot up&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx-admin create
@@ -96,10 +96,10 @@
     
     <item>
       <title>V3: jx admin invitation</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/invitation/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/invitation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/invitation/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/invitation/</guid>
       <description>
         
         
@@ -120,10 +120,10 @@
     
     <item>
       <title>V3: jx admin log</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/log/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/log/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/log/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/log/</guid>
       <description>
         
         
@@ -158,10 +158,10 @@
     
     <item>
       <title>V3: jx admin operator</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/operator/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/operator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/operator/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/operator/</guid>
       <description>
         
         
@@ -212,10 +212,10 @@
     
     <item>
       <title>V3: jx admin plugins</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/plugins/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/plugins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/plugins/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/plugins/</guid>
       <description>
         
         
@@ -233,10 +233,10 @@
     
     <item>
       <title>V3: jx admin stop</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/stop/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/stop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/stop/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/stop/</guid>
       <description>
         
         
@@ -260,10 +260,10 @@
     
     <item>
       <title>V3: jx admin trigger</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/trigger/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/trigger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/trigger/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/trigger/</guid>
       <description>
         
         
@@ -292,10 +292,10 @@
     
     <item>
       <title>V3: jx admin version</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/admin/version/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/admin/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/admin/version/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/admin/version/</guid>
       <description>
         
         

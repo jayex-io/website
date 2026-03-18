@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx changelog</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/changelog/</link>
-    <description>Recent content in jx changelog on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx changelog</title>
+    <link>https://jayex.io/v3/develop/reference/jx/changelog/</link>
+    <description>Recent content in jx changelog on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/changelog/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/changelog/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx changelog create</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/changelog/create/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/changelog/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/changelog/create/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/changelog/create/</guid>
       <description>
         
         
@@ -32,7 +32,7 @@
 &lt;p&gt;This command also generates a Release Custom Resource Definition you can include in your helm chart to give metadata about the changelog of the application along with metadata about the release (git tag, url, commits, issues fixed etc). Including this metadata in a helm charts means we can do things like automatically comment on issues when they hit Staging or Production; or give detailed descriptions of what things have changed when using GitOps to update versions in an environment by referencing the fixed issues in the Pull Request.&lt;/p&gt;
 &lt;p&gt;You can opt out of the release YAML generation via the &amp;lsquo;&amp;ndash;generate-yaml=false&amp;rsquo; option&lt;/p&gt;
 &lt;p&gt;To update the release notes on your git provider needs a git API token which is usually provided via the Tekton git authentication mechanism.&lt;/p&gt;
-&lt;p&gt;Apart from using your git provider as the issue tracker there is also support for Jira. You then specify issues in commit messages with the issue key that looks like ABC-123. You can configure this in in similar ways as environments, see &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/config/&#34;&gt;https://jenkins-x.io/v3/develop/environments/config/&lt;/a&gt;. An example configuration:&lt;/p&gt;
+&lt;p&gt;Apart from using your git provider as the issue tracker there is also support for Jira. You then specify issues in commit messages with the issue key that looks like ABC-123. You can configure this in in similar ways as environments, see &lt;a href=&#34;https://jayex.io/v3/develop/environments/config/&#34;&gt;https://jayex.io/v3/develop/environments/config/&lt;/a&gt;. An example configuration:&lt;/p&gt;
 &lt;p&gt;issueProvider:
 jira:
 serverUrl: &lt;a href=&#34;https://example.atlassian.net&#34;&gt;https://example.atlassian.net&lt;/a&gt;
@@ -95,10 +95,10 @@ e.g. define environment variables GIT_USERNAME and GIT_API_TOKEN&lt;/p&gt;
     
     <item>
       <title>V3: jx changelog version</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/changelog/version/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/changelog/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/changelog/version/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/changelog/version/</guid>
       <description>
         
         

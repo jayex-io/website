@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Maintainer Guide for Jenkins X</title>
-    <link>https://jenkins-x.io/community/maintainer_guide/</link>
-    <description>Recent content in Maintainer Guide for Jenkins X on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Maintainer Guide for JayeX</title>
+    <link>https://jayex.io/community/maintainer_guide/</link>
+    <description>Recent content in Maintainer Guide for JayeX on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/community/maintainer_guide/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/community/maintainer_guide/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,23 +15,23 @@
     
     <item>
       <title>Community: Mentorship opportunities</title>
-      <link>https://jenkins-x.io/community/maintainer_guide/mentorship/</link>
+      <link>https://jayex.io/community/maintainer_guide/mentorship/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/maintainer_guide/mentorship/</guid>
+      <guid>https://jayex.io/community/maintainer_guide/mentorship/</guid>
       <description>
         
         
-        &lt;p&gt;A maintainer is expected to help in increasing the adoption of Jenkins X and add new contributors.&lt;/p&gt;
-&lt;p&gt;Helping Jenkins X participate in internship opportunities is an excellent way to give Jenkins X more visibility and get new contributors.&lt;/p&gt;
-&lt;p&gt;These are the various internship programs that Jenkins X can participate in.&lt;/p&gt;
+        &lt;p&gt;A maintainer is expected to help in increasing the adoption of JayeX and add new contributors.&lt;/p&gt;
+&lt;p&gt;Helping JayeX participate in internship opportunities is an excellent way to give JayeX more visibility and get new contributors.&lt;/p&gt;
+&lt;p&gt;These are the various internship programs that JayeX can participate in.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Google summer of code&lt;/li&gt;
 &lt;li&gt;Google season of docs&lt;/li&gt;
 &lt;li&gt;Outreachy&lt;/li&gt;
 &lt;li&gt;LFX mentorship&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The Jenkins X Technical Oversight Committee (TOC) is responsible for keeping a list of projects year round.
+&lt;p&gt;The JayeX Technical Oversight Committee (TOC) is responsible for keeping a list of projects year round.
 This will help maintainers to float a project with less effort.&lt;/p&gt;
 &lt;p&gt;If you are interested in mentoring, please open a pull request in the jx-community repository with your project proposal.&lt;/p&gt;
 
@@ -40,17 +40,17 @@ This will help maintainers to float a project with less effort.&lt;/p&gt;
     
     <item>
       <title>Community: Golang upgrades</title>
-      <link>https://jenkins-x.io/community/maintainer_guide/go-upgrades/</link>
+      <link>https://jayex.io/community/maintainer_guide/go-upgrades/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/maintainer_guide/go-upgrades/</guid>
+      <guid>https://jayex.io/community/maintainer_guide/go-upgrades/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X codebase uses Golang/Go.
+        &lt;p&gt;JayeX codebase uses Golang/Go.
 New versions of golang comes every 6 months, and golang supports only &lt;a href=&#34;https://endoflife.date/go&#34;&gt;2 versions&lt;/a&gt;.
-It is highly desireable to use the latest and greatest version of golang for Jenkins X as newer versions have performance improvements and get regular security updates.&lt;/p&gt;
-&lt;p&gt;To update golang version in Jenkins X follow these steps&lt;/p&gt;
+It is highly desireable to use the latest and greatest version of golang for JayeX as newer versions have performance improvements and get regular security updates.&lt;/p&gt;
+&lt;p&gt;To update golang version in JayeX follow these steps&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Open an issue in jx repository announcing the upgrade.&lt;/li&gt;
 &lt;li&gt;Change the go version in the pipeline catalog repository.
@@ -72,7 +72,7 @@ See this &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/pull/3240&#34
 &lt;li&gt;Follow these steps to upgrade the version
 &lt;ul&gt;
 &lt;li&gt;Change the version in go.mod file&lt;/li&gt;
-&lt;li&gt;Upgrade any direct dependencies to other Jenkins X packages that you see in go.mod: If you for example find the line &lt;code&gt;github.com/jenkins-x/jx-logging/v3 v3.0.7&lt;/code&gt; you run go get -u github.com/jenkins-x/jx-logging/v3&lt;/li&gt;
+&lt;li&gt;Upgrade any direct dependencies to other JayeX packages that you see in go.mod: If you for example find the line &lt;code&gt;github.com/jenkins-x/jx-logging/v3 v3.0.7&lt;/code&gt; you run go get -u github.com/jenkins-x/jx-logging/v3&lt;/li&gt;
 &lt;li&gt;Run &lt;code&gt;go mod tidy&lt;/code&gt; and ensure that it does not error out&lt;/li&gt;
 &lt;li&gt;Change &lt;code&gt;GO_VERSION&lt;/code&gt; in makefile to the version you are upgrading to.&lt;/li&gt;
 &lt;li&gt;Check if there are any references to an older version and replace those.&lt;/li&gt;
@@ -82,7 +82,7 @@ See this &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/pull/3240&#34
 &lt;li&gt;tests are working, by running &lt;code&gt;make test&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;linting checks are working by running &lt;code&gt;golangci-lint run&lt;/code&gt;
 &lt;ul&gt;
-&lt;li&gt;Use the same version that is used by Jenkins X. At the time of writing that is 1.58; you can see what &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/tasks/go/pullrequest.yaml&#34;&gt;image version is referenced in the pipeline&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Use the same version that is used by JayeX. At the time of writing that is 1.58; you can see what &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/tasks/go/pullrequest.yaml&#34;&gt;image version is referenced in the pipeline&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;If there is a configuration file for golangci-lint in the repository (&lt;code&gt;.golangci.yaml&lt;/code&gt;) it likely needs to be updated. See for example &lt;a href=&#34;https://github.com/jenkins-x/jx-kube-client/blob/main/.golangci.yml&#34;&gt;https://github.com/jenkins-x/jx-kube-client/blob/main/.golangci.yml&lt;/a&gt; for reference.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -96,15 +96,15 @@ See this &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/pull/3240&#34
     </item>
     
     <item>
-      <title>Community: Jenkins X infrastructure</title>
-      <link>https://jenkins-x.io/community/maintainer_guide/infrastructure/</link>
+      <title>Community: JayeX infrastructure</title>
+      <link>https://jayex.io/community/maintainer_guide/infrastructure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/maintainer_guide/infrastructure/</guid>
+      <guid>https://jayex.io/community/maintainer_guide/infrastructure/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X runs it&amp;rsquo;s infrastructure in Google Cloud Platform (GCP).
+        &lt;p&gt;JayeX runs it&amp;rsquo;s infrastructure in Google Cloud Platform (GCP).
 We have 2 GCP projects&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;jenkinsxio&lt;/li&gt;
@@ -137,15 +137,15 @@ Test clusters are created here when a pull request is opened in the &lt;a href=&
     
     <item>
       <title>Community: Add sbom generation step to release pipelines</title>
-      <link>https://jenkins-x.io/community/maintainer_guide/supply-chain-security/</link>
+      <link>https://jayex.io/community/maintainer_guide/supply-chain-security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/community/maintainer_guide/supply-chain-security/</guid>
+      <guid>https://jayex.io/community/maintainer_guide/supply-chain-security/</guid>
       <description>
         
         
         &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Jenkins X started to support supply chain security through different steps.
+&lt;p&gt;JayeX started to support supply chain security through different steps.
 Till now we support:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SBOM generation&lt;/li&gt;

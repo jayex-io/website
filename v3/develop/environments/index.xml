@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Environments</title>
-    <link>https://jenkins-x.io/v3/develop/environments/</link>
-    <description>Recent content in Environments on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Environments</title>
+    <link>https://jayex.io/v3/develop/environments/</link>
+    <description>Recent content in Environments on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/environments/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/environments/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,15 +15,15 @@
     
     <item>
       <title>V3: Git</title>
-      <link>https://jenkins-x.io/v3/develop/environments/git/</link>
+      <link>https://jayex.io/v3/develop/environments/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/environments/git/</guid>
+      <guid>https://jayex.io/v3/develop/environments/git/</guid>
       <description>
         
         
         &lt;p&gt;Each kubernetes cluster has a git repository so that all the kubernetes resources in all namespaces can be managed by GitOps. Each cluster may also have a separate infrastructure git repository (e.g. for Terraform) to define the cloud resources (buckets, IAM roles, kubernetes cluster, node pools, VPNs, firewalls etc).&lt;/p&gt;
-&lt;p&gt;So if you use a &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/multi-cluster/&#34;&gt;Multi Cluster Setup&lt;/a&gt; you have git repository per cluster to define the kubernetes resources in all the namespaces in that cluster.&lt;/p&gt;
+&lt;p&gt;So if you use a &lt;a href=&#34;https://jayex.io/v3/admin/guides/multi-cluster/&#34;&gt;Multi Cluster Setup&lt;/a&gt; you have git repository per cluster to define the kubernetes resources in all the namespaces in that cluster.&lt;/p&gt;
 &lt;p&gt;e.g. having &lt;code&gt;Dev&lt;/code&gt;, &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt; with separate clusters you&amp;rsquo;ll have 3 git repositories containing &lt;code&gt;helmfile.yaml&lt;/code&gt; files. If you use a single cluster you&amp;rsquo;ll have 1 git repository.&lt;/p&gt;
 
       </description>
@@ -31,10 +31,10 @@
     
     <item>
       <title>V3: Configuration</title>
-      <link>https://jenkins-x.io/v3/develop/environments/config/</link>
+      <link>https://jayex.io/v3/develop/environments/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/environments/config/</guid>
+      <guid>https://jayex.io/v3/develop/environments/config/</guid>
       <description>
         
         
@@ -50,9 +50,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;key&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;production&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;which defaults to meaning that &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt; are namespaces (&lt;code&gt;jx-staging&lt;/code&gt; and &lt;code&gt;jx-production&lt;/code&gt;) in the local cluster. &lt;code&gt;Staging&lt;/code&gt; will use &lt;code&gt;Auto&lt;/code&gt; promotion and &lt;code&gt;Production&lt;/code&gt; will use &lt;code&gt;Manual&lt;/code&gt; (more on that later).&lt;/p&gt;
 &lt;h2 id=&#34;multi-cluster&#34;&gt;Multi cluster&lt;/h2&gt;
-&lt;p&gt;When you setup a &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/multi-cluster/&#34;&gt;Remote Cluster&lt;/a&gt; for &lt;code&gt;Staging&lt;/code&gt; or &lt;code&gt;Production&lt;/code&gt;  you can remove the above entries for those environments.&lt;/p&gt;
+&lt;p&gt;When you setup a &lt;a href=&#34;https://jayex.io/v3/admin/guides/multi-cluster/&#34;&gt;Remote Cluster&lt;/a&gt; for &lt;code&gt;Staging&lt;/code&gt; or &lt;code&gt;Production&lt;/code&gt;  you can remove the above entries for those environments.&lt;/p&gt;
 &lt;p&gt;Then when you import the remote cluster repository into the development environment (to setup the CI/CD on pull requests and enable promotion) the generated Pull Request will modify your &lt;code&gt;jx-requirements.yml&lt;/code&gt; to add remote entries for the remote cluster.&lt;/p&gt;
-&lt;p&gt;E.g. after importing the remote &lt;code&gt;production&lt;/code&gt; environment via &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/project/import&#34;&gt;jx project import&lt;/a&gt; and the pull request merging it should look like:&lt;/p&gt;
+&lt;p&gt;E.g. after importing the remote &lt;code&gt;production&lt;/code&gt; environment via &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/project/import&#34;&gt;jx project import&lt;/a&gt; and the pull request merging it should look like:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;core.jenkins-x.io/v4beta1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Requirements&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;spec&lt;/span&gt;:
@@ -95,9 +95,9 @@ looking like this:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;key&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;staging&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;promotionStrategy&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Never&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;custom-environments-per-group-of-repositories&#34;&gt;Custom environments per group of repositories&lt;/h2&gt;
-&lt;p&gt;If you have different teams sharing the same Jenkins X installation you may wish to organise the repositories into &lt;em&gt;groups&lt;/em&gt; (e.g. a group of repositories per team).&lt;/p&gt;
+&lt;p&gt;If you have different teams sharing the same JayeX installation you may wish to organise the repositories into &lt;em&gt;groups&lt;/em&gt; (e.g. a group of repositories per team).&lt;/p&gt;
 &lt;p&gt;The simplest way to do this is to use a separate git organisation (owner) per team and then you already get separate configurations per group/owner in the &lt;code&gt;.jx/gitops/source-config.yaml&lt;/code&gt; file in your development cluster git repository.&lt;/p&gt;
-&lt;p&gt;The added benefit of using separate git organisations is that already the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/dashboard/&#34;&gt;dashboard&lt;/a&gt; supports filtering all pipelines by owner; so each team will get effectively their own separate UI for viewing pipelines. You can easily bookmark the dashboards view for a single owner / repository.&lt;/p&gt;
+&lt;p&gt;The added benefit of using separate git organisations is that already the &lt;a href=&#34;https://jayex.io/v3/develop/ui/dashboard/&#34;&gt;dashboard&lt;/a&gt; supports filtering all pipelines by owner; so each team will get effectively their own separate UI for viewing pipelines. You can easily bookmark the dashboards view for a single owner / repository.&lt;/p&gt;
 &lt;p&gt;E.g. here&amp;rsquo;s `.jx/gitops/source-config.yaml in the development cluster git repository:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;gitops.jenkins-x.io/v1alpha1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;SourceConfig&lt;/span&gt;
@@ -153,19 +153,19 @@ looking like this:&lt;/p&gt;
     
     <item>
       <title>V3: Promotion</title>
-      <link>https://jenkins-x.io/v3/develop/environments/promotion/</link>
+      <link>https://jayex.io/v3/develop/environments/promotion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/environments/promotion/</guid>
+      <guid>https://jayex.io/v3/develop/environments/promotion/</guid>
       <description>
         
         
-        &lt;p&gt;When changes are merged to the main branch in the Jenkins X pipeline catalog a new versioned release is created (with a new image and helm chart). This new version is then promoted by creating Pull Requests on GitOps repositories.&lt;/p&gt;
+        &lt;p&gt;When changes are merged to the main branch in the JayeX pipeline catalog a new versioned release is created (with a new image and helm chart). This new version is then promoted by creating Pull Requests on GitOps repositories.&lt;/p&gt;
 &lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
 &lt;p&gt;The release pipelines use the [jx promote &amp;ndash;all](https://github.
 com/jenkins-x/jx-promote/blob/master/docs/cmd/jx-promote.md#jx-promote) command which creates Pull Requests on all
 Environments configured in your &lt;code&gt;jx-requirements.yml&lt;/code&gt; file and possibly &lt;code&gt;.jx/gitops/source-config.yaml&lt;/code&gt; or
-&lt;code&gt;.jx/settings.yaml&lt;/code&gt; (see the &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/config/&#34;&gt;Configuration&lt;/a&gt;).&lt;/p&gt;
+&lt;code&gt;.jx/settings.yaml&lt;/code&gt; (see the &lt;a href=&#34;https://jayex.io/v3/develop/environments/config/&#34;&gt;Configuration&lt;/a&gt;).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;every environment which is defined as &lt;code&gt;promotionStrategy&lt;/code&gt; &lt;strong&gt;Auto&lt;/strong&gt; or &lt;strong&gt;Manual&lt;/strong&gt; is included in a Pull Request to promote the new version to that environment&lt;/p&gt;
@@ -193,44 +193,44 @@ Environments configured in your &lt;code&gt;jx-requirements.yml&lt;/code&gt; fil
 promoting an application be reused.&lt;/p&gt;
 &lt;p&gt;Enabling reuse of pull requests for &lt;code&gt;jx promote&lt;/code&gt; is done in &lt;code&gt;jx-requirements.yaml&lt;/code&gt; by setting &lt;code&gt;reusePullRequest&lt;/code&gt; to
 &lt;code&gt;true&lt;/code&gt; for an environment. It can also be done in the same way when configuring environments others ways. See
-&lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/config/&#34;&gt;https://jenkins-x.io/v3/develop/environments/config/&lt;/a&gt; for more details about configuring environments.&lt;/p&gt;
+&lt;a href=&#34;https://jayex.io/v3/develop/environments/config/&#34;&gt;https://jayex.io/v3/develop/environments/config/&lt;/a&gt; for more details about configuring environments.&lt;/p&gt;
 &lt;p&gt;There are two main reasons why you would want to enable this:&lt;/p&gt;
 &lt;p&gt;To reduce conflicts: if a pull request is created before a previous pull request for upgrading the same application is
 merged there will be a conflict when the earlier pull request is merged. Since enabling reuse means that &lt;code&gt;jx  promote&lt;/code&gt; won&amp;rsquo;t open more pull requests for an application this can&amp;rsquo;t happen.&lt;/p&gt;
 &lt;p&gt;The other reason is if you make use of the functionality to propagate application changelogs to cluster
 repositories. This is described in the blog post
-&lt;a href=&#34;https://jenkins-x.io/blog/2023/05/24/propagate-changelogs/#reuse-pull-requests&#34;&gt;Improve your changelogs&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://jayex.io/blog/2023/05/24/propagate-changelogs/#reuse-pull-requests&#34;&gt;Improve your changelogs&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;synchronizing-environments-or-namespaces&#34;&gt;Synchronizing environments or namespaces&lt;/h2&gt;
 &lt;p&gt;By default each release of each microservice creates a Pull Request to upgrade that specific microservice to a new version in each of your environments - e.g. &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;When human approval is required in, say, &lt;code&gt;Production&lt;/code&gt; you can end up with the &lt;code&gt;drift&lt;/code&gt; between the 2 environments and want an easy way to bring them in sync.&lt;/p&gt;
-&lt;p&gt;The default with Jenkins X is for each new version of each microservice to be promoted immediately to &lt;code&gt;Staging&lt;/code&gt;. You may want to test the combination of microservices together for a while beforethen choosing to promote changes to production and may want to do this in one atomic Pull Request and commit/merge.&lt;/p&gt;
+&lt;p&gt;The default with JayeX is for each new version of each microservice to be promoted immediately to &lt;code&gt;Staging&lt;/code&gt;. You may want to test the combination of microservices together for a while beforethen choosing to promote changes to production and may want to do this in one atomic Pull Request and commit/merge.&lt;/p&gt;
 &lt;p&gt;If you wish to work in this way you can create a single Pull Request promoting all of the changes of apps between 2 environments or namespaces.&lt;/p&gt;
-&lt;p&gt;You can use the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/updatebot/sync/&#34;&gt;jx updatebot sync&lt;/a&gt; command to synchronise 2 environments or namespaces to reduce drift by creating a single Pull Request to add any missing applications or upgrade them.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/updatebot/sync/&#34;&gt;jx updatebot sync&lt;/a&gt; command to synchronise 2 environments or namespaces to reduce drift by creating a single Pull Request to add any missing applications or upgrade them.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# synchronizes the apps in 2 of your environments (local or remote)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx updatebot sync --source-env staging --target-env production
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This works whether the environments are separate namespaces within the same kubernetes cluster or you are using &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/multi-cluster/&#34;&gt;Multiple Cluster&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Note that if you are using &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/multi-cluster/&#34;&gt;Multiple Clusters&lt;/a&gt; make sure your terminal is connected to the development cluster before running &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/updatebot/sync/&#34;&gt;jx updatebot sync&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This works whether the environments are separate namespaces within the same kubernetes cluster or you are using &lt;a href=&#34;https://jayex.io/v3/admin/guides/multi-cluster/&#34;&gt;Multiple Cluster&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note that if you are using &lt;a href=&#34;https://jayex.io/v3/admin/guides/multi-cluster/&#34;&gt;Multiple Clusters&lt;/a&gt; make sure your terminal is connected to the development cluster before running &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/updatebot/sync/&#34;&gt;jx updatebot sync&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Previews</title>
-      <link>https://jenkins-x.io/v3/develop/environments/preview/</link>
+      <link>https://jayex.io/v3/develop/environments/preview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/environments/preview/</guid>
+      <guid>https://jayex.io/v3/develop/environments/preview/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X lets you spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch. This gives you faster feedback for your changes before they are merged and released and allows you to avoid having human approval inside your release pipeline to speed up delivery of changes merged to master.&lt;/p&gt;
-&lt;p&gt;When the Preview Environment is up and running Jenkins X will comment on your Pull Request with a link so in one click your team members can try out the preview!&lt;/p&gt;
-&lt;img src=&#34;https://jenkins-x.io/images/pr-comment.png&#34; class=&#34;img-thumbnail&#34;&gt;
+        &lt;p&gt;JayeX lets you spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch. This gives you faster feedback for your changes before they are merged and released and allows you to avoid having human approval inside your release pipeline to speed up delivery of changes merged to master.&lt;/p&gt;
+&lt;p&gt;When the Preview Environment is up and running JayeX will comment on your Pull Request with a link so in one click your team members can try out the preview!&lt;/p&gt;
+&lt;img src=&#34;https://jayex.io/images/pr-comment.png&#34; class=&#34;img-thumbnail&#34;&gt;
 &lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;
 &lt;p&gt;To see how to create a Preview Environment on a Pull Request see this demo:&lt;/p&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/x-GtKmmhDSI&#34; title=&#34;Demo of creating Preview Environments on Pull Requestss with Jenkins X&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/x-GtKmmhDSI&#34; title=&#34;Demo of creating Preview Environments on Pull Requestss with JayeX&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h3 id=&#34;generating-a-preview-environment&#34;&gt;Generating a preview environment&lt;/h3&gt;
-&lt;p&gt;In a typical Jenkins X development scenario, users make changes to an  application that has been &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;imported or created via a quickstart&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In a typical JayeX development scenario, users make changes to an  application that has been &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;imported or created via a quickstart&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;When the developer makes the change to their branch, with the ultimate
 goal of merging those branch changes into the &lt;code&gt;main&lt;/code&gt; branch for
 deployment to production, they save their changes from within their
@@ -259,12 +259,12 @@ development environment:&lt;/p&gt;
 &lt;p&gt;The program displays a link to a pull request. The developer can highlight the URL, right-click and choose &lt;em&gt;Open URL&lt;/em&gt; to see the GitHub page in their browser.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Jenkins X creates a preview environment in the PR for the application changes and displays a link to evaluate the new feature:&lt;/p&gt;
+&lt;p&gt;JayeX creates a preview environment in the PR for the application changes and displays a link to evaluate the new feature:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;row&#34;&gt;
   &lt;div class=&#34;col col-lg-9&#34;&gt;
-    &lt;img src=&#34;https://jenkins-x.io/images/pr-comment.png&#34;/&gt;
+    &lt;img src=&#34;https://jayex.io/images/pr-comment.png&#34;/&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 The preview environment is created whenever a pull request to the main branch is created in the
@@ -277,21 +277,21 @@ the preview environment is automatically updated.
 approve with a simple comment on the Pull Request that merges the code changes back to
 the main branch and initiate a release candidate build with the new feature:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    /approve
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The code is merged to the &lt;code&gt;main&lt;/code&gt; branch, and the release is created and will appear in the &lt;code&gt;Releases&lt;/code&gt; tab of the git repository along with any associated images or helm charts. Usually this then triggers &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/promotion/&#34;&gt;Promotion&lt;/a&gt; to other environments.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The code is merged to the &lt;code&gt;main&lt;/code&gt; branch, and the release is created and will appear in the &lt;code&gt;Releases&lt;/code&gt; tab of the git repository along with any associated images or helm charts. Usually this then triggers &lt;a href=&#34;https://jayex.io/v3/develop/environments/promotion/&#34;&gt;Promotion&lt;/a&gt; to other environments.&lt;/p&gt;
 &lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
-&lt;p&gt;the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; command creates a new &lt;a href=&#34;https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview&#34;&gt;Preview&lt;/a&gt; custom resource for each Pull Request on each repository so that we can track the resources and cleanly remove them when you run &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/destroy&#34;&gt;jx preview destroy&lt;/a&gt; pr &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/gc&#34;&gt;jx preview gc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; command creates a new &lt;a href=&#34;https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview&#34;&gt;Preview&lt;/a&gt; custom resource for each Pull Request on each repository so that we can track the resources and cleanly remove them when you run &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/destroy&#34;&gt;jx preview destroy&lt;/a&gt; pr &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/gc&#34;&gt;jx preview gc&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;For reference see the &lt;a href=&#34;https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#PreviewSpec&#34;&gt;Preview.Spec&lt;/a&gt; documentation&lt;/p&gt;
-&lt;p&gt;Once the  &lt;a href=&#34;https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview&#34;&gt;Preview&lt;/a&gt; resource is created with its associated preview namespace the  &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt;  command will execute &lt;code&gt;helmfile sync&lt;/code&gt; of the &lt;strong&gt;preview/helmfile.yaml&lt;/strong&gt; file to deploy all of the associated helm charts to the preview namespace.&lt;/p&gt;
+&lt;p&gt;Once the  &lt;a href=&#34;https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview&#34;&gt;Preview&lt;/a&gt; resource is created with its associated preview namespace the  &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt;  command will execute &lt;code&gt;helmfile sync&lt;/code&gt; of the &lt;strong&gt;preview/helmfile.yaml&lt;/strong&gt; file to deploy all of the associated helm charts to the preview namespace.&lt;/p&gt;
 &lt;p&gt;When the &lt;code&gt;helmfile sync&lt;/code&gt; is complete a comment is added to the Pull Request that the preview has been created. If a URL can be detected in the preview namespace it is added to the Pull Request as a comment so that your team can try it out and give fast feedback.&lt;/p&gt;
-&lt;img src=&#34;https://jenkins-x.io/images/pr-comment.png&#34; class=&#34;img-thumbnail&#34;&gt;
-&lt;p&gt;When the Pull Request is merged or closed the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/gc&#34;&gt;jx preview gc&lt;/a&gt; command kicks in periodically to remove any old preview environments.&lt;/p&gt;
+&lt;img src=&#34;https://jayex.io/images/pr-comment.png&#34; class=&#34;img-thumbnail&#34;&gt;
+&lt;p&gt;When the Pull Request is merged or closed the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/gc&#34;&gt;jx preview gc&lt;/a&gt; command kicks in periodically to remove any old preview environments.&lt;/p&gt;
 &lt;h2 id=&#34;when-previews-fail&#34;&gt;When previews fail&lt;/h2&gt;
 &lt;p&gt;A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in &lt;code&gt;jx-requirements.yml&lt;/code&gt;, bad image names, no capacity on the server to name but a few. Unfortunately &lt;code&gt;helmfile sync&lt;/code&gt; does not give much information other than it succeeded of failed which can be confusing.&lt;/p&gt;
-&lt;p&gt;To improve feedback on why some previews can fail we have added additional output in the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; command to tail the kubernetes events in the preview namespace. This basically runs &lt;code&gt;kubectl exec get event -n $PREVIEW_NAMESPACE -w&lt;/code&gt; and adds the output to the pipeline output (prefixed with &lt;code&gt;$PREVIEW_NAMESPACE:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To improve feedback on why some previews can fail we have added additional output in the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; command to tail the kubernetes events in the preview namespace. This basically runs &lt;code&gt;kubectl exec get event -n $PREVIEW_NAMESPACE -w&lt;/code&gt; and adds the output to the pipeline output (prefixed with &lt;code&gt;$PREVIEW_NAMESPACE:&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;This means the reason for why a preview fails should appear as a kubernetes event in the pipeline log.&lt;/p&gt;
 &lt;p&gt;e.g. if you make a mistake configuraing the helm chart on your preview you should see the error in the pipeline log. To fix the error just modify the code and git commit and push the fix and you should see the new results in the pipeline log.&lt;/p&gt;
 &lt;h2 id=&#34;configure-the-preview-url&#34;&gt;Configure the preview URL&lt;/h2&gt;
-&lt;p&gt;Depending on your helm chart or dependent charts you may wish to customise the kubernetes &lt;code&gt;Service&lt;/code&gt; or &lt;code&gt;Ingress&lt;/code&gt; name used to find the URL to use in the Preview Pull Request command and in the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/&#34;&gt;UI integrations&lt;/a&gt; to visualise the current Previews.&lt;/p&gt;
+&lt;p&gt;Depending on your helm chart or dependent charts you may wish to customise the kubernetes &lt;code&gt;Service&lt;/code&gt; or &lt;code&gt;Ingress&lt;/code&gt; name used to find the URL to use in the Preview Pull Request command and in the &lt;a href=&#34;https://jayex.io/v3/develop/ui/&#34;&gt;UI integrations&lt;/a&gt; to visualise the current Previews.&lt;/p&gt;
 &lt;p&gt;You can specify the &lt;code&gt;Service&lt;/code&gt; or &lt;code&gt;Ingress&lt;/code&gt; name via the &lt;strong&gt;JX_PREVIEW_SERVICE&lt;/strong&gt; environment variable name.&lt;/p&gt;
 &lt;p&gt;e.g. add the following line to your &lt;strong&gt;.jx/variables.sh&lt;/strong&gt; file, creating the file if it doesn&amp;rsquo;t exist:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export JX_PREVIEW_SERVICE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;my-custom-service-or-ingress&amp;#34;&lt;/span&gt;
@@ -318,10 +318,10 @@ the main branch and initiate a release candidate build with the new feature:&lt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;adding-more-resources&#34;&gt;Adding more resources&lt;/h2&gt;
-&lt;p&gt;If you need to add some kubernetes resources you can add those using the local chart source code model as described in &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-resources&#34;&gt;how to add new kubernetes resources&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you need to add some kubernetes resources you can add those using the local chart source code model as described in &lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-resources&#34;&gt;how to add new kubernetes resources&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;additional-preview-steps&#34;&gt;Additional preview steps&lt;/h2&gt;
 &lt;p&gt;It&amp;rsquo;s common to want to test out previews using system tests or integration tests. Or you may wish to run some kind of &lt;a href=&#34;https://www.cypress.io/&#34;&gt;cypress&lt;/a&gt; or &lt;a href=&#34;https://www.selenium.dev/&#34;&gt;selenium tests&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;You can do this by &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/editing/&#34;&gt;adding additional steps&lt;/a&gt; in the &lt;strong&gt;.lighthouse/jenkins-x/pullrequest.yaml&lt;/strong&gt; file.&lt;/p&gt;
+&lt;p&gt;You can do this by &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/editing/&#34;&gt;adding additional steps&lt;/a&gt; in the &lt;strong&gt;.lighthouse/jenkins-x/pullrequest.yaml&lt;/strong&gt; file.&lt;/p&gt;
 &lt;p&gt;To interact with the preview environment you will need to know its namespace and URL. So the additional step should source the &lt;code&gt;.jx/variables.sh&lt;/code&gt; file to setup the environment variables (which are defined below).&lt;/p&gt;
 &lt;p&gt;e.g. here is an additional step to curl the preview URL after the &lt;code&gt;jx preview create&lt;/code&gt; step:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;... 
@@ -332,14 +332,14 @@ the main branch and initiate a release candidate build with the new feature:&lt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    source .jx/variables.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    curl -v $PREVIEW_URL&lt;/span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;environment-variables&#34;&gt;Environment variables&lt;/h3&gt;
-&lt;p&gt;The following variables are added to the &lt;code&gt;.jx/variables.sh&lt;/code&gt; file by the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;The following variables are added to the &lt;code&gt;.jx/variables.sh&lt;/code&gt; file by the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; command:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;PREVIEW_URL&lt;/code&gt; the URL of the preview environment if it can be discovered&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PREVIEW_NAME&lt;/code&gt; the name of the &lt;code&gt;Preview&lt;/code&gt; custom resource which has the full metadata&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PREVIEW_NAMESPACE&lt;/code&gt; the namespace of the preview environment which you can use via &lt;code&gt;myservice.$PREVIEW_NAMESPACE.svc.cluster.local&lt;/code&gt; to access services in your preview&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;scaling-preview-environments&#34;&gt;Scaling Preview Environments&lt;/h2&gt;
-&lt;p&gt;A classic issue with preview environments is the number of pods that will grow with the number of applications, pull requests and dependencies. One solution is to use &lt;a href=&#34;https://github.com/dailymotion-oss/osiris&#34;&gt;Osiris&lt;/a&gt; to automatically scale down the preview environments which are idle. You can read the &lt;a href=&#34;https://jenkins-x.io/v3/guides/preview-environments&#34;&gt;admin guide on scaling preview environments&lt;/a&gt; to install Osiris in your cluster.&lt;/p&gt;
+&lt;p&gt;A classic issue with preview environments is the number of pods that will grow with the number of applications, pull requests and dependencies. One solution is to use &lt;a href=&#34;https://github.com/dailymotion-oss/osiris&#34;&gt;Osiris&lt;/a&gt; to automatically scale down the preview environments which are idle. You can read the &lt;a href=&#34;https://jayex.io/v3/guides/preview-environments&#34;&gt;admin guide on scaling preview environments&lt;/a&gt; to install Osiris in your cluster.&lt;/p&gt;
 &lt;h2 id=&#34;further-reading&#34;&gt;Further reading&lt;/h2&gt;
 &lt;p&gt;To get more detail on using preview environments check out &lt;a href=&#34;https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4&#34;&gt;this blog post&lt;/a&gt;&lt;/p&gt;
 

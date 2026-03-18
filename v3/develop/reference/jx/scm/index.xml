@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx scm</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/scm/</link>
-    <description>Recent content in jx scm on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx scm</title>
+    <link>https://jayex.io/v3/develop/reference/jx/scm/</link>
+    <description>Recent content in jx scm on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/scm/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/scm/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx scm pull-request</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/scm/pull-request/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/scm/pull-request/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/scm/pull-request/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/scm/pull-request/</guid>
       <description>
         
         
@@ -36,10 +36,10 @@
     
     <item>
       <title>V3: jx scm release</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/scm/release/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/scm/release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/scm/release/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/scm/release/</guid>
       <description>
         
         
@@ -57,10 +57,10 @@
     
     <item>
       <title>V3: jx scm repository</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/scm/repository/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/scm/repository/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/scm/repository/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/scm/repository/</guid>
       <description>
         
         
@@ -78,10 +78,10 @@
     
     <item>
       <title>V3: jx scm version</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/scm/version/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/scm/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/scm/version/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/scm/version/</guid>
       <description>
         
         

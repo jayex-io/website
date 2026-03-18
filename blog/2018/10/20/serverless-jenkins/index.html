@@ -21,27 +21,23 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Serverless Jenkins | Jenkins X - Cloud Native CI/CD Built On Kubernetes</title>
+<title>Serverless Jenkins | JayeX - Cloud Native CI/CD Built On Kubernetes</title>
 <meta name="description" content="How to get an elastic serverless Jenkins cloud
 ">
 <meta property="og:title" content="Serverless Jenkins" />
 <meta property="og:description" content="How to get an elastic serverless Jenkins cloud
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-x.io/blog/2018/10/20/serverless-jenkins/" /><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://jayex.io/blog/2018/10/20/serverless-jenkins/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2018-10-20T07:36:00+02:00" />
-<meta property="article:modified_time" content="2020-01-06T10:59:17-08:00" /><meta property="og:site_name" content="Jenkins X - Cloud Native CI/CD Built On Kubernetes" />
+<meta property="article:modified_time" content="2026-02-11T10:15:45+01:00" /><meta property="og:site_name" content="JayeX - Cloud Native CI/CD Built On Kubernetes" />
 
 <meta itemprop="name" content="Serverless Jenkins">
 <meta itemprop="description" content="How to get an elastic serverless Jenkins cloud
 "><meta itemprop="datePublished" content="2018-10-20T07:36:00+02:00" />
-<meta itemprop="dateModified" content="2020-01-06T10:59:17-08:00" />
-<meta itemprop="wordCount" content="62">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Serverless Jenkins"/>
-<meta name="twitter:description" content="How to get an elastic serverless Jenkins cloud
-"/>
-
+<meta itemprop="dateModified" content="2026-02-11T10:15:45+01:00" />
+<meta itemprop="wordCount" content="93">
+<meta itemprop="keywords" content="" />
 
 
 
@@ -50,10 +46,10 @@
 
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
-<link rel="stylesheet" href='https://jenkins-x.io/css/style.css' />
+<link rel="stylesheet" href='https://jayex.io/css/style.css' />
 
 
-<link rel="stylesheet" href='https://jenkins-x.io/css/prism.css' />
+<link rel="stylesheet" href='https://jayex.io/css/prism.css' />
 
 <link  rel="stylesheet"   href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" /><script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -82,7 +78,7 @@ if (!doNotTrack) {
 	
 <nav class="js-navbar-scroll navbar fixed-top navbar-expand-lg navbar-light bg-light flex-column flex-md-row td-navbar">
 	<a class="navbar-brand" href="/">
-		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 994.2 203.9" style="enable-background:new 0 0 994.2 203.9"><style>.st0{fill:#73c3d5}.st1{fill:#ef8949}.st2{fill:#ff7f40}.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#73c3d5}.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#ff7f40}</style><g><g><path class="st0" d="M387.3 62.1v58c0 11.8-9.6 21.3-21.4 21.3h-36.5c-11.8.0-21.4-9.5-21.4-21.3v-14.9h14.2v14.9c0 4 3.3 7.3 7.3 7.3H366c4 0 7.3-3.3 7.3-7.3v-58H387.3z"/><path class="st0" d="M412.9 83.6V91H464v14.2h-51.1v15c0 4 3.3 7.3 7.3 7.3h58v14.2h-58c-11.8.0-21.3-9.6-21.3-21.4V83.6c0-11.8 9.5-21.4 21.3-21.4h58v14.2h-58C416.1 76.3 412.9 79.6 412.9 83.6"/><polygon class="st0" points="568.9,62.2 568.9,141.7 554.7,130.8 503.6,91.4 503.6,141.7 489.5,141.7 489.5,62.5 503.6,73.3 554.7,112.7 554.7,62.1"/><polygon class="st0" points="624.9,94 659.3,141.5 641.8,141.5 614.4,103.6 594.3,121.9 594.3,141.5 580.1,141.5 580.1,62.1 594.3,62.1 594.3,102.7 606,92.1 616.5,82.4 638.7,62.1 659.7,62.1"/><rect x="671" y="62.1" class="st0" width="14.2" height="79.4"/><polygon class="st0" points="776,62.2 776,141.7 761.8,130.8 710.7,91.4 710.7,141.7 696.5,141.7 696.5,62.5 710.7,73.3 761.8,112.7 761.8,62.1"/><path class="st0" d="M848.2 84.1v-.5c0-4-3.3-7.3-7.3-7.3h-32.2c-4 0-7.3 3.3-7.3 7.3v.5c0 4 3.3 7.3 7.3 7.3h28.6c7.4.0 14 3.2 18.5 8.2.3.3.6.7.9 1 3.5 4.3 5.7 9.9 5.7 15.9.0 13.8-11.2 25.1-25.1 25.1h-24.8c-13.8.0-25.1-11.2-25.1-25.1h14.2c0 6 4.9 10.9 10.9 10.9h24.8c6 0 11-4.9 11-10.9s-5-10.9-11-10.9h-28.6c-5.8.0-11-2.3-14.9-6-1-1-1.9-2.2-2.7-3.4-2.4-3.4-3.7-7.6-3.7-12.1v-.5c0-11.8 9.5-21.4 21.3-21.4H841c11.8.0 21.4 9.6 21.4 21.4V84L848.2 84.1z"/><polygon class="st1" points="870.9,141.7 871.2,141.7 870.9,141.9"/><polygon class="st2" points="955.7,102 981.7,68.4 994.2,52.2 973.7,52.2 973.5,52.2 955.7,52.2 950.7,52.2 947.7,56.1 933.9,74 920.1,56.1 917.1,52.2 912.1,52.2 894.2,52.2 873.7,52.2 886.2,68.4 912.2,102.1 886.4,135.5 874,151.7 894.4,151.7 912.3,151.7 917.3,151.7 920.3,147.8 934,130.1 947.7,147.8 950.7,151.7 955.7,151.7 973.6,151.7 994.1,151.7 981.6,135.5"/><polygon class="st1" points="956.4,141.9 956.3,141.7 956.4,141.7"/></g><g><g><g><path class="st3" d="M98.2 83.9c8.7.0 15.7 7 15.7 15.7s-7 15.7-15.7 15.7-15.7-7-15.7-15.7C82.5 91 89.5 83.9 98.2 83.9"/><path class="st2" d="M98.2 76.2c6.5.0 12.3 2.6 16.6 6.9 4.2 4.2 6.9 10.1 6.9 16.6.0 6.5-2.6 12.3-6.9 16.6-4.2 4.2-10.1 6.8-16.6 6.8s-12.3-2.6-16.5-6.8-6.9-10.1-6.9-16.6 2.6-12.3 6.9-16.6C85.9 78.8 91.7 76.2 98.2 76.2m14.4 9c-3.7-3.7-8.8-6-14.4-6-5.6.0-10.7 2.3-14.4 6s-6 8.8-6 14.4c0 5.6 2.3 10.7 6 14.4s8.8 6 14.4 6c5.6.0 10.7-2.3 14.4-6s6-8.8 6-14.4-2.3-10.7-6-14.4"/></g><g><path class="st3" d="M186.8 83.9c8.7.0 15.7 7 15.7 15.7s-7 15.7-15.7 15.7-15.7-7-15.7-15.7C171.1 91 178.1 83.9 186.8 83.9"/><path class="st2" d="M186.8 76.2c6.5.0 12.3 2.6 16.5 6.9 4.2 4.2 6.9 10.1 6.9 16.6.0 6.5-2.6 12.3-6.9 16.6-4.2 4.2-10.1 6.8-16.5 6.8-6.5.0-12.3-2.6-16.6-6.8-4.2-4.2-6.9-10.1-6.9-16.6s2.6-12.3 6.9-16.6C174.5 78.8 180.3 76.2 186.8 76.2m14.4 9c-3.7-3.7-8.8-6-14.4-6s-10.7 2.3-14.4 6c-3.7 3.7-6 8.8-6 14.4.0 5.6 2.3 10.7 6 14.4s8.8 6 14.4 6 10.7-2.3 14.4-6c3.7-3.7 6-8.8 6-14.4S204.9 88.9 201.2 85.2"/></g></g><path class="st3" d="M284.7 11.5c-5.4 8.9-15.3 23.4-17.4 27.3l-1.4-16.6L238.6 51c-9.4-17.8-26.5-30.9-46.8-34.8C186.7 7.1 166 .5 144.8.0c-.8.0-1.6.0-2.3.0-.8.0-1.6.0-2.3.0-21.2.5-41.9 7-47 16.1-20.3 3.9-37.5 17-46.8 34.8L19.1 22.1l-1.4 16.6c-2.1-3.8-12-18.4-17.4-27.3-1.5 5.3 3.2 46.2 4.5 51.4 1.3 5.2 9.8 40.8 16.3 40.2.9-.4 2.7-7.5 4.9-14l15 28c7 28 29.9 50 58.5 55.6.3-2 .8-4.1 1.5-5.9-31.9-6.1-56.2-34.3-56.2-67.8v-17c0-28.9 20.4-53.2 47.5-59.3.1.2.1.4.2.6l16 43c2 5.4 5.4 10.1 11.8 10.1h22.3 22.3c6.4.0 9.8-4.7 11.8-10.1l16-43c.1-.2.1-.4.2-.6 27.1 6.1 47.5 30.5 47.5 59.3v16.9c0 33.6-24.3 61.8-56.2 67.8.8 1.8 1.2 3.9 1.5 5.9C214.1 166.9 237 145 244 117l15-27.8c2.2 6.4 3.9 13.6 4.9 14 6.5.6 15.1-35.1 16.3-40.2C281.5 57.6 286.2 16.7 284.7 11.5zM22.5 74.1l-2.7 17.6C11.9 69 7.8 51.8 4.5 27.4L21.2 58l3.1-23.1 19.3 22c-3.1 7.7-4.9 16.2-4.9 25v16.9c0 1 0 1.9.1 2.9L22.5 74.1zm164.3-53-16 43c-1.2 3.1-2.7 6.1-6.1 6.1h-22.2-22.2c-3.3.0-4.9-3-6.1-6.1l-16-43c-1.9-5.1 21.5-12 44.3-12.2C165.2 9.1 188.7 16 186.8 21.1zm78.4 70.6-2.7-17.6-16.3 27.5c0-1 .1-1.9.1-2.9V81.9c0-8.8-1.7-17.3-4.9-25l19.3-22 3.1 23.1 16.7-30.6C277.2 51.8 273.1 69 265.2 91.7z"/><path class="st0" d="M170.8 149.4h-28.3-28.3c-20.2.0-30.9-9.9-34.6-14.1l-3 2.5c4.2 4.7 16 15.5 37.6 15.5h28.3 28.3c21.6.0 33.4-10.7 37.6-15.5l-3-2.5C201.7 139.5 190.9 149.4 170.8 149.4z"/><path class="st4" d="M178.5 159.9c-3.3-1.7-6.9-1.6-10.3-.3-3.6 1.4-7.2 3.3-10.5 5.2-1.7.9-3.4 1.9-5 2.8-1.7-.9-3.6-1.5-5.6-1.5H138c-2 0-4 .5-5.6 1.5-1.7-1-3.4-1.9-5-2.8-3.4-1.9-6.9-3.8-10.5-5.2-3.4-1.3-7.1-1.4-10.3.3-7.6 3.9-8.8 14.9-8.1 22.4.6 7.6 3.6 19.6 12.4 21.3 1.5.3 3 .2 4.5-.2 5.7-1.5 12.1-4.7 17.9-8.3 1.5.7 3.1 1.1 4.9 1.1h9.1c1.7.0 3.4-.4 4.9-1.1 5.8 3.6 12.2 6.7 17.9 8.3 1.5.4 3 .5 4.5.2 8.8-1.7 11.8-13.8 12.4-21.3C187.3 174.8 186.2 163.8 178.5 159.9zm-64.9 37.8c-10.7 2.9-14.6-38.3 1-32.3 3.4 1.3 7.9 3.7 13.3 6.8-.9 1.6-1.4 3.5-1.4 5.5v.7c-2.6-.8-6-1.7-10.5-2.7 7.4 4.6 5.1 3.5 10.1 5.9-5.5 3.3-3 1.6-10.7 7.4 4.7-1.6 8.3-2.8 11-3.9.0 2.2.7 4.2 1.8 5.9C123.9 193.6 118.6 196.3 113.6 197.7zm57.8.0c-4.9-1.3-10.3-4-14.7-6.6 1-1.6 1.7-3.5 1.8-5.6 2.6 1 6 2.2 10.2 3.6-7.4-5.5-5.3-4.2-10.1-7.1v-.6c4.3-2.1 2.5-1.2 9.6-5.7-3.9.9-7.1 1.7-9.6 2.4v-.5c0-2-.5-3.9-1.4-5.5 5.4-3.1 9.9-5.5 13.3-6.8C186 159.3 182.1 200.5 171.4 197.7z"/></g></g></svg></span>
+		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1326.379 353.272"><defs><style>.st0{fill:#74c3d5}.st1,.st2{fill:#73c2d4}.st2,.st3{fill-rule:evenodd}.st3,.st4{fill:#f37e44}.st5{fill:#ed8747}</style></defs><g><g><g><path class="st2" d="M170.103 145.343c15.073.0 27.274 12.202 27.274 27.274s-12.202 27.274-27.274 27.274-27.274-12.202-27.274-27.274c0-15.073 12.202-27.274 27.274-27.274"/><path class="st4" d="M170.103 131.945c11.245.0 21.413 4.546 28.71 11.843 7.297 7.417 11.843 17.465 11.843 28.71s-4.546 21.293-11.843 28.71c-7.297 7.297-17.465 11.843-28.71 11.843s-21.293-4.546-28.71-11.843c-7.417-7.417-11.843-17.465-11.843-28.71s4.546-21.293 11.843-28.71c7.297-7.297 17.465-11.843 28.71-11.843m25.001 15.67c-6.34-6.34-15.192-10.288-25.001-10.288-9.69.0-18.542 3.948-25.001 10.288-6.34 6.34-10.288 15.192-10.288 25.001.0 9.69 3.948 18.542 10.288 25.001 6.34 6.34 15.192 10.288 25.001 10.288s18.542-3.948 25.001-10.288c6.34-6.34 10.407-15.192 10.407-25.001-.12-9.809-4.067-18.661-10.407-25.001"/></g><g><path class="st2" d="M323.699 145.343c15.073.0 27.274 12.202 27.274 27.274s-12.202 27.274-27.274 27.274-27.274-12.202-27.274-27.274 12.202-27.274 27.274-27.274"/><path class="st4" d="M323.699 131.945c11.245.0 21.293 4.546 28.71 11.843 7.417 7.417 11.843 17.465 11.843 28.71s-4.546 21.293-11.843 28.71c-7.297 7.297-17.465 11.843-28.71 11.843s-21.413-4.546-28.71-11.843c-7.297-7.417-11.843-17.465-11.843-28.71s4.546-21.293 11.843-28.71c7.297-7.297 17.465-11.843 28.71-11.843m24.882 15.67c-6.34-6.34-15.192-10.288-25.001-10.288s-18.542 3.948-25.001 10.288c-6.34 6.34-10.407 15.192-10.407 25.001.0 9.69 3.948 18.542 10.407 25.001 6.34 6.34 15.192 10.288 25.001 10.288 9.689.0 18.542-3.948 25.001-10.288 6.34-6.34 10.288-15.192 10.288-25.001.12-9.809-3.828-18.661-10.288-25.001"/></g></g><path class="st2" d="M493.325 19.738c-9.331 15.431-26.556 40.552-30.145 47.251l-2.392-28.71-47.251 49.883c-16.269-30.863-45.935-53.591-81.224-60.29C323.46 12.202 287.693.837 250.968.0h-8.134c-36.724.837-72.492 12.202-81.344 27.872-35.289 6.699-64.956 29.427-81.224 60.29L33.015 38.159l-2.392 28.71C27.033 60.29 9.807 35.05.477 19.618c-2.512 9.091 5.622 80.028 7.776 89.12 2.153 8.972 16.987 70.698 28.351 69.741 1.555-.598 4.665-13.039 8.374-24.284l25.958 48.208c12.202 48.567 51.917 86.607 101.321 96.297.478-3.589 1.316-7.058 2.632-10.288-55.266-10.527-97.374-59.333-97.374-117.59v-29.308c0-50.003 35.289-92.23 82.301-102.757.12.359.239.718.359 1.077l27.633 74.645c3.469 9.331 9.331 17.465 20.456 17.465h77.277c11.125.0 16.987-8.134 20.456-17.465l27.633-74.406c.12-.359.239-.718.359-1.077 46.892 10.646 82.301 52.754 82.301 102.757v29.308c0 58.257-42.107 107.063-97.374 117.59 1.316 3.23 2.153 6.699 2.632 10.288 49.524-9.69 89.12-47.73 101.321-96.297l25.958-48.208c3.828 11.125 6.819 23.566 8.374 24.284 11.364 1.077 26.198-60.769 28.351-69.741 2.153-9.331 10.288-80.148 7.776-89.239zM38.876 128.356l-4.665 30.504C20.573 119.384 13.396 89.718 7.774 47.371l28.949 52.993 5.383-40.074 33.375 38.16c-5.503 13.398-8.493 27.992-8.493 43.304v29.308c0 1.675.0 3.349.12 5.024l-28.231-47.73zM323.58 36.366l-27.633 74.406c-2.034 5.383-4.785 10.527-10.527 10.527h-77.038c-5.742.0-8.493-5.144-10.527-10.527l-27.633-74.406c-3.23-8.852 37.323-20.814 76.798-21.173 39.236.359 79.908 12.321 76.559 21.173zM459.472 158.86l-4.665-30.504-28.231 47.73c.12-1.675.12-3.349.12-5.024v-29.308c0-15.312-2.991-29.906-8.493-43.304l33.375-38.16 5.383 40.074 28.949-52.993c-5.622 42.227-12.68 72.013-26.437 111.489z"/><path class="st1" d="M295.827 258.746h-97.852c-34.93.0-53.591-17.226-59.931-24.403l-5.263 4.306c7.177 8.134 27.633 26.796 65.195 26.796h97.852c37.442.0 57.898-18.661 65.195-26.796l-5.263-4.306c-6.34 7.297-25.001 24.403-59.931 24.403z"/><path class="st3" d="M309.344 277.048c-5.742-2.991-11.962-2.751-17.944-.478-6.22 2.392-12.441 5.742-18.183 8.972-2.871 1.555-5.862 3.23-8.733 4.905-2.871-1.675-6.22-2.512-9.69-2.512h-15.671c-3.589.0-6.819.957-9.69 2.512-2.871-1.675-5.862-3.349-8.733-4.905-5.862-3.23-11.962-6.579-18.183-8.972-5.862-2.273-12.202-2.512-17.944.478-13.278 6.819-15.192 25.719-14.116 38.878 1.077 13.039 6.22 33.973 21.413 36.964 2.632.478 5.263.359 7.895-.239 9.929-2.632 21.054-8.134 30.982-14.355 2.512 1.196 5.383 1.914 8.493 1.914h15.671c2.991.0 5.862-.718 8.493-1.914 10.048 6.101 21.173 11.723 30.982 14.355 2.512.718 5.263.837 7.895.239 15.192-2.991 20.456-23.925 21.413-36.964.837-13.159-1.077-32.179-14.355-38.878zM196.779 342.362c-18.542 5.024-25.36-66.391 1.675-56.103 5.981 2.273 13.637 6.46 23.087 11.723-1.555 2.871-2.512 6.101-2.512 9.57v1.316c-4.426-1.435-10.407-2.871-18.063-4.665 12.8 8.015 8.852 5.981 17.465 10.288-9.57 5.622-5.144 2.871-18.422 12.8 8.134-2.632 14.474-4.905 19.14-6.819.12 3.828 1.196 7.297 3.11 10.288-7.656 4.665-16.867 9.331-25.48 11.603zm100.125.0c-8.613-2.273-17.824-6.938-25.36-11.484 1.794-2.871 2.871-6.101 3.11-9.69 4.546 1.794 10.407 3.828 17.585 6.22-12.8-9.57-9.211-7.297-17.585-12.202v-.957c7.417-3.708 4.306-2.034 16.628-9.809-6.819 1.555-12.321 2.991-16.628 4.187v-.837c0-3.469-.957-6.699-2.512-9.57 9.331-5.383 17.106-9.45 23.087-11.723 27.035-10.527 20.216 60.888 1.675 55.864z"/></g><g><polygon class="st5" points="1112.851 244.452 1113.21 244.452 1112.851 244.93 1112.851 244.452"/><polygon class="st4" points="1259.629 175.908 1304.727 117.531 1326.379 89.42 1290.851 89.42 1290.492 89.42 1259.629 89.42 1251.016 89.42 1245.872 96.238 1221.828 127.34 1197.903 96.238 1192.64 89.42 1184.146 89.42 1153.044 89.42 1117.636 89.42 1139.288 117.531 1184.386 175.908 1139.646 233.805 1117.995 261.917 1153.403 261.917 1184.505 261.917 1193.118 261.917 1198.262 255.218 1222.067 224.475 1245.872 255.218 1251.136 261.917 1259.629 261.917 1290.731 261.917 1326.259 261.917 1304.488 233.805 1259.629 175.908"/><polygon class="st5" points="1260.945 244.93 1260.705 244.452 1260.945 244.452 1260.945 244.93"/><path class="st0" d="M853.196 243.344h-27.362l-12.509-24.43-29.904-58.633-29.903 58.633-12.509 24.43h-27.362l12.509-24.43 57.265-112.381 57.266 112.381 12.509 24.43z"/><path class="st0" d="M827.195 243.344h.391l-.391.391v-.391zM964.006 106.338l-52.965 68.602-2.931 3.714v64.496h-24.431v-64.105l-3.323-4.104-52.965-68.602h30.881l37.526 48.667 37.526-48.667h30.684zM963.811 243.344h.195v.391l-.195-.391z"/><path class="st0" d="M987.455 143.472v12.704h87.95v24.431h-87.95v25.798c0 6.842 5.667 12.509 12.509 12.509h99.873v24.43h-99.873c-20.327.0-36.744-16.611-36.744-36.938v-62.933c0-20.327 16.418-36.94 36.744-36.94h99.873v24.431h-99.873c-6.842.0-12.509 5.668-12.509 12.509z"/><path class="st1" d="M702.715 89.73v127.291c0 25.907-21.174 46.831-47.08 46.831h-80.211c-25.906.0-47.08-20.924-47.08-46.831v-32.632h31.138v32.632c0 8.719 7.224 15.943 15.943 15.943h80.211c8.719.0 15.943-7.224 15.943-15.943V89.73h31.138z"/></g></svg></span>
 	</a>
 	<a  class="navbar-brand" href="https://cd.foundation/">
 		<span>
@@ -124,16 +120,6 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link" href="/docs/" ><span></span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
 				<a class="nav-link" href="/v3/about/" ><span>About</span></a>
 			</li>
 			
@@ -157,35 +143,14 @@ if (!doNotTrack) {
 				<a class="nav-link active" href="/blog/" ><span class="active">Blog</span></a>
 			</li>
 			
-			
-			<li class="nav-item dropdown d-none d-lg-block">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	Documentation
-</a>
-<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	
-	<a class="dropdown-item" href="/v3/about">v3.x (Current)</a>
-	
-	<a class="dropdown-item" href="/docs">v2.x (Unmaintained)</a>
-	
-</div>
-
-			</li>
-			
-			
-			<li class="nav-item dropdown d-none d-lg-block">
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
 				
-
-<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	English
-</a>
-<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	
-	<a class="dropdown-item" href="/zh/">中文</a>
-	
-	<a class="dropdown-item" href="/es/">Español</a>
-	
-</div>
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/v3/" ><span>Documentation</span></a>
 			</li>
 			
 		</ul>
@@ -387,14 +352,10 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-blognews-li">
   <a href="/blog/news/" title="News About Jenkins X" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-blognews"><span class="">News</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221108gsoc-2022-li">
-  <a href="/blog/2022/11/08/gsoc-2022/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221108gsoc-2022"><span class="">GSoC 2022 Final Report: Improving Supply Chain Security</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20220724sbom-tools-li">
-  <a href="/blog/2022/07/24/sbom-tools/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20220724sbom-tools"><span class="">Software Bill Of Materials generation tools</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20220724sbom-formats-li">
-  <a href="/blog/2022/07/24/sbom-formats/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20220724sbom-formats"><span class="">Software Bill Of Materials Formats</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20220724intro-to-sbom-li">
-  <a href="/blog/2022/07/24/intro-to-sbom/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20220724intro-to-sbom"><span class="">Introduction to Software Bill Of Materials</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20260305award-nominations-li">
+  <a href="/blog/2026/03/05/award-nominations/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20260305award-nominations"><span class="">JayeX Most Valuable Contributor 2026 🏆</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20260211jayex-li">
+  <a href="/blog/2026/02/11/jayex/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20260211jayex"><span class="">Jenkins X changes name to JayeX!</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20240506migrating-artifact-registry-li">
   <a href="/blog/2024/05/06/migrating-artifact-registry/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20240506migrating-artifact-registry"><span class="">Migrate to Google Artifact Registry</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20230524propagate-changelogs-li">
@@ -407,8 +368,16 @@ if (!doNotTrack) {
   <a href="/blog/2023/02/06/gsoc2023-ideas/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20230206gsoc2023-ideas"><span class="">Project ideas for Google Summer of Code 2023 ☀️</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221113gsoc-2022-work-report-li">
   <a href="/blog/2022/11/13/gsoc-2022-work-report/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221113gsoc-2022-work-report"><span class="">GSoC 2022 Final Report: Building Jenkins X UI</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221108gsoc-2022-li">
+  <a href="/blog/2022/11/08/gsoc-2022/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221108gsoc-2022"><span class="">GSoC 2022 Final Report: Improving Supply Chain Security</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20221003hacktoberfest2022-li">
   <a href="/blog/2022/10/03/hacktoberfest2022/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20221003hacktoberfest2022"><span class="">Hacktoberfest 2022</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20220724intro-to-sbom-li">
+  <a href="/blog/2022/07/24/intro-to-sbom/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20220724intro-to-sbom"><span class="">Introduction to Software Bill Of Materials</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20220724sbom-formats-li">
+  <a href="/blog/2022/07/24/sbom-formats/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20220724sbom-formats"><span class="">Software Bill Of Materials Formats</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20220724sbom-tools-li">
+  <a href="/blog/2022/07/24/sbom-tools/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20220724sbom-tools"><span class="">Software Bill Of Materials generation tools</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20220712gsoc2022-community-bonding-period-li">
   <a href="/blog/2022/07/12/gsoc2022-community-bonding-period/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20220712gsoc2022-community-bonding-period"><span class="">GSoC 2022 Community Bonding Period with Jenkins X</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20220422kubernetes-122-tekton-li">
@@ -483,10 +452,6 @@ if (!doNotTrack) {
   <a href="/blog/2020/09/16/cdcon2020/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20200916cdcon2020"><span class="">Jenkins X Talks at CDCon</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20200916jx-v3-alpha-li">
   <a href="/blog/2020/09/16/jx-v3-alpha/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20200916jx-v3-alpha"><span class="">Welcome to Jenkins X 3.x alpha!</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20200806octant-jx-li">
-  <a href="/blog/2020/08/06/octant-jx/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20200806octant-jx"><span class="">Octant: the OSS UI for Jenkins X</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blog20200729cjxdtoupstreamjxtofuture-li">
-  <a href="/blog/2020/07/29/cjxdtoupstreamjxtofuture/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-blog20200729cjxdtoupstreamjxtofuture"><span class="">CJXD to upstream Jenkins X to the future</span></a>
 </li>
   </ul>
 </li>
@@ -511,11 +476,11 @@ if (!doNotTrack) {
 
 <p>
   <h4>
-    <a href="https://github.com/jenkins-x/jx-docs/edit/main/content/en/blog/news/serverless-jenkins.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/jayex-io/jx-docs/edit/main/content/en/blog/news/serverless-jenkins.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
   </h4>
   <a href="/docs/contributing/documentation/changes/" target="_blank"><i>(Learn how to edit)</i></a>
 </p>
-<a href="https://github.com/jenkins-x/jx-docs/issues/new?title=Serverless%20Jenkins" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/jayex-io/jx-docs/issues/new?title=Serverless%20Jenkins" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/jenkins-x/jx/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -544,15 +509,9 @@ if (!doNotTrack) {
       
       <ul class="taxonomy-terms">
         
-          <li><a class="taxonomy-term" href="https://jenkins-x.io/categories/about-jenkins-x/" data-taxonomy-term="about-jenkins-x"><span class="taxonomy-label">about jenkins x</span><span class="taxonomy-count">1</span></a></li>
+          <li><a class="taxonomy-term" href="https://jayex.io/categories/blog/" data-taxonomy-term="blog"><span class="taxonomy-label">blog</span><span class="taxonomy-count">98</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://jenkins-x.io/categories/blog/" data-taxonomy-term="blog"><span class="taxonomy-label">blog</span><span class="taxonomy-count">96</span></a></li>
-        
-          <li><a class="taxonomy-term" href="https://jenkins-x.io/categories/getting-started/" data-taxonomy-term="getting-started"><span class="taxonomy-label">getting started</span><span class="taxonomy-count">9</span></a></li>
-        
-          <li><a class="taxonomy-term" href="https://jenkins-x.io/categories/other/" data-taxonomy-term="other"><span class="taxonomy-label">other</span><span class="taxonomy-count">1</span></a></li>
-        
-          <li><a class="taxonomy-term" href="https://jenkins-x.io/categories/tutorials/" data-taxonomy-term="tutorials"><span class="taxonomy-label">tutorials</span><span class="taxonomy-count">1</span></a></li>
+          <li><a class="taxonomy-term" href="https://jayex.io/categories/other/" data-taxonomy-term="other"><span class="taxonomy-label">other</span><span class="taxonomy-count">1</span></a></li>
         
       </ul>
     </div>
@@ -570,7 +529,7 @@ if (!doNotTrack) {
 
           </aside>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role="main">
-            <a class="btn btn-lg -bg-orange td-rss-button d-none d-lg-block" href="https://jenkins-x.io/blog/news/index.xml" target="_blank">
+            <a class="btn btn-lg -bg-orange td-rss-button d-none d-lg-block" href="https://jayex.io/blog/news/index.xml" target="_blank">
               RSS <i class="fa fa-rss ml-2 "></i>
             </a>
             
@@ -592,7 +551,7 @@ if (!doNotTrack) {
   <h5 class="taxonomy-title">Categories:</h5>
   <ul class="taxonomy-terms">
     
-      <li><a class="taxonomy-term" href="https://jenkins-x.io/categories/blog/" data-taxonomy-term="blog"><span class="taxonomy-label">blog</span></a></li>
+      <li><a class="taxonomy-term" href="https://jayex.io/categories/blog/" data-taxonomy-term="blog"><span class="taxonomy-label">blog</span></a></li>
     
   </ul>
 </div>
@@ -605,12 +564,17 @@ if (!doNotTrack) {
 
 		
 	</header>
-	<h2 id="serverless-jenkins">Serverless Jenkins</h2>
+	<div class="alert alert-warning" role="alert">
+  <h1>WARNING: This post refers to the unmaintained Jenkins X version 1 or 2</h1>
+  <h3>This post is outdated and is kept only out of historical interest. Some broken links have been removed.</h3>
+</div>
+
+<h2 id="serverless-jenkins">Serverless Jenkins</h2>
 <p><a href="https://medium.com/@jdrawlings/">James Rawlings</a> has just published an excellent article on <a href="https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870">Serverless Jenkins with Jenkins X</a> that is well worth a read.</p>
-<p>It describes how you can use it via the <code>--prow</code> feature flag when using either <a href="/commands/jx_create_cluster/">jx create cluster</a></p>
+<p>It describes how you can use it via the <code>--prow</code> feature flag when using either <code>jx create cluster</code></p>
 <pre><code>jx create cluster gke --prow
 </code></pre>
-<p>or <a href="/commands/deprecation/">jx install</a></p>
+<p>or <code>jx install</code></p>
 <pre><code>jx install --prow 
 </code></pre>
 <p>For more details see the <a href="https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870">blog</a> or check out the video:</p>
@@ -661,7 +625,7 @@ if (!doNotTrack) {
   </li>
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Contribute" aria-label="Contribute">
-    <a class="text-white" target="_blank" href="https://jenkins-x.io/community/documentation/">
+    <a class="text-white" target="_blank" href="https://jayex.io/community/documentation/">
       <i class="fas fa-edit"></i>
     </a>
   </li>
@@ -681,12 +645,12 @@ if (!doNotTrack) {
     <div class="row">
       <div class="col-12 col-sm-12 text-center text-xs-right order-sm-6">
         <p>
-          <small class="text-white">Copyright &copy; 2025 The Jenkins X Authors. All Rights Reserved</small>
+          <small class="text-white">Copyright &copy; 2026 The JayeX Authors. All Rights Reserved</small>
           <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a></small>
         </p>
         <p>
           <small class="text-white">
-            Copyright &copy; 2025 The Linux Foundation®. All rights reserved.<br/>
+            Copyright &copy; 2026 The Linux Foundation®. All rights reserved.<br/>
             The Linux Foundation has registered trademarks and uses trademarks.
             For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage</a> page.<br/>
             Linux is a registered trademark of Linus Torvalds.<br/>

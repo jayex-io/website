@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx gitops helmfile</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/</link>
-    <description>Recent content in jx gitops helmfile on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx gitops helmfile</title>
+    <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/</link>
+    <description>Recent content in jx gitops helmfile on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/gitops/helmfile/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx gitops helmfile add</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/add/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/add/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/add/</guid>
       <description>
         
         
@@ -56,10 +56,10 @@
     
     <item>
       <title>V3: jx gitops helmfile delete</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/delete/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/delete/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/delete/</guid>
       <description>
         
         
@@ -95,10 +95,10 @@
     
     <item>
       <title>V3: jx gitops helmfile move</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/move/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/move/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/move/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/move/</guid>
       <description>
         
         
@@ -135,10 +135,10 @@
     
     <item>
       <title>V3: jx gitops helmfile report</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/report/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/report/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/report/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/report/</guid>
       <description>
         
         
@@ -170,10 +170,10 @@
     
     <item>
       <title>V3: jx gitops helmfile resolve</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/resolve/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/resolve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/resolve/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/resolve/</guid>
       <description>
         
         
@@ -205,10 +205,10 @@
     
     <item>
       <title>V3: jx gitops helmfile status</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/status/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/status/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/status/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/status/</guid>
       <description>
         
         
@@ -234,10 +234,10 @@
     
     <item>
       <title>V3: jx gitops helmfile structure</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/structure/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/structure/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/structure/</guid>
       <description>
         
         
@@ -259,10 +259,10 @@
     
     <item>
       <title>V3: jx gitops helmfile validate</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/validate/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/validate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/validate/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/helmfile/validate/</guid>
       <description>
         
         

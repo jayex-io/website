@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx pipeline convert</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert/</link>
-    <description>Recent content in jx pipeline convert on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx pipeline convert</title>
+    <link>https://jayex.io/v3/develop/reference/jx/pipeline/convert/</link>
+    <description>Recent content in jx pipeline convert on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/pipeline/convert/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx pipeline convert remotetasks</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert/remotetasks/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/convert/remotetasks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert/remotetasks/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/convert/remotetasks/</guid>
       <description>
         
         
@@ -49,10 +49,10 @@
     
     <item>
       <title>V3: jx pipeline convert uses</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert/uses/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/pipeline/convert/uses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert/uses/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/pipeline/convert/uses/</guid>
       <description>
         
         

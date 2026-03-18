@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – OpenShift</title>
-    <link>https://jenkins-x.io/v3/admin/platforms/openshift/</link>
-    <description>Recent content in OpenShift on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – OpenShift</title>
+    <link>https://jayex.io/v3/admin/platforms/openshift/</link>
+    <description>Recent content in OpenShift on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/platforms/openshift/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/platforms/openshift/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,14 +16,14 @@
     
     <item>
       <title>V3: OpenShift CodeReady Containers</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/openshift/openshift-crc/</link>
+      <link>https://jayex.io/v3/admin/platforms/openshift/openshift-crc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/openshift/openshift-crc/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/openshift/openshift-crc/</guid>
       <description>
         
         
-        &lt;p&gt;This guide will walk you though how to setup Jenkins X on your laptop using &lt;a href=&#34;https://cloud.redhat.com/openshift/install/crc/installer-provisioned&#34;&gt;OpenShift 4.x with CodeReady Containers&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;This guide will walk you though how to setup JayeX on your laptop using &lt;a href=&#34;https://cloud.redhat.com/openshift/install/crc/installer-provisioned&#34;&gt;OpenShift 4.x with CodeReady Containers&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -83,7 +83,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/guides/operator/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Install the Git Operator&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/guides/operator/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Install the Git Operator&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;switch to the &lt;code&gt;jx&lt;/code&gt; namespace&lt;/p&gt;
@@ -91,7 +91,7 @@
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx ns jx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

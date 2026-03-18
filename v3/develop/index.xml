@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – User Guide</title>
-    <link>https://jenkins-x.io/v3/develop/</link>
-    <description>Recent content in User Guide on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – User Guide</title>
+    <link>https://jayex.io/v3/develop/</link>
+    <description>Recent content in User Guide on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: UI</title>
-      <link>https://jenkins-x.io/v3/develop/ui/</link>
+      <link>https://jayex.io/v3/develop/ui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/ui/</guid>
+      <guid>https://jayex.io/v3/develop/ui/</guid>
       <description>
         
         
@@ -28,36 +28,36 @@
     
     <item>
       <title>V3: Creating projects</title>
-      <link>https://jenkins-x.io/v3/develop/create-project/</link>
+      <link>https://jayex.io/v3/develop/create-project/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/create-project/</guid>
+      <guid>https://jayex.io/v3/develop/create-project/</guid>
       <description>
         
         
-        &lt;p&gt;To create or import projects you will need to get the &lt;a href=&#34;https://jenkins-x.io/v3/guides/jx3/&#34;&gt;jx 3.x binary&lt;/a&gt; and put it on your &lt;code&gt;$PATH&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;To create or import projects you will need to get the &lt;a href=&#34;https://jayex.io/v3/guides/jx3/&#34;&gt;jx 3.x binary&lt;/a&gt; and put it on your &lt;code&gt;$PATH&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;create-a-new-project-from-a-quickstart&#34;&gt;Create a new project from a quickstart&lt;/h2&gt;
-&lt;p&gt;To create a new project from a quickstart template use the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/project/quickstart&#34;&gt;jx project quickstart&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;To create a new project from a quickstart template use the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/project/quickstart&#34;&gt;jx project quickstart&lt;/a&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx project quickstart
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that the old Jenkins X 2.x alias &lt;code&gt;jx quickstart&lt;/code&gt; is still supported but will be deprecated eventually.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that the old JayeX 2.x alias &lt;code&gt;jx quickstart&lt;/code&gt; is still supported but will be deprecated eventually.&lt;/p&gt;
 &lt;p&gt;The quickstart files are all found in &lt;a href=&#34;https://github.com/jenkins-x-quickstarts&#34;&gt;the quickstart github organization&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;See the &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;quickstart documentation&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#importing--creating-quickstarts&#34;&gt;quickstart documentation&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;h2 id=&#34;import-an-existing-project&#34;&gt;Import an existing project&lt;/h2&gt;
-&lt;p&gt;To import an existing project use the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/project/import&#34;&gt;jx project import&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;To import an existing project use the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/project/import&#34;&gt;jx project import&lt;/a&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx project import
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The tasks which are copied over during the import process can be found &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you are using nested gitlab repositories (&lt;code&gt;org/group/repository&lt;/code&gt;), add &lt;code&gt;--nested-repo&lt;/code&gt; flag to &lt;code&gt;jx project import&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; that we recommend &lt;a href=&#34;#create-a-new-project-from-a-quickstart&#34;&gt;trying out a quickstart first&lt;/a&gt; before importing a project so that:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;you can verify your cluster is setup correctly so that you can create new charts + images, promote them to staging and create Preview Environments on Pull Requests etc.&lt;/li&gt;
-&lt;li&gt;as you start to import projects which may have their own custom &lt;code&gt;Dockerfile&lt;/code&gt; or custom charts you can compare your custom chart versus the charts included in the Jenkins X catalog to see how it works. e.g.
+&lt;li&gt;as you start to import projects which may have their own custom &lt;code&gt;Dockerfile&lt;/code&gt; or custom charts you can compare your custom chart versus the charts included in the JayeX catalog to see how it works. e.g.
 &lt;ul&gt;
 &lt;li&gt;the way the default pipelines update the image tag on each release to use a versioned image in the helm chart or the&lt;/li&gt;
 &lt;li&gt;how the ingress domain URL is injected into the &lt;code&gt;Ingress&lt;/code&gt; resource in the helm chart from the environment (preview / staging / production etc) so that the same chart can be deployed into any environment and things just work (with and without TLS)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;For troubleshooting what could be wrong with quickstart/import, refer to this &lt;a href=&#34;https://jenkins-x.io/v3/admin/troubleshooting/quickstart-import/&#34;&gt;page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For troubleshooting what could be wrong with quickstart/import, refer to this &lt;a href=&#34;https://jayex.io/v3/admin/troubleshooting/quickstart-import/&#34;&gt;page&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;default-file-layout&#34;&gt;Default file layout&lt;/h3&gt;
 &lt;p&gt;If you are importing your own repository which has a &lt;code&gt;Dockerfile&lt;/code&gt; and/or a helm chart the default pipelines look for these files at:&lt;/p&gt;
 &lt;ul&gt;
@@ -66,26 +66,26 @@
 &lt;/ul&gt;
 &lt;p&gt;You are free to use other conventions if you prefer; though you&amp;rsquo;ll need to modify the pipelines to look in different locations for these files.&lt;/p&gt;
 &lt;h3 id=&#34;importing-projects-with-jenkinfiles&#34;&gt;Importing projects with Jenkinfiles&lt;/h3&gt;
-&lt;p&gt;Note that Jenkins X 3.x includes &lt;a href=&#34;jenkinsfile&#34;&gt;new support for handling of importing Jenkinsfiles&lt;/a&gt; if you are trying to combine Jenkins and Tekton together in Jenkins X.&lt;/p&gt;
-&lt;p&gt;This means we can create quickstarts and import projects using the same UX whether you wish to use the automated CI/CD pipelines from Jenkins X using Tekton or wish to reuse your own existing &lt;code&gt;Jenkinsfile&lt;/code&gt; files (or even a combination of both on the same repository!)&lt;/p&gt;
+&lt;p&gt;Note that JayeX 3.x includes &lt;a href=&#34;jenkinsfile&#34;&gt;new support for handling of importing Jenkinsfiles&lt;/a&gt; if you are trying to combine Jenkins and Tekton together in JayeX.&lt;/p&gt;
+&lt;p&gt;This means we can create quickstarts and import projects using the same UX whether you wish to use the automated CI/CD pipelines from JayeX using Tekton or wish to reuse your own existing &lt;code&gt;Jenkinsfile&lt;/code&gt; files (or even a combination of both on the same repository!)&lt;/p&gt;
 &lt;h2 id=&#34;top-level-wizard&#34;&gt;Top level wizard&lt;/h2&gt;
-&lt;p&gt;If you just run the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/project&#34;&gt;jx project&lt;/a&gt; you get a top level wizard that asks you which kind of approach you wish to take (e.g. quickstart versus import etc)&lt;/p&gt;
+&lt;p&gt;If you just run the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/project&#34;&gt;jx project&lt;/a&gt; you get a top level wizard that asks you which kind of approach you wish to take (e.g. quickstart versus import etc)&lt;/p&gt;
 &lt;h2 id=&#34;improvements-since-v3&#34;&gt;Improvements since v3&lt;/h2&gt;
-&lt;p&gt;We&amp;rsquo;ve made a number of improvements over the 2.x version of &lt;a href=&#34;https://jenkins-x.io/commands/jx_import/&#34;&gt;jx import&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve made a number of improvements over the 2.x version of &lt;a href=&#34;https://jayex.io/commands/jx_import/&#34;&gt;jx import&lt;/a&gt; command:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;when importing to Jenkins X we ask which pipeline catalog you wish to use which you can now &lt;a href=&#34;https://jenkins-x.io/v3/about/extending/#pipeline-catalog&#34;&gt;configure easily&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;when importing to JayeX we ask which pipeline catalog you wish to use which you can now &lt;a href=&#34;https://jayex.io/v3/about/extending/#pipeline-catalog&#34;&gt;configure easily&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;the wizard will prompt you for the pack name (language) once the detection has occurred. Usually the pack name detection is good enough. e.g. detecting &lt;code&gt;maven&lt;/code&gt; but you may wish to change the version of the pack (e.g. &lt;code&gt;maven-java11&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;when importing a project which has a &lt;code&gt;Jenkinfiles&lt;/code&gt; you are given the choice to:
 &lt;ul&gt;
-&lt;li&gt;ignore the &lt;code&gt;Jenkinsfile&lt;/code&gt; and let Jenkins X automate the CI/CD via Tekton&lt;/li&gt;
-&lt;li&gt;use a Jenkins server you have configured via Jenkins X to implement the CI&lt;/li&gt;
-&lt;li&gt;add a new Jenkins server for the CI managed via GitOps in Jenkins X&lt;/li&gt;
+&lt;li&gt;ignore the &lt;code&gt;Jenkinsfile&lt;/code&gt; and let JayeX automate the CI/CD via Tekton&lt;/li&gt;
+&lt;li&gt;use a Jenkins server you have configured via JayeX to implement the CI&lt;/li&gt;
+&lt;li&gt;add a new Jenkins server for the CI managed via GitOps in JayeX&lt;/li&gt;
 &lt;li&gt;use the Jenkinfile Runner via Tekton&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;changes-since-2x&#34;&gt;Changes since 2.x:&lt;/h3&gt;
-&lt;p&gt;For those of you who know &lt;a href=&#34;https://jenkins-x.io/&#34;&gt;Jenkins X&lt;/a&gt; and have used &lt;a href=&#34;https://jenkins-x.io/commands/jx_import/&#34;&gt;jx import&lt;/a&gt; before the new project wizard is a little different:&lt;/p&gt;
+&lt;p&gt;For those of you who know &lt;a href=&#34;https://jayex.io/&#34;&gt;JayeX&lt;/a&gt; and have used &lt;a href=&#34;https://jayex.io/commands/jx_import/&#34;&gt;jx import&lt;/a&gt; before the new project wizard is a little different:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;the commands are a little different:&lt;/p&gt;
@@ -103,26 +103,26 @@
     
     <item>
       <title>V3: Developing</title>
-      <link>https://jenkins-x.io/v3/develop/developing/</link>
+      <link>https://jayex.io/v3/develop/developing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/developing/</guid>
+      <guid>https://jayex.io/v3/develop/developing/</guid>
       <description>
         
         
-        &lt;p&gt;Someone on your team has &lt;a href=&#34;https://jenkins-x.io/v3/admin/&#34;&gt;setup Jenkins X on a kubernetes cluster&lt;/a&gt;. So how do you use it?&lt;/p&gt;
+        &lt;p&gt;Someone on your team has &lt;a href=&#34;https://jayex.io/v3/admin/&#34;&gt;setup JayeX on a kubernetes cluster&lt;/a&gt;. So how do you use it?&lt;/p&gt;
 &lt;p&gt;Mostly you just use your IDE and git to change code in your usual way.&lt;/p&gt;
-&lt;p&gt;Though we do prefer you submit code changes via &lt;a href=&#34;https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests&#34;&gt;Pull Requests&lt;/a&gt; to then trigger CI and &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/&#34;&gt;Preview Environment&lt;/a&gt; for each Pull Request.&lt;/p&gt;
+&lt;p&gt;Though we do prefer you submit code changes via &lt;a href=&#34;https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests&#34;&gt;Pull Requests&lt;/a&gt; to then trigger CI and &lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/&#34;&gt;Preview Environment&lt;/a&gt; for each Pull Request.&lt;/p&gt;
 &lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;
-&lt;p&gt;To see how to create a &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/&#34;&gt;Preview Environment&lt;/a&gt; on a Pull Request see this demo:&lt;/p&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/x-GtKmmhDSI&#34; title=&#34;Demo of creating Preview Environments on Pull Requestss with Jenkins X&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;To see how to create a &lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/&#34;&gt;Preview Environment&lt;/a&gt; on a Pull Request see this demo:&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/x-GtKmmhDSI&#34; title=&#34;Demo of creating Preview Environments on Pull Requestss with JayeX&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h3 id=&#34;creating-a-project&#34;&gt;Creating a project&lt;/h3&gt;
-&lt;p&gt;To see how to &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;create a new project&lt;/a&gt; and get started developing with Jenkins X check out this demo:&lt;/p&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/4wqwulEzseM?t=279s&#34; title=&#34;Demo of developing with Jenkins X&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;To see how to &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;create a new project&lt;/a&gt; and get started developing with JayeX check out this demo:&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/4wqwulEzseM?t=279s&#34; title=&#34;Demo of developing with JayeX&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;pull-requests&#34;&gt;Pull Requests&lt;/h2&gt;
-&lt;p&gt;The pull request (PR) is the foundation of Jenkins X CI/CD pipeline execution.&lt;/p&gt;
+&lt;p&gt;The pull request (PR) is the foundation of JayeX CI/CD pipeline execution.&lt;/p&gt;
 &lt;p&gt;Note that some git providers call these &lt;code&gt;merge requests&lt;/code&gt; instead of &lt;code&gt;pull requests&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Using Pull Requests allows developers, reviewers and Jenkins X to:&lt;/p&gt;
+&lt;p&gt;Using Pull Requests allows developers, reviewers and JayeX to:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Verify changes are valid: unit tests still pass, code is linted and so forth&lt;/li&gt;
 &lt;li&gt;Review PR code changes and their effects&lt;/li&gt;
@@ -131,12 +131,12 @@
 &lt;li&gt;Manual promotion of PRs to production environments and software releases&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;preview-environments&#34;&gt;Preview Environments&lt;/h3&gt;
-&lt;p&gt;The other advantage of working with Pull Requests is the automated CI/CD in Jenkins X creates a &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/preview/&#34;&gt;Preview Environment&lt;/a&gt; for each Pull Request&lt;/p&gt;
+&lt;p&gt;The other advantage of working with Pull Requests is the automated CI/CD in JayeX creates a &lt;a href=&#34;https://jayex.io/v3/develop/environments/preview/&#34;&gt;Preview Environment&lt;/a&gt; for each Pull Request&lt;/p&gt;
 &lt;h3 id=&#34;work-in-progress-wip&#34;&gt;Work in progress (WIP)&lt;/h3&gt;
 &lt;p&gt;Pull requests can be marked as work in progress, blocking auto-merging, either via making the PR a draft on GitHub, or by adding &lt;code&gt;WIP:&lt;/code&gt;, &lt;code&gt;wip:&lt;/code&gt;, &lt;code&gt;[wip]:&lt;/code&gt;, or similar at the beginning of the PR title.
 The PR will be moved out of work-in-progress when no longer in draft or when the &lt;code&gt;WIP&lt;/code&gt; prefix in the PR title has been removed.&lt;/p&gt;
 &lt;h3 id=&#34;how-lighthouse-merges-a-pr&#34;&gt;How Lighthouse merges a PR&lt;/h3&gt;
-&lt;p&gt;There are some unique actions and behaviors when using &lt;a href=&#34;https://jenkins-x.io/v3/about/overview/#lighthouse&#34;&gt;lighthouse&lt;/a&gt; to implement ChatOps:&lt;/p&gt;
+&lt;p&gt;There are some unique actions and behaviors when using &lt;a href=&#34;https://jayex.io/v3/about/overview/#lighthouse&#34;&gt;lighthouse&lt;/a&gt; to implement ChatOps:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The PR must have its required test contexts pass (by default, just &lt;code&gt;pr-build&lt;/code&gt;).&lt;/li&gt;
 &lt;li&gt;PRs must be set &lt;code&gt;/lgtm&lt;/code&gt; and approved, or have the &lt;code&gt;updatebot&lt;/code&gt; label on it.&lt;/li&gt;
@@ -145,30 +145,30 @@ The PR will be moved out of work-in-progress when no longer in draft or when the
 &lt;/ul&gt;
 &lt;h3 id=&#34;after-pull-requests-merge&#34;&gt;After Pull Requests merge&lt;/h3&gt;
 &lt;p&gt;Once your pull request merges a new release is created for your application, creating new artifacts, images, helm charts etc&lt;/p&gt;
-&lt;p&gt;Then automatic &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/promotion/&#34;&gt;Promotion Pull Requests&lt;/a&gt; are triggered.&lt;/p&gt;
+&lt;p&gt;Then automatic &lt;a href=&#34;https://jayex.io/v3/develop/environments/promotion/&#34;&gt;Promotion Pull Requests&lt;/a&gt; are triggered.&lt;/p&gt;
 &lt;p&gt;By default your new version is promoted to the &lt;code&gt;Staging&lt;/code&gt; environment. Though you need to manually approve the Pull Request to promote to &lt;code&gt;Production&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can &lt;a href=&#34;https://jenkins-x.io/v3/develop/environments/config/&#34;&gt;Configure promotion to behave differently if you need it&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can &lt;a href=&#34;https://jayex.io/v3/develop/environments/config/&#34;&gt;Configure promotion to behave differently if you need it&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;using-chatops&#34;&gt;Using ChatOps&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;ChatOps&lt;/em&gt; lets you interact with the Pull Request via special comments on the Pull Request via your git providers website.&lt;/p&gt;
-&lt;p&gt;See the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/chatops/&#34;&gt;ChatOps Command Reference&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;https://jayex.io/v3/develop/reference/chatops/&#34;&gt;ChatOps Command Reference&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Apps</title>
-      <link>https://jenkins-x.io/v3/develop/apps/</link>
+      <link>https://jayex.io/v3/develop/apps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/apps/</guid>
+      <guid>https://jayex.io/v3/develop/apps/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X 3.x supports the &lt;code&gt;helmfile.yaml&lt;/code&gt; file format from the &lt;a href=&#34;https://github.com/helmfile/helmfile&#34;&gt;helmfile project&lt;/a&gt; that can be used to define the &lt;a href=&#34;https://helm.sh/&#34;&gt;Helm&lt;/a&gt; &lt;a href=&#34;https://helm.sh/docs/topics/charts/&#34;&gt;charts&lt;/a&gt; you wish to install and their namespace.&lt;/p&gt;
+        &lt;p&gt;JayeX 3.x supports the &lt;code&gt;helmfile.yaml&lt;/code&gt; file format from the &lt;a href=&#34;https://github.com/helmfile/helmfile&#34;&gt;helmfile project&lt;/a&gt; that can be used to define the &lt;a href=&#34;https://helm.sh/&#34;&gt;Helm&lt;/a&gt; &lt;a href=&#34;https://helm.sh/docs/topics/charts/&#34;&gt;charts&lt;/a&gt; you wish to install and their namespace.&lt;/p&gt;
 &lt;h2 id=&#34;adding-charts&#34;&gt;Adding Charts&lt;/h2&gt;
-&lt;p&gt;Jenkins X uses &lt;a href=&#34;https://helmfile.readthedocs.io/en/latest/#configuration&#34;&gt;helmfile&lt;/a&gt; to configure which versions of which helm charts are to be deployed in which namespace along with its configuration.&lt;/p&gt;
+&lt;p&gt;JayeX uses &lt;a href=&#34;https://helmfile.readthedocs.io/en/latest/#configuration&#34;&gt;helmfile&lt;/a&gt; to configure which versions of which helm charts are to be deployed in which namespace along with its configuration.&lt;/p&gt;
 &lt;h3 id=&#34;using-the-cli&#34;&gt;Using the CLI&lt;/h3&gt;
-&lt;p&gt;The easiest way to add apps/charts to your cluster is via a CLI command &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/gitops/helmfile/add/&#34;&gt;jx gitops helmfile add&lt;/a&gt; to add charts into the right&lt;code&gt;helmfile.yaml&lt;/code&gt; for the namespace:&lt;/p&gt;
+&lt;p&gt;The easiest way to add apps/charts to your cluster is via a CLI command &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/gitops/helmfile/add/&#34;&gt;jx gitops helmfile add&lt;/a&gt; to add charts into the right&lt;code&gt;helmfile.yaml&lt;/code&gt; for the namespace:&lt;/p&gt;
 &lt;p&gt;Make sure you are in a git clone of your cluster git repository then run:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# from inside a git clone of your cluster git repository&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx gitops helmfile add --chart somerepo/mychart --repository https://acme.com/myrepo --namespace foo --version 1.2.3
@@ -190,7 +190,7 @@ The PR will be moved out of work-in-progress when no longer in draft or when the
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;releases&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;chart&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;flagger/flagger&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;namespace&lt;/code&gt; and &lt;code&gt;version&lt;/code&gt; properties of the charts get resolved during deployment via the &lt;a href=&#34;https://jenkins-x.io/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; or you can specify them explicitly.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;namespace&lt;/code&gt; and &lt;code&gt;version&lt;/code&gt; properties of the charts get resolved during deployment via the &lt;a href=&#34;https://jayex.io/v3/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; or you can specify them explicitly.&lt;/p&gt;
 &lt;p&gt;The prefix of the chart name is the chart repository name. There are a few chart repository names already defined in the &lt;code&gt;helmfile.yaml&lt;/code&gt; in the &lt;code&gt;repositories:&lt;/code&gt; section. You can add any number of chart repositories to the &lt;code&gt;helmfile.yaml&lt;/code&gt; that you need.&lt;/p&gt;
 &lt;p&gt;We are trying to increase consistency and use canonical names in &lt;code&gt;helmfile.yaml&lt;/code&gt; files for chart repositories. You can see the default &lt;a href=&#34;https://github.com/jenkins-x/jxr-versions/blob/master/charts/repositories.yml&#34;&gt;chart repository names and URLs in this file&lt;/a&gt;. Feel free to use any name and URL you like.&lt;/p&gt;
 &lt;h2 id=&#34;adding-resources&#34;&gt;Adding resources&lt;/h2&gt;
@@ -223,8 +223,8 @@ The PR will be moved out of work-in-progress when no longer in draft or when the
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;versionStream/charts/stable/nginx-ingress/values.yaml.gotmpl&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;values.yaml&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also use a file called &lt;code&gt;values.yaml.gotmpl&lt;/code&gt; if you wish to use go templating of the values file. For example this lets you reference properties from the &lt;code&gt;jx-requirements.yml&lt;/code&gt; file via expressions like &lt;code&gt;{{ .Values.jxRequirements.ingress.domain }}&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;To see an example of this in action check out the &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/cdf/tekton-pipeline/values.yaml.gotmpl&#34;&gt;charts/jenkins-x/tekton/values.yaml.gotmpl&lt;/a&gt; file in the &lt;a href=&#34;https://jenkins-x.io/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Note that many apps are already configured to make use of the &lt;code&gt;jx-requirements.yml&lt;/code&gt; settings via the &lt;a href=&#34;https://jenkins-x.io/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; - but you are free to add your own custom configuration.&lt;/p&gt;
+&lt;p&gt;To see an example of this in action check out the &lt;a href=&#34;https://github.com/jenkins-x/jx3-versions/blob/master/charts/cdf/tekton-pipeline/values.yaml.gotmpl&#34;&gt;charts/jenkins-x/tekton/values.yaml.gotmpl&lt;/a&gt; file in the &lt;a href=&#34;https://jayex.io/v3/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note that many apps are already configured to make use of the &lt;code&gt;jx-requirements.yml&lt;/code&gt; settings via the &lt;a href=&#34;https://jayex.io/v3/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; - but you are free to add your own custom configuration.&lt;/p&gt;
 &lt;h3 id=&#34;using-requirements-in-charts&#34;&gt;Using requirements in charts&lt;/h3&gt;
 &lt;p&gt;The &lt;code&gt;jx-requirements.yml&lt;/code&gt; file gets converted to a namespace specific set of values, &lt;code&gt;jx-values.yaml&lt;/code&gt; in each namespace so it can be easily consumed in the namespace specific helmfile in &lt;code&gt;helmfiles/$namespace/helmefile.yaml&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;If your chart wishes to reuse some of the configuration from the requirements, you can add a reference to the &lt;code&gt;jx-values.yaml&lt;/code&gt; file in your chart in the &lt;code&gt;helmfiles/$namespace/helmefile.yaml&lt;/code&gt; for your namespace:&lt;/p&gt;
@@ -236,30 +236,30 @@ The PR will be moved out of work-in-progress when no longer in draft or when the
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;jx-values.yaml&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;There is also a file called &lt;code&gt;jx-global-values.yaml&lt;/code&gt; which can include various global values like &lt;code&gt;jx.imagePullSecrets&lt;/code&gt;. You can add your own global values into that file if you wish; it will be replicated into the &lt;code&gt;helmfiles/*/jx-values.yaml&lt;/code&gt; files so they can be easily consumed in a chart.&lt;/p&gt;
 &lt;h3 id=&#34;version-stream-folder&#34;&gt;Version Stream folder&lt;/h3&gt;
-&lt;p&gt;You may have noticed there is a folder called &lt;code&gt;versionStream&lt;/code&gt; inside your clusters git repository. The &lt;a href=&#34;https://jenkins-x.io/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; is used to provide shared configuration such as:&lt;/p&gt;
+&lt;p&gt;You may have noticed there is a folder called &lt;code&gt;versionStream&lt;/code&gt; inside your clusters git repository. The &lt;a href=&#34;https://jayex.io/v3/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; is used to provide shared configuration such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the verified versions of charts, images and git repositories which have been tested to work together&lt;/li&gt;
 &lt;li&gt;the default namespace and configuration of charts.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This means we can share canonical files and metadata across clusters and git repositories.&lt;/p&gt;
 &lt;h3 id=&#34;keeping-the-version-stream-in-sync&#34;&gt;Keeping the version stream in sync&lt;/h3&gt;
-&lt;p&gt;When you &lt;a href=&#34;https://jenkins-x.io/v3/guides/upgrade/#cluster&#34;&gt;upgrade your cluster&lt;/a&gt; the local &lt;code&gt;versionStream&lt;/code&gt; folder will be upgraded to the latest upstream version stream contents.&lt;/p&gt;
-&lt;p&gt;We mentioned &lt;a href=&#34;#customising-charts&#34;&gt;above how you can cusomize charts&lt;/a&gt;. Please try keep as many of your customizations as you can outside of the &lt;code&gt;versionStream&lt;/code&gt; folder as you can so that there&amp;rsquo;s no risk of your configurations getting overridden or causing merge conflicts with upstream &lt;a href=&#34;https://jenkins-x.io/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; changes.&lt;/p&gt;
-&lt;p&gt;Any changes in the local &lt;code&gt;helmfile.yaml&lt;/code&gt; or &lt;code&gt;charts&lt;/code&gt; folder are excluded by the &lt;a href=&#34;https://jenkins-x.io/v3/guides/upgrade/#cluster&#34;&gt;upgrade mechanism&lt;/a&gt; and so are totally safe.&lt;/p&gt;
+&lt;p&gt;When you &lt;a href=&#34;https://jayex.io/v3/guides/upgrade/#cluster&#34;&gt;upgrade your cluster&lt;/a&gt; the local &lt;code&gt;versionStream&lt;/code&gt; folder will be upgraded to the latest upstream version stream contents.&lt;/p&gt;
+&lt;p&gt;We mentioned &lt;a href=&#34;#customising-charts&#34;&gt;above how you can cusomize charts&lt;/a&gt;. Please try keep as many of your customizations as you can outside of the &lt;code&gt;versionStream&lt;/code&gt; folder as you can so that there&amp;rsquo;s no risk of your configurations getting overridden or causing merge conflicts with upstream &lt;a href=&#34;https://jayex.io/v3/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; changes.&lt;/p&gt;
+&lt;p&gt;Any changes in the local &lt;code&gt;helmfile.yaml&lt;/code&gt; or &lt;code&gt;charts&lt;/code&gt; folder are excluded by the &lt;a href=&#34;https://jayex.io/v3/guides/upgrade/#cluster&#34;&gt;upgrade mechanism&lt;/a&gt; and so are totally safe.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Pipelines</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/</link>
+      <link>https://jayex.io/v3/develop/pipelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/</guid>
       <description>
         
         
-        &lt;p&gt;As part of the &lt;a href=&#34;https://github.com/jenkins-x/enhancements/issues/37&#34;&gt;Tekton Catalog enhancement proposal&lt;/a&gt; we&amp;rsquo;ve improved support for Tekton in Jenkins X so that you can&lt;/p&gt;
+        &lt;p&gt;As part of the &lt;a href=&#34;https://github.com/jenkins-x/enhancements/issues/37&#34;&gt;Tekton Catalog enhancement proposal&lt;/a&gt; we&amp;rsquo;ve improved support for Tekton in JayeX so that you can&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;easily &lt;a href=&#34;editing&#34;&gt;edit any pipeline in any git repository&lt;/a&gt; by just modifying the &lt;a href=&#34;https://tekton.dev/docs/pipelines/tasks/#configuring-a-task&#34;&gt;Task&lt;/a&gt;, &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline&#34;&gt;Pipeline&lt;/a&gt; or &lt;a href=&#34;https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun&#34;&gt;PipelineRun&lt;/a&gt; files in your &lt;code&gt;.lighthouse/jenkins-x&lt;/code&gt; folder&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;editing/#add-new-taskspipelines-by-hand&#34;&gt;add new pipelines to any git repository&lt;/a&gt; to reuse any &lt;a href=&#34;https://tekton.dev/docs/pipelines/tasks/#configuring-a-task&#34;&gt;Task&lt;/a&gt; files you find from places like the &lt;a href=&#34;https://github.com/tektoncd/catalog&#34;&gt;tekton catalog&lt;/a&gt; in your repositories&lt;/li&gt;
@@ -270,27 +270,27 @@ The PR will be moved out of work-in-progress when no longer in draft or when the
     
     <item>
       <title>V3: Environments</title>
-      <link>https://jenkins-x.io/v3/develop/environments/</link>
+      <link>https://jayex.io/v3/develop/environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/environments/</guid>
+      <guid>https://jayex.io/v3/develop/environments/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X supports multiple environments for hosting your applications such as &lt;code&gt;Development&lt;/code&gt;, &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt;.&lt;/p&gt;
+        &lt;p&gt;JayeX supports multiple environments for hosting your applications such as &lt;code&gt;Development&lt;/code&gt;, &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;You can also use environments for different kinds of testing: system, integration, load, soak or regression tests.&lt;/p&gt;
 &lt;p&gt;The default configuration is a single cluster setup with &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt; environments which map to local namespaces &lt;code&gt;jx-staging&lt;/code&gt; and &lt;code&gt;jx-production&lt;/code&gt; inside the same cluster.&lt;/p&gt;
-&lt;p&gt;However for real enterprise setups we recommend using the &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/multi-cluster/&#34;&gt;Multi Cluster Setup&lt;/a&gt; where your &lt;code&gt;Production&lt;/code&gt; and maybe &lt;code&gt;Staging&lt;/code&gt; environments are setup in separate clusters; ideally with separate cloud provider accounts so that they can be completely isolated from each other.&lt;/p&gt;
+&lt;p&gt;However for real enterprise setups we recommend using the &lt;a href=&#34;https://jayex.io/v3/admin/guides/multi-cluster/&#34;&gt;Multi Cluster Setup&lt;/a&gt; where your &lt;code&gt;Production&lt;/code&gt; and maybe &lt;code&gt;Staging&lt;/code&gt; environments are setup in separate clusters; ideally with separate cloud provider accounts so that they can be completely isolated from each other.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Reference</title>
-      <link>https://jenkins-x.io/v3/develop/reference/</link>
+      <link>https://jayex.io/v3/develop/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/</guid>
+      <guid>https://jayex.io/v3/develop/reference/</guid>
       <description>
         
         
@@ -300,10 +300,10 @@ The PR will be moved out of work-in-progress when no longer in draft or when the
     
     <item>
       <title>V3: FAQ</title>
-      <link>https://jenkins-x.io/v3/develop/faq/</link>
+      <link>https://jayex.io/v3/develop/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/faq/</guid>
+      <guid>https://jayex.io/v3/develop/faq/</guid>
       <description>
         
         

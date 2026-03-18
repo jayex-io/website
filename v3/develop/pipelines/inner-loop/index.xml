@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Inner loop</title>
-    <link>https://jenkins-x.io/v3/develop/pipelines/inner-loop/</link>
-    <description>Recent content in Inner loop on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Inner loop</title>
+    <link>https://jayex.io/v3/develop/pipelines/inner-loop/</link>
+    <description>Recent content in Inner loop on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/pipelines/inner-loop/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/pipelines/inner-loop/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: okteto</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/inner-loop/okteto/</link>
+      <link>https://jayex.io/v3/develop/pipelines/inner-loop/okteto/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/inner-loop/okteto/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/inner-loop/okteto/</guid>
       <description>
         
         
@@ -35,10 +35,10 @@
     
     <item>
       <title>V3: ksync</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/inner-loop/ksync/</link>
+      <link>https://jayex.io/v3/develop/pipelines/inner-loop/ksync/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/inner-loop/ksync/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/inner-loop/ksync/</guid>
       <description>
         
         
@@ -54,10 +54,10 @@
     
     <item>
       <title>V3: skaffold</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/inner-loop/skaffold/</link>
+      <link>https://jayex.io/v3/develop/pipelines/inner-loop/skaffold/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/inner-loop/skaffold/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/inner-loop/skaffold/</guid>
       <description>
         
         
@@ -79,10 +79,10 @@
     
     <item>
       <title>V3: localizer</title>
-      <link>https://jenkins-x.io/v3/develop/pipelines/inner-loop/localizer/</link>
+      <link>https://jayex.io/v3/develop/pipelines/inner-loop/localizer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/pipelines/inner-loop/localizer/</guid>
+      <guid>https://jayex.io/v3/develop/pipelines/inner-loop/localizer/</guid>
       <description>
         
         

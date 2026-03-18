@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Google</title>
-    <link>https://jenkins-x.io/v3/admin/platforms/google/</link>
-    <description>Recent content in Google on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Google</title>
+    <link>https://jayex.io/v3/admin/platforms/google/</link>
+    <description>Recent content in Google on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/platforms/google/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/platforms/google/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>V3: Configure Google Cloud DNS to manage my domain</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/google/cloud_dns/</link>
+      <link>https://jayex.io/v3/admin/platforms/google/cloud_dns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/google/cloud_dns/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/google/cloud_dns/</guid>
       <description>
         
         
@@ -43,21 +43,21 @@ e.g. in google domains enter the nameservers without the &amp;ldquo;.&amp;rdquo;
 &lt;code&gt;ns-cloud-e1.googledomains.com&lt;/code&gt;
 not
 &lt;code&gt;ns-cloud-e1.googledomains.com.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jenkins-x.io/images/v3/google_domains.png&#34; alt=&#34;Edit Nameservers GCP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jayex.io/images/v3/google_domains.png&#34; alt=&#34;Edit Nameservers GCP&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Configure Google Service Account</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/google/svc_acct/</link>
+      <link>https://jayex.io/v3/admin/platforms/google/svc_acct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/google/svc_acct/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/google/svc_acct/</guid>
       <description>
         
         
-        &lt;p&gt;This doc will demonstrate how to set up a Google service account that can be used by Terraform to execute &lt;a href=&#34;https://github.com/jenkins-x/terraform-google-jx#jenkins-x-gke-module&#34;&gt;Jenkins X GKE Module&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;This doc will demonstrate how to set up a Google service account that can be used by Terraform to execute &lt;a href=&#34;https://github.com/jenkins-x/terraform-google-jx#jenkins-x-gke-module&#34;&gt;JayeX GKE Module&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;💡 This doc has been designed to assist in performing the demonstration through copying and pasting each block of code into a shell terminal.&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;To execute the commands listed in your local bash shell will require the &lt;a href=&#34;https://cloud.google.com/sdk/gcloud/#the_and&#34;&gt;Google gcloud tool and Cloud SDK&lt;/a&gt; and the &lt;a href=&#34;https://stedolan.github.io/jq/&#34;&gt;JQ command-line JSON processor&lt;/a&gt;.&lt;br&gt;&lt;/p&gt;

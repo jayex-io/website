@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx preview</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/preview/</link>
-    <description>Recent content in jx preview on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx preview</title>
+    <link>https://jayex.io/v3/develop/reference/jx/preview/</link>
+    <description>Recent content in jx preview on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/preview/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/preview/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx preview create</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/preview/create/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/preview/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/preview/create/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/preview/create/</guid>
       <description>
         
         
@@ -54,10 +54,10 @@
     
     <item>
       <title>V3: jx preview destroy</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/preview/destroy/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/preview/destroy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/preview/destroy/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/preview/destroy/</guid>
       <description>
         
         
@@ -82,17 +82,17 @@
     
     <item>
       <title>V3: jx preview gc</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/preview/gc/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/preview/gc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/preview/gc/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/preview/gc/</guid>
       <description>
         
         
         &lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;jx preview gc
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;synopsis&#34;&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Garbage collect Jenkins X preview environments.&lt;/p&gt;
+&lt;p&gt;Garbage collect JayeX preview environments.&lt;/p&gt;
 &lt;p&gt;If a pull request is merged or closed the associated preview environment will be deleted.&lt;/p&gt;
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# garbage collect previews&lt;/span&gt;
@@ -108,10 +108,10 @@
     
     <item>
       <title>V3: jx preview get</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/preview/get/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/preview/get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/preview/get/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/preview/get/</guid>
       <description>
         
         
@@ -138,10 +138,10 @@
     
     <item>
       <title>V3: jx preview template</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/preview/template/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/preview/template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/preview/template/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/preview/template/</guid>
       <description>
         
         
@@ -165,10 +165,10 @@
     
     <item>
       <title>V3: jx preview version</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/preview/version/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/preview/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/preview/version/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/preview/version/</guid>
       <description>
         
         

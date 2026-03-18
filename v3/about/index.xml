@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – About</title>
-    <link>https://jenkins-x.io/v3/about/</link>
-    <description>Recent content in About on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – About</title>
+    <link>https://jayex.io/v3/about/</link>
+    <description>Recent content in About on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/about/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/about/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -14,98 +14,99 @@
     
     
     <item>
-      <title>V3: What is Jenkins X?</title>
-      <link>https://jenkins-x.io/v3/about/what/</link>
+      <title>V3: What is JayeX?</title>
+      <link>https://jayex.io/v3/about/what/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/what/</guid>
+      <guid>https://jayex.io/v3/about/what/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X automates and accelerates Continuous Integration and Continuous Delivery for developers on the cloud, so they can focus on building awesome software.&lt;/p&gt;
-&lt;p&gt;Embracing popular open source projects Jenkins X automates the setup and management to provide an integrated Cloud Native solution teams can use to develop better software faster and more reliably than traditional non cloud solutions.&lt;/p&gt;
-&lt;p&gt;Open Source projects that Jenkins X integrates with:&lt;/p&gt;
+        &lt;p&gt;JayeX automates and accelerates Continuous Integration and Continuous Delivery for developers on the cloud, so they can focus on building awesome software.&lt;/p&gt;
+&lt;p&gt;Embracing popular open source projects JayeX automates the setup and management to provide an integrated Cloud Native solution teams can use to develop better software faster and more reliably than traditional non cloud solutions.&lt;/p&gt;
+&lt;p&gt;Open Source projects that JayeX integrates with:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; target platform Jenkins X is installed onto, optionally deploy and run applications built with Jenkins X&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; target platform JayeX is installed onto, optionally deploy and run applications built with JayeX&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://tekton.dev/&#34;&gt;Tekton&lt;/a&gt; Cloud Native pipeline orchestration&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/kuberhealthy/kuberhealthy&#34;&gt;Kuberhealthy&lt;/a&gt; Periodic health checks of the systems&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://grafana.com&#34;&gt;Grafana&lt;/a&gt; &lt;strong&gt;[optional]&lt;/strong&gt; Centralised logs and Observability&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.jenkins.io/&#34;&gt;Jenkins&lt;/a&gt; &lt;strong&gt;[optional]&lt;/strong&gt; traditional pipeline orchestration&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sonatype.com/nexus/repository-oss&#34;&gt;Nexus&lt;/a&gt; &lt;strong&gt;[optional]&lt;/strong&gt; artifact repository&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;At a high level Jenkins X can be split into a few areas:&lt;/p&gt;
+&lt;p&gt;At a high level JayeX can be split into a few areas:&lt;/p&gt;
 &lt;h3 id=&#34;infrastructure&#34;&gt;Infrastructure&lt;/h3&gt;
-&lt;p&gt;Jenkins X aims to use the cloud well, Kubernetes to host the core services, storage buckets for long term storage, container registries and hosted services like secrets managers. All of this needs to be created and managed.  Jenkins X defers to &lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt; to setup and manage the Cloud infrastructure needed by Jenkins X.&lt;/p&gt;
+&lt;p&gt;JayeX aims to use the cloud well, Kubernetes to host the core services, storage buckets for long term storage, container registries and hosted services like secrets managers. All of this needs to be created and managed.  JayeX defers to &lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt; to setup and manage the Cloud infrastructure needed by JayeX.&lt;/p&gt;
 &lt;h3 id=&#34;gitops&#34;&gt;GitOps&lt;/h3&gt;
-&lt;p&gt;The entire Jenkins X experience is based around Git.  The installation, extensions and applications you develop are managed via a cluster Git repository which is the desired state of your Kubernetes cluster.  A Kubernetes operator runs inside the cluster and polls for changes in the Git repository, applying verified and approved updates.  The cluster Git repository uses &lt;a href=&#34;https://github.com/roboll/helmfile/&#34;&gt;Helmfile&lt;/a&gt; to describe the helm charts that should be used to install software.  Jenkins X generates the Kubernetes resources defined in the Helmfiles, commits back to Git so the exact state can always be seen via Git.&lt;/p&gt;
+&lt;p&gt;The entire JayeX experience is based around Git.  The installation, extensions and applications you develop are managed via a cluster Git repository which is the desired state of your Kubernetes cluster.  A Kubernetes operator runs inside the cluster and polls for changes in the Git repository, applying verified and approved updates.  The cluster Git repository uses &lt;a href=&#34;https://github.com/roboll/helmfile/&#34;&gt;Helmfile&lt;/a&gt; to describe the helm charts that should be used to install software.  JayeX generates the Kubernetes resources defined in the Helmfiles, commits back to Git so the exact state can always be seen via Git.&lt;/p&gt;
 &lt;p&gt;Using GitOps means familiar processes can be followed when making any change to the cluster, using reviews, automation, traceability and rollbacks to give better control over consuming changes.&lt;/p&gt;
-&lt;p&gt;Jenkins X also uses GitOps as the way to &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/upgrades&#34;&gt;upgrade&lt;/a&gt;, including new releases of images, helm charts and packages.&lt;/p&gt;
+&lt;p&gt;JayeX also uses GitOps as the way to &lt;a href=&#34;https://jayex.io/v3/admin/setup/upgrades&#34;&gt;upgrade&lt;/a&gt;, including new releases of images, helm charts and packages.&lt;/p&gt;
 &lt;h3 id=&#34;secret-management&#34;&gt;Secret Management&lt;/h3&gt;
-&lt;p&gt;Using GitOps as above does present a challenge of where to store secrets for your cluster as keeping them in Git is insecure.  There is a way to &lt;a href=&#34;https://github.com/bitnami-labs/sealed-secrets&#34;&gt;encrypt secrets and store them in Git&lt;/a&gt; but there is a usability issue which makes the approach non trivial to use.  Jenkins X prefers to work with real secret provider solutions like &lt;a href=&#34;https://www.vaultproject.io/&#34;&gt;Vault&lt;/a&gt; or where possible cloud hosted solutions like &lt;a href=&#34;https://cloud.google.com/secret-manager&#34;&gt;Google&lt;/a&gt;, Azure or Amazon Secrets managers.&lt;/p&gt;
-&lt;p&gt;Jenkins X GitOps works with &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;External Secrets&lt;/a&gt; to provide an integrated experience so your secrets source of truth is a secrets manager and the values are replicated into the cluster when needed.&lt;/p&gt;
+&lt;p&gt;Using GitOps as above does present a challenge of where to store secrets for your cluster as keeping them in Git is insecure.  There is a way to &lt;a href=&#34;https://github.com/bitnami-labs/sealed-secrets&#34;&gt;encrypt secrets and store them in Git&lt;/a&gt; but there is a usability issue which makes the approach non trivial to use.  JayeX prefers to work with real secret provider solutions like &lt;a href=&#34;https://www.vaultproject.io/&#34;&gt;Vault&lt;/a&gt; or where possible cloud hosted solutions like &lt;a href=&#34;https://cloud.google.com/secret-manager&#34;&gt;Google&lt;/a&gt;, Azure or Amazon Secrets managers.&lt;/p&gt;
+&lt;p&gt;JayeX GitOps works with &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;External Secrets&lt;/a&gt; to provide an integrated experience so your secrets source of truth is a secrets manager and the values are replicated into the cluster when needed.&lt;/p&gt;
 &lt;h3 id=&#34;pipelines&#34;&gt;Pipelines&lt;/h3&gt;
-&lt;p&gt;By default Jenkins X ships with Tekton for a clean declarative cloud native way to describe &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/&#34;&gt;pipelines&lt;/a&gt;.  Combined with Lighthouse Jenkins X makes it easy to inherit versioned shared pipeline steps via Git and a simple syntax providing flexibility and easy maintenance.&lt;/p&gt;
-&lt;p&gt;Jenkins X can also work well with Jenkins for users that have traditional workloads.  This is not installed by default but with Jenkins X it is easy to install any helm chart and so designed to work great with our inspirational project Jenkins.&lt;/p&gt;
+&lt;p&gt;By default JayeX ships with Tekton for a clean declarative cloud native way to describe &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/&#34;&gt;pipelines&lt;/a&gt;.  Combined with Lighthouse JayeX makes it easy to inherit versioned shared pipeline steps via Git and a simple syntax providing flexibility and easy maintenance.&lt;/p&gt;
+&lt;p&gt;JayeX can also work well with Jenkins for users that have traditional workloads.  This is not installed by default but with JayeX it is easy to install any helm chart and so designed to work great with our inspirational project Jenkins.&lt;/p&gt;
 &lt;h3 id=&#34;chatops&#34;&gt;ChatOps&lt;/h3&gt;
-&lt;p&gt;With the ever growing number of microservices needing automation, Jenkins X provides the ability to interact with pipelines via comments on pull requests.  &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;Lighthouse&lt;/a&gt; has evolved from &lt;a href=&#34;https://github.com/kubernetes/test-infra/tree/master/prow#&#34;&gt;Prow&lt;/a&gt; which is used heavily in the Kubernetes ecosystem to provide a consistent developer workflow for triggering tests, approvals, hold and other common commands developers use in their everyday activities.&lt;/p&gt;
+&lt;p&gt;With the ever growing number of microservices needing automation, JayeX provides the ability to interact with pipelines via comments on pull requests.  &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;Lighthouse&lt;/a&gt; has evolved from &lt;a href=&#34;https://github.com/kubernetes/test-infra/tree/master/prow#&#34;&gt;Prow&lt;/a&gt; which is used heavily in the Kubernetes ecosystem to provide a consistent developer workflow for triggering tests, approvals, hold and other common commands developers use in their everyday activities.&lt;/p&gt;
 &lt;h3 id=&#34;developer-experience&#34;&gt;Developer experience&lt;/h3&gt;
-&lt;p&gt;Along with ChatOps mentioned above Jenkins X aims to help developers have a consistent way of working with their microservices, using a CLI or GUI developers can leverage proven approaches recomended by the &lt;a href=&#34;https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339&#34;&gt;Accelerate book&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Whether creating or importing new projects that automates the setup of CI and CD, packaging applications so they can deploy and run on Kubernetes or simply release as libraries for downstream applications to use.  Jenkins X helps teams have consistency in the way they are built, developed and improved.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;jx&lt;/code&gt; CLI helps developers interact with Jenkins X using their terminal.&lt;/p&gt;
+&lt;p&gt;Along with ChatOps mentioned above JayeX aims to help developers have a consistent way of working with their microservices, using a CLI or GUI developers can leverage proven approaches recomended by the &lt;a href=&#34;https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339&#34;&gt;Accelerate book&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Whether creating or importing new projects that automates the setup of CI and CD, packaging applications so they can deploy and run on Kubernetes or simply release as libraries for downstream applications to use.  JayeX helps teams have consistency in the way they are built, developed and improved.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;jx&lt;/code&gt; CLI helps developers interact with JayeX using their terminal.&lt;/p&gt;
 &lt;p&gt;There is also a read only in cluster pipeline dashboard that links via pull requests so users can view logs of builds.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>V3: Jenkins X concept models</title>
-      <link>https://jenkins-x.io/v3/about/concepts/</link>
+      <title>V3: JayeX concept models</title>
+      <link>https://jayex.io/v3/about/concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/concepts/</guid>
+      <guid>https://jayex.io/v3/about/concepts/</guid>
       <description>
         
         
-        &lt;p&gt;This is a conceptual description of the moving parts of Jenkins X.&lt;/p&gt;
+        &lt;p&gt;This is a conceptual description of the moving parts of JayeX.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Overview</title>
-      <link>https://jenkins-x.io/v3/about/overview/</link>
+      <link>https://jayex.io/v3/about/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/overview/</guid>
+      <guid>https://jayex.io/v3/about/overview/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X 3.x creates clearer separation of concerns between conceptual areas and releasable components.&lt;/p&gt;
-&lt;iframe style=&#34;border:none&#34; width=&#34;800&#34; height=&#34;450&#34; src=&#34;https://whimsical.com/embed/SnJBgXG6jz9pqQewiDTNRt@2Ux7TurymNDXVRa4FpLk&#34;&gt;&lt;/iframe&gt;
+        &lt;p&gt;JayeX 3.x creates clearer separation of concerns between conceptual areas and releasable components.&lt;/p&gt;
+&lt;iframe style=&#34;border:none&#34; width=&#34;800&#34; height=&#34;450&#34; src=&#34;https://whimsical.com/embed/67T71jkcU3AMwTbFZnAHqu&#34;&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;
 &lt;p&gt;The following demo walks you through an overview of the architecture:&lt;/p&gt;
 &lt;iframe width=&#34;700&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/bVp5_tZ21AA&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;microservices&#34;&gt;Microservices&lt;/h2&gt;
-&lt;p&gt;Jenkins X uses the following microservices by namespace.&lt;/p&gt;
-&lt;p&gt;Note that if you have a working Jenkins X installation you can browse all the actual kubernetes resources used across each namespace via the &lt;code&gt;config-root/namespaces/$namespace/$chartName&lt;/code&gt; folder in your cluster git repository.&lt;/p&gt;
+&lt;p&gt;JayeX uses the following microservices by namespace.&lt;/p&gt;
+&lt;p&gt;Note that if you have a working JayeX installation you can browse all the actual kubernetes resources used across each namespace via the &lt;code&gt;config-root/namespaces/$namespace/$chartName&lt;/code&gt; folder in your cluster git repository.&lt;/p&gt;
 &lt;h3 id=&#34;jx-git-operator&#34;&gt;&lt;code&gt;jx-git-operator&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Contains the &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#git-operator&#34;&gt;git operator&lt;/a&gt; from &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;jenkins-x/git-operator&lt;/a&gt; microservice and the associated &lt;a href=&#34;https://jenkins-x.io/v3/about/how-it-works/#boot-job&#34;&gt;boot jobs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Contains the &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#git-operator&#34;&gt;git operator&lt;/a&gt; from &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;jenkins-x/git-operator&lt;/a&gt; microservice and the associated &lt;a href=&#34;https://jayex.io/v3/about/how-it-works/#boot-job&#34;&gt;boot jobs&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;jx&#34;&gt;&lt;code&gt;jx&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Contains the main development services of Jenkins X:&lt;/p&gt;
+&lt;p&gt;Contains the main development services of JayeX:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;jx-build-controller&lt;/strong&gt; watches for &lt;code&gt;PipelineRun&lt;/code&gt; resources and creates/updates the associated &lt;code&gt;PipelineActivity&lt;/code&gt; resources used by &lt;code&gt;jx get build log&lt;/code&gt; and the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/dashboard&#34;&gt;pipelines visualizer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;jx-build-controller&lt;/strong&gt; watches for &lt;code&gt;PipelineRun&lt;/code&gt; resources and creates/updates the associated &lt;code&gt;PipelineActivity&lt;/code&gt; resources used by &lt;code&gt;jx get build log&lt;/code&gt; and the &lt;a href=&#34;https://jayex.io/v3/develop/ui/dashboard&#34;&gt;pipelines visualizer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;jx-pipelines-visualizer&lt;/strong&gt; visualises &lt;code&gt;PipelineActivity&lt;/code&gt; resources and the associated build logs in a read only UI&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;jx-preview-gc-jobs&lt;/strong&gt; periodically garbage collects &lt;code&gt;Preview&lt;/code&gt; resources and their associated preview environments created by &lt;a href=&#34;https://github.com/jenkins-x/jx-preview&#34;&gt;jx preview&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;jxboot-helmfile-resources-gcactivities&lt;/strong&gt; periodically garbage collects old and completed &lt;code&gt;PipelineActivity&lt;/code&gt; resources&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;jxboot-helmfile-resources-gcpods&lt;/strong&gt; periodically garbage collects completed &lt;code&gt;Pods&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;jx-kh-check&lt;/strong&gt; supports additional &lt;a href=&#34;https://github.com/Comcast/kuberhealthy&#34;&gt;kuberhealthy&lt;/a&gt; based &lt;a href=&#34;https://jenkins-x.io/v3/guides/health/&#34;&gt;health checks&lt;/a&gt; for Jenkins X specific resources&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;jx-kh-check&lt;/strong&gt; supports additional &lt;a href=&#34;https://github.com/Comcast/kuberhealthy&#34;&gt;kuberhealthy&lt;/a&gt; based &lt;a href=&#34;https://jayex.io/v3/guides/health/&#34;&gt;health checks&lt;/a&gt; for JayeX specific resources&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;lighthouse&#34;&gt;&lt;code&gt;lighthouse&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;jenkins-x/lighthouse&lt;/a&gt; creates &lt;a href=&#34;https://tekton.dev/&#34;&gt;tekton pipelines&lt;/a&gt; and triggers &lt;a href=&#34;https://jenkins-x.io/docs/resources/faq/using/chatops/&#34;&gt;ChatOps&lt;/a&gt; on Pull Requests. Its made up of the following components:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;jenkins-x/lighthouse&lt;/a&gt; creates &lt;a href=&#34;https://tekton.dev/&#34;&gt;tekton pipelines&lt;/a&gt; and
+triggers &lt;a href=&#34;https://jayex.io/v3/develop/faq/chatops/&#34;&gt;ChatOps&lt;/a&gt; on Pull Requests. Its made up of the following components:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;lighthouse-webhooks&lt;/strong&gt; converts webhooks from your git provider into &lt;code&gt;LighthouseJob&lt;/code&gt; custom resources&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;lighthouse-tekton-controller&lt;/strong&gt; converts &lt;code&gt;LighthouseJob&lt;/code&gt; custom resources into &lt;a href=&#34;https://tekton.dev/&#34;&gt;tekton&lt;/a&gt; &lt;code&gt;PipelineRun&lt;/code&gt; resources (the &lt;a href=&#34;https://tekton.dev/&#34;&gt;tekton controller&lt;/a&gt; converts &lt;code&gt;PipelineRun&lt;/code&gt; resources into kubernetes &lt;code&gt;Pods&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;lighthouse-foghorn&lt;/strong&gt; watches the execution of &lt;code&gt;PipelineRun&lt;/code&gt; resources triggered by lighthouse and updates the pipeline status in git so that you see pipelines start, complete or fail on your git provider along with having links the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/dashboard&#34;&gt;pipelines visualizer&lt;/a&gt; on each context on a Pull Request&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;lighthouse-foghorn&lt;/strong&gt; watches the execution of &lt;code&gt;PipelineRun&lt;/code&gt; resources triggered by lighthouse and updates the pipeline status in git so that you see pipelines start, complete or fail on your git provider along with having links the &lt;a href=&#34;https://jayex.io/v3/develop/ui/dashboard&#34;&gt;pipelines visualizer&lt;/a&gt; on each context on a Pull Request&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;lighthouse-keeper&lt;/strong&gt; looks for open Pull Requests with green pipelines and the necessary &lt;strong&gt;approve&lt;/strong&gt; labels to be able to auto merge&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;lighthouse-gc-jobs&lt;/strong&gt; periodically garbage collects &lt;code&gt;LighthouseJob&lt;/code&gt; resources and their associated resources (e.g. &lt;code&gt;PipelineRun&lt;/code&gt; and &lt;code&gt;Pods&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -116,7 +117,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.sonatype.com/nexus/repository-oss&#34;&gt;nexus&lt;/a&gt; if used as an artifact repository and maven proxy&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;kuberhealthy&#34;&gt;&lt;code&gt;kuberhealthy&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Contains the &lt;a href=&#34;https://github.com/Comcast/kuberhealthy&#34;&gt;kuberhealthy&lt;/a&gt; service to support &lt;a href=&#34;https://jenkins-x.io/v3/guides/health/&#34;&gt;health and improve observability&lt;/a&gt; which used by &lt;a href=&#34;https://github.com/jenkins-x-plugins/jx-health&#34;&gt;jx health&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Contains the &lt;a href=&#34;https://github.com/Comcast/kuberhealthy&#34;&gt;kuberhealthy&lt;/a&gt; service to support &lt;a href=&#34;https://jayex.io/v3/guides/health/&#34;&gt;health and improve observability&lt;/a&gt; which used by &lt;a href=&#34;https://github.com/jenkins-x-plugins/jx-health&#34;&gt;jx health&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;nginx&#34;&gt;&lt;code&gt;nginx&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Contains the &lt;a href=&#34;https://github.com/helm/charts/tree/master/stable/nginx-ingress&#34;&gt;nginx-ingress&lt;/a&gt; provider if enabled&lt;/p&gt;
 &lt;h3 id=&#34;jx-vault&#34;&gt;&lt;code&gt;jx-vault&lt;/code&gt;&lt;/h3&gt;
@@ -127,7 +128,7 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;secret-infra&#34;&gt;&lt;code&gt;secret-infra&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;kubernetes-external-secrets&lt;/strong&gt; contains the &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;external-secrets/kubernetes-external-secrets&lt;/a&gt; service for handling &lt;code&gt;ExternalSecrets&lt;/code&gt;. See &lt;a href=&#34;https://jenkins-x.io/v3/guides/secrets/&#34;&gt;how we use secrets&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;kubernetes-external-secrets&lt;/strong&gt; contains the &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;external-secrets/kubernetes-external-secrets&lt;/a&gt; service for handling &lt;code&gt;ExternalSecrets&lt;/code&gt;. See &lt;a href=&#34;https://jayex.io/v3/guides/secrets/&#34;&gt;how we use secrets&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;pusher-wave&lt;/strong&gt; contains the &lt;a href=&#34;https://github.com/pusher/wave&#34;&gt;pusher/wave&lt;/a&gt; service for performing a rolling upgrade of any microservice which consumes &lt;code&gt;Secret&lt;/code&gt; resources from either vault or a cloud providers secret store and the secrets change in the underlying store&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;tekton-pipelines&#34;&gt;&lt;code&gt;tekton-pipelines&lt;/code&gt;&lt;/h3&gt;
@@ -138,73 +139,73 @@
     
     <item>
       <title>V3: Changes</title>
-      <link>https://jenkins-x.io/v3/about/changes/</link>
+      <link>https://jayex.io/v3/about/changes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/changes/</guid>
+      <guid>https://jayex.io/v3/about/changes/</guid>
       <description>
         
         
-        &lt;p&gt;You may also find the &lt;a href=&#34;https://jenkins-x.io/community/roadmap/&#34;&gt;Roadmap&lt;/a&gt; and &lt;a href=&#34;https://jenkins-x.io/v3/about/maturity-matrix/&#34;&gt;Maturity Matrix&lt;/a&gt; documents useful:&lt;/p&gt;
+        &lt;p&gt;You may also find the &lt;a href=&#34;https://jayex.io/community/roadmap/&#34;&gt;Roadmap&lt;/a&gt; and &lt;a href=&#34;https://jayex.io/v3/about/maturity-matrix/&#34;&gt;Maturity Matrix&lt;/a&gt; documents useful:&lt;/p&gt;
 &lt;h2 id=&#34;breaking-changes&#34;&gt;Breaking Changes&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;we have &lt;a href=&#34;https://github.com/jenkins-x/jx/issues/7870&#34;&gt;noticed a regression&lt;/a&gt; in the &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/upgrades/cluster/#automatic-upgrades&#34;&gt;auto upgrade jobs&lt;/a&gt; which causes them to fail with an error like this:&lt;/li&gt;
+&lt;li&gt;we have &lt;a href=&#34;https://github.com/jenkins-x/jx/issues/7870&#34;&gt;noticed a regression&lt;/a&gt; in the &lt;a href=&#34;https://jayex.io/v3/admin/setup/upgrades/cluster/#automatic-upgrades&#34;&gt;auto upgrade jobs&lt;/a&gt; which causes them to fail with an error like this:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;updatebot WARNING: no $GIT_SECRET_MOUNT_PATH environment variable set                      
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;updatebot error: failed to setup git: failed to clone the cluster git URL: failed to clone cluster git repository https://github.com/myorg/myrepo.git: failed to clone cluster git repo https://github.com/
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;updatebot fatal: could not read Username &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://github.com&amp;#39;&lt;/span&gt;: No such device or address
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;you can fix this by following the &lt;a href=&#34;https://github.com/jenkins-x/jx/issues/7870&#34;&gt;workarounds on this issue&lt;/a&gt; which should get you past this and working &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/upgrades/cluster/#automatic-upgrades&#34;&gt;auto upgrade jobs&lt;/a&gt; again&lt;/p&gt;
+&lt;p&gt;you can fix this by following the &lt;a href=&#34;https://github.com/jenkins-x/jx/issues/7870&#34;&gt;workarounds on this issue&lt;/a&gt; which should get you past this and working &lt;a href=&#34;https://jayex.io/v3/admin/setup/upgrades/cluster/#automatic-upgrades&#34;&gt;auto upgrade jobs&lt;/a&gt; again&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;we now default to using &lt;code&gt;Ingress&lt;/code&gt; &lt;code&gt;v1&lt;/code&gt; which was introduced in kubernetes 1.19. The &lt;code&gt;v1beta1&lt;/code&gt; version of &lt;code&gt;Ingress&lt;/code&gt; has been deprecated since 1.14 and is removed in 1.22. If you are on 1.18 of kubernetes you could upgrade to 1.19 or later. Otherwise you can &lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/config/ingress/#how-do-i-configure-to-use-v1beta1-ingress&#34;&gt;configure your cluster to keep on v1beta1 if you want&lt;/a&gt; until you can move forwards to 1.19 or later.&lt;/p&gt;
+&lt;p&gt;we now default to using &lt;code&gt;Ingress&lt;/code&gt; &lt;code&gt;v1&lt;/code&gt; which was introduced in kubernetes 1.19. The &lt;code&gt;v1beta1&lt;/code&gt; version of &lt;code&gt;Ingress&lt;/code&gt; has been deprecated since 1.14 and is removed in 1.22. If you are on 1.18 of kubernetes you could upgrade to 1.19 or later. Otherwise you can &lt;a href=&#34;https://jayex.io/v3/develop/faq/config/ingress/#how-do-i-configure-to-use-v1beta1-ingress&#34;&gt;configure your cluster to keep on v1beta1 if you want&lt;/a&gt; until you can move forwards to 1.19 or later.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;the new tekton version (0.20.x) now requires kubernetes 1.17 or later. If your cluster is older and you are using the cloud just upgrade your kubernetes version before upgrading your cluster. Otherwise you may want to explicitly override your &lt;code&gt;tekton-pipeline&lt;/code&gt; version to pin it at &lt;code&gt;0.19.1&lt;/code&gt; instead in your &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/helmfiles/tekton-pipelines/helmfile.yaml#L12&#34;&gt;helmfiles/tekton-pipelines/helmfile.yaml&lt;/a&gt; file&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;if you are upgrading from an alpha cluster you may have vault installed in the &lt;code&gt;secret-infra&lt;/code&gt; namespace. check out the &lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/config/vault/#after-an-upgrade-the-boot-job-is-waiting-for-vault-in-jx-vault&#34;&gt;FAQ on vault in the wrong namespace&lt;/a&gt; for how to upgrade.&lt;/p&gt;
+&lt;p&gt;if you are upgrading from an alpha cluster you may have vault installed in the &lt;code&gt;secret-infra&lt;/code&gt; namespace. check out the &lt;a href=&#34;https://jayex.io/v3/develop/faq/config/vault/#after-an-upgrade-the-boot-job-is-waiting-for-vault-in-jx-vault&#34;&gt;FAQ on vault in the wrong namespace&lt;/a&gt; for how to upgrade.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;changes&#34;&gt;Changes&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;we have a new &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/grid/&#34;&gt;jx pipeline grid&lt;/a&gt; command to easily view whats happening in your cluster on the CLI in a similar way to the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/dashboard/&#34;&gt;Dashboard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;we have a new &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/grid/&#34;&gt;jx pipeline grid&lt;/a&gt; command to easily view whats happening in your cluster on the CLI in a similar way to the &lt;a href=&#34;https://jayex.io/v3/develop/ui/dashboard/&#34;&gt;Dashboard&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/&#34;&gt;reference guide&lt;/a&gt; now has a full &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/&#34;&gt;Command Line Reference&lt;/a&gt; for browsing the command line of the various &lt;a href=&#34;https://github.com/jenkins-x-plugins&#34;&gt;Jenkins X Plugins&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://jayex.io/v3/develop/reference/&#34;&gt;reference guide&lt;/a&gt; now has a full &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/&#34;&gt;Command Line Reference&lt;/a&gt; for browsing the command line of the various &lt;a href=&#34;https://github.com/jenkins-x-plugins&#34;&gt;JayeX Plugins&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;There is now support for &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/upgrades/cluster/#automatic-upgrades&#34;&gt;automatic upgrades&lt;/a&gt; where a Pull Request is automatically generated on your development cluster repository to upgrade the versions of charts in your installation. You can define the upgrade schedule and whether or not the Pull Request is auto merged or requires a manual approval/merge.&lt;/p&gt;
+&lt;p&gt;There is now support for &lt;a href=&#34;https://jayex.io/v3/admin/setup/upgrades/cluster/#automatic-upgrades&#34;&gt;automatic upgrades&lt;/a&gt; where a Pull Request is automatically generated on your development cluster repository to upgrade the versions of charts in your installation. You can define the upgrade schedule and whether or not the Pull Request is auto merged or requires a manual approval/merge.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in &lt;code&gt;jx-requirements.yml&lt;/code&gt;, bad image names, no capacity on the server to name but a few. Unfortunately &lt;code&gt;helmfile sync&lt;/code&gt; does not give much information other than it succeeded of failed.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;to improve feedback on why some previews can fail we have added additional output in the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; command to tail the kubernetes events in the preview namespace. This basically runs &lt;code&gt;kubectl exec get event -n $PREVIEW_NAMESPACE -w&lt;/code&gt; and adds the output to the pipeline output (prefixed with &lt;code&gt;$PREVIEW_NAMESPACE:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;to improve feedback on why some previews can fail we have added additional output in the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/preview/create&#34;&gt;jx preview create&lt;/a&gt; command to tail the kubernetes events in the preview namespace. This basically runs &lt;code&gt;kubectl exec get event -n $PREVIEW_NAMESPACE -w&lt;/code&gt; and adds the output to the pipeline output (prefixed with &lt;code&gt;$PREVIEW_NAMESPACE:&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;this means the reason for why a preview fails should appear as a kubernetes event in the pipeline log&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;we have a shiny new &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/slack/&#34;&gt;Slack bot for Jenkins X&lt;/a&gt; to help notify developers of failing pipelines&lt;/p&gt;
+&lt;p&gt;we have a shiny new &lt;a href=&#34;https://jayex.io/v3/develop/ui/slack/&#34;&gt;Slack bot for JayeX&lt;/a&gt; to help notify developers of failing pipelines&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;its now much easier to &lt;a href=&#34;https://github.com/jenkins-x/jx-preview#system-tests-in-previews&#34;&gt;write system tests against Preview Environments&lt;/a&gt; so it&amp;rsquo;s easier to test images and charts function as you expect inside a Pull Request before you are happy to merge the work for faster feedback&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;check out the new &lt;a href=&#34;https://jenkins-x.io/v3/devops/&#34;&gt;DevOps, GitOps and Cloud Native&lt;/a&gt; documentation we&amp;rsquo;re putting together based on the learnings of continuously deliverying Jenkins X with Jenkins X.&lt;/p&gt;
+&lt;p&gt;check out the new &lt;a href=&#34;https://jayex.io/v3/devops/&#34;&gt;DevOps, GitOps and Cloud Native&lt;/a&gt; documentation we&amp;rsquo;re putting together based on the learnings of continuously deliverying JayeX with JayeX.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;new clusters created using Terraform that use Vault will be using the &lt;code&gt;jx-vault&lt;/code&gt; namespace to setup Vault (so that its managed by Terraform)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;you can now use &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/pipeline/convert&#34;&gt;jx pipeline convert&lt;/a&gt; to &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/upgrading/#converting-older-pipelines&#34;&gt;convert any old pipelines&lt;/a&gt; across to the latest &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog/&#34;&gt;concise syntax&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;you can now use &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/pipeline/convert&#34;&gt;jx pipeline convert&lt;/a&gt; to &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/upgrading/#converting-older-pipelines&#34;&gt;convert any old pipelines&lt;/a&gt; across to the latest &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog/&#34;&gt;concise syntax&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;we have an awesome &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/catalog/&#34;&gt;new syntax to help share pipelines across git repositories&lt;/a&gt; that makes it easier to simplify the pipelines in each repository while keeping things vanilla Tekton YAML and letting you override and customise anything anywhere&lt;/p&gt;
+&lt;p&gt;we have an awesome &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/catalog/&#34;&gt;new syntax to help share pipelines across git repositories&lt;/a&gt; that makes it easier to simplify the pipelines in each repository while keeping things vanilla Tekton YAML and letting you override and customise anything anywhere&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;the boot job now upgrades the &lt;code&gt;docs&lt;/code&gt; folder to show what charts and versions are deployed in each namespace. You can view the &lt;code&gt;docs&lt;/code&gt; folder in your own git repositories once you&amp;rsquo;ve &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/upgrades/cluster/&#34;&gt;upgraded your cluster&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;the boot job now upgrades the &lt;code&gt;docs&lt;/code&gt; folder to show what charts and versions are deployed in each namespace. You can view the &lt;code&gt;docs&lt;/code&gt; folder in your own git repositories once you&amp;rsquo;ve &lt;a href=&#34;https://jayex.io/v3/admin/setup/upgrades/cluster/&#34;&gt;upgraded your cluster&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;you can see the default reports for &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-kubernetes/tree/master/docs&#34;&gt;kubernetes&lt;/a&gt;, &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-vault/tree/master/docs&#34;&gt;aws&lt;/a&gt;, &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-azure-akv&#34;&gt;azure&lt;/a&gt; and &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-gke-gsm/tree/master/docs&#34;&gt;gke&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -213,30 +214,30 @@
 &lt;p&gt;We now use multiple helmfiles per namespace so its easier to understand the organisation of your charts across namespaces&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The &lt;a href=&#34;https://jenkins-x.io/blog/2020/12/04/jx-v3-update/&#34;&gt;3.0 beta is almost ready&lt;/a&gt; so if you have been using the 3.0 alpha we now have a &lt;a href=&#34;https://jenkins-x.io/v3/admin/guides/migrate/v3-alpha/&#34;&gt;migration guide&lt;/a&gt; to smooth your transition to the beta&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://jayex.io/blog/2020/12/04/jx-v3-update/&#34;&gt;3.0 beta is almost ready&lt;/a&gt; so if you have been using the 3.0 alpha we now have a &lt;a href=&#34;https://jayex.io/v3/admin/guides/migrate/v3-alpha/&#34;&gt;migration guide&lt;/a&gt; to smooth your transition to the beta&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;You can now easily open the &lt;a href=&#34;https://jenkins-x.io/v3/develop/ui/dashboard/&#34;&gt;Pipeline Dashboard&lt;/a&gt; via the command:&lt;/p&gt;
+&lt;p&gt;You can now easily open the &lt;a href=&#34;https://jayex.io/v3/develop/ui/dashboard/&#34;&gt;Pipeline Dashboard&lt;/a&gt; via the command:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx dash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;We now have &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/&#34;&gt;Tekton Catalog integration&lt;/a&gt; so that you can:&lt;/p&gt;
+&lt;p&gt;We now have &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/&#34;&gt;Tekton Catalog integration&lt;/a&gt; so that you can:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;easily &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/#editing-pipelines&#34;&gt;edit any pipeline in any git repository&lt;/a&gt; by just modifying the &lt;code&gt;PipelineRun&lt;/code&gt; files in your &lt;code&gt;.ligthhouse/jenkins-x&lt;/code&gt; folder&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/#adding-tasks-from-the-tekton-catalog&#34;&gt;reuse Tasks from the Tekton catalog&lt;/a&gt; and optionally modify them locally in your repository&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/#add-new-taskspipelines-by-hand&#34;&gt;add new pipelines to any git repository&lt;/a&gt; to reuse any &lt;code&gt;PipelineRun&lt;/code&gt; files you find from places like the &lt;a href=&#34;https://github.com/tektoncd/catalog&#34;&gt;tekton catalog&lt;/a&gt; into your repositories&lt;/li&gt;
+&lt;li&gt;easily &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/#editing-pipelines&#34;&gt;edit any pipeline in any git repository&lt;/a&gt; by just modifying the &lt;code&gt;PipelineRun&lt;/code&gt; files in your &lt;code&gt;.ligthhouse/jenkins-x&lt;/code&gt; folder&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/pipelines/#adding-tasks-from-the-tekton-catalog&#34;&gt;reuse Tasks from the Tekton catalog&lt;/a&gt; and optionally modify them locally in your repository&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/pipelines/#add-new-taskspipelines-by-hand&#34;&gt;add new pipelines to any git repository&lt;/a&gt; to reuse any &lt;code&gt;PipelineRun&lt;/code&gt; files you find from places like the &lt;a href=&#34;https://github.com/tektoncd/catalog&#34;&gt;tekton catalog&lt;/a&gt; into your repositories&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;We have migrated most of the &lt;a href=&#34;https://github.com/jenkins-x/jx#plugins&#34;&gt;Jenkins X Plugins&lt;/a&gt; over to the new client-go 1.19.x version now which is a fairly major change due to the API changes in client-go. So we&amp;rsquo;ve moved many of the &lt;a href=&#34;https://github.com/jenkins-x/jx#libraries&#34;&gt;libraries&lt;/a&gt; over to use &lt;code&gt;v3&lt;/code&gt; instead such as using libraries like &lt;a href=&#34;https://github.com/jenkins-x/jx-api&#34;&gt;jx-api&lt;/a&gt; or &lt;a href=&#34;https://github.com/jenkins-x/jx-helpers&#34;&gt;jx-helpers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We have migrated most of the &lt;a href=&#34;https://github.com/jenkins-x/jx#plugins&#34;&gt;JayeX Plugins&lt;/a&gt; over to the new client-go 1.19.x version now which is a fairly major change due to the API changes in client-go. So we&amp;rsquo;ve moved many of the &lt;a href=&#34;https://github.com/jenkins-x/jx#libraries&#34;&gt;libraries&lt;/a&gt; over to use &lt;code&gt;v3&lt;/code&gt; instead such as using libraries like &lt;a href=&#34;https://github.com/jenkins-x/jx-api&#34;&gt;jx-api&lt;/a&gt; or &lt;a href=&#34;https://github.com/jenkins-x/jx-helpers&#34;&gt;jx-helpers&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;if you were planning on submitting a Pull Request on any plugin please make sure you rebase before submitting a Pull Request. Also upgrade to go &lt;code&gt;1.15.2&lt;/code&gt; ASAP&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;New &lt;a href=&#34;https://jenkins-x.io/v3/about/maturity-matrix/&#34;&gt;Maturity Matrix&lt;/a&gt; published! You can now view at a glance the different capabilities across clouds and infrastructure. Many thanks &lt;a href=&#34;https://github.com/borntorock&#34;&gt;Nitin&lt;/a&gt; for all your hard work&lt;/p&gt;
+&lt;p&gt;New &lt;a href=&#34;https://jayex.io/v3/about/maturity-matrix/&#34;&gt;Maturity Matrix&lt;/a&gt; published! You can now view at a glance the different capabilities across clouds and infrastructure. Many thanks &lt;a href=&#34;https://github.com/borntorock&#34;&gt;Nitin&lt;/a&gt; for all your hard work&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Preview environments now use &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt; as a declarative way to describe all of the dependencies you need in your preview environment.&lt;/p&gt;
@@ -246,7 +247,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The new Jenkins X version 3 CLI &lt;a href=&#34;https://github.com/jenkins-x/jx&#34;&gt;jx&lt;/a&gt; is now plugins all the way down; so that all of the features are implemented by &lt;a href=&#34;https://github.com/jenkins-x/jx#plugins&#34;&gt;separate binary plugins&lt;/a&gt; making the CLI more modular and easier to work on.&lt;/p&gt;
+&lt;p&gt;The new JayeX version 3 CLI &lt;a href=&#34;https://github.com/jenkins-x/jx&#34;&gt;jx&lt;/a&gt; is now plugins all the way down; so that all of the features are implemented by &lt;a href=&#34;https://github.com/jenkins-x/jx#plugins&#34;&gt;separate binary plugins&lt;/a&gt; making the CLI more modular and easier to work on.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -255,39 +256,39 @@
     
     <item>
       <title>V3: Maturity Level Matrix</title>
-      <link>https://jenkins-x.io/v3/about/maturity-matrix/</link>
+      <link>https://jayex.io/v3/about/maturity-matrix/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/maturity-matrix/</guid>
+      <guid>https://jayex.io/v3/about/maturity-matrix/</guid>
       <description>
         
         
-        &lt;img src=&#34;https://jenkins-x.io/images/v3/v3-maturity.png&#34;&gt;
-&lt;img src=&#34;https://jenkins-x.io/images/v3/jx-v3alpha-color-rep.png&#34;&gt;
+        &lt;img src=&#34;https://jayex.io/images/v3/v3-maturity.png&#34;&gt;
+&lt;img src=&#34;https://jayex.io/images/v3/jx-v3alpha-color-rep.png&#34;&gt;
 &lt;br /&gt;
-&lt;p&gt;This maturity matrix describes the tentative plan post Jenkins X v3.0 &lt;strong&gt;GA&lt;/strong&gt; release. This matrix will continue to evolve as we progress further.&lt;/p&gt;
-&lt;img src=&#34;https://jenkins-x.io/images/v3/jx-v3ga-maturity-matrix.png&#34;&gt;
+&lt;p&gt;This maturity matrix describes the tentative plan post JayeX v3.0 &lt;strong&gt;GA&lt;/strong&gt; release. This matrix will continue to evolve as we progress further.&lt;/p&gt;
+&lt;img src=&#34;https://jayex.io/images/v3/jx-v3ga-maturity-matrix.png&#34;&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Benefits</title>
-      <link>https://jenkins-x.io/v3/about/benefits/</link>
+      <link>https://jayex.io/v3/about/benefits/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/benefits/</guid>
+      <guid>https://jayex.io/v3/about/benefits/</guid>
       <description>
         
         
         &lt;ul&gt;
 &lt;li&gt;We can use vanilla tools like &lt;a href=&#34;https://helm.sh/&#34;&gt;helm 3&lt;/a&gt;, &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt;, &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt;, &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt; to install, update or delete charts in any namespace without needing helm 2.x or tiller or custom code to manage &lt;code&gt;helm template&lt;/code&gt;.
 &lt;ul&gt;
-&lt;li&gt;We can avoid all the complexities of the &lt;code&gt;jx step helm apply&lt;/code&gt; logic we used in Jenkins X 2.x&lt;/li&gt;
+&lt;li&gt;We can avoid all the complexities of the &lt;code&gt;jx step helm apply&lt;/code&gt; logic we used in JayeX 2.x&lt;/li&gt;
 &lt;li&gt;Instead we can replace this with vanilla &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt; to allow optional templating of &lt;code&gt;values.yaml&lt;/code&gt; files when using helm&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;The new &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;Getting Started&lt;/a&gt; approach is much simpler, easier to configure and customise and is cleanly integrated with tools like Terraform and works well with different cloud infrastructure platforms.
+&lt;li&gt;The new &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;Getting Started&lt;/a&gt; approach is much simpler, easier to configure and customise and is cleanly integrated with tools like Terraform and works well with different cloud infrastructure platforms.
 &lt;ul&gt;
 &lt;li&gt;The default install/upgrade pipelines check in all the generated kubernetes resources and custom resources as YAML so its easy to understand&lt;/li&gt;
 &lt;li&gt;You can read more about the &lt;a href=&#34;https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md&#34;&gt;git layout here&lt;/a&gt;
@@ -296,7 +297,7 @@
 &lt;li&gt;The &lt;code&gt;config-root/namespaces/jx&lt;/code&gt; folder contains all the namespaced resources in the &lt;code&gt;jx&lt;/code&gt; namespace&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;This makes it easy to use flexible apply logic in different boot &lt;code&gt;Jobs&lt;/code&gt; with different RBAC (or a system admin could apply the cluster level resources for you by hand) - to make it easier to install Jenkins X on more locked down and restricted clusters&lt;/li&gt;
+&lt;li&gt;This makes it easy to use flexible apply logic in different boot &lt;code&gt;Jobs&lt;/code&gt; with different RBAC (or a system admin could apply the cluster level resources for you by hand) - to make it easier to install JayeX on more locked down and restricted clusters&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;We use &lt;a href=&#34;https://github.com/external-secrets/kubernetes-external-secrets&#34;&gt;Kubernetes External Secrets&lt;/a&gt; to provide a single way to manage secrets which supports the following back end systems:
@@ -308,13 +309,13 @@
 &lt;li&gt;Hashicorp Vault&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;It opens the door to a flexible &lt;a href=&#34;https://jenkins-x.io/v3/guides/multi-cluster/&#34;&gt;multi-cluster support&lt;/a&gt; so that every cluster can be managed in the same canonical GitOps approach from a single git repository&lt;/li&gt;
-&lt;li&gt;The new &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;getting started approach&lt;/a&gt; runs the boot pipeline as a &lt;code&gt;Job&lt;/code&gt; inside the Kubernetes cluster. This ensures consistency in tooling used and also improves security by avoiding having the secrets on a developers laptop.
+&lt;li&gt;It opens the door to a flexible &lt;a href=&#34;https://jayex.io/v3/guides/multi-cluster/&#34;&gt;multi-cluster support&lt;/a&gt; so that every cluster can be managed in the same canonical GitOps approach from a single git repository&lt;/li&gt;
+&lt;li&gt;The new &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;getting started approach&lt;/a&gt; runs the boot pipeline as a &lt;code&gt;Job&lt;/code&gt; inside the Kubernetes cluster. This ensures consistency in tooling used and also improves security by avoiding having the secrets on a developers laptop.
 &lt;ul&gt;
-&lt;li&gt;The only thing you run on your local machine when installing Jenkins X is &lt;a href=&#34;https://jenkins-x.io/v3/guides/operator/&#34;&gt;installing the git operator&lt;/a&gt; which is a simple helm chart.&lt;/li&gt;
+&lt;li&gt;The only thing you run on your local machine when installing JayeX is &lt;a href=&#34;https://jayex.io/v3/guides/operator/&#34;&gt;installing the git operator&lt;/a&gt; which is a simple helm chart.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Everything is now an app. So if you want to remove our &lt;code&gt;nginx-ingress&lt;/code&gt; chart and replace it with another ingress solution (knative / istio / gloo / ambassador / linkerd or whatever) just go ahead and use the &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/&#34;&gt;apps commands&lt;/a&gt; to add/remove apps and have boot manage everything in a consistent way
+&lt;li&gt;Everything is now an app. So if you want to remove our &lt;code&gt;nginx-ingress&lt;/code&gt; chart and replace it with another ingress solution (knative / istio / gloo / ambassador / linkerd or whatever) just go ahead and use the &lt;a href=&#34;https://jayex.io/v3/develop/apps/&#34;&gt;apps commands&lt;/a&gt; to add/remove apps and have boot manage everything in a consistent way
 &lt;ul&gt;
 &lt;li&gt;e.g. here&amp;rsquo;s &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-kind-vault/blob/master/helmfile.yaml#L17&#34;&gt;an example&lt;/a&gt; of removing &lt;code&gt;chartmusem&lt;/code&gt; and &lt;code&gt;nexus&lt;/code&gt; and replacing it with &lt;code&gt;bucketrepo&lt;/code&gt; via a single simple yaml change.&lt;/li&gt;
 &lt;/ul&gt;
@@ -327,12 +328,12 @@
 &lt;li&gt;The cluster GitOps repository is simpler and easier to keep in sync/rebase/merge with the upstream git repositories.
 &lt;ul&gt;
 &lt;li&gt;We use &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt; to do that for us&lt;/li&gt;
-&lt;li&gt;We now include the &lt;a href=&#34;https://jenkins-x.io/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; inside your GitOps repository too inside the &lt;code&gt;versionStream&lt;/code&gt; directory after installation so that all the information about your installation is inside a single git repository so its simpler to test changes &amp;amp; ensure consistency.&lt;/li&gt;
+&lt;li&gt;We now include the &lt;a href=&#34;https://jayex.io/v3/about/concepts/version-stream/&#34;&gt;version stream&lt;/a&gt; inside your GitOps repository too inside the &lt;code&gt;versionStream&lt;/code&gt; directory after installation so that all the information about your installation is inside a single git repository so its simpler to test changes &amp;amp; ensure consistency.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;We can avoid composite charts to simplfiy configuration and upgrades&lt;/li&gt;
-&lt;li&gt;We no longer use &lt;code&gt;exposecontroller&lt;/code&gt;, instead use regular helm configuration to create &lt;code&gt;Ingress&lt;/code&gt; resources and &lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production&#34;&gt;override domain names&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;secret handling is currently much simpler using Kubernetes External Secrets for any secrets in any namespace or cluster for your own apps or for those used by Jenkins X.&lt;/li&gt;
+&lt;li&gt;We no longer use &lt;code&gt;exposecontroller&lt;/code&gt;, instead use regular helm configuration to create &lt;code&gt;Ingress&lt;/code&gt; resources and &lt;a href=&#34;https://jayex.io/v3/develop/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production&#34;&gt;override domain names&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;secret handling is currently much simpler using Kubernetes External Secrets for any secrets in any namespace or cluster for your own apps or for those used by JayeX.&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -340,25 +341,25 @@
     
     <item>
       <title>V3: Comparison</title>
-      <link>https://jenkins-x.io/v3/about/comparison/</link>
+      <link>https://jayex.io/v3/about/comparison/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/comparison/</guid>
+      <guid>https://jayex.io/v3/about/comparison/</guid>
       <description>
         
         
-        &lt;p&gt;This document outlines the similarities and differences of the 3.x approach for those who are aware of &lt;code&gt;jx boot&lt;/code&gt; with helm 2 in 2.x of Jenkins X.&lt;/p&gt;
+        &lt;p&gt;This document outlines the similarities and differences of the 3.x approach for those who are aware of &lt;code&gt;jx boot&lt;/code&gt; with helm 2 in 2.x of JayeX.&lt;/p&gt;
 &lt;h2 id=&#34;similarities-between-2x-and-3x&#34;&gt;Similarities between 2.x and 3.x&lt;/h2&gt;
 &lt;p&gt;Just like classic boot with the &lt;a href=&#34;https://github.com/jenkins-x/jenkins-x-boot-config/&#34;&gt;jenkins-x-boot-config&lt;/a&gt; git repository, this new &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt; solution supports:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;you can install and upgrade Jenkins X via GitOps&lt;/li&gt;
-&lt;li&gt;you can reuse helm charts from the internet, local charts or charts built by Jenkins X in any environment&lt;/li&gt;
+&lt;li&gt;you can install and upgrade JayeX via GitOps&lt;/li&gt;
+&lt;li&gt;you can reuse helm charts from the internet, local charts or charts built by JayeX in any environment&lt;/li&gt;
 &lt;li&gt;a YAML file is used to store all the charts that are applied during install/upgrade&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;differences-with-in-3x&#34;&gt;Differences with in 3.x&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;we support any permutation of tools such as: &lt;a href=&#34;https://helm.sh/&#34;&gt;helm 3&lt;/a&gt;, &lt;a href=&#34;https://github.com/roboll/helmfile&#34;&gt;helmfile&lt;/a&gt;, &lt;a href=&#34;https://kustomize.io/&#34;&gt;kustomize&lt;/a&gt; and/or &lt;a href=&#34;https://googlecontainertools.github.io/kpt/&#34;&gt;kpt&lt;/a&gt; to create the kubernetes resources&lt;/li&gt;
-&lt;li&gt;in 3.x the installation/upgrade of Jenkins X is run inside the kubernetes cluster via a &lt;code&gt;Job&lt;/code&gt; rather than on a developers laptop which helps with consistency and security.&lt;/li&gt;
+&lt;li&gt;in 3.x the installation/upgrade of JayeX is run inside the kubernetes cluster via a &lt;code&gt;Job&lt;/code&gt; rather than on a developers laptop which helps with consistency and security.&lt;/li&gt;
 &lt;li&gt;in 3.x we use a single git repository for each cluster; which can manage as many teams/namespaces as you like within the cluster
 &lt;ul&gt;
 &lt;li&gt;so any local environments like &lt;code&gt;Staging&lt;/code&gt; which reside in the same kubernetes cluster are defined in the same git repository in 3.x - whereas in 2.x we used a separate git repository for &lt;code&gt;Dev&lt;/code&gt;, &lt;code&gt;Staging&lt;/code&gt; and &lt;code&gt;Production&lt;/code&gt; when sharing the same cluster.&lt;/li&gt;
@@ -386,26 +387,26 @@
 &lt;li&gt;we have done away with the complexity of &lt;code&gt;jenkins-x-platform&lt;/code&gt; (a composite chart containing logs of &lt;a href=&#34;https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/requirements.yaml&#34;&gt;dependencies&lt;/a&gt; like &lt;code&gt;jenkins&lt;/code&gt; + &lt;code&gt;chartmuseum&lt;/code&gt; + &lt;code&gt;nexus&lt;/code&gt; etc) so that each chart can be added/removed independently or swapped out with a different version/distribution&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;removing-complexity-and-magic&#34;&gt;Removing complexity and magic&lt;/h2&gt;
-&lt;p&gt;Removing complexity out of Jenkins X and reusing other solutions wherever possible.  Jenkins X 2.x was tightly coupled to helm 2 for example.  There were &lt;code&gt;jx&lt;/code&gt; CLI steps that wrapped helm commands when installing applications into the cluster which injected secrets from an internal Vault and ultimately made it very confusing for users and maintainers.&lt;/p&gt;
-&lt;p&gt;Jenkins X 3.x prefers to avoid wrapping other CLIs unless a consistent higher level UX is being provided say around managing secrets and underlying commands being executed are clearly printed in users terminals.&lt;/p&gt;
+&lt;p&gt;Removing complexity out of JayeX and reusing other solutions wherever possible.  JayeX 2.x was tightly coupled to helm 2 for example.  There were &lt;code&gt;jx&lt;/code&gt; CLI steps that wrapped helm commands when installing applications into the cluster which injected secrets from an internal Vault and ultimately made it very confusing for users and maintainers.&lt;/p&gt;
+&lt;p&gt;JayeX 3.x prefers to avoid wrapping other CLIs unless a consistent higher level UX is being provided say around managing secrets and underlying commands being executed are clearly printed in users terminals.&lt;/p&gt;
 &lt;h2 id=&#34;maintainability&#34;&gt;Maintainability&lt;/h2&gt;
-&lt;p&gt;Created a new &lt;code&gt;jx&lt;/code&gt; CLI which includes an extensible plugin model where each main subcommand off the jx base is it&amp;rsquo;s own releasable git repository.  This has significantly improved the Jenkins X codebase which helps with maintainability and contributions.&lt;/p&gt;
+&lt;p&gt;Created a new &lt;code&gt;jx&lt;/code&gt; CLI which includes an extensible plugin model where each main subcommand off the jx base is it&amp;rsquo;s own releasable git repository.  This has significantly improved the JayeX codebase which helps with maintainability and contributions.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: How it works</title>
-      <link>https://jenkins-x.io/v3/about/how-it-works/</link>
+      <link>https://jayex.io/v3/about/how-it-works/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/how-it-works/</guid>
+      <guid>https://jayex.io/v3/about/how-it-works/</guid>
       <description>
         
         
         &lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
 &lt;p&gt;The GitOps repository templates contain the source code, scripts and docs to help you get your cloud resources created (e.g. a kubernetes cluster and maybe buckets and/or a secret manager).&lt;/p&gt;
-&lt;p&gt;Once you have created the GitOps repository from one of the &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;available templates and followed the instructions&lt;/a&gt; to set up your infrastructure you &lt;a href=&#34;https://jenkins-x.io/v3/guides/operator/&#34;&gt;install the git operator&lt;/a&gt; via the &lt;a href=&#34;https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md&#34;&gt;jx admin operator&lt;/a&gt; command:&lt;/p&gt;
+&lt;p&gt;Once you have created the GitOps repository from one of the &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;available templates and followed the instructions&lt;/a&gt; to set up your infrastructure you &lt;a href=&#34;https://jayex.io/v3/guides/operator/&#34;&gt;install the git operator&lt;/a&gt; via the &lt;a href=&#34;https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md&#34;&gt;jx admin operator&lt;/a&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    jx admin operator
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That command essentially installs the &lt;a href=&#34;https://github.com/jenkins-x/jx-git-operator&#34;&gt;git operator&lt;/a&gt; chart, passing in the git URL, username and token to run the boot process.&lt;/p&gt;
 &lt;h3 id=&#34;git-operator&#34;&gt;Git Operator&lt;/h3&gt;
@@ -442,9 +443,9 @@
 &lt;li&gt;we use &lt;a href=&#34;https://github.com/jenkins-x/jx-secret#mappings&#34;&gt;secret mapping&lt;/a&gt; to generate &lt;strong&gt;ExternalSecret&lt;/strong&gt; resources which define where the &lt;code&gt;Secret&lt;/code&gt; will be populated from (e.g. vault or your cloud provider secret store)&lt;/li&gt;
 &lt;li&gt;secrets can be populated by either:
 &lt;ul&gt;
-&lt;li&gt;directly in the secret store (e.g. via vault or the cloud secret store directly). If you are using vault you can &lt;a href=&#34;https://jenkins-x.io/v3/guides/secrets/vault/#using-vault&#34;&gt;follow these instructions&lt;/a&gt; to access the vault UI&lt;/li&gt;
-&lt;li&gt;via &lt;a href=&#34;https://jenkins-x.io/v3/guides/secrets/#edit-secrets&#34;&gt;jx secret edit&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;via the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/secret/populate&#34;&gt;jx secret populate&lt;/a&gt; command inside the boot job which uses the &lt;code&gt;versionStream/charts/*/secret-schema.yaml&lt;/code&gt; files to populate with generators and default values from the &lt;a href=&#34;https://github.com/jenkins-x/jx-secret#schema&#34;&gt;secret schema files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;directly in the secret store (e.g. via vault or the cloud secret store directly). If you are using vault you can &lt;a href=&#34;https://jayex.io/v3/guides/secrets/vault/#using-vault&#34;&gt;follow these instructions&lt;/a&gt; to access the vault UI&lt;/li&gt;
+&lt;li&gt;via &lt;a href=&#34;https://jayex.io/v3/guides/secrets/#edit-secrets&#34;&gt;jx secret edit&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;via the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/secret/populate&#34;&gt;jx secret populate&lt;/a&gt; command inside the boot job which uses the &lt;code&gt;versionStream/charts/*/secret-schema.yaml&lt;/code&gt; files to populate with generators and default values from the &lt;a href=&#34;https://github.com/jenkins-x/jx-secret#schema&#34;&gt;secret schema files&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -462,8 +463,8 @@
 &lt;p&gt;It essentially does &lt;code&gt;kubectl apply&lt;/code&gt; of the resources in the &lt;strong&gt;config-root&lt;/strong&gt; tree in git.&lt;/p&gt;
 &lt;p&gt;The apply step could be performed by other tools if need be (e.g. Google Anthos Config Sync or flux).&lt;/p&gt;
 &lt;h3 id=&#34;promotion&#34;&gt;Promotion&lt;/h3&gt;
-&lt;p&gt;When you create a quickstart or import a new project a new release is created then promotion is triggered just like in Jenkins X 2.x.&lt;/p&gt;
-&lt;p&gt;One change from Jenkins X 2.x is we default to including the specific kubernetes resources in git; rather than, say, just the name of a helm chart and the version.&lt;/p&gt;
+&lt;p&gt;When you create a quickstart or import a new project a new release is created then promotion is triggered just like in JayeX 2.x.&lt;/p&gt;
+&lt;p&gt;One change from JayeX 2.x is we default to including the specific kubernetes resources in git; rather than, say, just the name of a helm chart and the version.&lt;/p&gt;
 &lt;p&gt;So what tends to happen is:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the promote step in a pipeline creates a Pull Request on the cluster repository for the cluster to add or upgrade a helm chart and version&lt;/li&gt;
@@ -479,9 +480,9 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;importing--creating-quickstarts&#34;&gt;Importing / Creating Quickstarts&lt;/h3&gt;
 &lt;p&gt;Due to the new GitOps model this is a little more complex than in v2 since imports are done via GitOps and the changes in git result in a Job / Pipeline running in the cluster to effect change.&lt;/p&gt;
-&lt;p&gt;Here are the steps involved in &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;creating projects&lt;/a&gt; via importing / creating quickstarts:&lt;/p&gt;
+&lt;p&gt;Here are the steps involved in &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;creating projects&lt;/a&gt; via importing / creating quickstarts:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Run the &lt;code&gt;jx project quickstart&lt;/code&gt; or &lt;code&gt;jx project import&lt;/code&gt; command as &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;described here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Run the &lt;code&gt;jx project quickstart&lt;/code&gt; or &lt;code&gt;jx project import&lt;/code&gt; command as &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;described here&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;New git repository is created if:
 &lt;ul&gt;
 &lt;li&gt;you are creating a quickstart via &lt;code&gt;jx project quickstart&lt;/code&gt;&lt;/li&gt;
@@ -511,7 +512,7 @@
 &lt;li&gt;a Webhook is registered for Lighthouse on the app&amp;rsquo;s repository&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;The &lt;code&gt;jx project&lt;/code&gt; command now continues and pushes the new &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/&#34;&gt;tekton pipelines for your app&lt;/a&gt; to the main branch of the git repository
+&lt;li&gt;The &lt;code&gt;jx project&lt;/code&gt; command now continues and pushes the new &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/&#34;&gt;tekton pipelines for your app&lt;/a&gt; to the main branch of the git repository
 &lt;ul&gt;
 &lt;li&gt;this triggers a new pipeline to run on your app which creates a new release of your app&lt;/li&gt;
 &lt;li&gt;once the release is complete a Pull Request is created to start the &lt;a href=&#34;#promotion&#34;&gt;Promotion flow&lt;/a&gt; of the new app version&lt;/li&gt;
@@ -519,9 +520,9 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You can see an example of this in the &lt;a href=&#34;https://jenkins-x.io/blog/2020/09/16/jx-v3-alpha/&#34;&gt;demo of Jenkins X V3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can see an example of this in the &lt;a href=&#34;https://jayex.io/blog/2020/09/16/jx-v3-alpha/&#34;&gt;demo of JayeX V3&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;secrets&#34;&gt;Secrets&lt;/h3&gt;
-&lt;p&gt;We want to &lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template&#34;&gt;check all of the kubernetes resources into git&lt;/a&gt; so they are all nicely versioned through time so its easy to diagnose when things start to misbehave.&lt;/p&gt;
+&lt;p&gt;We want to &lt;a href=&#34;https://jayex.io/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template&#34;&gt;check all of the kubernetes resources into git&lt;/a&gt; so they are all nicely versioned through time so its easy to diagnose when things start to misbehave.&lt;/p&gt;
 &lt;p&gt;So we do this:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Any &lt;strong&gt;Secret&lt;/strong&gt; resource generated in a helm chart is is converted to an &lt;strong&gt;ExternalSecret&lt;/strong&gt; so that it can be checked into git
@@ -531,24 +532,24 @@
 &lt;/li&gt;
 &lt;li&gt;secrets can be populated by either:
 &lt;ul&gt;
-&lt;li&gt;directly in the secret store (e.g. via vault or the cloud secret store directly). If you are using vault you can &lt;a href=&#34;https://jenkins-x.io/v3/guides/secrets/vault/#using-vault&#34;&gt;follow these instructions&lt;/a&gt; to access the vault UI&lt;/li&gt;
-&lt;li&gt;via &lt;a href=&#34;https://jenkins-x.io/v3/guides/secrets/#edit-secrets&#34;&gt;jx secret edit&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;via the &lt;a href=&#34;https://jenkins-x.io/v3/develop/reference/jx/secret/populate&#34;&gt;jx secret populate&lt;/a&gt; command inside the boot job which uses the &lt;code&gt;versionStream/charts/*/secret-schema.yaml&lt;/code&gt; files to populate with generators and default values from the &lt;a href=&#34;https://github.com/jenkins-x/jx-secret#schema&#34;&gt;secret schema files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;directly in the secret store (e.g. via vault or the cloud secret store directly). If you are using vault you can &lt;a href=&#34;https://jayex.io/v3/guides/secrets/vault/#using-vault&#34;&gt;follow these instructions&lt;/a&gt; to access the vault UI&lt;/li&gt;
+&lt;li&gt;via &lt;a href=&#34;https://jayex.io/v3/guides/secrets/#edit-secrets&#34;&gt;jx secret edit&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;via the &lt;a href=&#34;https://jayex.io/v3/develop/reference/jx/secret/populate&#34;&gt;jx secret populate&lt;/a&gt; command inside the boot job which uses the &lt;code&gt;versionStream/charts/*/secret-schema.yaml&lt;/code&gt; files to populate with generators and default values from the &lt;a href=&#34;https://github.com/jenkins-x/jx-secret#schema&#34;&gt;secret schema files&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;What this basically means is that helm charts with secrets just work and you can then modify secrets or rotate secrets via the secret store. Also if you lose or move a cluster, GitOps will restore your cluster again using the contents of your git repository and whatever is in your secret store.&lt;/p&gt;
 &lt;h4 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h4&gt;
 &lt;p&gt;If you are not able to create quickstarts or import projects its most probably webhooks not being setup correctly.&lt;/p&gt;
-&lt;p&gt;Check out the &lt;a href=&#34;https://jenkins-x.io/v3/admin/troubleshooting/webhooks/&#34;&gt;webhooks troubleshooting guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&#34;https://jayex.io/v3/admin/troubleshooting/webhooks/&#34;&gt;webhooks troubleshooting guide&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;comparison-to-2x&#34;&gt;Comparison to 2.x&lt;/h2&gt;
-&lt;p&gt;From a high level Jenkins X 3.x similar to 2.x in that:&lt;/p&gt;
+&lt;p&gt;From a high level JayeX 3.x similar to 2.x in that:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;We use GitOps to manage applications, configurations and versions; keeping everything but secret values in git&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;However we’ve made a few changes in 3.x:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;We have a &lt;a href=&#34;https://jenkins-x.io/v3/admin/platform/&#34;&gt;simpler UX now for setting up Jenkins X&lt;/a&gt; which uses a library of GitOps repository templates you can start from
+&lt;li&gt;We have a &lt;a href=&#34;https://jayex.io/v3/admin/platform/&#34;&gt;simpler UX now for setting up JayeX&lt;/a&gt; which uses a library of GitOps repository templates you can start from
 &lt;ul&gt;
 &lt;li&gt;This lets you choose the closest example to the kind of infrastructure, tools and secret store you want to use so it’s easier to get started if your requirements fit the common quickstarts&lt;/li&gt;
 &lt;/ul&gt;
@@ -560,7 +561,7 @@
 &lt;/li&gt;
 &lt;li&gt;In 2.x we always had a git repository for Dev, Staging and Production. In 3.x if those environments are all inside the same cluster we use the same git repository for configuring cluster level resources and resources in any namespaces.
 &lt;ul&gt;
-&lt;li&gt;So by default there is 1 git repository with Jenkins X 3.x for the installation&lt;/li&gt;
+&lt;li&gt;So by default there is 1 git repository with JayeX 3.x for the installation&lt;/li&gt;
 &lt;li&gt;Whenever you create separate clusters (e.g. for muticluster support and you want Staging / Production environments to be separate), then each cluster gets its own git repository.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -571,18 +572,18 @@
     
     <item>
       <title>V3: Extending</title>
-      <link>https://jenkins-x.io/v3/about/extending/</link>
+      <link>https://jayex.io/v3/about/extending/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/about/extending/</guid>
+      <guid>https://jayex.io/v3/about/extending/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X has a number of extension points you can use to extend the CI/CD platform to suit your needs:&lt;/p&gt;
+        &lt;p&gt;JayeX has a number of extension points you can use to extend the CI/CD platform to suit your needs:&lt;/p&gt;
 &lt;h2 id=&#34;charts&#34;&gt;Charts&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://helm.sh/&#34;&gt;Helm&lt;/a&gt; &lt;a href=&#34;https://helm.sh/docs/topics/charts/&#34;&gt;charts&lt;/a&gt; are the standard way to package applications for kubernetes.&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s easy to use GitOps to &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-charts&#34;&gt;add charts&lt;/a&gt; to any of your clusters and &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#customising-charts&#34;&gt;customize them&lt;/a&gt; however you need.&lt;/p&gt;
-&lt;p&gt;You can also easily &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-resources&#34;&gt;add one or more kubernetes resources to a cluster via a source layout chart&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s easy to use GitOps to &lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-charts&#34;&gt;add charts&lt;/a&gt; to any of your clusters and &lt;a href=&#34;https://jayex.io/v3/develop/apps/#customising-charts&#34;&gt;customize them&lt;/a&gt; however you need.&lt;/p&gt;
+&lt;p&gt;You can also easily &lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-resources&#34;&gt;add one or more kubernetes resources to a cluster via a source layout chart&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;plugins&#34;&gt;Plugins&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;jx&lt;/code&gt; command line in version 3 is build on &lt;a href=&#34;https://github.com/jenkins-x/jx#plugins&#34;&gt;plugins&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It turns out anyone can create a new plugin to wrap up some functionality that is either ran on a developer laptop or is used via a container image inside a pipeline step.&lt;/p&gt;
@@ -606,15 +607,15 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# we will now try version 1.2.3 of the gitops plugin:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx gitops help
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;triggers&#34;&gt;Triggers&lt;/h2&gt;
-&lt;p&gt;With version 3.x we default to using &lt;a href=&#34;https://jenkins-x.io/v3/develop/pipelines/&#34;&gt;Pipeline Catalogs&lt;/a&gt; containing Tekton resources to define CI/CD pipelines.&lt;/p&gt;
-&lt;p&gt;e.g. the default CI/CD pipelines from the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs&#34;&gt;default Jenkins X Pipeline Catalog&lt;/a&gt; define tekton pipelines in the &lt;code&gt;.lighthouse/jenkins-x&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;With version 3.x we default to using &lt;a href=&#34;https://jayex.io/v3/develop/pipelines/&#34;&gt;Pipeline Catalogs&lt;/a&gt; containing Tekton resources to define CI/CD pipelines.&lt;/p&gt;
+&lt;p&gt;e.g. the default CI/CD pipelines from the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs&#34;&gt;default JayeX Pipeline Catalog&lt;/a&gt; define tekton pipelines in the &lt;code&gt;.lighthouse/jenkins-x&lt;/code&gt; folder.&lt;/p&gt;
 &lt;p&gt;Inside each repository there is now a trigger file called &lt;code&gt;triggers.yaml&lt;/code&gt; defined at&lt;code&gt;.lighthouse/jenkins-x/triggers.yaml&lt;/code&gt; to define the &lt;a href=&#34;https://github.com/jenkins-x/lighthouse&#34;&gt;lighthouse&lt;/a&gt; &lt;code&gt;presubmits&lt;/code&gt; and &lt;code&gt;postsubmits&lt;/code&gt; (i.e. Pull Request pipelines and release pipelines).&lt;/p&gt;
 &lt;p&gt;You can add any number of folders with the &lt;code&gt;.lighthouse&lt;/code&gt; folder to add any number of &lt;code&gt;presubmits&lt;/code&gt; and &lt;code&gt;postsubmits&lt;/code&gt; (i.e. Pull Request pipelines and releases).&lt;/p&gt;
-&lt;p&gt;If you define a pipeline you want to share with other repositories you can then use &lt;a href=&#34;https://googlecontainertools.github.io/kpt/reference/pkg/get/&#34;&gt;kpt pkg get&lt;/a&gt; to copy the folder into other repositories. Later on you can then use &lt;a href=&#34;https://googlecontainertools.github.io/kpt/reference/pkg/update/&#34;&gt;kpt pkg update&lt;/a&gt; to replicate upstream changes to other repositories. Or use the &lt;a href=&#34;https://jenkins-x.io/v3/guides/upgrade/#cluster&#34;&gt;jx gitops upgrade&lt;/a&gt; command which uses &lt;code&gt;kpt pkg update&lt;/code&gt; under the covers.&lt;/p&gt;
+&lt;p&gt;If you define a pipeline you want to share with other repositories you can then use &lt;a href=&#34;https://googlecontainertools.github.io/kpt/reference/pkg/get/&#34;&gt;kpt pkg get&lt;/a&gt; to copy the folder into other repositories. Later on you can then use &lt;a href=&#34;https://googlecontainertools.github.io/kpt/reference/pkg/update/&#34;&gt;kpt pkg update&lt;/a&gt; to replicate upstream changes to other repositories. Or use the &lt;a href=&#34;https://jayex.io/v3/guides/upgrade/#cluster&#34;&gt;jx gitops upgrade&lt;/a&gt; command which uses &lt;code&gt;kpt pkg update&lt;/code&gt; under the covers.&lt;/p&gt;
 &lt;h2 id=&#34;pipeline-catalog&#34;&gt;Pipeline Catalog&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;pipeline catalog&lt;/code&gt; contains default triggers, tekton pipelines and associated files (e.g. &lt;code&gt;Dockerfile&lt;/code&gt; and helm charts) for different languages and runtimes.&lt;/p&gt;
-&lt;p&gt;The pipeline catalog is used to default the triggers, pipelines and other files for &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;new projects&lt;/a&gt; when you import or create new quickstarts.&lt;/p&gt;
-&lt;p&gt;You can browse the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs&#34;&gt;default Jenkins X Pipeline Catalog here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The pipeline catalog is used to default the triggers, pipelines and other files for &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;new projects&lt;/a&gt; when you import or create new quickstarts.&lt;/p&gt;
+&lt;p&gt;You can browse the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs&#34;&gt;default JayeX Pipeline Catalog here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you want you can fork the &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog&#34;&gt;jenkins-x/jx3-pipeline-catalog&lt;/a&gt; repository and make your modifications to add/remove folders for different languages or modify the pipelines and associated files.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;d prefer if any improvements or enhancements could be submitted back to the project via a Pull Request then we all get to share your improvements; but its totally fine to have some local modifications for your specific business requirements.&lt;/p&gt;
 &lt;p&gt;To use your custom fork modify the &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/pipeline-catalog.yaml&#34;&gt;extensions/pipeline-catalog.yaml&lt;/a&gt; file in your cluster git repository to link to your fork instead of the  &lt;a href=&#34;https://github.com/jenkins-x/jx3-pipeline-catalog&#34;&gt;jenkins-x/jx3-pipeline-catalog&lt;/a&gt; repository:&lt;/p&gt;
@@ -653,9 +654,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    perl -ne&amp;#39;/version: (.*)/ &amp;amp;&amp;amp; print $1&amp;#39; versionStream/packages/jx.yml &amp;gt; VERSION&lt;/span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;uses:jenkins-x/jx3-pipeline-catalog/tasks/updatebot/release.yaml@versionStream&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;promote-release&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will open a PR on the pipeline catalog repo if updates are available. If Jenkins X manages the pipeline catalog repo, the PRs will be automatically merged.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will open a PR on the pipeline catalog repo if updates are available. If JayeX manages the pipeline catalog repo, the PRs will be automatically merged.&lt;/p&gt;
 &lt;h2 id=&#34;quickstarts&#34;&gt;QuickStarts&lt;/h2&gt;
-&lt;p&gt;Quickstarts are sample projects which are used &lt;code&gt;jx project quickstart&lt;/code&gt; when you &lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34;&gt;create new projects&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Quickstarts are sample projects which are used &lt;code&gt;jx project quickstart&lt;/code&gt; when you &lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34;&gt;create new projects&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The default quickstart projects are in the &lt;a href=&#34;https://github.com/jenkins-x-quickstarts/&#34;&gt;jenkins-x-quickstarts&lt;/a&gt; github organisation.&lt;/p&gt;
 &lt;p&gt;The quickstarts are defined in your &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml&#34;&gt;extensions/quickstarts.yaml&lt;/a&gt; file and defaults to including all of the quickstarts in the &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/versionStream/quickstarts.yaml&#34;&gt;versionStream/quickstarts.yml&lt;/a&gt; file.&lt;/p&gt;
 &lt;p&gt;You can include/exclude quickstarts from the version stream using the &lt;code&gt;includes&lt;/code&gt; and &lt;code&gt;excludes&lt;/code&gt; regular expressions in the &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml&#34;&gt;extensions/quickstarts.yaml&lt;/a&gt; file as shown below.&lt;/p&gt;

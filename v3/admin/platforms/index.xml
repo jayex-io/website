@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Platforms</title>
-    <link>https://jenkins-x.io/v3/admin/platforms/</link>
-    <description>Recent content in Platforms on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Platforms</title>
+    <link>https://jayex.io/v3/admin/platforms/</link>
+    <description>Recent content in Platforms on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/platforms/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/platforms/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,22 +16,22 @@
     
     <item>
       <title>V3: Amazon</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/eks/</link>
+      <link>https://jayex.io/v3/admin/platforms/eks/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/eks/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/eks/</guid>
       <description>
         
         
         &lt;hr&gt;
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-  Jenkins X supports the Kubernetes versions 1.23-1.30.
+  JayeX supports the Kubernetes versions 1.23-1.34.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Ensure you are logged into GitHub else you will get a 404 error when clicking the links below&lt;/li&gt;
-&lt;li&gt;The quickstart guides are for users who want to get up and running quickly with Jenkins X.
+&lt;li&gt;The quickstart guides are for users who want to get up and running quickly with JayeX.
 Refer to the &lt;a href=&#34;https://github.com/jenkins-x/terraform-aws-eks-jx/blob/master/README.md&#34;&gt;eks-jx terraform module readme&lt;/a&gt; for all the inputs that can be customized.&lt;/li&gt;
 &lt;li&gt;Always use the latest module version for the eks-jx module.
 The list of versions can be found &lt;a href=&#34;https://github.com/jenkins-x/terraform-aws-eks-jx/releases&#34;&gt;here.&lt;/a&gt;&lt;/li&gt;
@@ -52,10 +52,10 @@ The list of versions can be found &lt;a href=&#34;https://github.com/jenkins-x/t
 &lt;p&gt;Choose the cluster git repository based on the secrets backend&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-vault/generate&#34;  target=&#34;github-cluster&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create Git Repository for Jenkins X &lt;b&gt;Cluster&lt;/b&gt;&lt;/a&gt; based on the &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-vault&#34;&gt;jx3-gitops-repositories/jx3-eks-vault&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-vault/generate&#34;  target=&#34;github-cluster&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create Git Repository for JayeX &lt;b&gt;Cluster&lt;/b&gt;&lt;/a&gt; based on the &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-vault&#34;&gt;jx3-gitops-repositories/jx3-eks-vault&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-asm/generate&#34;  target=&#34;github-cluster&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create Git Repository for Jenkins X &lt;b&gt;Cluster&lt;/b&gt;&lt;/a&gt; based on the &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-asm&#34;&gt;jx3-gitops-repositories/jx3-eks-asm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-asm/generate&#34;  target=&#34;github-cluster&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create Git Repository for JayeX &lt;b&gt;Cluster&lt;/b&gt;&lt;/a&gt; based on the &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-eks-asm&#34;&gt;jx3-gitops-repositories/jx3-eks-asm&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -63,13 +63,13 @@ The list of versions can be found &lt;a href=&#34;https://github.com/jenkins-x/t
 &lt;p&gt;Install &lt;a href=&#34;https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform&#34;&gt;terraform CLI&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Install &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/jx3/&#34;&gt;jx CLI &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Install &lt;a href=&#34;https://jayex.io/v3/admin/setup/jx3/&#34;&gt;jx CLI &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;For AWS SSO ensure you have installed AWSCLI version 2 - &lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html&#34;&gt;see here&lt;/a&gt;. You must then configure it to use Named Profiles - &lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure-profiles.html&#34;&gt;see here&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;You should use a dedicated git user account for the Bot user. Jenkins X will use this user to interact with git. After you are logged in with the Bot user account you may use the following link &lt;a href=&#34;https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow&#34; target=&#34;github-token&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create Git Token for the Bot user &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You should use a dedicated git user account for the Bot user. JayeX will use this user to interact with git. After you are logged in with the Bot user account you may use the following link &lt;a href=&#34;https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow&#34; target=&#34;github-token&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create Git Token for the Bot user &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Override the input defaults in the Infrastructure repository. (E.g, edit variables.tf, set TF&lt;em&gt;VAR&lt;/em&gt; environment variables, or pass the values on the terraform command line.)&lt;/p&gt;
@@ -103,12 +103,12 @@ The list of versions can be found &lt;a href=&#34;https://github.com/jenkins-x/t
 it again run &lt;code&gt;terraform output&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Tail the Jenkins X installation logs&lt;/p&gt;
+&lt;p&gt;Tail the JayeX installation logs&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  jx admin log
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Once finished you can now move into the Jenkins X Developer namespace&lt;/li&gt;
+&lt;li&gt;Once finished you can now move into the JayeX Developer namespace&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  jx ns jx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
@@ -116,26 +116,26 @@ it again run &lt;code&gt;terraform output&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;and create or import your applications&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;For more details on how to install Jenkins X on AWS EKS see &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-terraform-eks#prerequisites&#34;&gt;Github repository for Jenkins X Terraform module for EKS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For more details on how to install JayeX on AWS EKS see &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-terraform-eks#prerequisites&#34;&gt;Github repository for JayeX Terraform module for EKS&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
       <title>V3: Azure</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/azure/</link>
+      <link>https://jayex.io/v3/admin/platforms/azure/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/azure/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/azure/</guid>
       <description>
         
         
         &lt;hr&gt;
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-  Jenkins X supports the Kubernetes versions 1.23-1.30.
+  JayeX supports the Kubernetes versions 1.23-1.34.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
@@ -156,12 +156,12 @@ it again run &lt;code&gt;terraform output&lt;/code&gt;.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-terraform-azure/blob/master/README.md&#34; 
 target=&#34;github&#34; class=&#34;btn bg-primary text-light&#34; 
-title=&#34;use your new git repository to create your cloud infrastructure and install Jenkins X&#34;&gt;
+title=&#34;use your new git repository to create your cloud infrastructure and install JayeX&#34;&gt;
 Create your infrastructure
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -170,16 +170,16 @@ Create your infrastructure
     
     <item>
       <title>V3: Google</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/google/</link>
+      <link>https://jayex.io/v3/admin/platforms/google/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/google/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/google/</guid>
       <description>
         
         
         &lt;hr&gt;
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-  Jenkins X supports the Kubernetes versions 1.23-1.30.
+  JayeX supports the Kubernetes versions 1.23-1.34.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
@@ -195,7 +195,7 @@ Create your infrastructure
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Ensure &lt;strong&gt;Owner&lt;/strong&gt; is the Git Organisation that will hold the repositories used for Jenkins X.&lt;/p&gt;
+&lt;p&gt;Ensure &lt;strong&gt;Owner&lt;/strong&gt; is the Git Organisation that will hold the repositories used for JayeX.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;git clone&lt;/code&gt; the new repository via &lt;strong&gt;HTTPS&lt;/strong&gt; and &lt;code&gt;cd&lt;/code&gt; into the git clone directory&lt;/p&gt;
@@ -203,15 +203,15 @@ Create your infrastructure
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-terraform-gke/blob/master/README.md&#34;
 target=&#34;github&#34; class=&#34;btn bg-primary text-light&#34; 
-title=&#34;use your new git repository to create your cloud infrastructure and install Jenkins X&#34;&gt;
+title=&#34;use your new git repository to create your cloud infrastructure and install JayeX&#34;&gt;
 Create your infrastructure
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The following demo walks through how to get started with Jenkins X 3 on GKE + Terraform&lt;/p&gt;
+&lt;p&gt;The following demo walks through how to get started with JayeX 3 on GKE + Terraform&lt;/p&gt;
 &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/RYgKvRpjkoY&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 
       </description>
@@ -219,20 +219,20 @@ Create your infrastructure
     
     <item>
       <title>V3: K3s</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/k3s/</link>
+      <link>https://jayex.io/v3/admin/platforms/k3s/</link>
       <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/k3s/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/k3s/</guid>
       <description>
         
         
         &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-  Jenkins X supports the Kubernetes versions 1.23-1.30.
+  JayeX supports the Kubernetes versions 1.23-1.34.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Ensure you are logged into GitHub else you will get a 404 error when clicking the links below&lt;/p&gt;
-&lt;p&gt;This guide will walk you though how to setup Jenkins X on your laptop using &lt;a href=&#34;https://k3s.io/&#34;&gt;k3s&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This guide will walk you though how to setup JayeX on your laptop using &lt;a href=&#34;https://k3s.io/&#34;&gt;k3s&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If you are on Mac OS, you can follow this &lt;a href=&#34;https://docs.kalm.dev/install/install-local-k3s/&#34;&gt;guide&lt;/a&gt; to set up k3s.
 You do not need to install kalm for the rest of the tutorial.&lt;/p&gt;
 &lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
@@ -261,7 +261,7 @@ You do not need to install kalm for the rest of the tutorial.&lt;/p&gt;
 &lt;li&gt;If still got &lt;code&gt;permission denied&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;777&lt;/span&gt; ~/.kube/config &lt;span style=&#34;color:#75715e&#34;&gt;#warning: this maybe vulnerable to multiple users&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This value of the node will be used later during installation and configuring of Jenkins X.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This value of the node will be used later during installation and configuring of JayeX.&lt;/p&gt;
 &lt;p&gt;Check &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/&#34;&gt;k3s install guide&lt;/a&gt; for more installation options.&lt;/p&gt;
 &lt;h4 id=&#34;vault&#34;&gt;Vault&lt;/h4&gt;
 &lt;p&gt;Install vault cli.
@@ -295,14 +295,14 @@ Once helm is installed, proceed to the next steps.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note: If you get the error &lt;code&gt;Error enabling kubernetes auth: Post &amp;quot;https://127.0.0.1:8200/v1/sys/auth/kubernetes&amp;quot;: http: server gave HTTP response to HTTPS client&lt;/code&gt;, try the command &lt;code&gt;vault login myroot&lt;/code&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;github&#34;&gt;Github&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Create a git bot user (different from your own personal user) e.g. &lt;a href=&#34;https://github.com/join&#34;&gt;https://github.com/join&lt;/a&gt; and generate a a personal access token, this will be used by Jenkins X to interact with git repositories. e.g. &lt;a href=&#34;https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook,write:packages&#34;&gt;https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook,write:packages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;This bot user needs to have write permission to write to any git repository used by Jenkins X. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.&lt;/li&gt;
+&lt;li&gt;Create a git bot user (different from your own personal user) e.g. &lt;a href=&#34;https://github.com/join&#34;&gt;https://github.com/join&lt;/a&gt; and generate a a personal access token, this will be used by JayeX to interact with git repositories. e.g. &lt;a href=&#34;https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook,write:packages&#34;&gt;https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook,write:packages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;This bot user needs to have write permission to write to any git repository used by JayeX. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;jenkins-x&#34;&gt;Jenkins-X&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Make sure you have installed &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/jx3/&#34;&gt;jx 3.x binary&lt;/a&gt; and put it on your &lt;code&gt;$PATH&lt;/code&gt; as the &lt;code&gt;jx admin operator&lt;/code&gt; will be used&lt;/li&gt;
+&lt;li&gt;Make sure you have installed &lt;a href=&#34;https://jayex.io/v3/admin/setup/jx3/&#34;&gt;jx 3.x binary&lt;/a&gt; and put it on your &lt;code&gt;$PATH&lt;/code&gt; as the &lt;code&gt;jx admin operator&lt;/code&gt; will be used&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;jenkins-x-v3-installation&#34;&gt;Jenkins X v3 installation&lt;/h3&gt;
+&lt;h3 id=&#34;jayex-v3-installation&#34;&gt;JayeX v3 installation&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Generate a cluster git repository from the &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-k3s-vault&#34;&gt;jx3-k3s-vault&lt;/a&gt; template, by clicking &lt;a href=&#34;https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
@@ -326,7 +326,7 @@ Once helm is installed, proceed to the next steps.&lt;/p&gt;
 &lt;p&gt;set up Ngrok&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/ngrok/&#34;&gt;these docs&lt;/a&gt; to set up ngrok&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;https://jayex.io/v3/develop/faq/ngrok/&#34;&gt;these docs&lt;/a&gt; to set up ngrok&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Once this tunnel is open, paste the ngrok url (without http) which is forwarding the traffic to port 8080 in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.&lt;/p&gt;
@@ -436,7 +436,7 @@ This job will create the secrets in vault which will be used by external secrets
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;POST /hook                     &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt; OK
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;next-steps&#34;&gt;Next steps&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -444,25 +444,25 @@ This job will create the secrets in vault which will be used by external secrets
     
     <item>
       <title>V3: Minikube</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/minikube/</link>
+      <link>https://jayex.io/v3/admin/platforms/minikube/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/minikube/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/minikube/</guid>
       <description>
         
         
         &lt;hr&gt;
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-  Jenkins X supports the Kubernetes versions 1.23-1.30.
+  JayeX supports the Kubernetes versions 1.23-1.34.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Ensure you are logged into GitHub else you will get a 404 error when clicking the links below&lt;/p&gt;
-&lt;p&gt;This guide will walk you though how to setup Jenkins X on your laptop using &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-minikube/&#34;&gt;minikube&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This guide will walk you though how to setup JayeX on your laptop using &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-minikube/&#34;&gt;minikube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/guides/jx3/&#34;&gt;Download and install the jx 3.x binary&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/guides/jx3/&#34;&gt;Download and install the jx 3.x binary&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-minikube/&#34;&gt;Install minikube&lt;/a&gt;&lt;/p&gt;
@@ -524,7 +524,7 @@ instead of virtualBox driver. Use command &amp;ldquo;minikube start &amp;ndash;d
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin main
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/guides/operator/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Install the Git Operator&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/guides/operator/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Install the Git Operator&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;switch to the &lt;code&gt;jx&lt;/code&gt; namespace&lt;/p&gt;
@@ -532,11 +532,11 @@ instead of virtualBox driver. Use command &amp;ldquo;minikube start &amp;ndash;d
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx ns jx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;once Jenkins X is installed run the following command to enable webhooks via &lt;code&gt;ngrok&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;once JayeX is installed run the following command to enable webhooks via &lt;code&gt;ngrok&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl port-forward svc/hook 8080:80
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;restarting&#34;&gt;Restarting&lt;/h2&gt;
 &lt;p&gt;If you quit minikube, reboot and come back to start working on it again, you will have to complete the whole procedure under #setup to get back to speed.
@@ -547,43 +547,43 @@ The minikube ip is normally the same on each invocation, but you should verify t
     
     <item>
       <title>V3: On-Premises</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/on-premises/</link>
+      <link>https://jayex.io/v3/admin/platforms/on-premises/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/on-premises/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/on-premises/</guid>
       <description>
         
         
         &lt;hr&gt;
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-  Jenkins X supports the Kubernetes versions 1.23-1.30.
+  JayeX supports the Kubernetes versions 1.23-1.34.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Ensure you are logged into GitHub else you will get a 404 error when clicking the links below&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;on-premises-kubernetes&#34;&gt;On-Premises Kubernetes&lt;/h2&gt;
-&lt;p&gt;If you are using kubernetes we highly recommend you use one of the &lt;a href=&#34;https://jenkins-x.io/v3/#administration&#34;&gt;managed cloud providers&lt;/a&gt; as this comes with lots of additional features like:&lt;/p&gt;
+&lt;p&gt;If you are using kubernetes we highly recommend you use one of the &lt;a href=&#34;https://jayex.io/v3/#administration&#34;&gt;managed cloud providers&lt;/a&gt; as this comes with lots of additional features like:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;container registries and bucket storage&lt;/li&gt;
 &lt;li&gt;IAM and workload identity (e.g. so kubernetes Service Accounts can be assigned roles to be able to read/write to certain buckets or container registries)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;However sometimes you need to run kubernetes on your premises. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premises too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing Jenkins X on a vanilla kubernetes cluster on-premises.&lt;/p&gt;
+&lt;p&gt;However sometimes you need to run kubernetes on your premises. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premises too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing JayeX on a vanilla kubernetes cluster on-premises.&lt;/p&gt;
 &lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
 &lt;p&gt;The following are the prerequisites of your on-premises kubernetes cluster:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/guides/jx3/&#34;&gt;Download and install the jx 3.x binary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/guides/jx3/&#34;&gt;Download and install the jx 3.x binary&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;kubernetes-cluster&#34;&gt;Kubernetes cluster&lt;/h4&gt;
-&lt;p&gt;We obviously need a working kubernetes cluster. There are many approaches to &lt;a href=&#34;https://kubernetes.io/docs/setup/production-environment/tools/&#34;&gt;setting up on-premises clusters&lt;/a&gt; obviously the easiest approach is to use the &lt;a href=&#34;https://jenkins-x.io/v3/#administration&#34;&gt;cloud&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We obviously need a working kubernetes cluster. There are many approaches to &lt;a href=&#34;https://kubernetes.io/docs/setup/production-environment/tools/&#34;&gt;setting up on-premises clusters&lt;/a&gt; obviously the easiest approach is to use the &lt;a href=&#34;https://jayex.io/v3/#administration&#34;&gt;cloud&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;kubectl-access&#34;&gt;kubectl access&lt;/h4&gt;
 &lt;p&gt;You need to be able to connect to your kubernetes cluster via &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl/&#34;&gt;kubectl&lt;/a&gt; so that you can run commands like:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get ns
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get node
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To view the namespaces and nodes respectively.&lt;/p&gt;
 &lt;h4 id=&#34;ingress&#34;&gt;Ingress&lt;/h4&gt;
-&lt;p&gt;To use Jenkins X we need ingress to work. This means being able to create a kubernetes &lt;code&gt;Ingress&lt;/code&gt; resource with a domain name which can be resolved outside of kubernetes to network into kubernetes services.&lt;/p&gt;
-&lt;p&gt;Jenkins X installs &lt;code&gt;nginx&lt;/code&gt; which has a &lt;code&gt;LoadBalancer&lt;/code&gt; kubernetes &lt;code&gt;Service&lt;/code&gt; to implement ingress. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes out of the box on all public clouds.&lt;/p&gt;
+&lt;p&gt;To use JayeX we need ingress to work. This means being able to create a kubernetes &lt;code&gt;Ingress&lt;/code&gt; resource with a domain name which can be resolved outside of kubernetes to network into kubernetes services.&lt;/p&gt;
+&lt;p&gt;JayeX installs &lt;code&gt;nginx&lt;/code&gt; which has a &lt;code&gt;LoadBalancer&lt;/code&gt; kubernetes &lt;code&gt;Service&lt;/code&gt; to implement ingress. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes out of the box on all public clouds.&lt;/p&gt;
 &lt;p&gt;With an on-premises kubernetes cluster you need to install something like &lt;a href=&#34;https://metallb.universe.tf/&#34;&gt;MetalLB&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If you are on bare metal you could try &lt;a href=&#34;https://007ba7.us/howto/metallb/&#34;&gt;these instructions&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;storage&#34;&gt;Storage&lt;/h4&gt;
@@ -611,7 +611,7 @@ The minikube ip is normally the same on each invocation, but you should verify t
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;domain&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mydomain.com&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;verify your cluster does not already have an &lt;a href=&#34;https://www.nginx.com/&#34;&gt;nginx&lt;/a&gt; installation. If it does then please remove the &lt;code&gt;nginx&lt;/code&gt; line from your &lt;code&gt;helmfile.yaml&lt;/code&gt; file and remove the &lt;code&gt;helmfiles/nginx&lt;/code&gt; files. If you are using a custom nginx installation then you will need to figure out your domain by hand and won&amp;rsquo;t be able to let Jenkins X detect the load balancer IP from its included nginx installation.&lt;/p&gt;
+&lt;p&gt;verify your cluster does not already have an &lt;a href=&#34;https://www.nginx.com/&#34;&gt;nginx&lt;/a&gt; installation. If it does then please remove the &lt;code&gt;nginx&lt;/code&gt; line from your &lt;code&gt;helmfile.yaml&lt;/code&gt; file and remove the &lt;code&gt;helmfiles/nginx&lt;/code&gt; files. If you are using a custom nginx installation then you will need to figure out your domain by hand and won&amp;rsquo;t be able to let JayeX detect the load balancer IP from its included nginx installation.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;git add, commit and push your changes:&lt;/p&gt;
@@ -627,9 +627,9 @@ The minikube ip is normally the same on each invocation, but you should verify t
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get node
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/guides/operator/&#34; 
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/guides/operator/&#34; 
 target=&#34;github&#34; class=&#34;btn bg-primary text-light&#34; 
-title=&#34;install the git operator to setup Jenkins X in your cluster&#34;&gt;
+title=&#34;install the git operator to setup JayeX in your cluster&#34;&gt;
 Install the git operator
 &lt;/a&gt; from inside a git clone of the git repository you created above.&lt;/p&gt;
 &lt;/li&gt;
@@ -639,7 +639,7 @@ Install the git operator
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx ns jx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -647,14 +647,14 @@ Install the git operator
     
     <item>
       <title>V3: OpenShift</title>
-      <link>https://jenkins-x.io/v3/admin/platforms/openshift/</link>
+      <link>https://jayex.io/v3/admin/platforms/openshift/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/platforms/openshift/</guid>
+      <guid>https://jayex.io/v3/admin/platforms/openshift/</guid>
       <description>
         
         
-        &lt;p&gt;If you don&amp;rsquo;t have a cluster or want to try Openshift on your laptop then please try &lt;a href=&#34;https://jenkins-x.io/v3/guides/infra/openshift-crc/&#34; target=&#34;github&#34; class=&#34;btn bg-primary text-light&#34;&gt;Install Jenkins X with OpenShift CodeReady Containers&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;If you don&amp;rsquo;t have a cluster or want to try Openshift on your laptop then please try &lt;a href=&#34;https://jayex.io/v3/guides/infra/openshift-crc/&#34; target=&#34;github&#34; class=&#34;btn bg-primary text-light&#34;&gt;Install JayeX with OpenShift CodeReady Containers&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Ensure you are logged into GitHub else you will get a 404 error when clicking the links below&lt;/p&gt;
@@ -698,7 +698,7 @@ Install the git operator
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin main
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://jenkins-x.io/v3/guides/operator/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Install the Git Operator&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jayex.io/v3/guides/operator/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Install the Git Operator&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;switch to the &lt;code&gt;jx&lt;/code&gt; namespace&lt;/p&gt;
@@ -706,7 +706,7 @@ Install the git operator
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jx ns jx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://jenkins-x.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jayex.io/v3/develop/create-project/&#34; class=&#34;btn bg-primary text-light&#34;&gt;Create or import projects&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;enable-webhooks&#34;&gt;Enable WebHooks&lt;/h2&gt;
 &lt;p&gt;If your cluster is not accessible on the internet and you can&amp;rsquo;t open a firewall to allow services like GitHub to access your ingress then you will need to enable webhooks as follows:&lt;/p&gt;

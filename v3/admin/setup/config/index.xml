@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – Configuration</title>
-    <link>https://jenkins-x.io/v3/admin/setup/config/</link>
-    <description>Recent content in Configuration on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – Configuration</title>
+    <link>https://jayex.io/v3/admin/setup/config/</link>
+    <description>Recent content in Configuration on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/admin/setup/config/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/admin/setup/config/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,14 +15,14 @@
     
     <item>
       <title>V3: Git</title>
-      <link>https://jenkins-x.io/v3/admin/setup/config/git/</link>
+      <link>https://jayex.io/v3/admin/setup/config/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/config/git/</guid>
+      <guid>https://jayex.io/v3/admin/setup/config/git/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X supports a number of different Git providers. You can specify the Git provider you wish to use and the organisation to use for the Git providers for each environment in your &lt;a href=&#34;https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements&#34;&gt;jx-requirements.yml&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;JayeX supports a number of different Git providers. You can specify the Git provider you wish to use and the organisation to use for the Git providers for each environment in your &lt;a href=&#34;https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements&#34;&gt;jx-requirements.yml&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;github&#34;&gt;GitHub&lt;/h3&gt;
 &lt;p&gt;This is the default Git provider if you don&amp;rsquo;t specify one.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;cluster&lt;/span&gt;:
@@ -85,21 +85,21 @@
     
     <item>
       <title>V3: Repository</title>
-      <link>https://jenkins-x.io/v3/admin/setup/config/repository/</link>
+      <link>https://jayex.io/v3/admin/setup/config/repository/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/config/repository/</guid>
+      <guid>https://jayex.io/v3/admin/setup/config/repository/</guid>
       <description>
         
         
-        &lt;p&gt;Jenkins X lets you configure different artifact repositories. We use artifact repositories to:&lt;/p&gt;
+        &lt;p&gt;JayeX lets you configure different artifact repositories. We use artifact repositories to:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;store artifacts from some kinds of build (e.g. Java builds tend to deploy jars, &lt;code&gt;pom.xml&lt;/code&gt; files and tarballs)&lt;/li&gt;
 &lt;li&gt;act as a Maven proxy to cache maven dependencies when using java/maven builds&lt;/li&gt;
 &lt;li&gt;implement a chart repository for releasing helm charts&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;nexus&#34;&gt;Nexus&lt;/h3&gt;
-&lt;p&gt;By default if you don&amp;rsquo;t make any explicit configuration then Jenkins X uses:&lt;/p&gt;
+&lt;p&gt;By default if you don&amp;rsquo;t make any explicit configuration then JayeX uses:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sonatype.com/nexus-repository-oss&#34;&gt;Nexus&lt;/a&gt; as an artifact repository to store artifacts (e.g. Java jars, &lt;code&gt;pom.xml&lt;/code&gt; files, tarballs or npm modules etc)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://chartmuseum.com/&#34;&gt;ChartMuseum&lt;/a&gt; as a repository of charts&lt;/li&gt;
@@ -125,9 +125,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;cluster&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;chartRepository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Another alternative for the helm chart repository is to use Github gh-pages, as explained &lt;a href=&#34;https://jenkins-x.io/v3/develop/faq/config/registries/#how-do-i-switch-to-github-pages-for-charts&#34;&gt;here&lt;/a&gt;. Note that in that case and if you don&amp;rsquo;t have any maven artifact, you don&amp;rsquo;t need bucketrepo.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Another alternative for the helm chart repository is to use Github gh-pages, as explained &lt;a href=&#34;https://jayex.io/v3/develop/faq/config/registries/#how-do-i-switch-to-github-pages-for-charts&#34;&gt;here&lt;/a&gt;. Note that in that case and if you don&amp;rsquo;t have any maven artifact, you don&amp;rsquo;t need bucketrepo.&lt;/p&gt;
 &lt;p&gt;By default the local file system in the bucket repo is used to store artifacts.&lt;/p&gt;
-&lt;p&gt;To enable cloud storage for artifacts in &lt;code&gt;bucketrepo&lt;/code&gt; you need to enable the &lt;code&gt;storage.repository&lt;/code&gt; configuration in &lt;code&gt;jx-requirements.yml&lt;/code&gt;, in which case a cloud bucket is used instead. See the &lt;a href=&#34;https://jenkins-x.io/v3/admin/setup/config/storage&#34;&gt;storage section for more details&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To enable cloud storage for artifacts in &lt;code&gt;bucketrepo&lt;/code&gt; you need to enable the &lt;code&gt;storage.repository&lt;/code&gt; configuration in &lt;code&gt;jx-requirements.yml&lt;/code&gt;, in which case a cloud bucket is used instead. See the &lt;a href=&#34;https://jayex.io/v3/admin/setup/config/storage&#34;&gt;storage section for more details&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;none&#34;&gt;None&lt;/h3&gt;
 &lt;p&gt;If you want to disable the artifact repository (nexus) but still use ChartMuseum for charts you can use the following:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;repository&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;none&lt;/span&gt;
@@ -166,16 +166,16 @@
     
     <item>
       <title>V3: Storage</title>
-      <link>https://jenkins-x.io/v3/admin/setup/config/storage/</link>
+      <link>https://jayex.io/v3/admin/setup/config/storage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/admin/setup/config/storage/</guid>
+      <guid>https://jayex.io/v3/admin/setup/config/storage/</guid>
       <description>
         
         
-        &lt;p&gt;By storage we mean cloud storage (e.g. bucket storage for logs). Any &lt;a href=&#34;https://jenkins-x.io/v3/develop/apps/#adding-charts&#34;&gt;chart you add via helmfile&lt;/a&gt; which uses &lt;code&gt;Persistent Volumes&lt;/code&gt; instead of cloud storage will be &lt;a href=&#34;https://jenkins-x.io/v3/devops/cloud-native/#try-avoid-persistent-volumes&#34;&gt;up to you to backup and manage&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you are using a &lt;a href=&#34;https://jenkins-x.io/v3/admin/platforms/&#34;&gt;cloud platform&lt;/a&gt; and terraform then your storage will be configured OOTB.&lt;/p&gt;
-&lt;p&gt;If you are &lt;a href=&#34;https://jenkins-x.io/v3/admin/platforms/&#34;&gt;on-premises&lt;/a&gt; and have installed something like &lt;a href=&#34;https://min.io/&#34;&gt;minio&lt;/a&gt; on your cluster then you can configure the &lt;code&gt;storage&lt;/code&gt; section of your &lt;a href=&#34;https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements&#34;&gt;jx-requirements.yml&lt;/a&gt; file to map to minio bucket URLs&lt;/p&gt;
+        &lt;p&gt;By storage we mean cloud storage (e.g. bucket storage for logs). Any &lt;a href=&#34;https://jayex.io/v3/develop/apps/#adding-charts&#34;&gt;chart you add via helmfile&lt;/a&gt; which uses &lt;code&gt;Persistent Volumes&lt;/code&gt; instead of cloud storage will be &lt;a href=&#34;https://jayex.io/v3/devops/cloud-native/#try-avoid-persistent-volumes&#34;&gt;up to you to backup and manage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are using a &lt;a href=&#34;https://jayex.io/v3/admin/platforms/&#34;&gt;cloud platform&lt;/a&gt; and terraform then your storage will be configured OOTB.&lt;/p&gt;
+&lt;p&gt;If you are &lt;a href=&#34;https://jayex.io/v3/admin/platforms/&#34;&gt;on-premises&lt;/a&gt; and have installed something like &lt;a href=&#34;https://min.io/&#34;&gt;minio&lt;/a&gt; on your cluster then you can configure the &lt;code&gt;storage&lt;/code&gt; section of your &lt;a href=&#34;https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements&#34;&gt;jx-requirements.yml&lt;/a&gt; file to map to minio bucket URLs&lt;/p&gt;
 
       </description>
     </item>

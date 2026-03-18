@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins X - Cloud Native CI/CD Built On Kubernetes – jx gitops git</title>
-    <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/</link>
-    <description>Recent content in jx gitops git on Jenkins X - Cloud Native CI/CD Built On Kubernetes</description>
+    <title>JayeX - Cloud Native CI/CD Built On Kubernetes – jx gitops git</title>
+    <link>https://jayex.io/v3/develop/reference/jx/gitops/git/</link>
+    <description>Recent content in jx gitops git on JayeX - Cloud Native CI/CD Built On Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jenkins-x.io/v3/develop/reference/jx/gitops/git/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jayex.io/v3/develop/reference/jx/gitops/git/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>V3: jx gitops git clone</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/clone/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/git/clone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/clone/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/git/clone/</guid>
       <description>
         
         
@@ -50,10 +50,10 @@
     
     <item>
       <title>V3: jx gitops git get</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/get/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/git/get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/get/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/git/get/</guid>
       <description>
         
         
@@ -61,7 +61,7 @@
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;jx gitops git get
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;synopsis&#34;&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Gets a file from the specified git repository or the git repository described in specified JX Environment resource.&lt;/p&gt;
-&lt;p&gt;Copies a file specified by &amp;ndash;file flag from a Git repository into local file system. The repository from which the file is read is either the one specified via command line flags or the one defined as the target repository of the Jenkins X Environment object, whose name too can be passed in via CLI flags.&lt;/p&gt;
+&lt;p&gt;Copies a file specified by &amp;ndash;file flag from a Git repository into local file system. The repository from which the file is read is either the one specified via command line flags or the one defined as the target repository of the JayeX Environment object, whose name too can be passed in via CLI flags.&lt;/p&gt;
 &lt;p&gt;In case that repository is read out from the environment, then if we are running in Kubernetes cluster the Environment object is searched for either in the namespace defined by the current kubeconfig context (if command is executed locally) or is searched for in the namespace of the Pod on which the command is being executed.&lt;/p&gt;
 &lt;p&gt;In case that command is not executed in Kubernetes and the repository has not been set via command line flags, then the repository from which file is read needs to be configured in environment variable: JX ENVIRONMENT GIT _URL.&lt;/p&gt;
 &lt;p&gt;The file is either copied to the path specified by the command line flag &amp;ndash;to or is written under the same path from which it was read into the current working directory.&lt;/p&gt;
@@ -89,10 +89,10 @@
     
     <item>
       <title>V3: jx gitops git merge</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/merge/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/git/merge/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/merge/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/git/merge/</guid>
       <description>
         
         
@@ -129,10 +129,10 @@
     
     <item>
       <title>V3: jx gitops git setup</title>
-      <link>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/setup/</link>
+      <link>https://jayex.io/v3/develop/reference/jx/gitops/git/setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-x.io/v3/develop/reference/jx/gitops/git/setup/</guid>
+      <guid>https://jayex.io/v3/develop/reference/jx/gitops/git/setup/</guid>
       <description>
         
         

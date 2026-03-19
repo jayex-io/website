@@ -13,6 +13,31 @@
     
     
     <item>
+      <title>Blog: Jenkins X changes name to JayeX!</title>
+      <link>https://jayex.io/blog/2026/03/19/jayex/</link>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayex.io/blog/2026/03/19/jayex/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+&lt;p&gt;During the early days of Jenkins X the Jenkins part of the name made sense for two reasons: Jenkins was used as the main
+pipeline engine and the development was done within CloudBees, the company that also is the main developer of Jenkins.&lt;/p&gt;
+&lt;h1 id=&#34;why-change&#34;&gt;Why change?&lt;/h1&gt;
+&lt;p&gt;Nowadays the Jenkins X name is more of a burden than boon marketing wise: It attracts people interested in Jenkins,
+who will dissapointed. It detracts people that are looking for an alternative to Jenkins, who might actually find
+what this project offers attractive.&lt;/p&gt;
+&lt;h1 id=&#34;what-happens-now&#34;&gt;What happens now?&lt;/h1&gt;
+&lt;p&gt;Technically nothing happens immediately. We will by and by replace the Jenkins X name with JayeX within the project
+without affecting the functionality. Any remaining integrations with Jenkins should be seen as deprecated though and
+will eventually be removed.&lt;/p&gt;
+&lt;p&gt;We will renew our marketing efforts using the new name.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: JayeX Most Valuable Contributor 2026 🏆</title>
       <link>https://jayex.io/blog/2026/03/05/award-nominations/</link>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
@@ -30,31 +55,6 @@ Nominations are now open and will close on Thursday, April 2, 2026&lt;/p&gt;
 &lt;h2 id=&#34;winners&#34;&gt;Winners&lt;/h2&gt;
 &lt;p&gt;The winners are announced during &lt;a href=&#34;https://cd.foundation/cdcon-2026/&#34;&gt;cdCon&lt;/a&gt;: May 18–20, 2026.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/cdfoundation/foundation/blob/main/CDF%20Awards%20Guidelines.md&#34;&gt;More information&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Blog: Jenkins X changes name to JayeX!</title>
-      <link>https://jayex.io/blog/2026/02/11/jayex/</link>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://jayex.io/blog/2026/02/11/jayex/</guid>
-      <description>
-        
-        
-        &lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
-&lt;p&gt;During the early days of Jenkins X the Jenkins part of the name made sense for two reasons: Jenkins was used as the main
-pipeline engine and the development was done within CloudBees, the company that also is the main developer of Jenkins.&lt;/p&gt;
-&lt;h1 id=&#34;why-change&#34;&gt;Why change?&lt;/h1&gt;
-&lt;p&gt;Nowadays the Jenkins X name is more of a burden than boon marketing wise: It attracts people interested in Jenkins,
-who will dissapointed. It detracts people that are looking for an alternative to Jenkins, who might actually find
-what this project offers attractive.&lt;/p&gt;
-&lt;h1 id=&#34;what-happens-now&#34;&gt;What happens now?&lt;/h1&gt;
-&lt;p&gt;Technically nothing happens immediately. We will by and by replace the Jenkins X name with JayeX within the project
-without affecting the functionality. Any remaining integrations with Jenkins should be seen as deprecated though and
-will eventually be removed.&lt;/p&gt;
-&lt;p&gt;We will renew our marketing efforts using the new name.&lt;/p&gt;
 
       </description>
     </item>

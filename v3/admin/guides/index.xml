@@ -300,7 +300,7 @@ Follow the upgrade steps according to your cloud provider. - &lt;a href=&#34;htt
 &lt;/ul&gt;
 &lt;p&gt;It&amp;rsquo;s a great way for us to save money on builds while ensuring you can give them enough resources to run quickly. It&amp;rsquo;s also a scalable to zero and doesn&amp;rsquo;t matter if you have to wait for a machine to be allocated.&lt;/p&gt;
 &lt;h2 id=&#34;how-to-setup-spot-instances-with-your-terraform-module&#34;&gt;How to setup spot instances with your terraform module&lt;/h2&gt;
-&lt;p&gt;Work has been completed on &lt;a href=&#34;https://github.com/jenkins-x/terraform-aws-eks-jx/pull/76&#34;&gt;AWS&lt;/a&gt; and &lt;a href=&#34;https://github.com/jenkins-x-terraform/terraform-jx-Azure/pull/23&#34;&gt;Azure&lt;/a&gt;, if someone would like to implement this on GCP (or another cloud provider), please join us in #jenkins-x-dev in slack.&lt;/p&gt;
+&lt;p&gt;Work has been completed on &lt;a href=&#34;https://github.com/jenkins-x/terraform-aws-eks-jx/pull/76&#34;&gt;AWS&lt;/a&gt; and &lt;a href=&#34;https://github.com/jenkins-x-terraform/terraform-jx-Azure/pull/23&#34;&gt;Azure&lt;/a&gt;, if someone would like to implement this on GCP (or another cloud provider), please join us in #jayex-dev in slack.&lt;/p&gt;
 &lt;h3 id=&#34;azure&#34;&gt;Azure&lt;/h3&gt;
 &lt;p&gt;On Azure, there are a few parameters to configure to enable spot instances:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# This sets whether to use spot or standard nodes for the builds, so we&amp;#39;ll leave this as true

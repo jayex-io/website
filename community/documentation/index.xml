@@ -471,7 +471,7 @@ screen and check the status of your PR in the merge queue.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;review-process&#34;&gt;Review Process&lt;/h3&gt;
 &lt;p&gt;The final part of all of this, is letting others review your work and provide feedback. As a rule of thumb, the conversation should happen on the PR, but sometimes things will be sorted out via Slack or a video call.&lt;/p&gt;
-&lt;p&gt;Sometimes it may take a few days for a review to happen. If you feel it&amp;rsquo;s an urgent change, jump on the &lt;a href=&#34;https://jayex.io/community/#slack&#34;&gt;community slack channel&lt;/a&gt; &lt;code&gt;#jenkins-x-user&lt;/code&gt; and ask for someone to review your PR.&lt;/p&gt;
+&lt;p&gt;Sometimes it may take a few days for a review to happen. If you feel it&amp;rsquo;s an urgent change, jump on the &lt;a href=&#34;https://jayex.io/community/#slack&#34;&gt;community slack channel&lt;/a&gt; &lt;code&gt;#jayex-user&lt;/code&gt; and ask for someone to review your PR.&lt;/p&gt;
 &lt;p&gt;Once the review is done, your changes will be merged into the master branch, and the site will be updated.&lt;/p&gt;
 
 

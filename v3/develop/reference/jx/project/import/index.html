@@ -23,14 +23,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>jx project import | JayeX - Cloud Native CI/CD Built On Kubernetes</title>
-<meta name="description" content="Imports a local project or Git repository into JayeX">
+<meta name="description" content="Imports a local project or Git repository into Jenkins X">
 <meta property="og:title" content="jx project import" />
-<meta property="og:description" content="Imports a local project or Git repository into JayeX" />
+<meta property="og:description" content="Imports a local project or Git repository into Jenkins X" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jayex.io/v3/develop/reference/jx/project/import/" /><meta property="og:site_name" content="JayeX - Cloud Native CI/CD Built On Kubernetes" />
 
 <meta itemprop="name" content="jx project import">
-<meta itemprop="description" content="Imports a local project or Git repository into JayeX">
+<meta itemprop="description" content="Imports a local project or Git repository into Jenkins X">
 
 
 
@@ -808,6 +808,8 @@ if (!doNotTrack) {
   <a href="/v3/develop/reference/jx/project/quickstart/" title="jx project quickstart" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-v3developreferencejxprojectquickstart"><span class="">quickstart</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-v3developreferencejxprojectspring-li">
   <a href="/v3/develop/reference/jx/project/spring/" title="jx project spring" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-v3developreferencejxprojectspring"><span class="">spring</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-v3developreferencejxprojectversion-li">
+  <a href="/v3/develop/reference/jx/project/version/" title="jx project version" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-v3developreferencejxprojectversion"><span class="">version</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-v3developreferencejxpromote-li">
@@ -1432,7 +1434,7 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>jx project import</h1>
-  <div class="lead">Imports a local project or Git repository into JayeX</div>
+  <div class="lead">Imports a local project or Git repository into Jenkins X</div>
 	<header class="article-meta">
 		
 
@@ -1451,10 +1453,10 @@ if (!doNotTrack) {
 	<h3 id="usage">Usage</h3>
 <pre tabindex="0"><code>jx project import
 </code></pre><h3 id="synopsis">Synopsis</h3>
-<p>Imports a local folder or Git repository into JayeX.</p>
+<p>Imports a local folder or Git repository into Jenkins X.</p>
 <p>If you specify no other options or arguments then the current directory is imported. Or you can use &lsquo;&ndash;dir&rsquo; to specify a directory to import.</p>
 <p>You can specify the git URL as an argument.</p>
-<p>For more documentation see: <a href="https://jayex.io/docs/using-jx/creating/import/">https://jayex.io/docs/using-jx/creating/import/</a></p>
+<p>For more documentation see: <a href="https://jenkins-x.io/docs/using-jx/creating/import/">https://jenkins-x.io/docs/using-jx/creating/import/</a></p>
 <h3 id="examples">Examples</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Import the current folder</span>
 </span></span><span style="display:flex;"><span>jx-project import
@@ -1481,7 +1483,7 @@ if (!doNotTrack) {
       --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
       --dir string                     Specify the directory to import (default &#34;.&#34;)
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
-      --dry-run                        Performs local changes to the repo but skips the import into JayeX
+      --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --env-name string                The name of the environment to create (only used for env projects)
       --env-strategy string            The promotion strategy of the environment to create (only used for env projects) (default &#34;Never&#34;)
       --git-kind string                the kind of git server to connect to
@@ -1494,8 +1496,8 @@ if (!doNotTrack) {
       --hpa                            should we enable the Horizontal Pod Autoscaler for this application.
       --import-commit-message string   Specifies the initial commit message used when importing the project
       --jenkins string                 The name of the Jenkins server to import the project into
-      --jenkinsfilerunner string       if you want to import into JayeX with Jenkinsfilerunner this argument lets you specify the container image to use
-      --jx                             if you want to default to importing this project into JayeX instead of a Jenkins server if you have a mixed JayeX and Jenkins cluster
+      --jenkinsfilerunner string       if you want to import into Jenkins X with Jenkinsfilerunner this argument lets you specify the container image to use
+      --jx                             if you want to default to importing this project into Jenkins X instead of a Jenkins server if you have a mixed Jenkins X and Jenkins cluster
       --log-level string               Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
   -n, --name string                    Specify the Git repository name to import the project into (if it is not already in one)
       --nested-repo                    Specify if using nested repositories (in gitlab)
@@ -1510,7 +1512,7 @@ if (!doNotTrack) {
       --pipeline-catalog-dir string    The pipeline catalog directory you want to use instead of the buildPackGitURL in the dev Environment Team settings. Generally only used for testing pipelines
       --pr-poll-period duration        the time between polls of the Pull Request on the cluster environment git repository (default 20s)
       --pr-poll-timeout duration       the maximum amount of time we wait for the Pull Request on the cluster environment git repository (default 20m0s)
-      --scheduler string               Change schedulerName, More info about Scheduler: https://jayex.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default &#34;in-repo&#34;)
+      --scheduler string               Change schedulerName, More info about Scheduler: https://jenkins-x.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default &#34;in-repo&#34;)
       --service-account string         The Kubernetes ServiceAccount to use to run the initial pipeline (default &#34;tekton-bot&#34;)
   -u, --url string                     The git clone URL to clone into the current directory and then import
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
@@ -1593,7 +1595,7 @@ if (!doNotTrack) {
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified February 9, 2026: <a href="https://github.com/jayex-io/jx-docs/commit/393aa477aad576b709e8682504c932e5ee4eb60b">fix: some search and replace from Jenkins X to JayeX (393aa477aa)</a>
+  Last modified July 17, 2026: <a href="https://github.com/jayex-io/jx-docs/commit/261b47dd558ecc3661d7bae87b7458feb2aa22f0">chore: regenerated plugin docs (261b47dd55)</a>
 </div>
 
 </div>

@@ -808,6 +808,8 @@ if (!doNotTrack) {
   <a href="/v3/develop/reference/jx/project/quickstart/" title="jx project quickstart" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-v3developreferencejxprojectquickstart"><span class="">quickstart</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-v3developreferencejxprojectspring-li">
   <a href="/v3/develop/reference/jx/project/spring/" title="jx project spring" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id="m-v3developreferencejxprojectspring"><span class="td-sidebar-nav-active-item">spring</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-v3developreferencejxprojectversion-li">
+  <a href="/v3/develop/reference/jx/project/version/" title="jx project version" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-v3developreferencejxprojectversion"><span class="">version</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-v3developreferencejxpromote-li">
@@ -1454,7 +1456,7 @@ if (!doNotTrack) {
 <p>Creates a new Spring Boot application and then optionally setups CI/CD pipelines and GitOps promotion.</p>
 <p>See Also:</p>
 <ul>
-<li>jx project : <a href="https://jayex.io/commands/jx_project">https://jayex.io/commands/jx_project</a></li>
+<li>jx project : <a href="https://jenkins-x.io/commands/jx_project">https://jenkins-x.io/commands/jx_project</a></li>
 </ul>
 <h3 id="examples">Examples</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create a Spring Boot application where you use the terminal to pick the values</span>
@@ -1479,7 +1481,7 @@ if (!doNotTrack) {
       --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
       --dir string                     Specify the directory to import (default &#34;.&#34;)
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
-      --dry-run                        Performs local changes to the repo but skips the import into JayeX
+      --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --env-name string                The name of the environment to create (only used for env projects)
       --env-strategy string            The promotion strategy of the environment to create (only used for env projects) (default &#34;Never&#34;)
       --git-kind string                the kind of git server to connect to
@@ -1493,8 +1495,8 @@ if (!doNotTrack) {
       --import-commit-message string   Specifies the initial commit message used when importing the project
   -j, --java-version string            Java version
       --jenkins string                 The name of the Jenkins server to import the project into
-      --jenkinsfilerunner string       if you want to import into JayeX with Jenkinsfilerunner this argument lets you specify the container image to use
-      --jx                             if you want to default to importing this project into JayeX instead of a Jenkins server if you have a mixed JayeX and Jenkins cluster
+      --jenkinsfilerunner string       if you want to import into Jenkins X with Jenkinsfilerunner this argument lets you specify the container image to use
+      --jx                             if you want to default to importing this project into Jenkins X instead of a Jenkins server if you have a mixed Jenkins X and Jenkins cluster
   -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops,Spring Cloud GCP,Azure,Cloud Contract,Cloud AWS,Cloud Messaging,Cloud Tracing])
   -l, --language string                Language to generate
       --log-level string               Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
@@ -1514,7 +1516,7 @@ if (!doNotTrack) {
       --pipeline-catalog-dir string    The pipeline catalog directory you want to use instead of the buildPackGitURL in the dev Environment Team settings. Generally only used for testing pipelines
       --pr-poll-period duration        the time between polls of the Pull Request on the cluster environment git repository (default 20s)
       --pr-poll-timeout duration       the maximum amount of time we wait for the Pull Request on the cluster environment git repository (default 20m0s)
-      --scheduler string               Change schedulerName, More info about Scheduler: https://jayex.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default &#34;in-repo&#34;)
+      --scheduler string               Change schedulerName, More info about Scheduler: https://jenkins-x.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default &#34;in-repo&#34;)
       --service-account string         The Kubernetes ServiceAccount to use to run the initial pipeline (default &#34;tekton-bot&#34;)
       --type string                    Project Type (such as maven-project or gradle-project)
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
@@ -1597,7 +1599,7 @@ if (!doNotTrack) {
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified February 9, 2026: <a href="https://github.com/jayex-io/jx-docs/commit/393aa477aad576b709e8682504c932e5ee4eb60b">fix: some search and replace from Jenkins X to JayeX (393aa477aa)</a>
+  Last modified July 17, 2026: <a href="https://github.com/jayex-io/jx-docs/commit/261b47dd558ecc3661d7bae87b7458feb2aa22f0">chore: regenerated plugin docs (261b47dd55)</a>
 </div>
 
 </div>

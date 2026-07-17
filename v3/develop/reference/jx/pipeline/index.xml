@@ -540,7 +540,7 @@
 &lt;p&gt;Display one or more preview environments.&lt;/p&gt;
 &lt;p&gt;See Also:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;jx get env : &lt;a href=&#34;https://jayex.io/commands/jx_get_env&#34;&gt;https://jayex.io/commands/jx_get_env&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;jx get env : &lt;a href=&#34;https://jenkins-x.io/commands/jx_get_env&#34;&gt;https://jenkins-x.io/commands/jx_get_env&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# List all preview environments&lt;/span&gt;

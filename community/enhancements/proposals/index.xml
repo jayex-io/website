@@ -1116,36 +1116,6 @@ functionality for cluster repositories.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Community: Proposals</title>
-      <link>https://jayex.io/community/enhancements/proposals/proposals/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jayex.io/community/enhancements/proposals/proposals/</guid>
-      <description>
-        
-        
-        &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/rawlingsj/enhancements/blob/master/proposals/labs/README.md&#34;&gt;Labs - enable rapid innovation while keeping a stable base platform&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/hferentschik/enhancements/blob/cloud-resources/proposals/3/README.md&#34;&gt;Cloud Resource Creation&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jstrachan/enhancements/blob/jenkins-trigger/proposals/trigger-jenkins/README.md&#34;&gt;Trigger Jenkins Pipelines&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vbehar/enhancements/blob/preview-helmfile/proposals/4/README.md&#34;&gt;Preview with Helmfile&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/garethjevans/enhancements/blob/decomposition/proposals/5/README.md&#34;&gt;Decomposition of Jenkins X&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Community: Use Tekton Dashboard</title>
       <link>https://jayex.io/community/enhancements/proposals/use-tekton-dashboard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
